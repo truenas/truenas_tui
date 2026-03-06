@@ -1,0 +1,67 @@
+Develop python ncurses based tui using the truenas_api_client library.
+
+Localizatoin should be using gettext: https://docs.python.org/3/library/gettext.html
+Configfile should use the base python configfile module.
+
+WE DO NOT NEED A CLI. WE NEED TUI.
+
+
+SOURCES:
+Truenas middleware /CODE/claudedir/middleware
+Truenas api client /CODE/claudedir/api_client
+Truenas midcli /CODE/claudedir/midcli  # only for reference for a shitty implementation of something we're replacing
+api ci testbed /CODE/claudedir/api-ci-testbed # contains ixnode tool
+
+
+CONFIGFILE:
+should contain: "server", "username", "api_key_path". If server IP address or credential info is omitted then AF_UNIX connection. Specifying configfile should be possible through argument.
+
+Target server: 192.168.1.108
+
+API KEY:
+{"id": 3, "name": "CKEY", "username": "claudetest", "user_identifier": "79", "keyhash": "$pbkdf2-sha512$500000$MFVRcXRzd1U3dlpmU1hCNA==$9DvteCG26aJlNWBgpDz4I04Ny2TsDHQmpBZd9UKyc4QYa671cs3jTgo32E6z6+rvMSvJkHwPpJxyRb6UZ//JxQ==", "created_at": {"$date": 1772281228000}, "expires_at": null, "local": true, "revoked": false, "revoked_reason": null, "key": "3-UhPCkJ01PASaaBIAE47SMu3XXbj9VShDeopeimMYRvz9XBDalNyhcp76axwAFEsZ"}
+
+NOTE: this is a READONLY key. Don't try to modify the target server
+
+
+Suggested source structure:
+src/tui_main <ncurses stuff for main>
+src/session <truenas client sessoin management>
+src/plugins < directory containing various plugins that will be in curses TUI>
+src/plugins/<name>/localization.py <localization related items 
+src/plugins/<name>/<source file>.py <ncurses implementation for stuff> -- This should also include the requirement rbac privileges for the API server for this plugin (so that we can decide whether to turn it on or off based on auth.me privilege set.
+
+
+TOP BAR OR BOTTOM BAR (somewhere)
+We should show the username of the authenticated user. Use `auth.me` API endpoint to get info about the authenticated user. It should also show role based on permissions. (FULL_ADMIN, SHARING_ADMIN, READONLY_ADMIN, CUSTOM). We should store the privilege info as well. If username is "root" we should make some large red bold warning.
+
+We should show the server's ip address and some of the basic system information in order to identify what server we're on.
+
+
+
+
+UI
+It should have basic two frame view left selects options right expands on it.
+
+We should first try to connect using AF_UNIX in the api client if no argument specified.
+ 
+
+Initially we just want to replicate functionality of "midcli --menu"
+
+```
+root@bobnas[/home/admin]# cli --menu
+1) Configure network interfaces
+2) Configure network settings
+3) Configure static routes
+4) Change local administrator password
+5) Create one-time password for "root"
+6) Reset configuration to defaults
+7) Open TrueNAS CLI Shell
+8) Open Linux Shell
+9) Reboot
+10) Shutdown
+ 
+Enter an option from 1-10:
+```
+
+But without the 7/8 options. Using up/down is probably OK, but we also have expect scripts that do automated installs that we don't want to break that are in api-ci-testbed. So keyboard shortcuts should allow the expect workflow.

@@ -1,0 +1,866 @@
+{
+  " (no QR tool found)": {
+    "machine_translated": true,
+    "translation": "(ಯಾವುದೇ QR ಉಪಕರಣ ಕಂಡುಬಂದಿಲ್ಲ)"
+  },
+  " My Account – {u} ": {
+    "machine_translated": true,
+    "translation": "ನನ್ನ ಖಾತೆ – {u}"
+  },
+  " Press Enter to continue": {
+    "machine_translated": true,
+    "translation": "ಮುಂದುವರಿಸಲು Enter ಒತ್ತಿರಿ"
+  },
+  " Two-Factor Authentication Setup ": {
+    "machine_translated": true,
+    "translation": "ಎರಡು-ಅಂಶ ದೃಢೀಕರಣ ಸೆಟಪ್"
+  },
+  "(Google Authenticator, Authy, etc.) before navigating away.": {
+    "machine_translated": true,
+    "translation": "(Google Authenticator, Authy, ಇತ್ಯಾದಿ) ದೂರ ನ್ಯಾವಿಗೇಟ್ ಮಾಡುವ ಮೊದಲು."
+  },
+  "(no addresses)": {
+    "machine_translated": true,
+    "translation": "(ಯಾವುದೇ ವಿಳಾಸಗಳಿಲ್ಲ)"
+  },
+  "(none)": {
+    "machine_translated": true,
+    "translation": "(ಯಾವುದೂ ಇಲ್ಲ)"
+  },
+  "Access: Read-only": {
+    "machine_translated": true,
+    "translation": "ಪ್ರವೇಶ: ಓದಲು-ಮಾತ್ರ"
+  },
+  "Access: Read/Write": {
+    "machine_translated": true,
+    "translation": "ಪ್ರವೇಶ: ಓದಿ/ಬರೆಯಿರಿ"
+  },
+  "Actions:": {
+    "machine_translated": true,
+    "translation": "ಕ್ರಿಯೆಗಳು:"
+  },
+  "Add Static Route": {
+    "machine_translated": true,
+    "translation": "ಸ್ಥಿರ ಮಾರ್ಗವನ್ನು ಸೇರಿಸಿ"
+  },
+  "Address": {
+    "machine_translated": true,
+    "translation": "ವಿಳಾಸ"
+  },
+  "Administrative user (admin)  [recommended]": {
+    "machine_translated": true,
+    "translation": "ಆಡಳಿತಾತ್ಮಕ ಬಳಕೆದಾರ (ನಿರ್ವಾಹಕ) [ಶಿಫಾರಸು ಮಾಡಲಾಗಿದೆ]"
+  },
+  "Alias must be in CIDR notation (e.g. 192.168.1.1/24): {e}": {
+    "machine_translated": true,
+    "translation": "ಅಲಿಯಾಸ್ CIDR ಸಂಕೇತದಲ್ಲಿರಬೇಕು (ಉದಾ. 192.168.1.1/24): {e}"
+  },
+  "Aliases (CIDR)": {
+    "machine_translated": true,
+    "translation": "ಅಲಿಯಾಸ್ (CIDR)"
+  },
+  "Appearance": {
+    "machine_translated": true,
+    "translation": "ಗೋಚರತೆ"
+  },
+  "Applied": {
+    "machine_translated": true,
+    "translation": "ಅನ್ವಯಿಸಲಾಗಿದೆ"
+  },
+  "Auto-refreshes every {n}s  [r] force refresh": {
+    "machine_translated": true,
+    "translation": "ಪ್ರತಿ {n}s [r] ಫೋರ್ಸ್ ರಿಫ್ರೆಶ್ ಅನ್ನು ಸ್ವಯಂ-ರಿಫ್ರೆಶ್ ಮಾಡುತ್ತದೆ"
+  },
+  "Behaviour": {
+    "machine_translated": true,
+    "translation": "ನಡವಳಿಕೆ"
+  },
+  "Bridge Settings": {
+    "machine_translated": true,
+    "translation": "ಸೇತುವೆ ಸೆಟ್ಟಿಂಗ್‌ಗಳು"
+  },
+  "CPU": {
+    "machine_translated": true,
+    "translation": "CPU"
+  },
+  "Cancel": {
+    "machine_translated": true,
+    "translation": "ರದ್ದುಮಾಡು"
+  },
+  "Cancelled": {
+    "machine_translated": true,
+    "translation": "ರದ್ದುಗೊಳಿಸಲಾಗಿದೆ"
+  },
+  "Cannot Change Password": {
+    "machine_translated": true,
+    "translation": "ಪಾಸ್ವರ್ಡ್ ಬದಲಾಯಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ"
+  },
+  "Change Password": {
+    "machine_translated": true,
+    "translation": "ಪಾಸ್ವರ್ಡ್ ಬದಲಾಯಿಸಿ"
+  },
+  "Change local administrator password": {
+    "machine_translated": true,
+    "translation": "ಸ್ಥಳೀಯ ನಿರ್ವಾಹಕರ ಗುಪ್ತಪದವನ್ನು ಬದಲಾಯಿಸಿ"
+  },
+  "Change password": {
+    "machine_translated": true,
+    "translation": "ಪಾಸ್ವರ್ಡ್ ಬದಲಾಯಿಸಿ"
+  },
+  "Change the password for a local administrator account.\n\nIf no local administrator has been configured yet, this\noption lets you set up an initial admin or root account.\n\nNote: changing a password will disable two-factor\nauthentication for that account.": {
+    "machine_translated": true,
+    "translation": "ಸ್ಥಳೀಯ ನಿರ್ವಾಹಕ ಖಾತೆಗಾಗಿ ಪಾಸ್ವರ್ಡ್ ಬದಲಾಯಿಸಿ.\n\nಯಾವುದೇ ಸ್ಥಳೀಯ ನಿರ್ವಾಹಕರನ್ನು ಇನ್ನೂ ಕಾನ್ಫಿಗರ್ ಮಾಡದಿದ್ದರೆ, ಇದು\nಆಯ್ಕೆಯು ಆರಂಭಿಕ ನಿರ್ವಾಹಕ ಅಥವಾ ರೂಟ್ ಖಾತೆಯನ್ನು ಹೊಂದಿಸಲು ನಿಮಗೆ ಅನುಮತಿಸುತ್ತದೆ.\n\nಗಮನಿಸಿ: ಪಾಸ್ವರ್ಡ್ ಅನ್ನು ಬದಲಾಯಿಸುವುದು ಎರಡು ಅಂಶವನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸುತ್ತದೆ\nಆ ಖಾತೆಗೆ ದೃಢೀಕರಣ."
+  },
+  "Changes applied. Network will roll back in ~60 seconds\nunless you press [p] to persist them.": {
+    "machine_translated": true,
+    "translation": "ಬದಲಾವಣೆಗಳನ್ನು ಅನ್ವಯಿಸಲಾಗಿದೆ. ನೆಟ್‌ವರ್ಕ್ ~60 ಸೆಕೆಂಡುಗಳಲ್ಲಿ ಹಿಂತಿರುಗುತ್ತದೆ\nನೀವು ಅವುಗಳನ್ನು ಮುಂದುವರಿಸಲು [p] ಅನ್ನು ಒತ್ತಿದ ಹೊರತು."
+  },
+  "Changes applied. Press [p] to persist or they roll back in {n}s.": {
+    "machine_translated": true,
+    "translation": "ಬದಲಾವಣೆಗಳನ್ನು ಅನ್ವಯಿಸಲಾಗಿದೆ. ಮುಂದುವರೆಯಲು [p] ಒತ್ತಿರಿ ಅಥವಾ ಅವು {n}s ನಲ್ಲಿ ಹಿಂತಿರುಗುತ್ತವೆ."
+  },
+  "Configuration reset cancelled.": {
+    "machine_translated": true,
+    "translation": "ಕಾನ್ಫಿಗರೇಶನ್ ಮರುಹೊಂದಿಕೆಯನ್ನು ರದ್ದುಗೊಳಿಸಲಾಗಿದೆ."
+  },
+  "Configuration reset initiated.\nThe system will reboot with default settings.": {
+    "machine_translated": true,
+    "translation": "ಕಾನ್ಫಿಗರೇಶನ್ ಮರುಹೊಂದಿಕೆಯನ್ನು ಪ್ರಾರಂಭಿಸಲಾಗಿದೆ.\nಡೀಫಾಲ್ಟ್ ಸೆಟ್ಟಿಂಗ್‌ಗಳೊಂದಿಗೆ ಸಿಸ್ಟಮ್ ರೀಬೂಟ್ ಆಗುತ್ತದೆ."
+  },
+  "Configure global network settings:\n\n  • Hostname and domain\n  • Default IPv4 and IPv6 gateways\n  • DNS nameservers (up to three)\n\nChanges take effect immediately after saving.": {
+    "machine_translated": true,
+    "translation": "ಜಾಗತಿಕ ನೆಟ್‌ವರ್ಕ್ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಕಾನ್ಫಿಗರ್ ಮಾಡಿ:\n\n  • ಹೋಸ್ಟ್ ಹೆಸರು ಮತ್ತು ಡೊಮೇನ್\n  • ಡೀಫಾಲ್ಟ್ IPv4 ಮತ್ತು IPv6 ಗೇಟ್‌ವೇಗಳು\n  • DNS ನೇಮ್‌ಸರ್ವರ್‌ಗಳು (ಮೂರು ವರೆಗೆ)\n\nಉಳಿಸಿದ ನಂತರ ಬದಲಾವಣೆಗಳು ತಕ್ಷಣವೇ ಕಾರ್ಯಗತಗೊಳ್ಳುತ್ತವೆ."
+  },
+  "Configure network interfaces": {
+    "machine_translated": true,
+    "translation": "ನೆಟ್ವರ್ಕ್ ಇಂಟರ್ಫೇಸ್ಗಳನ್ನು ಕಾನ್ಫಿಗರ್ ಮಾಡಿ"
+  },
+  "Configure network settings": {
+    "machine_translated": true,
+    "translation": "ನೆಟ್ವರ್ಕ್ ಸೆಟ್ಟಿಂಗ್ಗಳನ್ನು ಕಾನ್ಫಿಗರ್ ಮಾಡಿ"
+  },
+  "Configure networking for this TrueNAS system.\n\n  • Interface settings  – DHCP, IP aliases, MTU\n  • Network settings    – Hostname, domain, gateways, DNS\n  • Static routes       – Add and remove static routes\n\nChanges to interfaces require a commit step\nbefore they take effect.": {
+    "machine_translated": true,
+    "translation": "ಈ TrueNAS ಸಿಸ್ಟಮ್‌ಗಾಗಿ ನೆಟ್‌ವರ್ಕಿಂಗ್ ಅನ್ನು ಕಾನ್ಫಿಗರ್ ಮಾಡಿ.\n\n  • ಇಂಟರ್ಫೇಸ್ ಸೆಟ್ಟಿಂಗ್‌ಗಳು - DHCP, IP ಅಲಿಯಾಸ್, MTU\n  • ನೆಟ್‌ವರ್ಕ್ ಸೆಟ್ಟಿಂಗ್‌ಗಳು - ಹೋಸ್ಟ್ ಹೆಸರು, ಡೊಮೇನ್, ಗೇಟ್‌ವೇಗಳು, DNS\n  • ಸ್ಥಿರ ಮಾರ್ಗಗಳು - ಸ್ಥಿರ ಮಾರ್ಗಗಳನ್ನು ಸೇರಿಸಿ ಮತ್ತು ತೆಗೆದುಹಾಕಿ\n\nಇಂಟರ್‌ಫೇಸ್‌ಗಳಿಗೆ ಬದಲಾವಣೆಗಳಿಗೆ ಬದ್ಧತೆಯ ಹೆಜ್ಜೆಯ ಅಗತ್ಯವಿದೆ\nಅವರು ಜಾರಿಗೆ ಬರುವ ಮೊದಲು."
+  },
+  "Configure static routes": {
+    "machine_translated": true,
+    "translation": "ಸ್ಥಿರ ಮಾರ್ಗಗಳನ್ನು ಕಾನ್ಫಿಗರ್ ಮಾಡಿ"
+  },
+  "Confirm Delete": {
+    "machine_translated": true,
+    "translation": "ಅಳಿಸುವುದನ್ನು ದೃಢೀಕರಿಸಿ"
+  },
+  "Confirm Reboot": {
+    "machine_translated": true,
+    "translation": "ರೀಬೂಟ್ ಅನ್ನು ದೃಢೀಕರಿಸಿ"
+  },
+  "Confirm Reset": {
+    "machine_translated": true,
+    "translation": "ಮರುಹೊಂದಿಸಿ ದೃಢೀಕರಿಸಿ"
+  },
+  "Confirm Shutdown": {
+    "machine_translated": true,
+    "translation": "ಸ್ಥಗಿತಗೊಳಿಸುವಿಕೆಯನ್ನು ದೃಢೀಕರಿಸಿ"
+  },
+  "Confirm dangerous actions": {
+    "machine_translated": true,
+    "translation": "ಅಪಾಯಕಾರಿ ಕ್ರಮಗಳನ್ನು ದೃಢೀಕರಿಸಿ"
+  },
+  "Could not load LAG port choices:\n": {
+    "machine_translated": true,
+    "translation": "LAG ಪೋರ್ಟ್ ಆಯ್ಕೆಗಳನ್ನು ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ:"
+  },
+  "Could not load VLAN parent choices:\n": {
+    "machine_translated": true,
+    "translation": "VLAN ಪೋಷಕ ಆಯ್ಕೆಗಳನ್ನು ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ:"
+  },
+  "Could not load bridge member choices:\n": {
+    "machine_translated": true,
+    "translation": "ಸೇತುವೆ ಸದಸ್ಯರ ಆಯ್ಕೆಗಳನ್ನು ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ:"
+  },
+  "Create one-time password": {
+    "machine_translated": true,
+    "translation": "ಒಂದು ಬಾರಿ ಪಾಸ್ವರ್ಡ್ ರಚಿಸಿ"
+  },
+  "Create one-time password for \"{u}\"": {
+    "machine_translated": true,
+    "translation": "\"{u}\" ಗಾಗಿ ಒಂದು-ಬಾರಿಯ ಪಾಸ್‌ವರ್ಡ್ ಅನ್ನು ರಚಿಸಿ"
+  },
+  "Created": {
+    "machine_translated": true,
+    "translation": "ರಚಿಸಲಾಗಿದೆ"
+  },
+  "Current password:": {
+    "machine_translated": true,
+    "translation": "ಪ್ರಸ್ತುತ ಪಾಸ್ವರ್ಡ್:"
+  },
+  "Customise the TrueNAS TUI for your user account.\n\n  • Theme: default (blue), dark (green), high-contrast\n  • Startup view: system info pane or menu description\n  • Confirm dangerous actions (reboot, shutdown, reset)\n  • Language and date/time display formats\n\nSettings are saved to your account and persist across\nsessions on any client.": {
+    "machine_translated": true,
+    "translation": "ನಿಮ್ಮ ಬಳಕೆದಾರ ಖಾತೆಗಾಗಿ TrueNAS TUI ಅನ್ನು ಕಸ್ಟಮೈಸ್ ಮಾಡಿ.\n\n  • ಥೀಮ್: ಡೀಫಾಲ್ಟ್ (ನೀಲಿ), ಗಾಢ (ಹಸಿರು), ಹೆಚ್ಚಿನ ಕಾಂಟ್ರಾಸ್ಟ್\n  • ಆರಂಭಿಕ ವೀಕ್ಷಣೆ: ಸಿಸ್ಟಂ ಮಾಹಿತಿ ಫಲಕ ಅಥವಾ ಮೆನು ವಿವರಣೆ\n  • ಅಪಾಯಕಾರಿ ಕ್ರಿಯೆಗಳನ್ನು ದೃಢೀಕರಿಸಿ (ರೀಬೂಟ್, ಸ್ಥಗಿತಗೊಳಿಸುವಿಕೆ, ಮರುಹೊಂದಿಸಿ)\n  • ಭಾಷೆ ಮತ್ತು ದಿನಾಂಕ/ಸಮಯದ ಪ್ರದರ್ಶನ ಸ್ವರೂಪಗಳು\n\nಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ನಿಮ್ಮ ಖಾತೆಯಲ್ಲಿ ಉಳಿಸಲಾಗಿದೆ ಮತ್ತು ಉದ್ದಕ್ಕೂ ಇರುತ್ತವೆ\nಯಾವುದೇ ಕ್ಲೈಂಟ್‌ನಲ್ಲಿ ಸೆಷನ್‌ಗಳು."
+  },
+  "Date format": {
+    "machine_translated": true,
+    "translation": "ದಿನಾಂಕ ಸ್ವರೂಪ"
+  },
+  "Delete Route": {
+    "machine_translated": true,
+    "translation": "ಮಾರ್ಗವನ್ನು ಅಳಿಸಿ"
+  },
+  "Delete interface {name}?": {
+    "machine_translated": true,
+    "translation": "ಇಂಟರ್ಫೇಸ್ {name} ಅಳಿಸುವುದೇ?"
+  },
+  "Delete static route {dest}?": {
+    "machine_translated": true,
+    "translation": "ಸ್ಥಿರ ಮಾರ್ಗವನ್ನು {dest} ಅಳಿಸುವುದೇ?"
+  },
+  "Deleted": {
+    "machine_translated": true,
+    "translation": "ಅಳಿಸಲಾಗಿದೆ"
+  },
+  "Description": {
+    "machine_translated": true,
+    "translation": "ವಿವರಣೆ"
+  },
+  "Destination (CIDR)": {
+    "machine_translated": true,
+    "translation": "ಗಮ್ಯಸ್ಥಾನ (CIDR)"
+  },
+  "Disable Two-Factor Authentication": {
+    "machine_translated": true,
+    "translation": "ಎರಡು ಅಂಶಗಳ ದೃಢೀಕರಣವನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಿ"
+  },
+  "Disable two-factor authentication": {
+    "machine_translated": true,
+    "translation": "ಎರಡು ಅಂಶದ ದೃಢೀಕರಣವನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಿ"
+  },
+  "Disable two-factor authentication for {u}?\nYou will no longer need an OTP to log in.": {
+    "machine_translated": true,
+    "translation": "{u} ಗಾಗಿ ಎರಡು ಅಂಶದ ದೃಢೀಕರಣವನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸುವುದೇ?\nಲಾಗ್ ಇನ್ ಮಾಡಲು ನಿಮಗೆ ಇನ್ನು ಮುಂದೆ OTP ಬೇಕಾಗಿಲ್ಲ."
+  },
+  "Disabled": {
+    "machine_translated": true,
+    "translation": "ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ"
+  },
+  "Domain": {
+    "machine_translated": true,
+    "translation": "ಡೊಮೇನ್"
+  },
+  "Edit Static Route": {
+    "machine_translated": true,
+    "translation": "ಸ್ಥಿರ ಮಾರ್ಗವನ್ನು ಸಂಪಾದಿಸಿ"
+  },
+  "Enabled": {
+    "machine_translated": true,
+    "translation": "ಸಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ"
+  },
+  "Enter: confirm  Esc: cancel": {
+    "machine_translated": true,
+    "translation": "ನಮೂದಿಸಿ: Esc ಅನ್ನು ದೃಢೀಕರಿಸಿ: ರದ್ದುಗೊಳಿಸಿ"
+  },
+  "Erase all TrueNAS configuration and reset to factory\ndefaults.\n\nWARNING: This is irreversible. All settings including\nnetwork configuration, shares, users, and storage pools\nwill be erased.\n\nYou will be prompted to confirm twice before proceeding.": {
+    "machine_translated": true,
+    "translation": "ಎಲ್ಲಾ TrueNAS ಕಾನ್ಫಿಗರೇಶನ್ ಅನ್ನು ಅಳಿಸಿ ಮತ್ತು ಕಾರ್ಖಾನೆಗೆ ಮರುಹೊಂದಿಸಿ\nಡೀಫಾಲ್ಟ್‌ಗಳು.\n\nಎಚ್ಚರಿಕೆ: ಇದು ಬದಲಾಯಿಸಲಾಗದು. ಸೇರಿದಂತೆ ಎಲ್ಲಾ ಸೆಟ್ಟಿಂಗ್‌ಗಳು\nನೆಟ್‌ವರ್ಕ್ ಕಾನ್ಫಿಗರೇಶನ್, ಷೇರುಗಳು, ಬಳಕೆದಾರರು ಮತ್ತು ಶೇಖರಣಾ ಪೂಲ್‌ಗಳು\nಅಳಿಸಿಹೋಗುತ್ತದೆ.\n\nಮುಂದುವರಿಯುವ ಮೊದಲು ಎರಡು ಬಾರಿ ಖಚಿತಪಡಿಸಲು ನಿಮ್ಮನ್ನು ಕೇಳಲಾಗುತ್ತದೆ."
+  },
+  "Error": {
+    "machine_translated": true,
+    "translation": "ದೋಷ"
+  },
+  "Failover Critical": {
+    "machine_translated": true,
+    "translation": "ವೈಫಲ್ಯ ಕ್ರಿಟಿಕಲ್"
+  },
+  "Failover Group": {
+    "machine_translated": true,
+    "translation": "ವಿಫಲ ಗುಂಪು"
+  },
+  "Failover Settings": {
+    "machine_translated": true,
+    "translation": "ವೈಫಲ್ಯ ಸೆಟ್ಟಿಂಗ್‌ಗಳು"
+  },
+  "Gateway": {
+    "machine_translated": true,
+    "translation": "ಗೇಟ್ವೇ"
+  },
+  "Generate a single-use temporary password for the\ncurrently authenticated user.\n\nThe one-time password can be used to log in once\nand is invalidated immediately after use.": {
+    "machine_translated": true,
+    "translation": "ಗಾಗಿ ಏಕ-ಬಳಕೆಯ ತಾತ್ಕಾಲಿಕ ಪಾಸ್‌ವರ್ಡ್ ಅನ್ನು ರಚಿಸಿ\nಪ್ರಸ್ತುತ ದೃಢೀಕರಿಸಿದ ಬಳಕೆದಾರ.\n\nಒಮ್ಮೆ ಲಾಗಿನ್ ಆಗಲು ಒನ್-ಟೈಮ್ ಪಾಸ್‌ವರ್ಡ್ ಅನ್ನು ಬಳಸಬಹುದು\nಮತ್ತು ಬಳಕೆಯ ನಂತರ ತಕ್ಷಣವೇ ಅಮಾನ್ಯಗೊಳಿಸಲಾಗುತ್ತದೆ."
+  },
+  "Generate one-time password": {
+    "machine_translated": true,
+    "translation": "ಒಂದು-ಬಾರಿ ಪಾಸ್ವರ್ಡ್ ಅನ್ನು ರಚಿಸಿ"
+  },
+  "Generating a new 2FA secret will invalidate your current\nauthenticator app configuration. Continue?": {
+    "machine_translated": true,
+    "translation": "ಹೊಸ 2FA ರಹಸ್ಯವನ್ನು ರಚಿಸುವುದು ನಿಮ್ಮ ಪ್ರಸ್ತುತವನ್ನು ಅಮಾನ್ಯಗೊಳಿಸುತ್ತದೆ\nದೃಢೀಕರಣ ಅಪ್ಲಿಕೇಶನ್ ಕಾನ್ಫಿಗರೇಶನ್. ಮುಂದುವರಿಸುವುದೇ?"
+  },
+  "Hostname": {
+    "machine_translated": true,
+    "translation": "ಹೋಸ್ಟ್ ಹೆಸರು"
+  },
+  "IMPORTANT: Scan this QR code with your authenticator app": {
+    "machine_translated": true,
+    "translation": "ಪ್ರಮುಖ: ನಿಮ್ಮ ದೃಢೀಕರಣ ಅಪ್ಲಿಕೇಶನ್‌ನೊಂದಿಗೆ ಈ QR ಕೋಡ್ ಅನ್ನು ಸ್ಕ್ಯಾನ್ ಮಾಡಿ"
+  },
+  "IP Address": {
+    "machine_translated": true,
+    "translation": "IP ವಿಳಾಸ"
+  },
+  "IPv4 DHCP": {
+    "machine_translated": true,
+    "translation": "IPv4 DHCP"
+  },
+  "IPv4 Gateway": {
+    "machine_translated": true,
+    "translation": "IPv4 ಗೇಟ್‌ವೇ"
+  },
+  "IPv6 Auto": {
+    "machine_translated": true,
+    "translation": "IPv6 ಆಟೋ"
+  },
+  "IPv6 Gateway": {
+    "machine_translated": true,
+    "translation": "IPv6 ಗೇಟ್‌ವೇ"
+  },
+  "Interface": {
+    "machine_translated": true,
+    "translation": "ಇಂಟರ್ಫೇಸ್"
+  },
+  "Interface Settings": {
+    "machine_translated": true,
+    "translation": "ಇಂಟರ್ಫೇಸ್ ಸೆಟ್ಟಿಂಗ್ಗಳು"
+  },
+  "Interface Type": {
+    "machine_translated": true,
+    "translation": "ಇಂಟರ್ಫೇಸ್ ಪ್ರಕಾರ"
+  },
+  "Interface name is required.": {
+    "machine_translated": true,
+    "translation": "ಇಂಟರ್ಫೇಸ್ ಹೆಸರು ಅಗತ್ಯವಿದೆ."
+  },
+  "Interface settings": {
+    "machine_translated": true,
+    "translation": "ಇಂಟರ್ಫೇಸ್ ಸೆಟ್ಟಿಂಗ್‌ಗಳು"
+  },
+  "Interface {name} created.\nUse [a] from the list to apply changes.": {
+    "machine_translated": true,
+    "translation": "ಇಂಟರ್ಫೇಸ್ {name} ರಚಿಸಲಾಗಿದೆ.\nಬದಲಾವಣೆಗಳನ್ನು ಅನ್ವಯಿಸಲು ಪಟ್ಟಿಯಿಂದ [a] ಬಳಸಿ."
+  },
+  "Interface {name} deleted.\nUse [a] from the list to apply changes.": {
+    "machine_translated": true,
+    "translation": "ಇಂಟರ್ಫೇಸ್ {name} ಅಳಿಸಲಾಗಿದೆ.\nಬದಲಾವಣೆಗಳನ್ನು ಅನ್ವಯಿಸಲು ಪಟ್ಟಿಯಿಂದ [a] ಬಳಸಿ."
+  },
+  "Interface {name} updated.\nUse [a] from the list to apply changes.": {
+    "machine_translated": true,
+    "translation": "ಇಂಟರ್ಫೇಸ್ {name} ಅನ್ನು ನವೀಕರಿಸಲಾಗಿದೆ.\nಬದಲಾವಣೆಗಳನ್ನು ಅನ್ವಯಿಸಲು ಪಟ್ಟಿಯಿಂದ [a] ಬಳಸಿ."
+  },
+  "Invalid IP address in alias: {e}": {
+    "machine_translated": true,
+    "translation": "ಅಲಿಯಾಸ್‌ನಲ್ಲಿ ಅಮಾನ್ಯ IP ವಿಳಾಸ: {e}"
+  },
+  "Invalid IP address: {s}": {
+    "machine_translated": true,
+    "translation": "ಅಮಾನ್ಯ IP ವಿಳಾಸ: {s}"
+  },
+  "Invalid prefix length in alias: {e}": {
+    "machine_translated": true,
+    "translation": "ಅಲಿಯಾಸ್‌ನಲ್ಲಿ ಅಮಾನ್ಯ ಪೂರ್ವಪ್ರತ್ಯಯ ಉದ್ದ: {e}"
+  },
+  "LACPDU Rate": {
+    "machine_translated": true,
+    "translation": "LACPDU ದರ"
+  },
+  "Language": {
+    "machine_translated": true,
+    "translation": "ಭಾಷೆ"
+  },
+  "Link Aggregation Settings": {
+    "machine_translated": true,
+    "translation": "ಲಿಂಕ್ ಒಟ್ಟುಗೂಡಿಸುವಿಕೆ ಸೆಟ್ಟಿಂಗ್‌ಗಳು"
+  },
+  "Load Average": {
+    "machine_translated": true,
+    "translation": "ಲೋಡ್ ಸರಾಸರಿ"
+  },
+  "Local administrator {u} set up successfully.": {
+    "machine_translated": true,
+    "translation": "ಸ್ಥಳೀಯ ನಿರ್ವಾಹಕರು {u} ಅನ್ನು ಯಶಸ್ವಿಯಾಗಿ ಹೊಂದಿಸಲಾಗಿದೆ."
+  },
+  "Locale": {
+    "machine_translated": true,
+    "translation": "ಸ್ಥಳೀಯ"
+  },
+  "MTU": {
+    "machine_translated": true,
+    "translation": "MTU"
+  },
+  "Manage static network routes.\n\n  • View existing static routes\n  • Add new routes (destination, gateway, description)\n  • Edit or delete existing routes\n\nKeys: Enter = Edit,  a = Add,  d = Delete,  q = Back": {
+    "machine_translated": true,
+    "translation": "ಸ್ಥಿರ ನೆಟ್ವರ್ಕ್ ಮಾರ್ಗಗಳನ್ನು ನಿರ್ವಹಿಸಿ.\n\n  • ಅಸ್ತಿತ್ವದಲ್ಲಿರುವ ಸ್ಥಿರ ಮಾರ್ಗಗಳನ್ನು ವೀಕ್ಷಿಸಿ\n  • ಹೊಸ ಮಾರ್ಗಗಳನ್ನು ಸೇರಿಸಿ (ಗಮ್ಯಸ್ಥಾನ, ಗೇಟ್‌ವೇ, ವಿವರಣೆ)\n  • ಅಸ್ತಿತ್ವದಲ್ಲಿರುವ ಮಾರ್ಗಗಳನ್ನು ಎಡಿಟ್ ಮಾಡಿ ಅಥವಾ ಅಳಿಸಿ\n\nಕೀಗಳು: ನಮೂದಿಸಿ = ಸಂಪಾದಿಸು, a = ಸೇರಿಸಿ, d = ಅಳಿಸು, q = ಹಿಂದೆ"
+  },
+  "Manufacturer": {
+    "machine_translated": true,
+    "translation": "ತಯಾರಕ"
+  },
+  "Members": {
+    "machine_translated": true,
+    "translation": "ಸದಸ್ಯರು"
+  },
+  "Memory": {
+    "machine_translated": true,
+    "translation": "ಸ್ಮರಣೆ"
+  },
+  "My account": {
+    "machine_translated": true,
+    "translation": "ನನ್ನ ಖಾತೆ"
+  },
+  "Name": {
+    "machine_translated": true,
+    "translation": "ಹೆಸರು"
+  },
+  "Nameserver 1": {
+    "machine_translated": true,
+    "translation": "ನೇಮ್ ಸರ್ವರ್ 1"
+  },
+  "Nameserver 2": {
+    "machine_translated": true,
+    "translation": "ನೇಮ್ ಸರ್ವರ್ 2"
+  },
+  "Nameserver 3": {
+    "machine_translated": true,
+    "translation": "ನೇಮ್ ಸರ್ವರ್ 3"
+  },
+  "Network": {
+    "machine_translated": true,
+    "translation": "ನೆಟ್ವರ್ಕ್"
+  },
+  "Network Configuration": {
+    "machine_translated": true,
+    "translation": "ನೆಟ್‌ವರ್ಕ್ ಕಾನ್ಫಿಗರೇಶನ್"
+  },
+  "Network Interfaces": {
+    "machine_translated": true,
+    "translation": "ನೆಟ್ವರ್ಕ್ ಇಂಟರ್ಫೇಸ್ಗಳು"
+  },
+  "Network changes persisted successfully.": {
+    "machine_translated": true,
+    "translation": "ನೆಟ್‌ವರ್ಕ್ ಬದಲಾವಣೆಗಳು ಯಶಸ್ವಿಯಾಗಿ ಮುಂದುವರೆದಿದೆ."
+  },
+  "Network settings": {
+    "machine_translated": true,
+    "translation": "ನೆಟ್‌ವರ್ಕ್ ಸೆಟ್ಟಿಂಗ್‌ಗಳು"
+  },
+  "Network settings updated successfully.": {
+    "machine_translated": true,
+    "translation": "ನೆಟ್‌ವರ್ಕ್ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಯಶಸ್ವಿಯಾಗಿ ನವೀಕರಿಸಲಾಗಿದೆ."
+  },
+  "New Interface – Step 1": {
+    "machine_translated": true,
+    "translation": "ಹೊಸ ಇಂಟರ್ಫೇಸ್ - ಹಂತ 1"
+  },
+  "New Interface – Step 2": {
+    "machine_translated": true,
+    "translation": "ಹೊಸ ಇಂಟರ್ಫೇಸ್ - ಹಂತ 2"
+  },
+  "New password for {u}:": {
+    "machine_translated": true,
+    "translation": "{u} ಗಾಗಿ ಹೊಸ ಪಾಸ್‌ವರ್ಡ್:"
+  },
+  "No": {
+    "machine_translated": true,
+    "translation": "ಸಂ"
+  },
+  "No local administrators found.": {
+    "machine_translated": true,
+    "translation": "ಯಾವುದೇ ಸ್ಥಳೀಯ ನಿರ್ವಾಹಕರು ಕಂಡುಬಂದಿಲ್ಲ."
+  },
+  "No provisioning URI returned from server.": {
+    "machine_translated": true,
+    "translation": "ಸರ್ವರ್‌ನಿಂದ ಯಾವುದೇ ಒದಗಿಸುವಿಕೆಯ URI ಹಿಂತಿರುಗಿಲ್ಲ."
+  },
+  "No static routes configured.": {
+    "machine_translated": true,
+    "translation": "ಯಾವುದೇ ಸ್ಥಿರ ಮಾರ್ಗಗಳನ್ನು ಕಾನ್ಫಿಗರ್ ಮಾಡಲಾಗಿಲ್ಲ."
+  },
+  "No terminal QR code tool was found on this system.\n\nInstall \"qr\" or \"qrcode-terminal\" to use this feature.": {
+    "machine_translated": true,
+    "translation": "ಈ ಸಿಸ್ಟಂನಲ್ಲಿ ಯಾವುದೇ ಟರ್ಮಿನಲ್ QR ಕೋಡ್ ಟೂಲ್ ಕಂಡುಬಂದಿಲ್ಲ.\n\nಈ ವೈಶಿಷ್ಟ್ಯವನ್ನು ಬಳಸಲು \"qr\" ಅಥವಾ \"qrcode-terminal\" ಅನ್ನು ಸ್ಥಾಪಿಸಿ."
+  },
+  "Not Found": {
+    "machine_translated": true,
+    "translation": "ಕಂಡುಬಂದಿಲ್ಲ"
+  },
+  "Not a valid member: {v}": {
+    "machine_translated": true,
+    "translation": "ಮಾನ್ಯ ಸದಸ್ಯರಲ್ಲ: {v}"
+  },
+  "Not a valid port: {v}": {
+    "machine_translated": true,
+    "translation": "ಮಾನ್ಯ ಪೋರ್ಟ್ ಅಲ್ಲ: {v}"
+  },
+  "One-Time Password": {
+    "machine_translated": true,
+    "translation": "ಒನ್-ಟೈಮ್ ಪಾಸ್‌ವರ್ಡ್"
+  },
+  "One-time password for \"{u}\":\n\n  {otp}\n\nThis password can only be used once.\nDialog closes automatically after {t} seconds.": {
+    "machine_translated": true,
+    "translation": "\"{u}\" ಗಾಗಿ ಒಂದು-ಬಾರಿಯ ಪಾಸ್‌ವರ್ಡ್:\n\n  {otp}\n\nಈ ಪಾಸ್‌ವರ್ಡ್ ಅನ್ನು ಒಮ್ಮೆ ಮಾತ್ರ ಬಳಸಬಹುದಾಗಿದೆ.\nಡೈಲಾಗ್ {t} ಸೆಕೆಂಡುಗಳ ನಂತರ ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಮುಚ್ಚುತ್ತದೆ."
+  },
+  "Open Linux Shell": {
+    "machine_translated": true,
+    "translation": "ಲಿನಕ್ಸ್ ಶೆಲ್ ತೆರೆಯಿರಿ"
+  },
+  "Open TrueNAS CLI Shell": {
+    "machine_translated": true,
+    "translation": "TrueNAS CLI ಶೆಲ್ ತೆರೆಯಿರಿ"
+  },
+  "Open a Linux shell (bash/zsh).\n\nSuspends the TUI and opens your login shell.\nType \"exit\" or press Ctrl+D to return to the TUI.": {
+    "machine_translated": true,
+    "translation": "Linux ಶೆಲ್ ತೆರೆಯಿರಿ (bash/zsh).\n\nTUI ಅನ್ನು ಅಮಾನತುಗೊಳಿಸುತ್ತದೆ ಮತ್ತು ನಿಮ್ಮ ಲಾಗಿನ್ ಶೆಲ್ ಅನ್ನು ತೆರೆಯುತ್ತದೆ.\nTUI ಗೆ ಹಿಂತಿರುಗಲು \"ನಿರ್ಗಮನ\" ಎಂದು ಟೈಪ್ ಮಾಡಿ ಅಥವಾ Ctrl+D ಒತ್ತಿರಿ."
+  },
+  "Open the TrueNAS interactive CLI shell (midcli).\n\nReplaces the TUI with the full midcli command-line\ninterface. The TUI restarts after you exit midcli.": {
+    "machine_translated": true,
+    "translation": "TrueNAS ಸಂವಾದಾತ್ಮಕ CLI ಶೆಲ್ (ಮಿಡ್ಕ್ಲಿ) ತೆರೆಯಿರಿ.\n\nTUI ಅನ್ನು ಪೂರ್ಣ midcli ಕಮಾಂಡ್-ಲೈನ್‌ನೊಂದಿಗೆ ಬದಲಾಯಿಸುತ್ತದೆ\nಇಂಟರ್ಫೇಸ್. ನೀವು ಮಿಡ್‌ಕ್ಲಿಯಿಂದ ನಿರ್ಗಮಿಸಿದ ನಂತರ TUI ಮರುಪ್ರಾರಂಭಗೊಳ್ಳುತ್ತದೆ."
+  },
+  "Other Settings": {
+    "machine_translated": true,
+    "translation": "ಇತರ ಸೆಟ್ಟಿಂಗ್‌ಗಳು"
+  },
+  "Parent Interface": {
+    "machine_translated": true,
+    "translation": "ಪೋಷಕ ಇಂಟರ್ಫೇಸ್"
+  },
+  "Password changed successfully.": {
+    "machine_translated": true,
+    "translation": "ಪಾಸ್ವರ್ಡ್ ಅನ್ನು ಯಶಸ್ವಿಯಾಗಿ ಬದಲಾಯಿಸಲಾಗಿದೆ."
+  },
+  "Password changes are only supported for local accounts.\nThis account is managed by an external directory service.": {
+    "machine_translated": true,
+    "translation": "ಪಾಸ್ವರ್ಡ್ ಬದಲಾವಣೆಗಳು ಸ್ಥಳೀಯ ಖಾತೆಗಳಿಗೆ ಮಾತ್ರ ಬೆಂಬಲಿತವಾಗಿದೆ.\nಈ ಖಾತೆಯನ್ನು ಬಾಹ್ಯ ಡೈರೆಕ್ಟರಿ ಸೇವೆಯಿಂದ ನಿರ್ವಹಿಸಲಾಗುತ್ತದೆ."
+  },
+  "Password for {u} changed successfully.\nTwo-factor authentication has been disabled.": {
+    "machine_translated": true,
+    "translation": "{u} ಗಾಗಿ ಪಾಸ್‌ವರ್ಡ್ ಯಶಸ್ವಿಯಾಗಿ ಬದಲಾಗಿದೆ.\nಎರಡು ಅಂಶದ ದೃಢೀಕರಣವನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ."
+  },
+  "Password for {u}:": {
+    "machine_translated": true,
+    "translation": "{u} ಗಾಗಿ ಪಾಸ್‌ವರ್ಡ್:"
+  },
+  "Password must be at least {n} characters.": {
+    "machine_translated": true,
+    "translation": "ಪಾಸ್ವರ್ಡ್ ಕನಿಷ್ಠ {n} ಅಕ್ಷರಗಳಾಗಿರಬೇಕು."
+  },
+  "Passwords do not match.": {
+    "machine_translated": true,
+    "translation": "ಪಾಸ್‌ವರ್ಡ್‌ಗಳು ಹೊಂದಿಕೆಯಾಗುತ್ತಿಲ್ಲ."
+  },
+  "Pending changes. Press [a] to apply.": {
+    "machine_translated": true,
+    "translation": "ಬಾಕಿ ಉಳಿದಿರುವ ಬದಲಾವಣೆಗಳು. ಅನ್ವಯಿಸಲು [a] ಒತ್ತಿರಿ."
+  },
+  "Persisted": {
+    "machine_translated": true,
+    "translation": "ಪಟ್ಟುಹಿಡಿದರು"
+  },
+  "Please enter the reason for the system reboot\n(leave blank to cancel):": {
+    "machine_translated": true,
+    "translation": "ದಯವಿಟ್ಟು ಸಿಸ್ಟಮ್ ರೀಬೂಟ್‌ಗೆ ಕಾರಣವನ್ನು ನಮೂದಿಸಿ\n(ರದ್ದು ಮಾಡಲು ಖಾಲಿ ಬಿಡಿ):"
+  },
+  "Please enter the reason for the system shutdown\n(leave blank to cancel):": {
+    "machine_translated": true,
+    "translation": "ದಯವಿಟ್ಟು ಸಿಸ್ಟಂ ಸ್ಥಗಿತಗೊಳ್ಳಲು ಕಾರಣವನ್ನು ನಮೂದಿಸಿ\n(ರದ್ದು ಮಾಡಲು ಖಾಲಿ ಬಿಡಿ):"
+  },
+  "Port": {
+    "machine_translated": true,
+    "translation": "ಬಂದರು"
+  },
+  "Ports": {
+    "machine_translated": true,
+    "translation": "ಬಂದರುಗಳು"
+  },
+  "Power Control": {
+    "machine_translated": true,
+    "translation": "ಪವರ್ ಕಂಟ್ರೋಲ್"
+  },
+  "Prefix length out of range in alias: {e}": {
+    "machine_translated": true,
+    "translation": "ಅಲಿಯಾಸ್‌ನಲ್ಲಿ ಪೂರ್ವಪ್ರತ್ಯಯ ಉದ್ದವು ವ್ಯಾಪ್ತಿಯಿಂದ ಹೊರಗಿದೆ: {e}"
+  },
+  "Priority (PCP)": {
+    "machine_translated": true,
+    "translation": "ಆದ್ಯತೆ (PCP)"
+  },
+  "Product": {
+    "machine_translated": true,
+    "translation": "ಉತ್ಪನ್ನ"
+  },
+  "Protocol": {
+    "machine_translated": true,
+    "translation": "ಪ್ರೋಟೋಕಾಲ್"
+  },
+  "Reboot": {
+    "machine_translated": true,
+    "translation": "ರೀಬೂಟ್ ಮಾಡಿ"
+  },
+  "Reboot initiated. The system is shutting down.": {
+    "machine_translated": true,
+    "translation": "ರೀಬೂಟ್ ಆರಂಭಿಸಲಾಗಿದೆ. ವ್ಯವಸ್ಥೆಯು ಸ್ಥಗಿತಗೊಳ್ಳುತ್ತಿದೆ."
+  },
+  "Reboot or shut down the TrueNAS system.\n\n  • Reboot   – restart the system\n  • Shutdown – power off the system\n\nYou will be prompted for a reason and confirmation\nbefore any action is taken.": {
+    "machine_translated": true,
+    "translation": "TrueNAS ಸಿಸ್ಟಮ್ ಅನ್ನು ರೀಬೂಟ್ ಮಾಡಿ ಅಥವಾ ಸ್ಥಗಿತಗೊಳಿಸಿ.\n\n  • ರೀಬೂಟ್ - ಸಿಸ್ಟಮ್ ಅನ್ನು ಮರುಪ್ರಾರಂಭಿಸಿ\n  • ಸ್ಥಗಿತಗೊಳಿಸುವಿಕೆ - ಸಿಸ್ಟಮ್ ಅನ್ನು ಪವರ್ ಆಫ್ ಮಾಡಿ\n\nಕಾರಣ ಮತ್ತು ದೃಢೀಕರಣಕ್ಕಾಗಿ ನಿಮ್ಮನ್ನು ಕೇಳಲಾಗುತ್ತದೆ\nಯಾವುದೇ ಕ್ರಮ ತೆಗೆದುಕೊಳ್ಳುವ ಮೊದಲು."
+  },
+  "Reboot the TrueNAS system.\n\nYou will be prompted to enter a reason for the reboot\nbefore the system restarts.\n\nAll active sessions and shares will be interrupted.": {
+    "machine_translated": true,
+    "translation": "TrueNAS ಸಿಸ್ಟಮ್ ಅನ್ನು ರೀಬೂಟ್ ಮಾಡಿ.\n\nರೀಬೂಟ್ ಮಾಡಲು ಕಾರಣವನ್ನು ನಮೂದಿಸಲು ನಿಮ್ಮನ್ನು ಕೇಳಲಾಗುತ್ತದೆ\nಸಿಸ್ಟಮ್ ಮರುಪ್ರಾರಂಭಿಸುವ ಮೊದಲು.\n\nಎಲ್ಲಾ ಸಕ್ರಿಯ ಸೆಷನ್‌ಗಳು ಮತ್ತು ಹಂಚಿಕೆಗಳು ಅಡಚಣೆಯಾಗುತ್ತವೆ."
+  },
+  "Reboot the system?\n\nReason: {r}": {
+    "machine_translated": true,
+    "translation": "ಸಿಸ್ಟಮ್ ಅನ್ನು ರೀಬೂಟ್ ಮಾಡುವುದೇ?\n\nಕಾರಣ: {r}"
+  },
+  "Reboot/Shutdown": {
+    "machine_translated": true,
+    "translation": "ರೀಬೂಟ್/ಶಟ್‌ಡೌನ್"
+  },
+  "Rebooting": {
+    "machine_translated": true,
+    "translation": "ರೀಬೂಟ್ ಮಾಡಲಾಗುತ್ತಿದೆ"
+  },
+  "Renew 2FA Secret": {
+    "machine_translated": true,
+    "translation": "2FA ರಹಸ್ಯವನ್ನು ನವೀಕರಿಸಿ"
+  },
+  "Renew two-factor secret": {
+    "machine_translated": true,
+    "translation": "ಎರಡು ಅಂಶಗಳ ರಹಸ್ಯವನ್ನು ನವೀಕರಿಸಿ"
+  },
+  "Reset": {
+    "machine_translated": true,
+    "translation": "ಮರುಹೊಂದಿಸಿ"
+  },
+  "Reset Configuration": {
+    "machine_translated": true,
+    "translation": "ಕಾನ್ಫಿಗರೇಶನ್ ಅನ್ನು ಮರುಹೊಂದಿಸಿ"
+  },
+  "Reset configuration to defaults": {
+    "machine_translated": true,
+    "translation": "ಡೀಫಾಲ್ಟ್‌ಗಳಿಗೆ ಕಾನ್ಫಿಗರೇಶನ್ ಅನ್ನು ಮರುಹೊಂದಿಸಿ"
+  },
+  "Retype new password:": {
+    "machine_translated": true,
+    "translation": "ಹೊಸ ಪಾಸ್‌ವರ್ಡ್ ಅನ್ನು ಮರು ಟೈಪ್ ಮಾಡಿ:"
+  },
+  "Retype password for {u}:": {
+    "machine_translated": true,
+    "translation": "{u} ಗಾಗಿ ಪಾಸ್‌ವರ್ಡ್ ಅನ್ನು ಮರು ಟೈಪ್ ಮಾಡಿ:"
+  },
+  "Root user (not recommended)": {
+    "machine_translated": true,
+    "translation": "ರೂಟ್ ಬಳಕೆದಾರ (ಶಿಫಾರಸು ಮಾಡಲಾಗಿಲ್ಲ)"
+  },
+  "Save": {
+    "machine_translated": true,
+    "translation": "ಉಳಿಸಿ"
+  },
+  "Saved": {
+    "machine_translated": true,
+    "translation": "ಉಳಿಸಲಾಗಿದೆ"
+  },
+  "Secret key: {s}  (for manual entry)": {
+    "machine_translated": true,
+    "translation": "ರಹಸ್ಯ ಕೀ: {s} (ಹಸ್ತಚಾಲಿತ ಪ್ರವೇಶಕ್ಕಾಗಿ)"
+  },
+  "Select Administrator": {
+    "machine_translated": true,
+    "translation": "ನಿರ್ವಾಹಕರನ್ನು ಆಯ್ಕೆಮಾಡಿ"
+  },
+  "Serial": {
+    "machine_translated": true,
+    "translation": "ಧಾರಾವಾಹಿ"
+  },
+  "Set Up Administrator": {
+    "machine_translated": true,
+    "translation": "ನಿರ್ವಾಹಕರನ್ನು ಹೊಂದಿಸಿ"
+  },
+  "Set to 0 to use the system default MTU": {
+    "machine_translated": true,
+    "translation": "ಸಿಸ್ಟಮ್ ಡೀಫಾಲ್ಟ್ MTU ಅನ್ನು ಬಳಸಲು 0 ಗೆ ಹೊಂದಿಸಿ"
+  },
+  "Set up local administrator": {
+    "machine_translated": true,
+    "translation": "ಸ್ಥಳೀಯ ನಿರ್ವಾಹಕರನ್ನು ಹೊಂದಿಸಿ"
+  },
+  "Set up two-factor authentication": {
+    "machine_translated": true,
+    "translation": "ಎರಡು ಅಂಶದ ದೃಢೀಕರಣವನ್ನು ಹೊಂದಿಸಿ"
+  },
+  "Settings Saved": {
+    "machine_translated": true,
+    "translation": "ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಉಳಿಸಲಾಗಿದೆ"
+  },
+  "Shut down the TrueNAS system.\n\nYou will be prompted to enter a reason for the shutdown\nbefore the system powers off.\n\nAll active sessions and shares will be interrupted.": {
+    "machine_translated": true,
+    "translation": "TrueNAS ಸಿಸ್ಟಮ್ ಅನ್ನು ಸ್ಥಗಿತಗೊಳಿಸಿ.\n\nಸ್ಥಗಿತಗೊಳ್ಳಲು ಕಾರಣವನ್ನು ನಮೂದಿಸಲು ನಿಮ್ಮನ್ನು ಕೇಳಲಾಗುತ್ತದೆ\nಸಿಸ್ಟಮ್ ಪವರ್ ಆಫ್ ಆಗುವ ಮೊದಲು.\n\nಎಲ್ಲಾ ಸಕ್ರಿಯ ಸೆಷನ್‌ಗಳು ಮತ್ತು ಹಂಚಿಕೆಗಳು ಅಡಚಣೆಯಾಗುತ್ತವೆ."
+  },
+  "Shut down the system?\n\nReason: {r}": {
+    "machine_translated": true,
+    "translation": "ವ್ಯವಸ್ಥೆಯನ್ನು ಸ್ಥಗಿತಗೊಳಿಸುವುದೇ?\n\nಕಾರಣ: {r}"
+  },
+  "Shutdown": {
+    "machine_translated": true,
+    "translation": "ಸ್ಥಗಿತಗೊಳಿಸುವಿಕೆ"
+  },
+  "Shutdown initiated. The system is powering off.": {
+    "machine_translated": true,
+    "translation": "ಸ್ಥಗಿತಗೊಳಿಸುವಿಕೆಯನ್ನು ಪ್ರಾರಂಭಿಸಲಾಗಿದೆ. ಸಿಸ್ಟಮ್ ಪವರ್ ಆಫ್ ಆಗುತ್ತಿದೆ."
+  },
+  "Shutting Down": {
+    "machine_translated": true,
+    "translation": "ಮುಚ್ಚಲಾಗುತ್ತಿದೆ"
+  },
+  "Specify a bare IP address (no prefix length)": {
+    "machine_translated": true,
+    "translation": "ಬೇರ್ IP ವಿಳಾಸವನ್ನು ನಿರ್ದಿಷ್ಟಪಡಿಸಿ (ಪೂರ್ವಪ್ರತ್ಯಯ ಉದ್ದವಿಲ್ಲ)"
+  },
+  "Startup": {
+    "machine_translated": true,
+    "translation": "ಪ್ರಾರಂಭ"
+  },
+  "Startup view": {
+    "machine_translated": true,
+    "translation": "ಆರಂಭಿಕ ನೋಟ"
+  },
+  "Static Routes": {
+    "machine_translated": true,
+    "translation": "ಸ್ಥಿರ ಮಾರ್ಗಗಳು"
+  },
+  "Static routes": {
+    "machine_translated": true,
+    "translation": "ಸ್ಥಿರ ಮಾರ್ಗಗಳು"
+  },
+  "Success": {
+    "machine_translated": true,
+    "translation": "ಯಶಸ್ಸು"
+  },
+  "System Information": {
+    "machine_translated": true,
+    "translation": "ಸಿಸ್ಟಮ್ ಮಾಹಿತಿ"
+  },
+  "TUI preferences saved.\nTheme and locale changes take effect immediately.": {
+    "machine_translated": true,
+    "translation": "TUI ಪ್ರಾಶಸ್ತ್ಯಗಳನ್ನು ಉಳಿಸಲಾಗಿದೆ.\nಥೀಮ್ ಮತ್ತು ಸ್ಥಳ ಬದಲಾವಣೆಗಳು ತಕ್ಷಣವೇ ಜಾರಿಗೆ ಬರುತ್ತವೆ."
+  },
+  "Tab/↑↓: navigate   Enter: confirm   Esc: cancel": {
+    "machine_translated": true,
+    "translation": "ಟ್ಯಾಬ್/↑↓: ನ್ಯಾವಿಗೇಟ್ ನಮೂದಿಸಿ: ಖಚಿತಪಡಿಸಿ Esc: ರದ್ದುಮಾಡಿ"
+  },
+  "Text UI settings": {
+    "machine_translated": true,
+    "translation": "ಪಠ್ಯ UI ಸೆಟ್ಟಿಂಗ್‌ಗಳು"
+  },
+  "Theme": {
+    "machine_translated": true,
+    "translation": "ಥೀಮ್"
+  },
+  "This Node IPs": {
+    "machine_translated": true,
+    "translation": "ಈ ನೋಡ್ ಐಪಿಗಳು"
+  },
+  "This will ERASE all configuration and reset to defaults.\nAre you absolutely sure?": {
+    "machine_translated": true,
+    "translation": "ಇದು ಎಲ್ಲಾ ಕಾನ್ಫಿಗರೇಶನ್ ಅನ್ನು ಅಳಿಸುತ್ತದೆ ಮತ್ತು ಡೀಫಾಲ್ಟ್‌ಗಳಿಗೆ ಮರುಹೊಂದಿಸುತ್ತದೆ.\nನೀವು ಸಂಪೂರ್ಣವಾಗಿ ಖಚಿತವಾಗಿರುವಿರಾ?"
+  },
+  "Time format": {
+    "machine_translated": true,
+    "translation": "ಸಮಯದ ಸ್ವರೂಪ"
+  },
+  "Timezone": {
+    "machine_translated": true,
+    "translation": "ಸಮಯವಲಯ"
+  },
+  "Two-factor authentication has been disabled.": {
+    "machine_translated": true,
+    "translation": "ಎರಡು ಅಂಶದ ದೃಢೀಕರಣವನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ."
+  },
+  "Type RESET to confirm (case-sensitive):": {
+    "machine_translated": true,
+    "translation": "ಖಚಿತಪಡಿಸಲು ಮರುಹೊಂದಿಸಿ ಟೈಪ್ ಮಾಡಿ (ಕೇಸ್-ಸೆನ್ಸಿಟಿವ್):"
+  },
+  "Unavailable": {
+    "machine_translated": true,
+    "translation": "ಲಭ್ಯವಿಲ್ಲ"
+  },
+  "Uptime": {
+    "machine_translated": true,
+    "translation": "ಅಪ್ಟೈಮ್"
+  },
+  "VLAN Settings": {
+    "machine_translated": true,
+    "translation": "VLAN ಸೆಟ್ಟಿಂಗ್‌ಗಳು"
+  },
+  "VLAN Tag": {
+    "machine_translated": true,
+    "translation": "VLAN ಟ್ಯಾಗ್"
+  },
+  "Version": {
+    "machine_translated": true,
+    "translation": "ಆವೃತ್ತಿ"
+  },
+  "View and edit network interface configuration.\n\n  • Enable/disable DHCP and IPv6 auto-configuration\n  • Add or remove static IP aliases\n  • Set MTU, VLAN tag, bridge members, LAG ports, and more\n  • Apply changes (with automatic rollback safety)\n  • Persist changes once the network is confirmed working\n\nPress Enter to select an interface to edit.\nPress [n] to create a new interface, [d] to delete.\nAfter editing, use [a] to Apply and [p] to Persist.": {
+    "machine_translated": true,
+    "translation": "ನೆಟ್ವರ್ಕ್ ಇಂಟರ್ಫೇಸ್ ಕಾನ್ಫಿಗರೇಶನ್ ಅನ್ನು ವೀಕ್ಷಿಸಿ ಮತ್ತು ಸಂಪಾದಿಸಿ.\n\n  • DHCP ಮತ್ತು IPv6 ಸ್ವಯಂ-ಕಾನ್ಫಿಗರೇಶನ್ ಅನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ/ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಿ\n  • ಸ್ಥಿರ IP ಅಲಿಯಾಸ್‌ಗಳನ್ನು ಸೇರಿಸಿ ಅಥವಾ ತೆಗೆದುಹಾಕಿ\n  • MTU, VLAN ಟ್ಯಾಗ್, ಸೇತುವೆ ಸದಸ್ಯರು, LAG ಪೋರ್ಟ್‌ಗಳು ಮತ್ತು ಹೆಚ್ಚಿನದನ್ನು ಹೊಂದಿಸಿ\n  • ಬದಲಾವಣೆಗಳನ್ನು ಅನ್ವಯಿಸಿ (ಸ್ವಯಂಚಾಲಿತ ರೋಲ್ಬ್ಯಾಕ್ ಸುರಕ್ಷತೆಯೊಂದಿಗೆ)\n  • ನೆಟ್‌ವರ್ಕ್ ಕಾರ್ಯನಿರ್ವಹಿಸುವುದನ್ನು ಖಚಿತಪಡಿಸಿದ ನಂತರ ಬದಲಾವಣೆಗಳನ್ನು ಮುಂದುವರಿಸಿ\n\nಎಡಿಟ್ ಮಾಡಲು ಇಂಟರ್ಫೇಸ್ ಅನ್ನು ಆಯ್ಕೆ ಮಾಡಲು Enter ಅನ್ನು ಒತ್ತಿರಿ.\nಹೊಸ ಇಂಟರ್ಫೇಸ್ ರಚಿಸಲು [n] ಒತ್ತಿರಿ, ಅಳಿಸಲು [d].\nಸಂಪಾದಿಸಿದ ನಂತರ, ಅನ್ವಯಿಸಲು [a] ಮತ್ತು ಪರ್ಸಿಸ್ಟ್ ಮಾಡಲು [p] ಬಳಸಿ."
+  },
+  "View your account information and manage credentials.\n\n  • View username, UID, roles, and 2FA status\n  • Change your password\n  • Generate a one-time password for single-use login\n  • Set up or renew two-factor authentication\n\nPassword changes take effect immediately.\nOne-time passwords expire after a single login.": {
+    "machine_translated": true,
+    "translation": "ನಿಮ್ಮ ಖಾತೆಯ ಮಾಹಿತಿಯನ್ನು ವೀಕ್ಷಿಸಿ ಮತ್ತು ರುಜುವಾತುಗಳನ್ನು ನಿರ್ವಹಿಸಿ.\n\n  • ಬಳಕೆದಾರಹೆಸರು, UID, ಪಾತ್ರಗಳು ಮತ್ತು 2FA ಸ್ಥಿತಿಯನ್ನು ವೀಕ್ಷಿಸಿ\n  • ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ಬದಲಾಯಿಸಿ\n  • ಏಕ-ಬಳಕೆಯ ಲಾಗಿನ್‌ಗಾಗಿ ಒಂದು-ಬಾರಿಯ ಪಾಸ್‌ವರ್ಡ್ ಅನ್ನು ರಚಿಸಿ\n  • ಎರಡು ಅಂಶದ ದೃಢೀಕರಣವನ್ನು ಹೊಂದಿಸಿ ಅಥವಾ ನವೀಕರಿಸಿ\n\nಪಾಸ್ವರ್ಡ್ ಬದಲಾವಣೆಗಳು ತಕ್ಷಣವೇ ಜಾರಿಗೆ ಬರುತ್ತವೆ.\nಒಂದು ಬಾರಿಯ ಪಾಸ್‌ವರ್ಡ್‌ಗಳು ಒಂದೇ ಲಾಗಿನ್‌ನ ನಂತರ ಮುಕ್ತಾಯಗೊಳ್ಳುತ್ತವೆ."
+  },
+  "Virtual IPs": {
+    "machine_translated": true,
+    "translation": "ವರ್ಚುವಲ್ ಐಪಿಗಳು"
+  },
+  "WARNING: You are logged in as root!": {
+    "machine_translated": true,
+    "translation": "ಎಚ್ಚರಿಕೆ: ನೀವು ರೂಟ್ ಆಗಿ ಲಾಗ್ ಇನ್ ಆಗಿರುವಿರಿ!"
+  },
+  "Web UI Authentication Method": {
+    "machine_translated": true,
+    "translation": "ವೆಬ್ UI ದೃಢೀಕರಣ ವಿಧಾನ"
+  },
+  "Without it you may be locked out of this system.": {
+    "machine_translated": true,
+    "translation": "ಇದು ಇಲ್ಲದೆ ನೀವು ಈ ವ್ಯವಸ್ಥೆಯಿಂದ ಲಾಕ್ ಆಗಬಹುದು."
+  },
+  "Xmit Hash Policy": {
+    "machine_translated": true,
+    "translation": "Xmit ಹ್ಯಾಶ್ ನೀತಿ"
+  },
+  "Yes": {
+    "machine_translated": true,
+    "translation": "ಹೌದು"
+  },
+  "Yes, reset": {
+    "machine_translated": true,
+    "translation": "ಹೌದು, ಮರುಹೊಂದಿಸಿ"
+  },
+  "[↑↓] Navigate  [Enter] Edit  [a] Add  [d] Delete  [q] Back": {
+    "machine_translated": true,
+    "translation": "[↑↓] ನ್ಯಾವಿಗೇಟ್ ಮಾಡಿ [ನಮೂದಿಸಿ] ಸಂಪಾದಿಸಿ [a] ಸೇರಿಸಿ [d] ಅಳಿಸಿ [q] ಹಿಂದಕ್ಕೆ"
+  },
+  "[↑↓] Navigate  [Enter] Edit  [n] New  [d] Delete  [a] Apply  [p] Persist  [q] Back": {
+    "machine_translated": true,
+    "translation": "[↑↓] ನ್ಯಾವಿಗೇಟ್ ಮಾಡಿ [ನಮೂದಿಸಿ] ಸಂಪಾದಿಸಿ [n] ಹೊಸ [d] ಅಳಿಸಿ [a] ಅನ್ವಯಿಸು [p] ಪರ್ಸಿಸ್ಟ್ [q] ಹಿಂದೆ"
+  },
+  "[↑↓] Select  [Enter] Edit  [a] Add  [d] Delete  [Esc] Done": {
+    "machine_translated": true,
+    "translation": "[↑↓] ಆಯ್ಕೆ ಮಾಡಿ [ನಮೂದಿಸಿ] ಸಂಪಾದಿಸಿ [a] ಸೇರಿಸಿ [d] ಅಳಿಸಿ [Esc] ಮುಗಿದಿದೆ"
+  },
+  "midcli is not available on this system.": {
+    "machine_translated": true,
+    "translation": "ಈ ವ್ಯವಸ್ಥೆಯಲ್ಲಿ midcli ಲಭ್ಯವಿಲ್ಲ."
+  },
+  "↑↓ Navigate  Enter Select  Esc Cancel": {
+    "machine_translated": true,
+    "translation": "↑↓ ನ್ಯಾವಿಗೇಟ್ ಮಾಡಿ ನಮೂದಿಸಿ ಆಯ್ಕೆಮಾಡಿ Esc ರದ್ದುಮಾಡಿ"
+  }
+}

@@ -1,0 +1,866 @@
+{
+  " (no QR tool found)": {
+    "machine_translated": true,
+    "translation": "(QR 도구를 찾을 수 없음)"
+  },
+  " My Account – {u} ": {
+    "machine_translated": true,
+    "translation": "내 계정 – {u}"
+  },
+  " Press Enter to continue": {
+    "machine_translated": true,
+    "translation": "계속하려면 Enter를 누르세요."
+  },
+  " Two-Factor Authentication Setup ": {
+    "machine_translated": true,
+    "translation": "2단계 인증 설정"
+  },
+  "(Google Authenticator, Authy, etc.) before navigating away.": {
+    "machine_translated": true,
+    "translation": "(Google Authenticator, Authy 등)을 탐색한 후 이동하세요."
+  },
+  "(no addresses)": {
+    "machine_translated": true,
+    "translation": "(주소 없음)"
+  },
+  "(none)": {
+    "machine_translated": true,
+    "translation": "(없음)"
+  },
+  "Access: Read-only": {
+    "machine_translated": true,
+    "translation": "액세스: 읽기 전용"
+  },
+  "Access: Read/Write": {
+    "machine_translated": true,
+    "translation": "액세스: 읽기/쓰기"
+  },
+  "Actions:": {
+    "machine_translated": true,
+    "translation": "행위:"
+  },
+  "Add Static Route": {
+    "machine_translated": true,
+    "translation": "고정 경로 추가"
+  },
+  "Address": {
+    "machine_translated": true,
+    "translation": "주소"
+  },
+  "Administrative user (admin)  [recommended]": {
+    "machine_translated": true,
+    "translation": "관리자(admin) [권장]"
+  },
+  "Alias must be in CIDR notation (e.g. 192.168.1.1/24): {e}": {
+    "machine_translated": true,
+    "translation": "별칭은 CIDR 표기법(예: 192.168.1.1/24)이어야 합니다. {e}"
+  },
+  "Aliases (CIDR)": {
+    "machine_translated": true,
+    "translation": "별칭(CIDR)"
+  },
+  "Appearance": {
+    "machine_translated": true,
+    "translation": "모습"
+  },
+  "Applied": {
+    "machine_translated": true,
+    "translation": "적용된"
+  },
+  "Auto-refreshes every {n}s  [r] force refresh": {
+    "machine_translated": true,
+    "translation": "{n}s [r]마다 자동 새로 고침 강제 새로 고침"
+  },
+  "Behaviour": {
+    "machine_translated": true,
+    "translation": "행동"
+  },
+  "Bridge Settings": {
+    "machine_translated": true,
+    "translation": "브리지 설정"
+  },
+  "CPU": {
+    "machine_translated": true,
+    "translation": "CPU"
+  },
+  "Cancel": {
+    "machine_translated": true,
+    "translation": "취소"
+  },
+  "Cancelled": {
+    "machine_translated": true,
+    "translation": "취소"
+  },
+  "Cannot Change Password": {
+    "machine_translated": true,
+    "translation": "비밀번호를 변경할 수 없습니다"
+  },
+  "Change Password": {
+    "machine_translated": true,
+    "translation": "비밀번호 변경"
+  },
+  "Change local administrator password": {
+    "machine_translated": true,
+    "translation": "로컬 관리자 비밀번호 변경"
+  },
+  "Change password": {
+    "machine_translated": true,
+    "translation": "비밀번호 변경"
+  },
+  "Change the password for a local administrator account.\n\nIf no local administrator has been configured yet, this\noption lets you set up an initial admin or root account.\n\nNote: changing a password will disable two-factor\nauthentication for that account.": {
+    "machine_translated": true,
+    "translation": "로컬 관리자 계정의 비밀번호를 변경합니다.\n\n아직 로컬 관리자가 구성되지 않은 경우 이\n옵션을 사용하면 초기 관리자 또는 루트 계정을 설정할 수 있습니다.\n\n참고: 비밀번호를 변경하면 이중 요소가 비활성화됩니다.\n해당 계정에 대한 인증입니다."
+  },
+  "Changes applied. Network will roll back in ~60 seconds\nunless you press [p] to persist them.": {
+    "machine_translated": true,
+    "translation": "변경사항이 적용되었습니다. 네트워크는 약 60초 후에 롤백됩니다.\n[p]를 눌러 지속하지 않는 한."
+  },
+  "Changes applied. Press [p] to persist or they roll back in {n}s.": {
+    "machine_translated": true,
+    "translation": "변경사항이 적용되었습니다. 지속하려면 [p]를 누르거나 {n}초 후에 롤백됩니다."
+  },
+  "Configuration reset cancelled.": {
+    "machine_translated": true,
+    "translation": "구성 재설정이 취소되었습니다."
+  },
+  "Configuration reset initiated.\nThe system will reboot with default settings.": {
+    "machine_translated": true,
+    "translation": "구성 재설정이 시작되었습니다.\n시스템이 기본 설정으로 재부팅됩니다."
+  },
+  "Configure global network settings:\n\n  • Hostname and domain\n  • Default IPv4 and IPv6 gateways\n  • DNS nameservers (up to three)\n\nChanges take effect immediately after saving.": {
+    "machine_translated": true,
+    "translation": "글로벌 네트워크 설정을 구성합니다.\n\n  • 호스트 이름 및 도메인\n  • 기본 IPv4 및 IPv6 게이트웨이\n  • DNS 네임서버(최대 3개)\n\n변경 사항은 저장 후 즉시 적용됩니다."
+  },
+  "Configure network interfaces": {
+    "machine_translated": true,
+    "translation": "네트워크 인터페이스 구성"
+  },
+  "Configure network settings": {
+    "machine_translated": true,
+    "translation": "네트워크 설정 구성"
+  },
+  "Configure networking for this TrueNAS system.\n\n  • Interface settings  – DHCP, IP aliases, MTU\n  • Network settings    – Hostname, domain, gateways, DNS\n  • Static routes       – Add and remove static routes\n\nChanges to interfaces require a commit step\nbefore they take effect.": {
+    "machine_translated": true,
+    "translation": "이 TrueNAS 시스템에 대한 네트워킹을 구성합니다.\n\n  • 인터페이스 설정 - DHCP, IP 별칭, MTU\n  • 네트워크 설정 – 호스트 이름, 도메인, 게이트웨이, DNS\n  • 정적 경로 – 정적 경로 추가 및 제거\n\n인터페이스를 변경하려면 커밋 단계가 필요합니다.\n효력이 발생하기 전에."
+  },
+  "Configure static routes": {
+    "machine_translated": true,
+    "translation": "정적 경로 구성"
+  },
+  "Confirm Delete": {
+    "machine_translated": true,
+    "translation": "삭제 확인"
+  },
+  "Confirm Reboot": {
+    "machine_translated": true,
+    "translation": "재부팅 확인"
+  },
+  "Confirm Reset": {
+    "machine_translated": true,
+    "translation": "재설정 확인"
+  },
+  "Confirm Shutdown": {
+    "machine_translated": true,
+    "translation": "종료 확인"
+  },
+  "Confirm dangerous actions": {
+    "machine_translated": true,
+    "translation": "위험한 행동 확인"
+  },
+  "Could not load LAG port choices:\n": {
+    "machine_translated": true,
+    "translation": "LAG 포트 선택 사항을 로드할 수 없습니다."
+  },
+  "Could not load VLAN parent choices:\n": {
+    "machine_translated": true,
+    "translation": "VLAN 상위 선택 항목을 로드할 수 없습니다."
+  },
+  "Could not load bridge member choices:\n": {
+    "machine_translated": true,
+    "translation": "브리지 구성원 선택 사항을 로드할 수 없습니다."
+  },
+  "Create one-time password": {
+    "machine_translated": true,
+    "translation": "일회용 비밀번호 만들기"
+  },
+  "Create one-time password for \"{u}\"": {
+    "machine_translated": true,
+    "translation": "\"{u}\"에 대한 일회용 비밀번호 생성"
+  },
+  "Created": {
+    "machine_translated": true,
+    "translation": "생성함"
+  },
+  "Current password:": {
+    "machine_translated": true,
+    "translation": "현재 비밀번호:"
+  },
+  "Customise the TrueNAS TUI for your user account.\n\n  • Theme: default (blue), dark (green), high-contrast\n  • Startup view: system info pane or menu description\n  • Confirm dangerous actions (reboot, shutdown, reset)\n  • Language and date/time display formats\n\nSettings are saved to your account and persist across\nsessions on any client.": {
+    "machine_translated": true,
+    "translation": "사용자 계정에 맞게 TrueNAS TUI를 사용자 정의하십시오.\n\n  • 테마: 기본(파란색), 어두운(녹색), 고대비\n  • 시작 보기: 시스템 정보 창 또는 메뉴 설명\n  • 위험한 행동 확인(재부팅, 종료, 재설정)\n  • 언어 및 날짜/시간 표시 형식\n\n설정은 귀하의 계정에 저장되고 계속 유지됩니다.\n모든 클라이언트의 세션."
+  },
+  "Date format": {
+    "machine_translated": true,
+    "translation": "날짜 형식"
+  },
+  "Delete Route": {
+    "machine_translated": true,
+    "translation": "경로 삭제"
+  },
+  "Delete interface {name}?": {
+    "machine_translated": true,
+    "translation": "{name} 인터페이스를 삭제하시겠습니까?"
+  },
+  "Delete static route {dest}?": {
+    "machine_translated": true,
+    "translation": "정적 경로 {dest}을(를) 삭제하시겠습니까?"
+  },
+  "Deleted": {
+    "machine_translated": true,
+    "translation": "삭제됨"
+  },
+  "Description": {
+    "machine_translated": true,
+    "translation": "설명"
+  },
+  "Destination (CIDR)": {
+    "machine_translated": true,
+    "translation": "목적지(CIDR)"
+  },
+  "Disable Two-Factor Authentication": {
+    "machine_translated": true,
+    "translation": "2단계 인증 비활성화"
+  },
+  "Disable two-factor authentication": {
+    "machine_translated": true,
+    "translation": "이중 인증 비활성화"
+  },
+  "Disable two-factor authentication for {u}?\nYou will no longer need an OTP to log in.": {
+    "machine_translated": true,
+    "translation": "{u}에 대한 2단계 인증을 비활성화하시겠습니까?\n더 이상 로그인 시 OTP가 필요하지 않습니다."
+  },
+  "Disabled": {
+    "machine_translated": true,
+    "translation": "비활성화"
+  },
+  "Domain": {
+    "machine_translated": true,
+    "translation": "도메인"
+  },
+  "Edit Static Route": {
+    "machine_translated": true,
+    "translation": "고정 경로 수정"
+  },
+  "Enabled": {
+    "machine_translated": true,
+    "translation": "활성화"
+  },
+  "Enter: confirm  Esc: cancel": {
+    "machine_translated": true,
+    "translation": "Enter: 확인 Esc: 취소"
+  },
+  "Erase all TrueNAS configuration and reset to factory\ndefaults.\n\nWARNING: This is irreversible. All settings including\nnetwork configuration, shares, users, and storage pools\nwill be erased.\n\nYou will be prompted to confirm twice before proceeding.": {
+    "machine_translated": true,
+    "translation": "모든 TrueNAS 구성을 지우고 공장으로 재설정\n기본값.\n\n경고: 이 작업은 되돌릴 수 없습니다. 다음을 포함한 모든 설정\n네트워크 구성, 공유, 사용자 및 스토리지 풀\n삭제됩니다.\n\n계속하기 전에 확인하라는 메시지가 두 번 표시됩니다."
+  },
+  "Error": {
+    "machine_translated": true,
+    "translation": "오류"
+  },
+  "Failover Critical": {
+    "machine_translated": true,
+    "translation": "장애 조치 중요"
+  },
+  "Failover Group": {
+    "machine_translated": true,
+    "translation": "장애 조치 그룹"
+  },
+  "Failover Settings": {
+    "machine_translated": true,
+    "translation": "장애 조치 설정"
+  },
+  "Gateway": {
+    "machine_translated": true,
+    "translation": "게이트웨이"
+  },
+  "Generate a single-use temporary password for the\ncurrently authenticated user.\n\nThe one-time password can be used to log in once\nand is invalidated immediately after use.": {
+    "machine_translated": true,
+    "translation": "일회용 임시 비밀번호를 생성하세요.\n현재 인증된 사용자입니다.\n\n일회용 비밀번호는 한 번 로그인하는 데 사용할 수 있습니다.\n이용 후 즉시 무효가 됩니다."
+  },
+  "Generate one-time password": {
+    "machine_translated": true,
+    "translation": "일회용 비밀번호 생성"
+  },
+  "Generating a new 2FA secret will invalidate your current\nauthenticator app configuration. Continue?": {
+    "machine_translated": true,
+    "translation": "새로운 2FA 비밀번호를 생성하면 현재 비밀번호가 무효화됩니다.\n인증자 앱 구성. 계속하다?"
+  },
+  "Hostname": {
+    "machine_translated": true,
+    "translation": "호스트 이름"
+  },
+  "IMPORTANT: Scan this QR code with your authenticator app": {
+    "machine_translated": true,
+    "translation": "중요: 인증 앱으로 이 QR 코드를 스캔하세요."
+  },
+  "IP Address": {
+    "machine_translated": true,
+    "translation": "IP 주소"
+  },
+  "IPv4 DHCP": {
+    "machine_translated": true,
+    "translation": "IPv4 DHCP"
+  },
+  "IPv4 Gateway": {
+    "machine_translated": true,
+    "translation": "IPv4 게이트웨이"
+  },
+  "IPv6 Auto": {
+    "machine_translated": true,
+    "translation": "IPv6 자동"
+  },
+  "IPv6 Gateway": {
+    "machine_translated": true,
+    "translation": "IPv6 게이트웨이"
+  },
+  "Interface": {
+    "machine_translated": true,
+    "translation": "인터페이스"
+  },
+  "Interface Settings": {
+    "machine_translated": true,
+    "translation": "인터페이스 설정"
+  },
+  "Interface Type": {
+    "machine_translated": true,
+    "translation": "인터페이스 유형"
+  },
+  "Interface name is required.": {
+    "machine_translated": true,
+    "translation": "인터페이스 이름이 필요합니다."
+  },
+  "Interface settings": {
+    "machine_translated": true,
+    "translation": "인터페이스 설정"
+  },
+  "Interface {name} created.\nUse [a] from the list to apply changes.": {
+    "machine_translated": true,
+    "translation": "인터페이스 {name}이(가) 생성되었습니다.\n변경 사항을 적용하려면 목록에서 [a]를 사용하세요."
+  },
+  "Interface {name} deleted.\nUse [a] from the list to apply changes.": {
+    "machine_translated": true,
+    "translation": "인터페이스 {name}이(가) 삭제되었습니다.\n변경 사항을 적용하려면 목록에서 [a]를 사용하세요."
+  },
+  "Interface {name} updated.\nUse [a] from the list to apply changes.": {
+    "machine_translated": true,
+    "translation": "인터페이스 {name}이(가) 업데이트되었습니다.\n변경 사항을 적용하려면 목록에서 [a]를 사용하세요."
+  },
+  "Invalid IP address in alias: {e}": {
+    "machine_translated": true,
+    "translation": "별칭에 잘못된 IP 주소: {e}"
+  },
+  "Invalid IP address: {s}": {
+    "machine_translated": true,
+    "translation": "잘못된 IP 주소: {s}"
+  },
+  "Invalid prefix length in alias: {e}": {
+    "machine_translated": true,
+    "translation": "별칭의 접두사 길이가 잘못되었습니다: {e}"
+  },
+  "LACPDU Rate": {
+    "machine_translated": true,
+    "translation": "LCAPDU 전송률"
+  },
+  "Language": {
+    "machine_translated": true,
+    "translation": "언어"
+  },
+  "Link Aggregation Settings": {
+    "machine_translated": true,
+    "translation": "링크 집계 설정"
+  },
+  "Load Average": {
+    "machine_translated": true,
+    "translation": "평균 부하"
+  },
+  "Local administrator {u} set up successfully.": {
+    "machine_translated": true,
+    "translation": "로컬 관리자 {u}이(가) 성공적으로 설정되었습니다."
+  },
+  "Locale": {
+    "machine_translated": true,
+    "translation": "장소"
+  },
+  "MTU": {
+    "machine_translated": true,
+    "translation": "MTU"
+  },
+  "Manage static network routes.\n\n  • View existing static routes\n  • Add new routes (destination, gateway, description)\n  • Edit or delete existing routes\n\nKeys: Enter = Edit,  a = Add,  d = Delete,  q = Back": {
+    "machine_translated": true,
+    "translation": "정적 네트워크 경로를 관리합니다.\n\n  • 기존 고정 경로 보기\n  • 새로운 경로 추가(대상, 게이트웨이, 설명)\n  • 기존 경로를 편집하거나 삭제합니다.\n\n키: Enter = 편집, a = 추가, d = 삭제, q = 뒤로"
+  },
+  "Manufacturer": {
+    "machine_translated": true,
+    "translation": "제조업체"
+  },
+  "Members": {
+    "machine_translated": true,
+    "translation": "구성원"
+  },
+  "Memory": {
+    "machine_translated": true,
+    "translation": "메모리"
+  },
+  "My account": {
+    "machine_translated": true,
+    "translation": "내 계정"
+  },
+  "Name": {
+    "machine_translated": true,
+    "translation": "이름"
+  },
+  "Nameserver 1": {
+    "machine_translated": true,
+    "translation": "네임서버 1"
+  },
+  "Nameserver 2": {
+    "machine_translated": true,
+    "translation": "네임서버 2"
+  },
+  "Nameserver 3": {
+    "machine_translated": true,
+    "translation": "네임서버 3"
+  },
+  "Network": {
+    "machine_translated": true,
+    "translation": "네트워크"
+  },
+  "Network Configuration": {
+    "machine_translated": true,
+    "translation": "네트워크 구성"
+  },
+  "Network Interfaces": {
+    "machine_translated": true,
+    "translation": "네트워크 인터페이스"
+  },
+  "Network changes persisted successfully.": {
+    "machine_translated": true,
+    "translation": "네트워크 변경 사항이 성공적으로 유지되었습니다."
+  },
+  "Network settings": {
+    "machine_translated": true,
+    "translation": "네트워크 설정"
+  },
+  "Network settings updated successfully.": {
+    "machine_translated": true,
+    "translation": "네트워크 설정이 업데이트되었습니다."
+  },
+  "New Interface – Step 1": {
+    "machine_translated": true,
+    "translation": "새로운 인터페이스 - 1단계"
+  },
+  "New Interface – Step 2": {
+    "machine_translated": true,
+    "translation": "새로운 인터페이스 – 2단계"
+  },
+  "New password for {u}:": {
+    "machine_translated": true,
+    "translation": "{u}의 새 비밀번호:"
+  },
+  "No": {
+    "machine_translated": true,
+    "translation": "아니오"
+  },
+  "No local administrators found.": {
+    "machine_translated": true,
+    "translation": "로컬 관리자를 찾을 수 없습니다."
+  },
+  "No provisioning URI returned from server.": {
+    "machine_translated": true,
+    "translation": "서버에서 프로비저닝 URI가 반환되지 않았습니다."
+  },
+  "No static routes configured.": {
+    "machine_translated": true,
+    "translation": "구성된 고정 경로가 없습니다."
+  },
+  "No terminal QR code tool was found on this system.\n\nInstall \"qr\" or \"qrcode-terminal\" to use this feature.": {
+    "machine_translated": true,
+    "translation": "이 시스템에서는 터미널 QR 코드 도구를 찾을 수 없습니다.\n\n이 기능을 사용하려면 \"qr\" 또는 \"qrcode-terminal\"을 설치하세요."
+  },
+  "Not Found": {
+    "machine_translated": true,
+    "translation": "찾을 수 없음"
+  },
+  "Not a valid member: {v}": {
+    "machine_translated": true,
+    "translation": "유효한 회원이 아닙니다: {v}"
+  },
+  "Not a valid port: {v}": {
+    "machine_translated": true,
+    "translation": "유효한 포트가 아닙니다: {v}"
+  },
+  "One-Time Password": {
+    "machine_translated": true,
+    "translation": "일회용 비밀번호"
+  },
+  "One-time password for \"{u}\":\n\n  {otp}\n\nThis password can only be used once.\nDialog closes automatically after {t} seconds.": {
+    "machine_translated": true,
+    "translation": "\"{u}\"의 일회용 비밀번호:\n\n  {otp}\n\n이 비밀번호는 한 번만 사용할 수 있습니다.\n대화상자는 {t}초 후에 자동으로 닫힙니다."
+  },
+  "Open Linux Shell": {
+    "machine_translated": true,
+    "translation": "리눅스 셸 열기"
+  },
+  "Open TrueNAS CLI Shell": {
+    "machine_translated": true,
+    "translation": "TrueNAS CLI 셸 열기"
+  },
+  "Open a Linux shell (bash/zsh).\n\nSuspends the TUI and opens your login shell.\nType \"exit\" or press Ctrl+D to return to the TUI.": {
+    "machine_translated": true,
+    "translation": "Linux 셸(bash/zsh)을 엽니다.\n\nTUI를 일시 중단하고 로그인 셸을 엽니다.\n\"exit\"를 입력하거나 Ctrl+D를 눌러 TUI로 돌아갑니다."
+  },
+  "Open the TrueNAS interactive CLI shell (midcli).\n\nReplaces the TUI with the full midcli command-line\ninterface. The TUI restarts after you exit midcli.": {
+    "machine_translated": true,
+    "translation": "TrueNAS 대화형 CLI 셸(midcli)을 엽니다.\n\nTUI를 전체 midcli 명령줄로 대체합니다.\n인터페이스. midcli를 종료하면 TUI가 다시 시작됩니다."
+  },
+  "Other Settings": {
+    "machine_translated": true,
+    "translation": "기타 설정"
+  },
+  "Parent Interface": {
+    "machine_translated": true,
+    "translation": "상위 인터페이스"
+  },
+  "Password changed successfully.": {
+    "machine_translated": true,
+    "translation": "비밀번호가 성공적으로 변경되었습니다."
+  },
+  "Password changes are only supported for local accounts.\nThis account is managed by an external directory service.": {
+    "machine_translated": true,
+    "translation": "비밀번호 변경은 로컬 계정에만 지원됩니다.\n이 계정은 외부 디렉터리 서비스에서 관리됩니다."
+  },
+  "Password for {u} changed successfully.\nTwo-factor authentication has been disabled.": {
+    "machine_translated": true,
+    "translation": "{u}의 비밀번호가 성공적으로 변경되었습니다.\n이중 인증이 비활성화되었습니다."
+  },
+  "Password for {u}:": {
+    "machine_translated": true,
+    "translation": "{u}의 비밀번호:"
+  },
+  "Password must be at least {n} characters.": {
+    "machine_translated": true,
+    "translation": "비밀번호는 {n}자 이상이어야 합니다."
+  },
+  "Passwords do not match.": {
+    "machine_translated": true,
+    "translation": "비밀번호가 일치하지 않습니다."
+  },
+  "Pending changes. Press [a] to apply.": {
+    "machine_translated": true,
+    "translation": "변경사항이 보류 중입니다. 적용하려면 [a]를 누르세요."
+  },
+  "Persisted": {
+    "machine_translated": true,
+    "translation": "지속됨"
+  },
+  "Please enter the reason for the system reboot\n(leave blank to cancel):": {
+    "machine_translated": true,
+    "translation": "시스템 재부팅 이유를 입력하세요.\n(취소하려면 비워 두세요):"
+  },
+  "Please enter the reason for the system shutdown\n(leave blank to cancel):": {
+    "machine_translated": true,
+    "translation": "시스템 종료 이유를 입력하세요.\n(취소하려면 비워 두세요):"
+  },
+  "Port": {
+    "machine_translated": true,
+    "translation": "포트"
+  },
+  "Ports": {
+    "machine_translated": true,
+    "translation": "포트"
+  },
+  "Power Control": {
+    "machine_translated": true,
+    "translation": "전력 제어"
+  },
+  "Prefix length out of range in alias: {e}": {
+    "machine_translated": true,
+    "translation": "별칭의 접두사 길이가 범위를 벗어났습니다: {e}"
+  },
+  "Priority (PCP)": {
+    "machine_translated": true,
+    "translation": "우선순위(PCP)"
+  },
+  "Product": {
+    "machine_translated": true,
+    "translation": "제품"
+  },
+  "Protocol": {
+    "machine_translated": true,
+    "translation": "규약"
+  },
+  "Reboot": {
+    "machine_translated": true,
+    "translation": "재시작"
+  },
+  "Reboot initiated. The system is shutting down.": {
+    "machine_translated": true,
+    "translation": "재부팅이 시작되었습니다. 시스템이 종료되고 있습니다."
+  },
+  "Reboot or shut down the TrueNAS system.\n\n  • Reboot   – restart the system\n  • Shutdown – power off the system\n\nYou will be prompted for a reason and confirmation\nbefore any action is taken.": {
+    "machine_translated": true,
+    "translation": "TrueNAS 시스템을 재부팅하거나 종료합니다.\n\n  • 재부팅 – 시스템을 다시 시작합니다.\n  • 종료 – 시스템 전원을 끕니다.\n\n이유와 확인 메시지가 표시됩니다.\n어떤 조치를 취하기 전에."
+  },
+  "Reboot the TrueNAS system.\n\nYou will be prompted to enter a reason for the reboot\nbefore the system restarts.\n\nAll active sessions and shares will be interrupted.": {
+    "machine_translated": true,
+    "translation": "TrueNAS 시스템을 재부팅합니다.\n\n재부팅 이유를 입력하라는 메시지가 표시됩니다.\n시스템이 다시 시작되기 전에.\n\n모든 활성 세션과 공유가 중단됩니다."
+  },
+  "Reboot the system?\n\nReason: {r}": {
+    "machine_translated": true,
+    "translation": "시스템을 재부팅하시겠습니까?\n\n이유: {r}"
+  },
+  "Reboot/Shutdown": {
+    "machine_translated": true,
+    "translation": "재부팅/종료"
+  },
+  "Rebooting": {
+    "machine_translated": true,
+    "translation": "재부팅 중"
+  },
+  "Renew 2FA Secret": {
+    "machine_translated": true,
+    "translation": "2FA 비밀 갱신"
+  },
+  "Renew two-factor secret": {
+    "machine_translated": true,
+    "translation": "2단계 비밀 갱신"
+  },
+  "Reset": {
+    "machine_translated": true,
+    "translation": "재설정"
+  },
+  "Reset Configuration": {
+    "machine_translated": true,
+    "translation": "구성 재설정"
+  },
+  "Reset configuration to defaults": {
+    "machine_translated": true,
+    "translation": "구성을 기본값으로 재설정"
+  },
+  "Retype new password:": {
+    "machine_translated": true,
+    "translation": "새 비밀번호를 다시 입력하세요."
+  },
+  "Retype password for {u}:": {
+    "machine_translated": true,
+    "translation": "{u}의 비밀번호를 다시 입력하세요:"
+  },
+  "Root user (not recommended)": {
+    "machine_translated": true,
+    "translation": "루트 사용자(권장하지 않음)"
+  },
+  "Save": {
+    "machine_translated": true,
+    "translation": "저장"
+  },
+  "Saved": {
+    "machine_translated": true,
+    "translation": "저장됨"
+  },
+  "Secret key: {s}  (for manual entry)": {
+    "machine_translated": true,
+    "translation": "비밀 키: {s}(수동 입력용)"
+  },
+  "Select Administrator": {
+    "machine_translated": true,
+    "translation": "관리자 선택"
+  },
+  "Serial": {
+    "machine_translated": true,
+    "translation": "일련번호"
+  },
+  "Set Up Administrator": {
+    "machine_translated": true,
+    "translation": "관리자 설정"
+  },
+  "Set to 0 to use the system default MTU": {
+    "machine_translated": true,
+    "translation": "시스템 기본 MTU를 사용하려면 0으로 설정하세요."
+  },
+  "Set up local administrator": {
+    "machine_translated": true,
+    "translation": "로컬 관리자 설정"
+  },
+  "Set up two-factor authentication": {
+    "machine_translated": true,
+    "translation": "이중 인증 설정"
+  },
+  "Settings Saved": {
+    "machine_translated": true,
+    "translation": "설정이 저장되었습니다"
+  },
+  "Shut down the TrueNAS system.\n\nYou will be prompted to enter a reason for the shutdown\nbefore the system powers off.\n\nAll active sessions and shares will be interrupted.": {
+    "machine_translated": true,
+    "translation": "TrueNAS 시스템을 종료합니다.\n\n종료 이유를 입력하라는 메시지가 표시됩니다.\n시스템 전원이 꺼지기 전에.\n\n모든 활성 세션과 공유가 중단됩니다."
+  },
+  "Shut down the system?\n\nReason: {r}": {
+    "machine_translated": true,
+    "translation": "시스템을 종료하시겠습니까?\n\n이유: {r}"
+  },
+  "Shutdown": {
+    "machine_translated": true,
+    "translation": "종료"
+  },
+  "Shutdown initiated. The system is powering off.": {
+    "machine_translated": true,
+    "translation": "종료가 시작되었습니다. 시스템 전원이 꺼지고 있습니다."
+  },
+  "Shutting Down": {
+    "machine_translated": true,
+    "translation": "종료 중"
+  },
+  "Specify a bare IP address (no prefix length)": {
+    "machine_translated": true,
+    "translation": "베어 IP 주소 지정(접두사 길이 없음)"
+  },
+  "Startup": {
+    "machine_translated": true,
+    "translation": "시작"
+  },
+  "Startup view": {
+    "machine_translated": true,
+    "translation": "시작 보기"
+  },
+  "Static Routes": {
+    "machine_translated": true,
+    "translation": "고정 경로"
+  },
+  "Static routes": {
+    "machine_translated": true,
+    "translation": "정적 경로"
+  },
+  "Success": {
+    "machine_translated": true,
+    "translation": "성공"
+  },
+  "System Information": {
+    "machine_translated": true,
+    "translation": "시스템 정보"
+  },
+  "TUI preferences saved.\nTheme and locale changes take effect immediately.": {
+    "machine_translated": true,
+    "translation": "TUI 환경설정이 저장되었습니다.\n테마 및 로캘 변경 사항은 즉시 적용됩니다."
+  },
+  "Tab/↑↓: navigate   Enter: confirm   Esc: cancel": {
+    "machine_translated": true,
+    "translation": "Tab/↑↓: 탐색 Enter: 확인 Esc: 취소"
+  },
+  "Text UI settings": {
+    "machine_translated": true,
+    "translation": "텍스트 UI 설정"
+  },
+  "Theme": {
+    "machine_translated": true,
+    "translation": "테마"
+  },
+  "This Node IPs": {
+    "machine_translated": true,
+    "translation": "이 노드 IP"
+  },
+  "This will ERASE all configuration and reset to defaults.\nAre you absolutely sure?": {
+    "machine_translated": true,
+    "translation": "이렇게 하면 모든 구성이 지워지고 기본값으로 재설정됩니다.\n정말 확신하시나요?"
+  },
+  "Time format": {
+    "machine_translated": true,
+    "translation": "시간 형식"
+  },
+  "Timezone": {
+    "machine_translated": true,
+    "translation": "시간대"
+  },
+  "Two-factor authentication has been disabled.": {
+    "machine_translated": true,
+    "translation": "이중 인증이 비활성화되었습니다."
+  },
+  "Type RESET to confirm (case-sensitive):": {
+    "machine_translated": true,
+    "translation": "확인하려면 RESET을 입력하세요(대소문자 구분)."
+  },
+  "Unavailable": {
+    "machine_translated": true,
+    "translation": "없는"
+  },
+  "Uptime": {
+    "machine_translated": true,
+    "translation": "가동시간"
+  },
+  "VLAN Settings": {
+    "machine_translated": true,
+    "translation": "VLAN 설정"
+  },
+  "VLAN Tag": {
+    "machine_translated": true,
+    "translation": "VLAN 태그"
+  },
+  "Version": {
+    "machine_translated": true,
+    "translation": "버전"
+  },
+  "View and edit network interface configuration.\n\n  • Enable/disable DHCP and IPv6 auto-configuration\n  • Add or remove static IP aliases\n  • Set MTU, VLAN tag, bridge members, LAG ports, and more\n  • Apply changes (with automatic rollback safety)\n  • Persist changes once the network is confirmed working\n\nPress Enter to select an interface to edit.\nPress [n] to create a new interface, [d] to delete.\nAfter editing, use [a] to Apply and [p] to Persist.": {
+    "machine_translated": true,
+    "translation": "네트워크 인터페이스 구성을 보고 편집합니다.\n\n  • DHCP 및 IPv6 자동 구성 활성화/비활성화\n  • 고정 IP 별칭 추가 또는 제거\n  • MTU, VLAN 태그, 브리지 멤버, LAG 포트 등 설정\n  • 변경 사항 적용(자동 롤백 안전 기능 포함)\n  • 네트워크 작동이 확인되면 변경 사항 유지\n\n편집할 인터페이스를 선택하려면 Enter를 누르세요.\n새 인터페이스를 생성하려면 [n]을 누르고, 삭제하려면 [d]를 누르세요.\n편집 후 [a]를 사용하여 적용하고 [p]를 사용하여 지속합니다."
+  },
+  "View your account information and manage credentials.\n\n  • View username, UID, roles, and 2FA status\n  • Change your password\n  • Generate a one-time password for single-use login\n  • Set up or renew two-factor authentication\n\nPassword changes take effect immediately.\nOne-time passwords expire after a single login.": {
+    "machine_translated": true,
+    "translation": "계정 정보를 확인하고 자격 증명을 관리하세요.\n\n  • 사용자 이름, UID, 역할 및 2FA 상태 보기\n  • 비밀번호를 변경하세요.\n  • 일회용 로그인을 위한 일회용 비밀번호 생성\n  • 2단계 인증 설정 또는 갱신\n\n비밀번호 변경은 즉시 적용됩니다.\n일회용 비밀번호는 한 번 로그인하면 만료됩니다."
+  },
+  "Virtual IPs": {
+    "machine_translated": true,
+    "translation": "가상 IP"
+  },
+  "WARNING: You are logged in as root!": {
+    "machine_translated": true,
+    "translation": "경고: 루트로 로그인하셨습니다!"
+  },
+  "Web UI Authentication Method": {
+    "machine_translated": true,
+    "translation": "웹 UI 인증 방법"
+  },
+  "Without it you may be locked out of this system.": {
+    "machine_translated": true,
+    "translation": "그렇지 않으면 이 시스템이 잠길 수 있습니다."
+  },
+  "Xmit Hash Policy": {
+    "machine_translated": true,
+    "translation": "Xmit 해시 정책"
+  },
+  "Yes": {
+    "machine_translated": true,
+    "translation": "예"
+  },
+  "Yes, reset": {
+    "machine_translated": true,
+    "translation": "예, 재설정합니다"
+  },
+  "[↑↓] Navigate  [Enter] Edit  [a] Add  [d] Delete  [q] Back": {
+    "machine_translated": true,
+    "translation": "[↑↓] 탐색 [Enter] 편집 [a] 추가 [d] 삭제 [q] 뒤로"
+  },
+  "[↑↓] Navigate  [Enter] Edit  [n] New  [d] Delete  [a] Apply  [p] Persist  [q] Back": {
+    "machine_translated": true,
+    "translation": "[↑↓] 탐색 [Enter] 편집 [n] 새로 만들기 [d] 삭제 [a] 적용 [p] 지속 [q] 뒤로"
+  },
+  "[↑↓] Select  [Enter] Edit  [a] Add  [d] Delete  [Esc] Done": {
+    "machine_translated": true,
+    "translation": "[↑↓] 선택 [Enter] 편집 [a] 추가 [d] 삭제 [Esc] 완료"
+  },
+  "midcli is not available on this system.": {
+    "machine_translated": true,
+    "translation": "이 시스템에서는 midcli를 사용할 수 없습니다."
+  },
+  "↑↓ Navigate  Enter Select  Esc Cancel": {
+    "machine_translated": true,
+    "translation": "↑↓ 탐색 Enter 선택 Esc 취소"
+  }
+}

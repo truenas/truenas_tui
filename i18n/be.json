@@ -1,0 +1,866 @@
+{
+  " (no QR tool found)": {
+    "machine_translated": true,
+    "translation": "(інструмент QR не знойдзены)"
+  },
+  " My Account – {u} ": {
+    "machine_translated": true,
+    "translation": "Мой рахунак – {u}"
+  },
+  " Press Enter to continue": {
+    "machine_translated": true,
+    "translation": "Каб працягнуць, націсніце Enter"
+  },
+  " Two-Factor Authentication Setup ": {
+    "machine_translated": true,
+    "translation": "Налада двухфакторнай аўтэнтыфікацыі"
+  },
+  "(Google Authenticator, Authy, etc.) before navigating away.": {
+    "machine_translated": true,
+    "translation": "(Google Authenticator, Authy і г.д.), перш чым сысці."
+  },
+  "(no addresses)": {
+    "machine_translated": true,
+    "translation": "(няма адрасоў)"
+  },
+  "(none)": {
+    "machine_translated": true,
+    "translation": "(няма)"
+  },
+  "Access: Read-only": {
+    "machine_translated": true,
+    "translation": "Доступ: толькі для чытання"
+  },
+  "Access: Read/Write": {
+    "machine_translated": true,
+    "translation": "Доступ: чытанне/запіс"
+  },
+  "Actions:": {
+    "machine_translated": true,
+    "translation": "Дзеянні:"
+  },
+  "Add Static Route": {
+    "machine_translated": true,
+    "translation": "Дадаць статычны маршрут"
+  },
+  "Address": {
+    "machine_translated": true,
+    "translation": "Адрас"
+  },
+  "Administrative user (admin)  [recommended]": {
+    "machine_translated": true,
+    "translation": "Адміністратар (адміністратар) [рэкамендуецца]"
+  },
+  "Alias must be in CIDR notation (e.g. 192.168.1.1/24): {e}": {
+    "machine_translated": true,
+    "translation": "Псеўданім павінен быць у натацыі CIDR (напрыклад, 192.168.1.1/24): {e}"
+  },
+  "Aliases (CIDR)": {
+    "machine_translated": true,
+    "translation": "Псеўданімы (CIDR)"
+  },
+  "Appearance": {
+    "machine_translated": true,
+    "translation": "Знешні выгляд"
+  },
+  "Applied": {
+    "machine_translated": true,
+    "translation": "Ужывальная"
+  },
+  "Auto-refreshes every {n}s  [r] force refresh": {
+    "machine_translated": true,
+    "translation": "Аўтаматычнае абнаўленне кожныя {n}s [r] прымусовага абнаўлення"
+  },
+  "Behaviour": {
+    "machine_translated": true,
+    "translation": "Паводзіны"
+  },
+  "Bridge Settings": {
+    "machine_translated": true,
+    "translation": "Налады Bridge"
+  },
+  "CPU": {
+    "machine_translated": true,
+    "translation": "працэсар"
+  },
+  "Cancel": {
+    "machine_translated": true,
+    "translation": "Адмяніць"
+  },
+  "Cancelled": {
+    "machine_translated": true,
+    "translation": "Адменена"
+  },
+  "Cannot Change Password": {
+    "machine_translated": true,
+    "translation": "Немагчыма змяніць пароль"
+  },
+  "Change Password": {
+    "machine_translated": true,
+    "translation": "Змяніць пароль"
+  },
+  "Change local administrator password": {
+    "machine_translated": true,
+    "translation": "Змяніць пароль лакальнага адміністратара"
+  },
+  "Change password": {
+    "machine_translated": true,
+    "translation": "Змяніць пароль"
+  },
+  "Change the password for a local administrator account.\n\nIf no local administrator has been configured yet, this\noption lets you set up an initial admin or root account.\n\nNote: changing a password will disable two-factor\nauthentication for that account.": {
+    "machine_translated": true,
+    "translation": "Зменіце пароль для ўліковага запісу лакальнага адміністратара.\n\nКалі лакальны адміністратар яшчэ не настроены, гэта\nопцыя дазваляе наладзіць першапачатковы ўліковы запіс адміністратара або root.\n\nЗаўвага: змена пароля адключыць двухфактарную\nаўтэнтыфікацыя для гэтага ўліковага запісу."
+  },
+  "Changes applied. Network will roll back in ~60 seconds\nunless you press [p] to persist them.": {
+    "machine_translated": true,
+    "translation": "Змены прыменены. Сетка адкаціцца праз ~60 секунд\nкалі вы не націснеце [p], каб захаваць іх."
+  },
+  "Changes applied. Press [p] to persist or they roll back in {n}s.": {
+    "machine_translated": true,
+    "translation": "Змены прыменены. Націсніце [p], каб працягнуць, або яны адкацяцца праз {n} с."
+  },
+  "Configuration reset cancelled.": {
+    "machine_translated": true,
+    "translation": "Скід канфігурацыі адменены."
+  },
+  "Configuration reset initiated.\nThe system will reboot with default settings.": {
+    "machine_translated": true,
+    "translation": "Пачаты скід канфігурацыі.\nСістэма перазагрузіцца з наладамі па змаўчанні."
+  },
+  "Configure global network settings:\n\n  • Hostname and domain\n  • Default IPv4 and IPv6 gateways\n  • DNS nameservers (up to three)\n\nChanges take effect immediately after saving.": {
+    "machine_translated": true,
+    "translation": "Наладзьце параметры глабальнай сеткі:\n\n  • Імя хаста і дамен\n  • Шлюзы IPv4 і IPv6 па змаўчанні\n  • DNS-серверы імёнаў (да трох)\n\nЗмены ўступаюць у сілу адразу пасля захавання."
+  },
+  "Configure network interfaces": {
+    "machine_translated": true,
+    "translation": "Налада сеткавых інтэрфейсаў"
+  },
+  "Configure network settings": {
+    "machine_translated": true,
+    "translation": "Наладзьце параметры сеткі"
+  },
+  "Configure networking for this TrueNAS system.\n\n  • Interface settings  – DHCP, IP aliases, MTU\n  • Network settings    – Hostname, domain, gateways, DNS\n  • Static routes       – Add and remove static routes\n\nChanges to interfaces require a commit step\nbefore they take effect.": {
+    "machine_translated": true,
+    "translation": "Наладзьце сетку для гэтай сістэмы TrueNAS.\n\n  • Налады інтэрфейсу - DHCP, псеўданімы IP, MTU\n  • Налады сеткі - імя хаста, дамен, шлюзы, DNS\n  • Статычныя маршруты – дадавайце і выдаляйце статычныя маршруты\n\nЗмены ў інтэрфейсах патрабуюць этапу фіксацыі\nперш чым яны ўступяць у сілу."
+  },
+  "Configure static routes": {
+    "machine_translated": true,
+    "translation": "Наладзьце статычныя маршруты"
+  },
+  "Confirm Delete": {
+    "machine_translated": true,
+    "translation": "Пацвердзіце выдаленне"
+  },
+  "Confirm Reboot": {
+    "machine_translated": true,
+    "translation": "Пацвердзіце перазагрузку"
+  },
+  "Confirm Reset": {
+    "machine_translated": true,
+    "translation": "Пацвердзіце Скід"
+  },
+  "Confirm Shutdown": {
+    "machine_translated": true,
+    "translation": "Пацвердзіце выключэнне"
+  },
+  "Confirm dangerous actions": {
+    "machine_translated": true,
+    "translation": "Пацвердзіце небяспечныя дзеянні"
+  },
+  "Could not load LAG port choices:\n": {
+    "machine_translated": true,
+    "translation": "Не ўдалося загрузіць варыянты порта LAG:"
+  },
+  "Could not load VLAN parent choices:\n": {
+    "machine_translated": true,
+    "translation": "Немагчыма загрузіць бацькоўскія параметры VLAN:"
+  },
+  "Could not load bridge member choices:\n": {
+    "machine_translated": true,
+    "translation": "Не ўдалося загрузіць выбар членаў моста:"
+  },
+  "Create one-time password": {
+    "machine_translated": true,
+    "translation": "Стварыце аднаразовы пароль"
+  },
+  "Create one-time password for \"{u}\"": {
+    "machine_translated": true,
+    "translation": "Стварыце аднаразовы пароль для \"{u}\""
+  },
+  "Created": {
+    "machine_translated": true,
+    "translation": "Стварылі"
+  },
+  "Current password:": {
+    "machine_translated": true,
+    "translation": "Актуальны пароль:"
+  },
+  "Customise the TrueNAS TUI for your user account.\n\n  • Theme: default (blue), dark (green), high-contrast\n  • Startup view: system info pane or menu description\n  • Confirm dangerous actions (reboot, shutdown, reset)\n  • Language and date/time display formats\n\nSettings are saved to your account and persist across\nsessions on any client.": {
+    "machine_translated": true,
+    "translation": "Наладзьце TrueNAS TUI для вашага ўліковага запісу карыстальніка.\n\n  • Тэма: па змаўчанні (сіні), цёмны (зялёны), высокакантрастны\n  • Выгляд запуску: панэль сістэмнай інфармацыі або апісанне меню\n  • Пацвердзіце небяспечныя дзеянні (перазагрузка, выключэнне, скід)\n  • Мова і фарматы адлюстравання даты/часу\n\nНалады захоўваюцца ў вашым уліковым запісе і захоўваюцца ва ўсім\nсесіі на любым кліенце."
+  },
+  "Date format": {
+    "machine_translated": true,
+    "translation": "Фармат даты"
+  },
+  "Delete Route": {
+    "machine_translated": true,
+    "translation": "Выдаліць маршрут"
+  },
+  "Delete interface {name}?": {
+    "machine_translated": true,
+    "translation": "Выдаліць інтэрфейс {name}?"
+  },
+  "Delete static route {dest}?": {
+    "machine_translated": true,
+    "translation": "Выдаліць статычны маршрут {dest}?"
+  },
+  "Deleted": {
+    "machine_translated": true,
+    "translation": "Выдалены"
+  },
+  "Description": {
+    "machine_translated": true,
+    "translation": "Апісанне"
+  },
+  "Destination (CIDR)": {
+    "machine_translated": true,
+    "translation": "Пункт прызначэння (CIDR)"
+  },
+  "Disable Two-Factor Authentication": {
+    "machine_translated": true,
+    "translation": "Адключыць двухфакторную аўтэнтыфікацыю"
+  },
+  "Disable two-factor authentication": {
+    "machine_translated": true,
+    "translation": "Адключыць двухфактарную аўтэнтыфікацыю"
+  },
+  "Disable two-factor authentication for {u}?\nYou will no longer need an OTP to log in.": {
+    "machine_translated": true,
+    "translation": "Адключыць двухфактарную аўтэнтыфікацыю для {u}?\nВам больш не спатрэбіцца OTP для ўваходу."
+  },
+  "Disabled": {
+    "machine_translated": true,
+    "translation": "Інваліды"
+  },
+  "Domain": {
+    "machine_translated": true,
+    "translation": "Дамен"
+  },
+  "Edit Static Route": {
+    "machine_translated": true,
+    "translation": "Рэдагаваць статычны маршрут"
+  },
+  "Enabled": {
+    "machine_translated": true,
+    "translation": "Уключана"
+  },
+  "Enter: confirm  Esc: cancel": {
+    "machine_translated": true,
+    "translation": "Enter: пацверджанне Esc: адмена"
+  },
+  "Erase all TrueNAS configuration and reset to factory\ndefaults.\n\nWARNING: This is irreversible. All settings including\nnetwork configuration, shares, users, and storage pools\nwill be erased.\n\nYou will be prompted to confirm twice before proceeding.": {
+    "machine_translated": true,
+    "translation": "Сцерці ўсю канфігурацыю TrueNAS і скінуць налады да заводскіх\nпа змаўчанні.\n\nПАПЯРЭДЖАННЕ: гэта незваротна. Усе налады ў тым ліку\nканфігурацыя сеткі, агульны доступ, карыстальнікі і пулы захоўвання\nбудуць сцёртыя.\n\nПерш чым працягнуць, вам будзе прапанавана двойчы пацвердзіць."
+  },
+  "Error": {
+    "machine_translated": true,
+    "translation": "Памылка"
+  },
+  "Failover Critical": {
+    "machine_translated": true,
+    "translation": "Адмова Крытычны"
+  },
+  "Failover Group": {
+    "machine_translated": true,
+    "translation": "Адказная група"
+  },
+  "Failover Settings": {
+    "machine_translated": true,
+    "translation": "Налады пераключэння пасля адмовы"
+  },
+  "Gateway": {
+    "machine_translated": true,
+    "translation": "Шлюз"
+  },
+  "Generate a single-use temporary password for the\ncurrently authenticated user.\n\nThe one-time password can be used to log in once\nand is invalidated immediately after use.": {
+    "machine_translated": true,
+    "translation": "Стварыце аднаразовы часовы пароль для\nаўтэнтыфікаваны карыстальнік.\n\nАднаразовы пароль можна выкарыстоўваць для ўваходу ў сістэму аднаразова\nі прызнаецца несапраўдным адразу пасля выкарыстання."
+  },
+  "Generate one-time password": {
+    "machine_translated": true,
+    "translation": "Стварыць аднаразовы пароль"
+  },
+  "Generating a new 2FA secret will invalidate your current\nauthenticator app configuration. Continue?": {
+    "machine_translated": true,
+    "translation": "Стварэнне новага сакрэту 2FA зробіць ваш бягучы сакрэт несапраўдным\nканфігурацыя прыкладання аўтэнтыфікатара. Працягнуць?"
+  },
+  "Hostname": {
+    "machine_translated": true,
+    "translation": "Імя хаста"
+  },
+  "IMPORTANT: Scan this QR code with your authenticator app": {
+    "machine_translated": true,
+    "translation": "ВАЖНА: адсканіруйце гэты QR-код з дапамогай праграмы аўтэнтыфікацыі"
+  },
+  "IP Address": {
+    "machine_translated": true,
+    "translation": "IP-адрас"
+  },
+  "IPv4 DHCP": {
+    "machine_translated": true,
+    "translation": "IPv4 DHCP"
+  },
+  "IPv4 Gateway": {
+    "machine_translated": true,
+    "translation": "Шлюз IPv4"
+  },
+  "IPv6 Auto": {
+    "machine_translated": true,
+    "translation": "Аўтаматычны IPv6"
+  },
+  "IPv6 Gateway": {
+    "machine_translated": true,
+    "translation": "Шлюз IPv6"
+  },
+  "Interface": {
+    "machine_translated": true,
+    "translation": "Інтэрфейс"
+  },
+  "Interface Settings": {
+    "machine_translated": true,
+    "translation": "Налады інтэрфейсу"
+  },
+  "Interface Type": {
+    "machine_translated": true,
+    "translation": "Тып інтэрфейсу"
+  },
+  "Interface name is required.": {
+    "machine_translated": true,
+    "translation": "Патрабуецца імя інтэрфейсу."
+  },
+  "Interface settings": {
+    "machine_translated": true,
+    "translation": "Налады інтэрфейсу"
+  },
+  "Interface {name} created.\nUse [a] from the list to apply changes.": {
+    "machine_translated": true,
+    "translation": "Інтэрфейс {name} створаны.\nВыкарыстоўвайце [a] са спісу, каб прымяніць змены."
+  },
+  "Interface {name} deleted.\nUse [a] from the list to apply changes.": {
+    "machine_translated": true,
+    "translation": "Інтэрфейс {name} выдалены.\nВыкарыстоўвайце [a] са спісу, каб прымяніць змены."
+  },
+  "Interface {name} updated.\nUse [a] from the list to apply changes.": {
+    "machine_translated": true,
+    "translation": "Інтэрфейс {name} абноўлены.\nВыкарыстоўвайце [a] са спісу, каб прымяніць змены."
+  },
+  "Invalid IP address in alias: {e}": {
+    "machine_translated": true,
+    "translation": "Няправільны IP-адрас у псеўданіме: {e}"
+  },
+  "Invalid IP address: {s}": {
+    "machine_translated": true,
+    "translation": "Няправільны IP-адрас: {s}"
+  },
+  "Invalid prefix length in alias: {e}": {
+    "machine_translated": true,
+    "translation": "Няправільная даўжыня прэфікса ў псеўданіме: {e}"
+  },
+  "LACPDU Rate": {
+    "machine_translated": true,
+    "translation": "Стаўка LACPDU"
+  },
+  "Language": {
+    "machine_translated": true,
+    "translation": "мова"
+  },
+  "Link Aggregation Settings": {
+    "machine_translated": true,
+    "translation": "Налады агрэгацыі спасылак"
+  },
+  "Load Average": {
+    "machine_translated": true,
+    "translation": "Сярэдняя нагрузка"
+  },
+  "Local administrator {u} set up successfully.": {
+    "machine_translated": true,
+    "translation": "Лакальны адміністратар {u} усталяваны паспяхова."
+  },
+  "Locale": {
+    "machine_translated": true,
+    "translation": "Лакаль"
+  },
+  "MTU": {
+    "machine_translated": true,
+    "translation": "MTU"
+  },
+  "Manage static network routes.\n\n  • View existing static routes\n  • Add new routes (destination, gateway, description)\n  • Edit or delete existing routes\n\nKeys: Enter = Edit,  a = Add,  d = Delete,  q = Back": {
+    "machine_translated": true,
+    "translation": "Кіраванне статычнымі сеткавымі маршрутамі.\n\n  • Прагляд існуючых статычных маршрутаў\n  • Дадаць новыя маршруты (пункт прызначэння, шлюз, апісанне)\n  • Рэдагаваць або выдаляць існуючыя маршруты\n\nКлавішы: Enter = Рэдагаваць, a = Дадаць, d = Выдаліць, q = Назад"
+  },
+  "Manufacturer": {
+    "machine_translated": true,
+    "translation": "Вытворца"
+  },
+  "Members": {
+    "machine_translated": true,
+    "translation": "Члены"
+  },
+  "Memory": {
+    "machine_translated": true,
+    "translation": "Памяць"
+  },
+  "My account": {
+    "machine_translated": true,
+    "translation": "Мой рахунак"
+  },
+  "Name": {
+    "machine_translated": true,
+    "translation": "Імя"
+  },
+  "Nameserver 1": {
+    "machine_translated": true,
+    "translation": "Сервер імёнаў 1"
+  },
+  "Nameserver 2": {
+    "machine_translated": true,
+    "translation": "Сервер імёнаў 2"
+  },
+  "Nameserver 3": {
+    "machine_translated": true,
+    "translation": "Сервер імёнаў 3"
+  },
+  "Network": {
+    "machine_translated": true,
+    "translation": "Сетка"
+  },
+  "Network Configuration": {
+    "machine_translated": true,
+    "translation": "Канфігурацыя сеткі"
+  },
+  "Network Interfaces": {
+    "machine_translated": true,
+    "translation": "Сеткавыя інтэрфейсы"
+  },
+  "Network changes persisted successfully.": {
+    "machine_translated": true,
+    "translation": "Змены ў сетцы паспяхова захаваліся."
+  },
+  "Network settings": {
+    "machine_translated": true,
+    "translation": "Налады сеткі"
+  },
+  "Network settings updated successfully.": {
+    "machine_translated": true,
+    "translation": "Налады сеткі паспяхова абноўлены."
+  },
+  "New Interface – Step 1": {
+    "machine_translated": true,
+    "translation": "Новы інтэрфейс - Крок 1"
+  },
+  "New Interface – Step 2": {
+    "machine_translated": true,
+    "translation": "Новы інтэрфейс - Крок 2"
+  },
+  "New password for {u}:": {
+    "machine_translated": true,
+    "translation": "Новы пароль для {u}:"
+  },
+  "No": {
+    "machine_translated": true,
+    "translation": "няма"
+  },
+  "No local administrators found.": {
+    "machine_translated": true,
+    "translation": "Лакальныя адміністратары не знойдзены."
+  },
+  "No provisioning URI returned from server.": {
+    "machine_translated": true,
+    "translation": "Сервер не вяртае URI забеспячэння."
+  },
+  "No static routes configured.": {
+    "machine_translated": true,
+    "translation": "Статычныя маршруты не настроены."
+  },
+  "No terminal QR code tool was found on this system.\n\nInstall \"qr\" or \"qrcode-terminal\" to use this feature.": {
+    "machine_translated": true,
+    "translation": "У гэтай сістэме не знойдзены тэрмінальны QR-код.\n\nУсталюйце \"qr\" або \"qrcode-terminal\", каб выкарыстоўваць гэту функцыю."
+  },
+  "Not Found": {
+    "machine_translated": true,
+    "translation": "Не знойдзены"
+  },
+  "Not a valid member: {v}": {
+    "machine_translated": true,
+    "translation": "Недапушчальны ўдзельнік: {v}"
+  },
+  "Not a valid port: {v}": {
+    "machine_translated": true,
+    "translation": "Няправільны порт: {v}"
+  },
+  "One-Time Password": {
+    "machine_translated": true,
+    "translation": "Аднаразовы пароль"
+  },
+  "One-time password for \"{u}\":\n\n  {otp}\n\nThis password can only be used once.\nDialog closes automatically after {t} seconds.": {
+    "machine_translated": true,
+    "translation": "Аднаразовы пароль для \"{u}\":\n\n  {otp}\n\nГэты пароль можна выкарыстоўваць толькі адзін раз.\nДыялогавае акно зачыняецца аўтаматычна праз {t} секунд."
+  },
+  "Open Linux Shell": {
+    "machine_translated": true,
+    "translation": "Адкрыйце абалонку Linux"
+  },
+  "Open TrueNAS CLI Shell": {
+    "machine_translated": true,
+    "translation": "Адкрыйце TrueNAS CLI Shell"
+  },
+  "Open a Linux shell (bash/zsh).\n\nSuspends the TUI and opens your login shell.\nType \"exit\" or press Ctrl+D to return to the TUI.": {
+    "machine_translated": true,
+    "translation": "Адкрыйце абалонку Linux (bash/zsh).\n\nПрыпыняе TUI і адкрывае вашу абалонку ўваходу.\nУвядзіце «exit» або націсніце Ctrl+D, каб вярнуцца ў TUI."
+  },
+  "Open the TrueNAS interactive CLI shell (midcli).\n\nReplaces the TUI with the full midcli command-line\ninterface. The TUI restarts after you exit midcli.": {
+    "machine_translated": true,
+    "translation": "Адкрыйце інтэрактыўную абалонку CLI TrueNAS (midcli).\n\nЗамяняе TUI поўным камандным радком midcli\nінтэрфейс. TUI перазапускаецца пасля выхаду з midcli."
+  },
+  "Other Settings": {
+    "machine_translated": true,
+    "translation": "Іншыя налады"
+  },
+  "Parent Interface": {
+    "machine_translated": true,
+    "translation": "Бацькоўскі інтэрфейс"
+  },
+  "Password changed successfully.": {
+    "machine_translated": true,
+    "translation": "Пароль паспяхова зменены."
+  },
+  "Password changes are only supported for local accounts.\nThis account is managed by an external directory service.": {
+    "machine_translated": true,
+    "translation": "Змена пароля падтрымліваецца толькі для лакальных уліковых запісаў.\nГэты ўліковы запіс кіруецца знешняй службай каталогаў."
+  },
+  "Password for {u} changed successfully.\nTwo-factor authentication has been disabled.": {
+    "machine_translated": true,
+    "translation": "Пароль для {u} паспяхова зменены.\nДвухфактарная аўтэнтыфікацыя была адключана."
+  },
+  "Password for {u}:": {
+    "machine_translated": true,
+    "translation": "Пароль для {u}:"
+  },
+  "Password must be at least {n} characters.": {
+    "machine_translated": true,
+    "translation": "Пароль павінен складацца не менш за {n} сімвалаў."
+  },
+  "Passwords do not match.": {
+    "machine_translated": true,
+    "translation": "Паролі не супадаюць."
+  },
+  "Pending changes. Press [a] to apply.": {
+    "machine_translated": true,
+    "translation": "Змены ў чаканні. Каб прымяніць, націсніце [a]."
+  },
+  "Persisted": {
+    "machine_translated": true,
+    "translation": "Настойваў"
+  },
+  "Please enter the reason for the system reboot\n(leave blank to cancel):": {
+    "machine_translated": true,
+    "translation": "Калі ласка, увядзіце прычыну перазагрузкі сістэмы\n(пакіньце пустым, каб адмяніць):"
+  },
+  "Please enter the reason for the system shutdown\n(leave blank to cancel):": {
+    "machine_translated": true,
+    "translation": "Калі ласка, увядзіце прычыну адключэння сістэмы\n(пакіньце пустым, каб адмяніць):"
+  },
+  "Port": {
+    "machine_translated": true,
+    "translation": "Порт"
+  },
+  "Ports": {
+    "machine_translated": true,
+    "translation": "Парты"
+  },
+  "Power Control": {
+    "machine_translated": true,
+    "translation": "Кантроль харчавання"
+  },
+  "Prefix length out of range in alias: {e}": {
+    "machine_translated": true,
+    "translation": "Даўжыня прэфікса па-за дыяпазонам у псеўданіме: {e}"
+  },
+  "Priority (PCP)": {
+    "machine_translated": true,
+    "translation": "Прыярытэт (PCP)"
+  },
+  "Product": {
+    "machine_translated": true,
+    "translation": "Прадукт"
+  },
+  "Protocol": {
+    "machine_translated": true,
+    "translation": "Пратакол"
+  },
+  "Reboot": {
+    "machine_translated": true,
+    "translation": "Перазагрузка"
+  },
+  "Reboot initiated. The system is shutting down.": {
+    "machine_translated": true,
+    "translation": "Пачата перазагрузка. Сістэма адключаецца."
+  },
+  "Reboot or shut down the TrueNAS system.\n\n  • Reboot   – restart the system\n  • Shutdown – power off the system\n\nYou will be prompted for a reason and confirmation\nbefore any action is taken.": {
+    "machine_translated": true,
+    "translation": "Перазагрузіце або выключыце сістэму TrueNAS.\n\n  • Reboot – перазагрузка сістэмы\n  • Выключэнне – выключэнне сістэмы\n\nВам будзе прапанавана прычына і пацверджанне\nда таго, як будуць зроблены якія-небудзь дзеянні."
+  },
+  "Reboot the TrueNAS system.\n\nYou will be prompted to enter a reason for the reboot\nbefore the system restarts.\n\nAll active sessions and shares will be interrupted.": {
+    "machine_translated": true,
+    "translation": "Перазагрузіце сістэму TrueNAS.\n\nВам будзе прапанавана ўвесці прычыну перазагрузкі\nперад перазагрузкай сістэмы.\n\nУсе актыўныя сеансы і абагульванні будуць перапынены."
+  },
+  "Reboot the system?\n\nReason: {r}": {
+    "machine_translated": true,
+    "translation": "Перазагрузіць сістэму?\n\nПрычына: {r}"
+  },
+  "Reboot/Shutdown": {
+    "machine_translated": true,
+    "translation": "Перазагрузка/выключэнне"
+  },
+  "Rebooting": {
+    "machine_translated": true,
+    "translation": "Перазагрузка"
+  },
+  "Renew 2FA Secret": {
+    "machine_translated": true,
+    "translation": "Абнавіць сакрэт 2FA"
+  },
+  "Renew two-factor secret": {
+    "machine_translated": true,
+    "translation": "Аднавіце двухфакторную таямніцу"
+  },
+  "Reset": {
+    "machine_translated": true,
+    "translation": "Скінуць"
+  },
+  "Reset Configuration": {
+    "machine_translated": true,
+    "translation": "Скінуць канфігурацыю"
+  },
+  "Reset configuration to defaults": {
+    "machine_translated": true,
+    "translation": "Скінуць канфігурацыю да значэнняў па змаўчанні"
+  },
+  "Retype new password:": {
+    "machine_translated": true,
+    "translation": "Паўтарыце новы пароль:"
+  },
+  "Retype password for {u}:": {
+    "machine_translated": true,
+    "translation": "Паўтарыце пароль для {u}:"
+  },
+  "Root user (not recommended)": {
+    "machine_translated": true,
+    "translation": "Каранёвы карыстальнік (не рэкамендуецца)"
+  },
+  "Save": {
+    "machine_translated": true,
+    "translation": "Захаваць"
+  },
+  "Saved": {
+    "machine_translated": true,
+    "translation": "Захавана"
+  },
+  "Secret key: {s}  (for manual entry)": {
+    "machine_translated": true,
+    "translation": "Сакрэтны ключ: {s} (для ручнога ўводу)"
+  },
+  "Select Administrator": {
+    "machine_translated": true,
+    "translation": "Выберыце Адміністратар"
+  },
+  "Serial": {
+    "machine_translated": true,
+    "translation": "Серыял"
+  },
+  "Set Up Administrator": {
+    "machine_translated": true,
+    "translation": "Налада адміністратара"
+  },
+  "Set to 0 to use the system default MTU": {
+    "machine_translated": true,
+    "translation": "Усталюйце 0, каб выкарыстоўваць сістэмны стандартны MTU"
+  },
+  "Set up local administrator": {
+    "machine_translated": true,
+    "translation": "Наладзьце лакальнага адміністратара"
+  },
+  "Set up two-factor authentication": {
+    "machine_translated": true,
+    "translation": "Наладзьце двухфакторную аўтэнтыфікацыю"
+  },
+  "Settings Saved": {
+    "machine_translated": true,
+    "translation": "Налады захаваны"
+  },
+  "Shut down the TrueNAS system.\n\nYou will be prompted to enter a reason for the shutdown\nbefore the system powers off.\n\nAll active sessions and shares will be interrupted.": {
+    "machine_translated": true,
+    "translation": "Выключыце сістэму TrueNAS.\n\nВам будзе прапанавана ўвесці прычыну адключэння\nперад адключэннем сістэмы.\n\nУсе актыўныя сеансы і абагульванні будуць перапынены."
+  },
+  "Shut down the system?\n\nReason: {r}": {
+    "machine_translated": true,
+    "translation": "Выключыць сістэму?\n\nПрычына: {r}"
+  },
+  "Shutdown": {
+    "machine_translated": true,
+    "translation": "Адключэнне"
+  },
+  "Shutdown initiated. The system is powering off.": {
+    "machine_translated": true,
+    "translation": "Пачата адключэнне. Сістэма адключаецца."
+  },
+  "Shutting Down": {
+    "machine_translated": true,
+    "translation": "Выключэнне"
+  },
+  "Specify a bare IP address (no prefix length)": {
+    "machine_translated": true,
+    "translation": "Укажыце голы IP-адрас (без даўжыні прэфікса)"
+  },
+  "Startup": {
+    "machine_translated": true,
+    "translation": "Запуск"
+  },
+  "Startup view": {
+    "machine_translated": true,
+    "translation": "Выгляд запуску"
+  },
+  "Static Routes": {
+    "machine_translated": true,
+    "translation": "Статычныя маршруты"
+  },
+  "Static routes": {
+    "machine_translated": true,
+    "translation": "Статычныя маршруты"
+  },
+  "Success": {
+    "machine_translated": true,
+    "translation": "Поспех"
+  },
+  "System Information": {
+    "machine_translated": true,
+    "translation": "Сістэмная інфармацыя"
+  },
+  "TUI preferences saved.\nTheme and locale changes take effect immediately.": {
+    "machine_translated": true,
+    "translation": "Параметры TUI захаваны.\nЗмены тэмы і лакалі ўступаюць у сілу неадкладна."
+  },
+  "Tab/↑↓: navigate   Enter: confirm   Esc: cancel": {
+    "machine_translated": true,
+    "translation": "Tab/↑↓: навігацыя Enter: пацверджанне Esc: адмена"
+  },
+  "Text UI settings": {
+    "machine_translated": true,
+    "translation": "Налады тэкставага інтэрфейсу"
+  },
+  "Theme": {
+    "machine_translated": true,
+    "translation": "Тэма"
+  },
+  "This Node IPs": {
+    "machine_translated": true,
+    "translation": "IP-адрасы гэтага вузла"
+  },
+  "This will ERASE all configuration and reset to defaults.\nAre you absolutely sure?": {
+    "machine_translated": true,
+    "translation": "Гэта СЦІРАЕ ўсю канфігурацыю і верне налады па змаўчанні.\nВы абсалютна ўпэўнены?"
+  },
+  "Time format": {
+    "machine_translated": true,
+    "translation": "Фармат часу"
+  },
+  "Timezone": {
+    "machine_translated": true,
+    "translation": "Часавы пояс"
+  },
+  "Two-factor authentication has been disabled.": {
+    "machine_translated": true,
+    "translation": "Двухфактарная аўтэнтыфікацыя была адключана."
+  },
+  "Type RESET to confirm (case-sensitive):": {
+    "machine_translated": true,
+    "translation": "Каб пацвердзіць, увядзіце RESET (з улікам рэгістра):"
+  },
+  "Unavailable": {
+    "machine_translated": true,
+    "translation": "Недаступны"
+  },
+  "Uptime": {
+    "machine_translated": true,
+    "translation": "Час бесперабойнай працы"
+  },
+  "VLAN Settings": {
+    "machine_translated": true,
+    "translation": "Налады VLAN"
+  },
+  "VLAN Tag": {
+    "machine_translated": true,
+    "translation": "Тэг VLAN"
+  },
+  "Version": {
+    "machine_translated": true,
+    "translation": "Версія"
+  },
+  "View and edit network interface configuration.\n\n  • Enable/disable DHCP and IPv6 auto-configuration\n  • Add or remove static IP aliases\n  • Set MTU, VLAN tag, bridge members, LAG ports, and more\n  • Apply changes (with automatic rollback safety)\n  • Persist changes once the network is confirmed working\n\nPress Enter to select an interface to edit.\nPress [n] to create a new interface, [d] to delete.\nAfter editing, use [a] to Apply and [p] to Persist.": {
+    "machine_translated": true,
+    "translation": "Прагляд і рэдагаванне канфігурацыі сеткавага інтэрфейсу.\n\n  • Уключыць/выключыць аўтаматычную канфігурацыю DHCP і IPv6\n  • Дадаць або выдаліць статычныя псеўданімы IP\n  • Усталюйце MTU, тэг VLAN, члены моста, парты LAG і многае іншае\n  • Ужыць змены (з аўтаматычнай бяспекай адкату)\n  • Захоўваць змены пасля пацверджання працы сеткі\n\nНацісніце Enter, каб выбраць інтэрфейс для рэдагавання.\nНацісніце [n], каб стварыць новы інтэрфейс, [d], каб выдаліць.\nПасля рэдагавання выкарыстоўвайце [a] для прымянення і [p] для захавання."
+  },
+  "View your account information and manage credentials.\n\n  • View username, UID, roles, and 2FA status\n  • Change your password\n  • Generate a one-time password for single-use login\n  • Set up or renew two-factor authentication\n\nPassword changes take effect immediately.\nOne-time passwords expire after a single login.": {
+    "machine_translated": true,
+    "translation": "Прагляд інфармацыі аб вашым уліковым запісе і кіраванне ўліковымі дадзенымі.\n\n  • Прагляд імя карыстальніка, UID, роляў і стану 2FA\n  • Змяніць пароль\n  • Стварыце аднаразовы пароль для аднаразовага ўваходу\n  • Наладзьце або аднавіце двухфактарную аўтэнтыфікацыю\n\nЗмены пароля ўступаюць у сілу неадкладна.\nТэрмін дзеяння аднаразовых пароляў заканчваецца пасля аднаго ўваходу."
+  },
+  "Virtual IPs": {
+    "machine_translated": true,
+    "translation": "Віртуальныя IP"
+  },
+  "WARNING: You are logged in as root!": {
+    "machine_translated": true,
+    "translation": "ПАПЯРЭДЖАННЕ: Вы ўвайшлі ў сістэму як root!"
+  },
+  "Web UI Authentication Method": {
+    "machine_translated": true,
+    "translation": "Метад аўтэнтыфікацыі вэб-інтэрфейсу"
+  },
+  "Without it you may be locked out of this system.": {
+    "machine_translated": true,
+    "translation": "Без гэтага вы можаце быць заблакіраваны з гэтай сістэмы."
+  },
+  "Xmit Hash Policy": {
+    "machine_translated": true,
+    "translation": "Хэш-палітыка Xmit"
+  },
+  "Yes": {
+    "machine_translated": true,
+    "translation": "так"
+  },
+  "Yes, reset": {
+    "machine_translated": true,
+    "translation": "Так, скінуць"
+  },
+  "[↑↓] Navigate  [Enter] Edit  [a] Add  [d] Delete  [q] Back": {
+    "machine_translated": true,
+    "translation": "[↑↓] Пераход [Enter] Рэдагаванне [a] Дадаць [d] Выдаліць [q] Назад"
+  },
+  "[↑↓] Navigate  [Enter] Edit  [n] New  [d] Delete  [a] Apply  [p] Persist  [q] Back": {
+    "machine_translated": true,
+    "translation": "[↑↓] Пераход [Enter] Рэдагаванне [n] Новы [d] Выдаліць [a] Ужыць [p] Захаваць [q] Назад"
+  },
+  "[↑↓] Select  [Enter] Edit  [a] Add  [d] Delete  [Esc] Done": {
+    "machine_translated": true,
+    "translation": "[↑↓] Выберыце [Enter] Рэдагаваць [a] Дадаць [d] Выдаліць [Esc] Гатова"
+  },
+  "midcli is not available on this system.": {
+    "machine_translated": true,
+    "translation": "midcli недаступны ў гэтай сістэме."
+  },
+  "↑↓ Navigate  Enter Select  Esc Cancel": {
+    "machine_translated": true,
+    "translation": "↑↓ Перайдзіце Enter Выберыце Esc Адмена"
+  }
+}

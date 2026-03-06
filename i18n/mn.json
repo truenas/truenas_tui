@@ -1,0 +1,866 @@
+{
+  " (no QR tool found)": {
+    "machine_translated": true,
+    "translation": "(QR хэрэгсэл олдсонгүй)"
+  },
+  " My Account – {u} ": {
+    "machine_translated": true,
+    "translation": "Миний бүртгэл – {u}"
+  },
+  " Press Enter to continue": {
+    "machine_translated": true,
+    "translation": "Үргэлжлүүлэхийн тулд Enter дарна уу"
+  },
+  " Two-Factor Authentication Setup ": {
+    "machine_translated": true,
+    "translation": "Хоёр хүчин зүйлийн баталгаажуулалтын тохиргоо"
+  },
+  "(Google Authenticator, Authy, etc.) before navigating away.": {
+    "machine_translated": true,
+    "translation": "(Google Authenticator, Authy гэх мэт) холдохын өмнө."
+  },
+  "(no addresses)": {
+    "machine_translated": true,
+    "translation": "(хаяг байхгүй)"
+  },
+  "(none)": {
+    "machine_translated": true,
+    "translation": "(байхгүй)"
+  },
+  "Access: Read-only": {
+    "machine_translated": true,
+    "translation": "Хандалт: Зөвхөн унших боломжтой"
+  },
+  "Access: Read/Write": {
+    "machine_translated": true,
+    "translation": "Хандалт: Унших/бичих"
+  },
+  "Actions:": {
+    "machine_translated": true,
+    "translation": "Үйлдлүүд:"
+  },
+  "Add Static Route": {
+    "machine_translated": true,
+    "translation": "Статик зам нэмэх"
+  },
+  "Address": {
+    "machine_translated": true,
+    "translation": "Хаяг"
+  },
+  "Administrative user (admin)  [recommended]": {
+    "machine_translated": true,
+    "translation": "Захиргааны хэрэглэгч (админ) [санал болгож байна]"
+  },
+  "Alias must be in CIDR notation (e.g. 192.168.1.1/24): {e}": {
+    "machine_translated": true,
+    "translation": "Алга нэр нь CIDR тэмдэглэгээнд байх ёстой (жишээ нь: 192.168.1.1/24): {e}"
+  },
+  "Aliases (CIDR)": {
+    "machine_translated": true,
+    "translation": "Гадна нэр (CIDR)"
+  },
+  "Appearance": {
+    "machine_translated": true,
+    "translation": "Гадаад төрх"
+  },
+  "Applied": {
+    "machine_translated": true,
+    "translation": "Хэрэглэсэн"
+  },
+  "Auto-refreshes every {n}s  [r] force refresh": {
+    "machine_translated": true,
+    "translation": "{n}s [r] болгонд автоматаар шинэчлэгддэг"
+  },
+  "Behaviour": {
+    "machine_translated": true,
+    "translation": "Зан төлөв"
+  },
+  "Bridge Settings": {
+    "machine_translated": true,
+    "translation": "Гүүрний тохиргоо"
+  },
+  "CPU": {
+    "machine_translated": true,
+    "translation": "CPU"
+  },
+  "Cancel": {
+    "machine_translated": true,
+    "translation": "Цуцлах"
+  },
+  "Cancelled": {
+    "machine_translated": true,
+    "translation": "Цуцлагдсан"
+  },
+  "Cannot Change Password": {
+    "machine_translated": true,
+    "translation": "Нууц үг солих боломжгүй"
+  },
+  "Change Password": {
+    "machine_translated": true,
+    "translation": "Нууц үг солих"
+  },
+  "Change local administrator password": {
+    "machine_translated": true,
+    "translation": "Дотоод администраторын нууц үгийг өөрчлөх"
+  },
+  "Change password": {
+    "machine_translated": true,
+    "translation": "Нууц үг солих"
+  },
+  "Change the password for a local administrator account.\n\nIf no local administrator has been configured yet, this\noption lets you set up an initial admin or root account.\n\nNote: changing a password will disable two-factor\nauthentication for that account.": {
+    "machine_translated": true,
+    "translation": "Дотоод администраторын бүртгэлийн нууц үгийг солино уу.\n\nХэрэв локал администраторыг хараахан тохируулаагүй бол энэ\nСонголт нь танд анхны админ эсвэл үндсэн бүртгэлийг тохируулах боломжийг олгоно.\n\nТайлбар: нууц үг солих нь хоёр хүчин зүйлийг идэвхгүй болгоно\nтухайн дансны баталгаажуулалт."
+  },
+  "Changes applied. Network will roll back in ~60 seconds\nunless you press [p] to persist them.": {
+    "machine_translated": true,
+    "translation": "Өөрчлөлтүүдийг оруулсан. Сүлжээ ~60 секундын дараа буцах болно\nХэрэв та тэдгээрийг үргэлжлүүлэхийн тулд [p] дээр дарахгүй бол."
+  },
+  "Changes applied. Press [p] to persist or they roll back in {n}s.": {
+    "machine_translated": true,
+    "translation": "Өөрчлөлтүүдийг оруулсан. Үргэлжлүүлэхийн тулд [p] дарна уу, эс тэгвээс тэд {n} секундын дараа буцна."
+  },
+  "Configuration reset cancelled.": {
+    "machine_translated": true,
+    "translation": "Тохиргоог дахин тохируулахыг цуцалсан."
+  },
+  "Configuration reset initiated.\nThe system will reboot with default settings.": {
+    "machine_translated": true,
+    "translation": "Тохиргоог дахин тохирууллаа.\nСистем анхдагч тохиргоогоор дахин ачаалах болно."
+  },
+  "Configure global network settings:\n\n  • Hostname and domain\n  • Default IPv4 and IPv6 gateways\n  • DNS nameservers (up to three)\n\nChanges take effect immediately after saving.": {
+    "machine_translated": true,
+    "translation": "Глобал сүлжээний тохиргоог тохируулах:\n\n  • Хост нэр болон домэйн\n  • Өгөгдмөл IPv4 болон IPv6 гарцууд\n  • DNS нэрийн сервер (гурв хүртэл)\n\nӨөрчлөлтүүд хадгалсны дараа шууд хүчин төгөлдөр болно."
+  },
+  "Configure network interfaces": {
+    "machine_translated": true,
+    "translation": "Сүлжээний интерфейсийг тохируулах"
+  },
+  "Configure network settings": {
+    "machine_translated": true,
+    "translation": "Сүлжээний тохиргоог хийнэ үү"
+  },
+  "Configure networking for this TrueNAS system.\n\n  • Interface settings  – DHCP, IP aliases, MTU\n  • Network settings    – Hostname, domain, gateways, DNS\n  • Static routes       – Add and remove static routes\n\nChanges to interfaces require a commit step\nbefore they take effect.": {
+    "machine_translated": true,
+    "translation": "Энэ TrueNAS системийн сүлжээг тохируулна уу.\n\n  • Интерфэйсийн тохиргоо – DHCP, IP нэр, MTU\n  • Сүлжээний тохиргоо – Хост нэр, домэйн, гарц, DNS\n  • Статик чиглүүлэлтүүд – Статик чиглүүлэлтүүдийг нэмэх, устгах\n\nИнтерфэйсийг өөрчлөхөд тодорхой алхам шаардлагатай\nхүчин төгөлдөр болохоос өмнө."
+  },
+  "Configure static routes": {
+    "machine_translated": true,
+    "translation": "Статик маршрутуудыг тохируулах"
+  },
+  "Confirm Delete": {
+    "machine_translated": true,
+    "translation": "Устгахаа баталгаажуулна уу"
+  },
+  "Confirm Reboot": {
+    "machine_translated": true,
+    "translation": "Дахин ачаалахыг баталгаажуулна уу"
+  },
+  "Confirm Reset": {
+    "machine_translated": true,
+    "translation": "Дахин тохируулахыг баталгаажуулна уу"
+  },
+  "Confirm Shutdown": {
+    "machine_translated": true,
+    "translation": "Унтраахыг баталгаажуулна уу"
+  },
+  "Confirm dangerous actions": {
+    "machine_translated": true,
+    "translation": "Аюултай үйлдлүүдийг баталгаажуулах"
+  },
+  "Could not load LAG port choices:\n": {
+    "machine_translated": true,
+    "translation": "LAG портын сонголтыг ачаалж чадсангүй:"
+  },
+  "Could not load VLAN parent choices:\n": {
+    "machine_translated": true,
+    "translation": "VLAN эцэг эхийн сонголтыг ачаалж чадсангүй:"
+  },
+  "Could not load bridge member choices:\n": {
+    "machine_translated": true,
+    "translation": "Гүүрийн гишүүний сонголтыг ачаалж чадсангүй:"
+  },
+  "Create one-time password": {
+    "machine_translated": true,
+    "translation": "Нэг удаагийн нууц үг үүсгэх"
+  },
+  "Create one-time password for \"{u}\"": {
+    "machine_translated": true,
+    "translation": "\"{u}\"-д нэг удаагийн нууц үг үүсгэх"
+  },
+  "Created": {
+    "machine_translated": true,
+    "translation": "Үүсгэсэн"
+  },
+  "Current password:": {
+    "machine_translated": true,
+    "translation": "Одоогийн нууц үг:"
+  },
+  "Customise the TrueNAS TUI for your user account.\n\n  • Theme: default (blue), dark (green), high-contrast\n  • Startup view: system info pane or menu description\n  • Confirm dangerous actions (reboot, shutdown, reset)\n  • Language and date/time display formats\n\nSettings are saved to your account and persist across\nsessions on any client.": {
+    "machine_translated": true,
+    "translation": "TrueNAS TUI-г хэрэглэгчийн бүртгэлдээ тохируулна уу.\n\n  • Сэдэв: анхдагч (цэнхэр), бараан (ногоон), өндөр тодосгогч\n  • Эхлэх харагдац: системийн мэдээллийн хэсэг эсвэл цэсийн тайлбар\n  • Аюултай үйлдлүүдийг баталгаажуулах (дахин ачаалах, унтраах, дахин тохируулах)\n  • Хэл, огноо/цаг харуулах формат\n\nТохиргоонууд таны бүртгэлд хадгалагдаж, хадгалагдах болно\nямар ч үйлчлүүлэгч дээр сесс."
+  },
+  "Date format": {
+    "machine_translated": true,
+    "translation": "Огнооны формат"
+  },
+  "Delete Route": {
+    "machine_translated": true,
+    "translation": "Маршрутыг устгах"
+  },
+  "Delete interface {name}?": {
+    "machine_translated": true,
+    "translation": "{name} интерфейсийг устгах уу?"
+  },
+  "Delete static route {dest}?": {
+    "machine_translated": true,
+    "translation": "{dest} статик маршрутыг устгах уу?"
+  },
+  "Deleted": {
+    "machine_translated": true,
+    "translation": "Устгасан"
+  },
+  "Description": {
+    "machine_translated": true,
+    "translation": "Тодорхойлолт"
+  },
+  "Destination (CIDR)": {
+    "machine_translated": true,
+    "translation": "Очих газар (CIDR)"
+  },
+  "Disable Two-Factor Authentication": {
+    "machine_translated": true,
+    "translation": "Хоёр хүчин зүйлийн баталгаажуулалтыг идэвхгүй болгох"
+  },
+  "Disable two-factor authentication": {
+    "machine_translated": true,
+    "translation": "Хоёр хүчин зүйлийн баталгаажуулалтыг идэвхгүй болгох"
+  },
+  "Disable two-factor authentication for {u}?\nYou will no longer need an OTP to log in.": {
+    "machine_translated": true,
+    "translation": "{u}-н хоёр хүчин зүйлийн баталгаажуулалтыг идэвхгүй болгох уу?\nНэвтрэхийн тулд танд OTP шаардлагагүй болно."
+  },
+  "Disabled": {
+    "machine_translated": true,
+    "translation": "Идэвхгүй"
+  },
+  "Domain": {
+    "machine_translated": true,
+    "translation": "Домэйн"
+  },
+  "Edit Static Route": {
+    "machine_translated": true,
+    "translation": "Статик маршрутыг засах"
+  },
+  "Enabled": {
+    "machine_translated": true,
+    "translation": "Идэвхжүүлсэн"
+  },
+  "Enter: confirm  Esc: cancel": {
+    "machine_translated": true,
+    "translation": "Оруулна уу: баталгаажуулах Esc: цуцлах"
+  },
+  "Erase all TrueNAS configuration and reset to factory\ndefaults.\n\nWARNING: This is irreversible. All settings including\nnetwork configuration, shares, users, and storage pools\nwill be erased.\n\nYou will be prompted to confirm twice before proceeding.": {
+    "machine_translated": true,
+    "translation": "TrueNAS-ийн бүх тохиргоог устгаад үйлдвэрийн тохиргоонд дахин тохируулна уу\nөгөгдмөл.\n\nАНХААРУУЛГА: Энэ нь эргэлт буцалтгүй юм. Бүх тохиргоо орно\nсүлжээний тохиргоо, хуваалцах, хэрэглэгчид, хадгалах сан\nустгагдах болно.\n\nҮргэлжлүүлэхийн өмнө та хоёр удаа баталгаажуулахыг хүсэх болно."
+  },
+  "Error": {
+    "machine_translated": true,
+    "translation": "Алдаа"
+  },
+  "Failover Critical": {
+    "machine_translated": true,
+    "translation": "Failover Critical"
+  },
+  "Failover Group": {
+    "machine_translated": true,
+    "translation": "Гүйцэтгэх бүлэг"
+  },
+  "Failover Settings": {
+    "machine_translated": true,
+    "translation": "Гүйцэтгэх тохиргоо"
+  },
+  "Gateway": {
+    "machine_translated": true,
+    "translation": "Гарц"
+  },
+  "Generate a single-use temporary password for the\ncurrently authenticated user.\n\nThe one-time password can be used to log in once\nand is invalidated immediately after use.": {
+    "machine_translated": true,
+    "translation": "Нэг удаагийн түр нууц үг үүсгэх\nодоогоор баталгаажуулсан хэрэглэгч.\n\nНэг удаагийн нууц үгээр нэг удаа нэвтэрч болно\nмөн хэрэглэсний дараа шууд хүчингүй болно."
+  },
+  "Generate one-time password": {
+    "machine_translated": true,
+    "translation": "Нэг удаагийн нууц үг үүсгэх"
+  },
+  "Generating a new 2FA secret will invalidate your current\nauthenticator app configuration. Continue?": {
+    "machine_translated": true,
+    "translation": "Шинэ 2FA нууц үүсгэх нь таны одоогийн нууцыг хүчингүй болгоно\nauthenticator програмын тохиргоо. Үргэлжлүүлэх үү?"
+  },
+  "Hostname": {
+    "machine_translated": true,
+    "translation": "Хост нэр"
+  },
+  "IMPORTANT: Scan this QR code with your authenticator app": {
+    "machine_translated": true,
+    "translation": "ЧУХАЛ: Энэ QR кодыг баталгаажуулагч програмаараа уншина уу"
+  },
+  "IP Address": {
+    "machine_translated": true,
+    "translation": "IP хаяг"
+  },
+  "IPv4 DHCP": {
+    "machine_translated": true,
+    "translation": "IPv4 DHCP"
+  },
+  "IPv4 Gateway": {
+    "machine_translated": true,
+    "translation": "IPv4 гарц"
+  },
+  "IPv6 Auto": {
+    "machine_translated": true,
+    "translation": "IPv6 автомат"
+  },
+  "IPv6 Gateway": {
+    "machine_translated": true,
+    "translation": "IPv6 гарц"
+  },
+  "Interface": {
+    "machine_translated": true,
+    "translation": "Интерфэйс"
+  },
+  "Interface Settings": {
+    "machine_translated": true,
+    "translation": "Интерфэйсийн тохиргоо"
+  },
+  "Interface Type": {
+    "machine_translated": true,
+    "translation": "Интерфейсийн төрөл"
+  },
+  "Interface name is required.": {
+    "machine_translated": true,
+    "translation": "Интерфэйсийн нэр шаардлагатай."
+  },
+  "Interface settings": {
+    "machine_translated": true,
+    "translation": "Интерфейсийн тохиргоо"
+  },
+  "Interface {name} created.\nUse [a] from the list to apply changes.": {
+    "machine_translated": true,
+    "translation": "{name} интерфейс үүсгэгдсэн.\nӨөрчлөлтийг хэрэгжүүлэхийн тулд жагсаалтаас [a]-г ашиглана уу."
+  },
+  "Interface {name} deleted.\nUse [a] from the list to apply changes.": {
+    "machine_translated": true,
+    "translation": "{name} интерфейсийг устгасан.\nӨөрчлөлтийг хэрэгжүүлэхийн тулд жагсаалтаас [a]-г ашиглана уу."
+  },
+  "Interface {name} updated.\nUse [a] from the list to apply changes.": {
+    "machine_translated": true,
+    "translation": "{name} интерфэйс шинэчлэгдсэн.\nӨөрчлөлтийг хэрэгжүүлэхийн тулд жагсаалтаас [a]-г ашиглана уу."
+  },
+  "Invalid IP address in alias: {e}": {
+    "machine_translated": true,
+    "translation": "Буруу IP хаяг: {e}"
+  },
+  "Invalid IP address: {s}": {
+    "machine_translated": true,
+    "translation": "Буруу IP хаяг: {s}"
+  },
+  "Invalid prefix length in alias: {e}": {
+    "machine_translated": true,
+    "translation": "Буруу нэрийн угтвар урт: {e}"
+  },
+  "LACPDU Rate": {
+    "machine_translated": true,
+    "translation": "LACPDU ханш"
+  },
+  "Language": {
+    "machine_translated": true,
+    "translation": "Хэл"
+  },
+  "Link Aggregation Settings": {
+    "machine_translated": true,
+    "translation": "Холбоосыг нэгтгэх тохиргоо"
+  },
+  "Load Average": {
+    "machine_translated": true,
+    "translation": "Дундаж ачаалал"
+  },
+  "Local administrator {u} set up successfully.": {
+    "machine_translated": true,
+    "translation": "Орон нутгийн админ {u}-г амжилттай тохирууллаа."
+  },
+  "Locale": {
+    "machine_translated": true,
+    "translation": "Орон нутаг"
+  },
+  "MTU": {
+    "machine_translated": true,
+    "translation": "MTU"
+  },
+  "Manage static network routes.\n\n  • View existing static routes\n  • Add new routes (destination, gateway, description)\n  • Edit or delete existing routes\n\nKeys: Enter = Edit,  a = Add,  d = Delete,  q = Back": {
+    "machine_translated": true,
+    "translation": "Статик сүлжээний маршрутуудыг удирдах.\n\n  • Одоо байгаа статик маршрутуудыг харах\n  • Шинэ маршрут нэмэх (очих газар, гарц, тайлбар)\n  • Одоо байгаа маршрутуудыг засах эсвэл устгах\n\nТүлхүүр: Enter = Засах, a = Нэмэх, d = Устгах, q = Буцах"
+  },
+  "Manufacturer": {
+    "machine_translated": true,
+    "translation": "Үйлдвэрлэгч"
+  },
+  "Members": {
+    "machine_translated": true,
+    "translation": "Гишүүд"
+  },
+  "Memory": {
+    "machine_translated": true,
+    "translation": "Санах ой"
+  },
+  "My account": {
+    "machine_translated": true,
+    "translation": "Миний данс"
+  },
+  "Name": {
+    "machine_translated": true,
+    "translation": "Нэр"
+  },
+  "Nameserver 1": {
+    "machine_translated": true,
+    "translation": "Нэрийн сервер 1"
+  },
+  "Nameserver 2": {
+    "machine_translated": true,
+    "translation": "Нэрийн сервер 2"
+  },
+  "Nameserver 3": {
+    "machine_translated": true,
+    "translation": "Нэрийн сервер 3"
+  },
+  "Network": {
+    "machine_translated": true,
+    "translation": "Сүлжээ"
+  },
+  "Network Configuration": {
+    "machine_translated": true,
+    "translation": "Сүлжээний тохиргоо"
+  },
+  "Network Interfaces": {
+    "machine_translated": true,
+    "translation": "Сүлжээний интерфейс"
+  },
+  "Network changes persisted successfully.": {
+    "machine_translated": true,
+    "translation": "Сүлжээний өөрчлөлтүүд амжилттай үргэлжилсэн."
+  },
+  "Network settings": {
+    "machine_translated": true,
+    "translation": "Сүлжээний тохиргоо"
+  },
+  "Network settings updated successfully.": {
+    "machine_translated": true,
+    "translation": "Сүлжээний тохиргоог амжилттай шинэчилсэн."
+  },
+  "New Interface – Step 1": {
+    "machine_translated": true,
+    "translation": "Шинэ интерфейс - 1-р алхам"
+  },
+  "New Interface – Step 2": {
+    "machine_translated": true,
+    "translation": "Шинэ интерфейс - 2-р алхам"
+  },
+  "New password for {u}:": {
+    "machine_translated": true,
+    "translation": "{u}-н шинэ нууц үг:"
+  },
+  "No": {
+    "machine_translated": true,
+    "translation": "Үгүй"
+  },
+  "No local administrators found.": {
+    "machine_translated": true,
+    "translation": "Орон нутгийн администратор олдсонгүй."
+  },
+  "No provisioning URI returned from server.": {
+    "machine_translated": true,
+    "translation": "Серверээс ямар ч нөөцийн URI буцаж ирээгүй."
+  },
+  "No static routes configured.": {
+    "machine_translated": true,
+    "translation": "Ямар ч статик маршрутыг тохируулаагүй байна."
+  },
+  "No terminal QR code tool was found on this system.\n\nInstall \"qr\" or \"qrcode-terminal\" to use this feature.": {
+    "machine_translated": true,
+    "translation": "Энэ систем дээр терминалын QR кодын хэрэгсэл олдсонгүй.\n\nЭнэ функцийг ашиглахын тулд \"qr\" эсвэл \"qrcode-terminal\" суулгана уу."
+  },
+  "Not Found": {
+    "machine_translated": true,
+    "translation": "Олдсонгүй"
+  },
+  "Not a valid member: {v}": {
+    "machine_translated": true,
+    "translation": "Хүчин төгөлдөр гишүүн биш: {v}"
+  },
+  "Not a valid port: {v}": {
+    "machine_translated": true,
+    "translation": "Зөв порт биш: {v}"
+  },
+  "One-Time Password": {
+    "machine_translated": true,
+    "translation": "Нэг удаагийн нууц үг"
+  },
+  "One-time password for \"{u}\":\n\n  {otp}\n\nThis password can only be used once.\nDialog closes automatically after {t} seconds.": {
+    "machine_translated": true,
+    "translation": "\"{u}\"-н нэг удаагийн нууц үг:\n\n  {otp}\n\nЭнэ нууц үгийг зөвхөн нэг удаа ашиглах боломжтой.\nХарилцах цонх {t} секундын дараа автоматаар хаагдана."
+  },
+  "Open Linux Shell": {
+    "machine_translated": true,
+    "translation": "Linux Shell-ийг нээнэ үү"
+  },
+  "Open TrueNAS CLI Shell": {
+    "machine_translated": true,
+    "translation": "TrueNAS CLI Shell-ийг нээнэ үү"
+  },
+  "Open a Linux shell (bash/zsh).\n\nSuspends the TUI and opens your login shell.\nType \"exit\" or press Ctrl+D to return to the TUI.": {
+    "machine_translated": true,
+    "translation": "Линукс бүрхүүлийг нээх (bash/zsh).\n\nTUI-г түр зогсоож, таны нэвтрэх бүрхүүлийг нээнэ.\nTUI руу буцахын тулд \"exit\" гэж бичнэ үү эсвэл Ctrl+D дарна уу."
+  },
+  "Open the TrueNAS interactive CLI shell (midcli).\n\nReplaces the TUI with the full midcli command-line\ninterface. The TUI restarts after you exit midcli.": {
+    "machine_translated": true,
+    "translation": "TrueNAS интерактив CLI бүрхүүлийг (midcli) нээнэ үү.\n\nTUI-г бүрэн midcli командын мөрөөр орлуулна\nинтерфейс. Таныг midcli-ээс гарсны дараа TUI дахин эхэлнэ."
+  },
+  "Other Settings": {
+    "machine_translated": true,
+    "translation": "Бусад тохиргоо"
+  },
+  "Parent Interface": {
+    "machine_translated": true,
+    "translation": "Эцэг эхийн интерфейс"
+  },
+  "Password changed successfully.": {
+    "machine_translated": true,
+    "translation": "Нууц үг амжилттай өөрчлөгдсөн."
+  },
+  "Password changes are only supported for local accounts.\nThis account is managed by an external directory service.": {
+    "machine_translated": true,
+    "translation": "Нууц үгийн өөрчлөлтийг зөвхөн локал дансанд дэмждэг.\nЭнэ бүртгэлийг гадны лавлах үйлчилгээ удирддаг."
+  },
+  "Password for {u} changed successfully.\nTwo-factor authentication has been disabled.": {
+    "machine_translated": true,
+    "translation": "{u}-н нууц үг амжилттай өөрчлөгдсөн.\nХоёр хүчин зүйлийн баталгаажуулалтыг идэвхгүй болгосон."
+  },
+  "Password for {u}:": {
+    "machine_translated": true,
+    "translation": "{u}-н нууц үг:"
+  },
+  "Password must be at least {n} characters.": {
+    "machine_translated": true,
+    "translation": "Нууц үг хамгийн багадаа {n} тэмдэгттэй байх ёстой."
+  },
+  "Passwords do not match.": {
+    "machine_translated": true,
+    "translation": "Нууц үг таарахгүй байна."
+  },
+  "Pending changes. Press [a] to apply.": {
+    "machine_translated": true,
+    "translation": "Хүлээгдэж буй өөрчлөлтүүд. Өргөдөл гаргахын тулд [a] дарна уу."
+  },
+  "Persisted": {
+    "machine_translated": true,
+    "translation": "Үргэлжилсэн"
+  },
+  "Please enter the reason for the system reboot\n(leave blank to cancel):": {
+    "machine_translated": true,
+    "translation": "Системийг дахин ачаалах шалтгааныг оруулна уу\n(цуцлахын тулд хоосон орхино уу):"
+  },
+  "Please enter the reason for the system shutdown\n(leave blank to cancel):": {
+    "machine_translated": true,
+    "translation": "Систем унтарсан шалтгааныг оруулна уу\n(цуцлахын тулд хоосон орхино уу):"
+  },
+  "Port": {
+    "machine_translated": true,
+    "translation": "Порт"
+  },
+  "Ports": {
+    "machine_translated": true,
+    "translation": "Портууд"
+  },
+  "Power Control": {
+    "machine_translated": true,
+    "translation": "Эрчим хүчний хяналт"
+  },
+  "Prefix length out of range in alias: {e}": {
+    "machine_translated": true,
+    "translation": "Угтварын урт нь бусад нэрийн хүрээнээс гадуур: {e}"
+  },
+  "Priority (PCP)": {
+    "machine_translated": true,
+    "translation": "Тэргүүлэх (PCP)"
+  },
+  "Product": {
+    "machine_translated": true,
+    "translation": "Бүтээгдэхүүн"
+  },
+  "Protocol": {
+    "machine_translated": true,
+    "translation": "Протокол"
+  },
+  "Reboot": {
+    "machine_translated": true,
+    "translation": "Дахин ачаална уу"
+  },
+  "Reboot initiated. The system is shutting down.": {
+    "machine_translated": true,
+    "translation": "Дахин ачааллаа. Систем унтарч байна."
+  },
+  "Reboot or shut down the TrueNAS system.\n\n  • Reboot   – restart the system\n  • Shutdown – power off the system\n\nYou will be prompted for a reason and confirmation\nbefore any action is taken.": {
+    "machine_translated": true,
+    "translation": "TrueNAS системийг дахин ачаалах эсвэл унтраа.\n\n  • Дахин ачаалах – системийг дахин эхлүүлэх\n  • Унтраах – системийг унтраах\n\nТанаас шалтгаан, баталгаажуулалтыг асуух болно\nямар нэгэн арга хэмжээ авахаас өмнө."
+  },
+  "Reboot the TrueNAS system.\n\nYou will be prompted to enter a reason for the reboot\nbefore the system restarts.\n\nAll active sessions and shares will be interrupted.": {
+    "machine_translated": true,
+    "translation": "TrueNAS системийг дахин ачаална уу.\n\nТа дахин ачаалах шалтгааныг оруулахыг хүсэх болно\nсистемийг дахин эхлүүлэхээс өмнө.\n\nБүх идэвхтэй сесс болон хувьцаанууд тасалдана."
+  },
+  "Reboot the system?\n\nReason: {r}": {
+    "machine_translated": true,
+    "translation": "Системийг дахин ачаалах уу?\n\nШалтгаан: {r}"
+  },
+  "Reboot/Shutdown": {
+    "machine_translated": true,
+    "translation": "Дахин ачаалах/унтраах"
+  },
+  "Rebooting": {
+    "machine_translated": true,
+    "translation": "Дахин ачаалж байна"
+  },
+  "Renew 2FA Secret": {
+    "machine_translated": true,
+    "translation": "2FA нууцыг шинэчлэх"
+  },
+  "Renew two-factor secret": {
+    "machine_translated": true,
+    "translation": "Хоёр хүчин зүйлийн нууцыг шинэчил"
+  },
+  "Reset": {
+    "machine_translated": true,
+    "translation": "Дахин тохируулах"
+  },
+  "Reset Configuration": {
+    "machine_translated": true,
+    "translation": "Тохиргоог дахин тохируулах"
+  },
+  "Reset configuration to defaults": {
+    "machine_translated": true,
+    "translation": "Тохиргоог өгөгдмөл рүү дахин тохируулна уу"
+  },
+  "Retype new password:": {
+    "machine_translated": true,
+    "translation": "Шинэ нууц үгийг дахин оруулна уу:"
+  },
+  "Retype password for {u}:": {
+    "machine_translated": true,
+    "translation": "{u}-н нууц үгийг дахин оруулна уу:"
+  },
+  "Root user (not recommended)": {
+    "machine_translated": true,
+    "translation": "Root хэрэглэгч (зөвлөдөггүй)"
+  },
+  "Save": {
+    "machine_translated": true,
+    "translation": "Хадгалах"
+  },
+  "Saved": {
+    "machine_translated": true,
+    "translation": "Хадгалсан"
+  },
+  "Secret key: {s}  (for manual entry)": {
+    "machine_translated": true,
+    "translation": "Нууц түлхүүр: {s} (гараар оруулах)"
+  },
+  "Select Administrator": {
+    "machine_translated": true,
+    "translation": "Администраторыг сонгоно уу"
+  },
+  "Serial": {
+    "machine_translated": true,
+    "translation": "Цуврал"
+  },
+  "Set Up Administrator": {
+    "machine_translated": true,
+    "translation": "Администраторыг тохируулах"
+  },
+  "Set to 0 to use the system default MTU": {
+    "machine_translated": true,
+    "translation": "Системийн өгөгдмөл MTU-г ашиглахын тулд 0 болгож тохируулна уу"
+  },
+  "Set up local administrator": {
+    "machine_translated": true,
+    "translation": "Орон нутгийн администраторыг тохируулна уу"
+  },
+  "Set up two-factor authentication": {
+    "machine_translated": true,
+    "translation": "Хоёр хүчин зүйлийн баталгаажуулалтыг тохируулна уу"
+  },
+  "Settings Saved": {
+    "machine_translated": true,
+    "translation": "Тохиргоог хадгалсан"
+  },
+  "Shut down the TrueNAS system.\n\nYou will be prompted to enter a reason for the shutdown\nbefore the system powers off.\n\nAll active sessions and shares will be interrupted.": {
+    "machine_translated": true,
+    "translation": "TrueNAS системийг унтраа.\n\nУнтраах шалтгааныг оруулахыг танаас хүсэх болно\nсистем унтрахаас өмнө.\n\nБүх идэвхтэй сесс болон хувьцаанууд тасалдана."
+  },
+  "Shut down the system?\n\nReason: {r}": {
+    "machine_translated": true,
+    "translation": "Системийг унтраах уу?\n\nШалтгаан: {r}"
+  },
+  "Shutdown": {
+    "machine_translated": true,
+    "translation": "Унтраах"
+  },
+  "Shutdown initiated. The system is powering off.": {
+    "machine_translated": true,
+    "translation": "Унтраах эхлэлийг тавьсан. Систем унтарч байна."
+  },
+  "Shutting Down": {
+    "machine_translated": true,
+    "translation": "Унтраах"
+  },
+  "Specify a bare IP address (no prefix length)": {
+    "machine_translated": true,
+    "translation": "Нүцгэн IP хаягийг зааж өгөх (уртгал урт байхгүй)"
+  },
+  "Startup": {
+    "machine_translated": true,
+    "translation": "Эхлэл"
+  },
+  "Startup view": {
+    "machine_translated": true,
+    "translation": "Эхлэх харагдац"
+  },
+  "Static Routes": {
+    "machine_translated": true,
+    "translation": "Статик маршрутууд"
+  },
+  "Static routes": {
+    "machine_translated": true,
+    "translation": "Статик замууд"
+  },
+  "Success": {
+    "machine_translated": true,
+    "translation": "Амжилт"
+  },
+  "System Information": {
+    "machine_translated": true,
+    "translation": "Системийн мэдээлэл"
+  },
+  "TUI preferences saved.\nTheme and locale changes take effect immediately.": {
+    "machine_translated": true,
+    "translation": "TUI тохиргоог хадгалсан.\nЗагвар болон хэлний өөрчлөлтүүд шууд хүчин төгөлдөр болно."
+  },
+  "Tab/↑↓: navigate   Enter: confirm   Esc: cancel": {
+    "machine_translated": true,
+    "translation": "Tab/↑↓: чиглүүлэх Enter: баталгаажуулах Esc: цуцлах"
+  },
+  "Text UI settings": {
+    "machine_translated": true,
+    "translation": "UI тохиргоог бичнэ үү"
+  },
+  "Theme": {
+    "machine_translated": true,
+    "translation": "Сэдэв"
+  },
+  "This Node IPs": {
+    "machine_translated": true,
+    "translation": "Энэ зангилааны IP"
+  },
+  "This will ERASE all configuration and reset to defaults.\nAre you absolutely sure?": {
+    "machine_translated": true,
+    "translation": "Энэ нь бүх тохиргоог АРИЛГАЖ, өгөгдмөл рүү буцаах болно.\nТа үнэхээр итгэлтэй байна уу?"
+  },
+  "Time format": {
+    "machine_translated": true,
+    "translation": "Цагийн формат"
+  },
+  "Timezone": {
+    "machine_translated": true,
+    "translation": "Цагийн бүс"
+  },
+  "Two-factor authentication has been disabled.": {
+    "machine_translated": true,
+    "translation": "Хоёр хүчин зүйлийн баталгаажуулалтыг идэвхгүй болгосон."
+  },
+  "Type RESET to confirm (case-sensitive):": {
+    "machine_translated": true,
+    "translation": "Баталгаажуулахын тулд RESET гэж бичнэ үү (том жижиг үсгээр):"
+  },
+  "Unavailable": {
+    "machine_translated": true,
+    "translation": "Боломжгүй"
+  },
+  "Uptime": {
+    "machine_translated": true,
+    "translation": "Ажиллах хугацаа"
+  },
+  "VLAN Settings": {
+    "machine_translated": true,
+    "translation": "VLAN тохиргоо"
+  },
+  "VLAN Tag": {
+    "machine_translated": true,
+    "translation": "VLAN шошго"
+  },
+  "Version": {
+    "machine_translated": true,
+    "translation": "Хувилбар"
+  },
+  "View and edit network interface configuration.\n\n  • Enable/disable DHCP and IPv6 auto-configuration\n  • Add or remove static IP aliases\n  • Set MTU, VLAN tag, bridge members, LAG ports, and more\n  • Apply changes (with automatic rollback safety)\n  • Persist changes once the network is confirmed working\n\nPress Enter to select an interface to edit.\nPress [n] to create a new interface, [d] to delete.\nAfter editing, use [a] to Apply and [p] to Persist.": {
+    "machine_translated": true,
+    "translation": "Сүлжээний интерфейсийн тохиргоог харах, засах.\n\n  • DHCP болон IPv6 автомат тохиргоог идэвхжүүлэх/идэвхгүй болгох\n  • Статик IP нэр нэмэх эсвэл устгах\n  • MTU, VLAN шошго, гүүрний гишүүд, LAG портууд болон бусад зүйлийг тохируулна уу\n  • Өөрчлөлтийг хэрэгжүүлэх (автоматаар буцаах аюулгүй байдалтай)\n  • Сүлжээ ажиллаж байгаа эсэхийг баталгаажуулсны дараа өөрчлөлтүүдийг үргэлжлүүлнэ\n\nEnter дарж засварлах интерфэйсийг сонгоно уу.\nШинэ интерфэйс үүсгэхийн тулд [n], устгахын тулд [d] товчийг дарна уу.\nЗассаны дараа Хэрэглэхийн тулд [a], Үргэлжлүүлэхийн тулд [p] товчийг ашиглана уу."
+  },
+  "View your account information and manage credentials.\n\n  • View username, UID, roles, and 2FA status\n  • Change your password\n  • Generate a one-time password for single-use login\n  • Set up or renew two-factor authentication\n\nPassword changes take effect immediately.\nOne-time passwords expire after a single login.": {
+    "machine_translated": true,
+    "translation": "Бүртгэлийнхээ мэдээллийг харж, итгэмжлэлээ удирдана уу.\n\n  • Хэрэглэгчийн нэр, UID, үүрэг, 2FA статусыг харах\n  • Нууц үгээ солино уу\n  • Нэг удаагийн нэвтрэлтэнд нэг удаагийн нууц үг үүсгэх\n  • Хоёр хүчин зүйлийн баталгаажуулалтыг тохируулах эсвэл шинэчлэх\n\nНууц үгийн өөрчлөлт нэн даруй хүчин төгөлдөр болно.\nНэг удаагийн нууц үгийн хугацаа нэг удаа нэвтэрсний дараа дуусна."
+  },
+  "Virtual IPs": {
+    "machine_translated": true,
+    "translation": "Виртуал IP"
+  },
+  "WARNING: You are logged in as root!": {
+    "machine_translated": true,
+    "translation": "АНХААРУУЛГА: Та root-ээр нэвтэрсэн байна!"
+  },
+  "Web UI Authentication Method": {
+    "machine_translated": true,
+    "translation": "Вэб UI баталгаажуулалтын арга"
+  },
+  "Without it you may be locked out of this system.": {
+    "machine_translated": true,
+    "translation": "Үүнгүйгээр та энэ системээс хаагдаж магадгүй."
+  },
+  "Xmit Hash Policy": {
+    "machine_translated": true,
+    "translation": "Xmit хэш бодлого"
+  },
+  "Yes": {
+    "machine_translated": true,
+    "translation": "Тиймээ"
+  },
+  "Yes, reset": {
+    "machine_translated": true,
+    "translation": "Тийм, дахин тохируулна уу"
+  },
+  "[↑↓] Navigate  [Enter] Edit  [a] Add  [d] Delete  [q] Back": {
+    "machine_translated": true,
+    "translation": "[↑↓] Чиглүүлэх [Enter] Засварлах [a] Нэмэх [d] Устгах [q] Буцах"
+  },
+  "[↑↓] Navigate  [Enter] Edit  [n] New  [d] Delete  [a] Apply  [p] Persist  [q] Back": {
+    "machine_translated": true,
+    "translation": "[↑↓] Навигац хийх [Enter] Засах [n] Шинэ [d] Устгах [a] Хэрэглэх [p] Үргэлжлүүлэх [q] Буцах"
+  },
+  "[↑↓] Select  [Enter] Edit  [a] Add  [d] Delete  [Esc] Done": {
+    "machine_translated": true,
+    "translation": "[↑↓] Сонгох [Enter] Засах [a] Нэмэх [d] Устгах [Esc] Дууссан"
+  },
+  "midcli is not available on this system.": {
+    "machine_translated": true,
+    "translation": "midcli энэ систем дээр байхгүй."
+  },
+  "↑↓ Navigate  Enter Select  Esc Cancel": {
+    "machine_translated": true,
+    "translation": "↑↓ Enter-г сонгох Esc Cancel-г сонгоно"
+  }
+}

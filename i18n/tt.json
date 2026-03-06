@@ -1,0 +1,866 @@
+{
+  " (no QR tool found)": {
+    "machine_translated": true,
+    "translation": "(QR коралы табылмады)"
+  },
+  " My Account – {u} ": {
+    "machine_translated": true,
+    "translation": "Минем хисап - {u}"
+  },
+  " Press Enter to continue": {
+    "machine_translated": true,
+    "translation": "Дәвам итәр өчен Enter төймәсенә басыгыз"
+  },
+  " Two-Factor Authentication Setup ": {
+    "machine_translated": true,
+    "translation": "Ике факторлы аутентификация көйләү"
+  },
+  "(Google Authenticator, Authy, etc.) before navigating away.": {
+    "machine_translated": true,
+    "translation": "(Google Authenticator, Authy һ.б.) читкә киткәнче."
+  },
+  "(no addresses)": {
+    "machine_translated": true,
+    "translation": "(адреслары юк)"
+  },
+  "(none)": {
+    "machine_translated": true,
+    "translation": "(юк)"
+  },
+  "Access: Read-only": {
+    "machine_translated": true,
+    "translation": "Рөхсәт: Уку өчен генә"
+  },
+  "Access: Read/Write": {
+    "machine_translated": true,
+    "translation": "Рөхсәт: укыгыз / языгыз"
+  },
+  "Actions:": {
+    "machine_translated": true,
+    "translation": "Эшләр:"
+  },
+  "Add Static Route": {
+    "machine_translated": true,
+    "translation": "Статик маршрут өстәгез"
+  },
+  "Address": {
+    "machine_translated": true,
+    "translation": "Адрес"
+  },
+  "Administrative user (admin)  [recommended]": {
+    "machine_translated": true,
+    "translation": "Административ кулланучы (администратор) [тәкъдим ителә]"
+  },
+  "Alias must be in CIDR notation (e.g. 192.168.1.1/24): {e}": {
+    "machine_translated": true,
+    "translation": "Алия CIDR язмасында булырга тиеш (мәс. 192.168.1.1/24): {e}"
+  },
+  "Aliases (CIDR)": {
+    "machine_translated": true,
+    "translation": "Алиалар (CIDR)"
+  },
+  "Appearance": {
+    "machine_translated": true,
+    "translation": "Күренеш"
+  },
+  "Applied": {
+    "machine_translated": true,
+    "translation": "Кулланыла"
+  },
+  "Auto-refreshes every {n}s  [r] force refresh": {
+    "machine_translated": true,
+    "translation": "Everyәрбер көчне автомат рәвештә яңарта"
+  },
+  "Behaviour": {
+    "machine_translated": true,
+    "translation": "Тәртип"
+  },
+  "Bridge Settings": {
+    "machine_translated": true,
+    "translation": "Күпер көйләүләре"
+  },
+  "CPU": {
+    "machine_translated": true,
+    "translation": "Uзәк эшкәрткеч җайланма"
+  },
+  "Cancel": {
+    "machine_translated": true,
+    "translation": "Баш тарту"
+  },
+  "Cancelled": {
+    "machine_translated": true,
+    "translation": "Беркетелде"
+  },
+  "Cannot Change Password": {
+    "machine_translated": true,
+    "translation": "Серсүзне үзгәртә алмый"
+  },
+  "Change Password": {
+    "machine_translated": true,
+    "translation": "Серсүзне үзгәртү"
+  },
+  "Change local administrator password": {
+    "machine_translated": true,
+    "translation": "Localирле администратор серсүзен үзгәртү"
+  },
+  "Change password": {
+    "machine_translated": true,
+    "translation": "Серсүзне үзгәртү"
+  },
+  "Change the password for a local administrator account.\n\nIf no local administrator has been configured yet, this\noption lets you set up an initial admin or root account.\n\nNote: changing a password will disable two-factor\nauthentication for that account.": {
+    "machine_translated": true,
+    "translation": "Localирле администратор счеты өчен серсүзне үзгәртегез.\n\nӘгәр дә җирле администратор конфигурацияләнмәгән булса, бу\nвариант сезгә башлангыч администратор яки тамыр счетын урнаштырырга мөмкинлек бирә.\n\nИскәрмә: серсүзне үзгәртү ике факторны сүндерәчәк\nбу хисап өчен аутентификация."
+  },
+  "Changes applied. Network will roll back in ~60 seconds\nunless you press [p] to persist them.": {
+    "machine_translated": true,
+    "translation": "Changзгәрешләр кулланылды. Челтәр ~ 60 секунд эчендә кире кайтачак\nдәвам итәр өчен [р] басыгыз."
+  },
+  "Changes applied. Press [p] to persist or they roll back in {n}s.": {
+    "machine_translated": true,
+    "translation": "Changзгәрешләр кулланылды. Туктау өчен [р] басыгыз, яисә алар кире әйләнеп кайталар."
+  },
+  "Configuration reset cancelled.": {
+    "machine_translated": true,
+    "translation": "Конфигурацияне яңадан торгызу юкка чыгарылды."
+  },
+  "Configuration reset initiated.\nThe system will reboot with default settings.": {
+    "machine_translated": true,
+    "translation": "Конфигурацияне яңадан башлау.\nСистема килешү көйләнмәләре белән яңадан башланачак."
+  },
+  "Configure global network settings:\n\n  • Hostname and domain\n  • Default IPv4 and IPv6 gateways\n  • DNS nameservers (up to three)\n\nChanges take effect immediately after saving.": {
+    "machine_translated": true,
+    "translation": "Глобаль челтәр көйләнмәләрен конфигурацияләгез:\n\n  • Хост исеме һәм домен\n  Килешү IPv4 һәм IPv6 шлюзлары\n  • DNS исемнәрен үзгәртүчеләр (өчкә кадәр)\n\nSavingзгәрешләр сакланганнан соң ук көченә керә."
+  },
+  "Configure network interfaces": {
+    "machine_translated": true,
+    "translation": "Челтәр интерфейсларын конфигурацияләгез"
+  },
+  "Configure network settings": {
+    "machine_translated": true,
+    "translation": "Челтәр көйләнмәләрен конфигурацияләгез"
+  },
+  "Configure networking for this TrueNAS system.\n\n  • Interface settings  – DHCP, IP aliases, MTU\n  • Network settings    – Hostname, domain, gateways, DNS\n  • Static routes       – Add and remove static routes\n\nChanges to interfaces require a commit step\nbefore they take effect.": {
+    "machine_translated": true,
+    "translation": "Бу TrueNAS системасы өчен челтәрне конфигурацияләгез.\n\n  • Интерфейс көйләүләре - DHCP, IP псевдонимнары, MTU\n  Челтәр көйләүләре - Хост исеме, домен, шлюзлар, DNS\n  • Статик маршрутлар - статик маршрутларны өстәү һәм бетерү\n\nИнтерфейсларга үзгәрешләр кертү адымын таләп итә\nкөченә кергәнче."
+  },
+  "Configure static routes": {
+    "machine_translated": true,
+    "translation": "Статик маршрутларны конфигурацияләгез"
+  },
+  "Confirm Delete": {
+    "machine_translated": true,
+    "translation": "Бетерүне раслагыз"
+  },
+  "Confirm Reboot": {
+    "machine_translated": true,
+    "translation": "Яңартуны раслагыз"
+  },
+  "Confirm Reset": {
+    "machine_translated": true,
+    "translation": "Яңартуны раслагыз"
+  },
+  "Confirm Shutdown": {
+    "machine_translated": true,
+    "translation": "Сүндерүне раслагыз"
+  },
+  "Confirm dangerous actions": {
+    "machine_translated": true,
+    "translation": "Куркыныч гамәлләрне раслагыз"
+  },
+  "Could not load LAG port choices:\n": {
+    "machine_translated": true,
+    "translation": "LAG порт сайлауларын йөкләп булмады:"
+  },
+  "Could not load VLAN parent choices:\n": {
+    "machine_translated": true,
+    "translation": "VLAN ата-аналар сайлауларын йөкләп булмады:"
+  },
+  "Could not load bridge member choices:\n": {
+    "machine_translated": true,
+    "translation": "Күпер әгъзалары сайлауларын йөкләп булмады:"
+  },
+  "Create one-time password": {
+    "machine_translated": true,
+    "translation": "Бер тапкыр серсүз ясагыз"
+  },
+  "Create one-time password for \"{u}\"": {
+    "machine_translated": true,
+    "translation": "\"{U}\" өчен бер тапкыр серсүз ясагыз"
+  },
+  "Created": {
+    "machine_translated": true,
+    "translation": "Барлыкка китерелгән"
+  },
+  "Current password:": {
+    "machine_translated": true,
+    "translation": "Хәзерге серсүз:"
+  },
+  "Customise the TrueNAS TUI for your user account.\n\n  • Theme: default (blue), dark (green), high-contrast\n  • Startup view: system info pane or menu description\n  • Confirm dangerous actions (reboot, shutdown, reset)\n  • Language and date/time display formats\n\nSettings are saved to your account and persist across\nsessions on any client.": {
+    "machine_translated": true,
+    "translation": "Кулланучының счеты өчен TrueNAS TUI көйләгез.\n\n  • Тема: килешү (зәңгәр), кара (яшел), югары контраст\n  • Стартап күренеше: система мәгълүмат тактасы яки меню тасвирламасы\n  • Куркыныч гамәлләрне раслагыз (яңадан башлау, ябу, яңадан урнаштыру)\n  • Тел һәм дата / вакыт күрсәтү форматлары\n\nКөйләүләр сезнең хисапка саклана һәм дәвам итә\nтеләсә нинди клиент буенча сессияләр."
+  },
+  "Date format": {
+    "machine_translated": true,
+    "translation": "Дата форматы"
+  },
+  "Delete Route": {
+    "machine_translated": true,
+    "translation": "Маршрутны бетерү"
+  },
+  "Delete interface {name}?": {
+    "machine_translated": true,
+    "translation": "Интерфейсны бетерегез {исем}?"
+  },
+  "Delete static route {dest}?": {
+    "machine_translated": true,
+    "translation": "Статик маршрутны бетерү {dest}?"
+  },
+  "Deleted": {
+    "machine_translated": true,
+    "translation": "Бетерелгән"
+  },
+  "Description": {
+    "machine_translated": true,
+    "translation": "Тасвирлау"
+  },
+  "Destination (CIDR)": {
+    "machine_translated": true,
+    "translation": "Максат (CIDR)"
+  },
+  "Disable Two-Factor Authentication": {
+    "machine_translated": true,
+    "translation": "Ике факторлы аутентификацияне сүндерегез"
+  },
+  "Disable two-factor authentication": {
+    "machine_translated": true,
+    "translation": "Ике факторлы аутентификацияне сүндерегез"
+  },
+  "Disable two-factor authentication for {u}?\nYou will no longer need an OTP to log in.": {
+    "machine_translated": true,
+    "translation": "{U for өчен ике факторлы аутентификацияне сүндерегез?\nСезгә керү өчен OTP кирәк булмаячак."
+  },
+  "Disabled": {
+    "machine_translated": true,
+    "translation": "Инвалид"
+  },
+  "Domain": {
+    "machine_translated": true,
+    "translation": "Домен"
+  },
+  "Edit Static Route": {
+    "machine_translated": true,
+    "translation": "Статик маршрутны үзгәртү"
+  },
+  "Enabled": {
+    "machine_translated": true,
+    "translation": "Эшләтелгән"
+  },
+  "Enter: confirm  Esc: cancel": {
+    "machine_translated": true,
+    "translation": "Керегез: Esc раслагыз: бетерегез"
+  },
+  "Erase all TrueNAS configuration and reset to factory\ndefaults.\n\nWARNING: This is irreversible. All settings including\nnetwork configuration, shares, users, and storage pools\nwill be erased.\n\nYou will be prompted to confirm twice before proceeding.": {
+    "machine_translated": true,
+    "translation": "Барлык TrueNAS конфигурациясен бетерегез һәм заводка урнаштырыгыз\nКилешү.\n\nКисәтү: Бу кире кайтарылмый. Барлык көйләүләр дә кертеп\nчелтәр конфигурациясе, бүлешүләр, кулланучылар, саклау бассейннары\nбетереләчәк.\n\nАлга таба сез ике тапкыр расларга сорарсыз."
+  },
+  "Error": {
+    "machine_translated": true,
+    "translation": "Хата"
+  },
+  "Failover Critical": {
+    "machine_translated": true,
+    "translation": "Тәнкыйть"
+  },
+  "Failover Group": {
+    "machine_translated": true,
+    "translation": "Уңайсызлык төркеме"
+  },
+  "Failover Settings": {
+    "machine_translated": true,
+    "translation": "Уңайсыз көйләүләр"
+  },
+  "Gateway": {
+    "machine_translated": true,
+    "translation": "Шлюз"
+  },
+  "Generate a single-use temporary password for the\ncurrently authenticated user.\n\nThe one-time password can be used to log in once\nand is invalidated immediately after use.": {
+    "machine_translated": true,
+    "translation": "Бер тапкыр кулланылган вакытлы серсүз ясагыз\nхәзерге вакытта расланган кулланучы.\n\nБер тапкыр серсүзне бер тапкыр керү өчен кулланырга мөмкин\nһәм кулланганнан соң шунда ук юкка чыга."
+  },
+  "Generate one-time password": {
+    "machine_translated": true,
+    "translation": "Бер тапкыр серсүз ясагыз"
+  },
+  "Generating a new 2FA secret will invalidate your current\nauthenticator app configuration. Continue?": {
+    "machine_translated": true,
+    "translation": "Яңа 2FA серен булдыру сезнең токны юкка чыгарачак\nаутентикатор кушымтасы конфигурациясе. Дәвам итегез?"
+  },
+  "Hostname": {
+    "machine_translated": true,
+    "translation": "Хост исеме"
+  },
+  "IMPORTANT: Scan this QR code with your authenticator app": {
+    "machine_translated": true,
+    "translation": "МPPим: Бу QR кодны аутентификатор кушымтасы белән сканерлагыз"
+  },
+  "IP Address": {
+    "machine_translated": true,
+    "translation": "IP адрес"
+  },
+  "IPv4 DHCP": {
+    "machine_translated": true,
+    "translation": "IPv4 DHCP"
+  },
+  "IPv4 Gateway": {
+    "machine_translated": true,
+    "translation": "IPv4 шлюз"
+  },
+  "IPv6 Auto": {
+    "machine_translated": true,
+    "translation": "IPv6 Авто"
+  },
+  "IPv6 Gateway": {
+    "machine_translated": true,
+    "translation": "IPv6 шлюз"
+  },
+  "Interface": {
+    "machine_translated": true,
+    "translation": "Интерфейс"
+  },
+  "Interface Settings": {
+    "machine_translated": true,
+    "translation": "Интерфейс көйләүләре"
+  },
+  "Interface Type": {
+    "machine_translated": true,
+    "translation": "Интерфейс тибы"
+  },
+  "Interface name is required.": {
+    "machine_translated": true,
+    "translation": "Интерфейс исеме кирәк."
+  },
+  "Interface settings": {
+    "machine_translated": true,
+    "translation": "Интерфейс көйләүләре"
+  },
+  "Interface {name} created.\nUse [a] from the list to apply changes.": {
+    "machine_translated": true,
+    "translation": "Интерфейс {исем} ясалган.\nChangesзгәрешләр кертү өчен исемлектән [a] кулланыгыз."
+  },
+  "Interface {name} deleted.\nUse [a] from the list to apply changes.": {
+    "machine_translated": true,
+    "translation": "Интерфейс {исем} бетерелде.\nChangesзгәрешләр кертү өчен исемлектән [a] кулланыгыз."
+  },
+  "Interface {name} updated.\nUse [a] from the list to apply changes.": {
+    "machine_translated": true,
+    "translation": "Интерфейс {исем} яңартылды.\nChangesзгәрешләр кертү өчен исемлектән [a] кулланыгыз."
+  },
+  "Invalid IP address in alias: {e}": {
+    "machine_translated": true,
+    "translation": "Псевдонимда дөрес булмаган IP адрес: {e}"
+  },
+  "Invalid IP address: {s}": {
+    "machine_translated": true,
+    "translation": "Яраксыз IP адрес: {s}"
+  },
+  "Invalid prefix length in alias: {e}": {
+    "machine_translated": true,
+    "translation": "Псевдонимда дөрес булмаган префикс озынлыгы: {e}"
+  },
+  "LACPDU Rate": {
+    "machine_translated": true,
+    "translation": "LACPDU ставкасы"
+  },
+  "Language": {
+    "machine_translated": true,
+    "translation": "Тел"
+  },
+  "Link Aggregation Settings": {
+    "machine_translated": true,
+    "translation": "Агрегат көйләүләрен бәйләү"
+  },
+  "Load Average": {
+    "machine_translated": true,
+    "translation": "Уртача йөк"
+  },
+  "Local administrator {u} set up successfully.": {
+    "machine_translated": true,
+    "translation": "Localирле администратор уңышлы урнаштырылды."
+  },
+  "Locale": {
+    "machine_translated": true,
+    "translation": "Район"
+  },
+  "MTU": {
+    "machine_translated": true,
+    "translation": "MTU"
+  },
+  "Manage static network routes.\n\n  • View existing static routes\n  • Add new routes (destination, gateway, description)\n  • Edit or delete existing routes\n\nKeys: Enter = Edit,  a = Add,  d = Delete,  q = Back": {
+    "machine_translated": true,
+    "translation": "Статик челтәр маршрутлары белән идарә итү.\n\n  • Статик маршрутларны карау\n  • Яңа маршрутлар өстәгез (юнәлеш, шлюз, тасвирлау)\n  • булган маршрутларны үзгәртү яки бетерү\n\nАчкычлар: Керү = Редакцияләү, а = Кушу, d = Бетерү, q = Арт"
+  },
+  "Manufacturer": {
+    "machine_translated": true,
+    "translation": "Manufactитештерүче"
+  },
+  "Members": {
+    "machine_translated": true,
+    "translation": "Әгъзалар"
+  },
+  "Memory": {
+    "machine_translated": true,
+    "translation": "Хәтер"
+  },
+  "My account": {
+    "machine_translated": true,
+    "translation": "Минем хисап"
+  },
+  "Name": {
+    "machine_translated": true,
+    "translation": "Исем"
+  },
+  "Nameserver 1": {
+    "machine_translated": true,
+    "translation": "1"
+  },
+  "Nameserver 2": {
+    "machine_translated": true,
+    "translation": "2"
+  },
+  "Nameserver 3": {
+    "machine_translated": true,
+    "translation": "3"
+  },
+  "Network": {
+    "machine_translated": true,
+    "translation": "Челтәр"
+  },
+  "Network Configuration": {
+    "machine_translated": true,
+    "translation": "Челтәр конфигурациясе"
+  },
+  "Network Interfaces": {
+    "machine_translated": true,
+    "translation": "Челтәр интерфейслары"
+  },
+  "Network changes persisted successfully.": {
+    "machine_translated": true,
+    "translation": "Челтәр үзгәреше уңышлы дәвам итте."
+  },
+  "Network settings": {
+    "machine_translated": true,
+    "translation": "Челтәр көйләүләре"
+  },
+  "Network settings updated successfully.": {
+    "machine_translated": true,
+    "translation": "Челтәр көйләүләре уңышлы яңартылды."
+  },
+  "New Interface – Step 1": {
+    "machine_translated": true,
+    "translation": "Яңа интерфейс - 1 адым"
+  },
+  "New Interface – Step 2": {
+    "machine_translated": true,
+    "translation": "Яңа интерфейс - 2 адым"
+  },
+  "New password for {u}:": {
+    "machine_translated": true,
+    "translation": "{U for өчен яңа серсүз:"
+  },
+  "No": {
+    "machine_translated": true,
+    "translation": ".К"
+  },
+  "No local administrators found.": {
+    "machine_translated": true,
+    "translation": "Localирле администраторлар табылмады."
+  },
+  "No provisioning URI returned from server.": {
+    "machine_translated": true,
+    "translation": "Сервердан URI тәэмин итү юк."
+  },
+  "No static routes configured.": {
+    "machine_translated": true,
+    "translation": "Статик маршрутлар конфигурацияләнмәгән."
+  },
+  "No terminal QR code tool was found on this system.\n\nInstall \"qr\" or \"qrcode-terminal\" to use this feature.": {
+    "machine_translated": true,
+    "translation": "Бу системада QR код терминалы табылмады.\n\nБу функцияне куллану өчен \"qr\" яки \"qrcode-терминал\" урнаштырыгыз."
+  },
+  "Not Found": {
+    "machine_translated": true,
+    "translation": "Табылмады"
+  },
+  "Not a valid member: {v}": {
+    "machine_translated": true,
+    "translation": "Дөрес әгъза түгел: {v}"
+  },
+  "Not a valid port: {v}": {
+    "machine_translated": true,
+    "translation": "Дөрес порт түгел: {v}"
+  },
+  "One-Time Password": {
+    "machine_translated": true,
+    "translation": "Бер тапкыр серсүз"
+  },
+  "One-time password for \"{u}\":\n\n  {otp}\n\nThis password can only be used once.\nDialog closes automatically after {t} seconds.": {
+    "machine_translated": true,
+    "translation": "\"{U}\" өчен бер тапкыр серсүз:\n\n  {otp}\n\nБу серсүзне бер генә тапкыр кулланырга мөмкин.\nДиалог {t} секундтан соң автоматик рәвештә ябыла."
+  },
+  "Open Linux Shell": {
+    "machine_translated": true,
+    "translation": "Linux кабыгын ачу"
+  },
+  "Open TrueNAS CLI Shell": {
+    "machine_translated": true,
+    "translation": "TrueNAS CLI кабыгын ачу"
+  },
+  "Open a Linux shell (bash/zsh).\n\nSuspends the TUI and opens your login shell.\nType \"exit\" or press Ctrl+D to return to the TUI.": {
+    "machine_translated": true,
+    "translation": "Linux кабыгын ачыгыз (bash / zsh).\n\nTUIны туктата һәм сезнең логин кабыгыгызны ача.\nTUI-ка кире кайту өчен \"чыгу\" языгыз яки Ctrl + D басыгыз."
+  },
+  "Open the TrueNAS interactive CLI shell (midcli).\n\nReplaces the TUI with the full midcli command-line\ninterface. The TUI restarts after you exit midcli.": {
+    "machine_translated": true,
+    "translation": "TrueNAS интерактив CLI кабыгын ачыгыз (midcli).\n\nTUI-ны тулы midcli командование белән алыштыра\nинтерфейс. TUI midcli чыкканнан соң яңадан башлана."
+  },
+  "Other Settings": {
+    "machine_translated": true,
+    "translation": "Башка көйләүләр"
+  },
+  "Parent Interface": {
+    "machine_translated": true,
+    "translation": "Ата-аналар интерфейсы"
+  },
+  "Password changed successfully.": {
+    "machine_translated": true,
+    "translation": "Серсүз уңышлы үзгәрде."
+  },
+  "Password changes are only supported for local accounts.\nThis account is managed by an external directory service.": {
+    "machine_translated": true,
+    "translation": "Серсүз үзгәртүләре җирле счетлар өчен генә кулланыла.\nБу хисап тышкы каталог хезмәте белән идарә ителә."
+  },
+  "Password for {u} changed successfully.\nTwo-factor authentication has been disabled.": {
+    "machine_translated": true,
+    "translation": "{U for серсүз уңышлы үзгәрде.\nИке факторлы аутентификация сүндерелгән."
+  },
+  "Password for {u}:": {
+    "machine_translated": true,
+    "translation": "{U for өчен серсүз:"
+  },
+  "Password must be at least {n} characters.": {
+    "machine_translated": true,
+    "translation": "Серсүз ким дигәндә {n} символ булырга тиеш."
+  },
+  "Passwords do not match.": {
+    "machine_translated": true,
+    "translation": "Серсүзләр туры килми."
+  },
+  "Pending changes. Press [a] to apply.": {
+    "machine_translated": true,
+    "translation": "Көтелгән үзгәрешләр. Куллану өчен [a] басыгыз."
+  },
+  "Persisted": {
+    "machine_translated": true,
+    "translation": "Тукта"
+  },
+  "Please enter the reason for the system reboot\n(leave blank to cancel):": {
+    "machine_translated": true,
+    "translation": "Зинһар, системаны яңадан башлау сәбәбен кертегез\n(юкка чыгару өчен буш калдырыгыз):"
+  },
+  "Please enter the reason for the system shutdown\n(leave blank to cancel):": {
+    "machine_translated": true,
+    "translation": "Зинһар, системаның ябылу сәбәбен кертегез\n(юкка чыгару өчен буш калдырыгыз):"
+  },
+  "Port": {
+    "machine_translated": true,
+    "translation": "Порт"
+  },
+  "Ports": {
+    "machine_translated": true,
+    "translation": "Портлар"
+  },
+  "Power Control": {
+    "machine_translated": true,
+    "translation": "Энергия белән идарә итү"
+  },
+  "Prefix length out of range in alias: {e}": {
+    "machine_translated": true,
+    "translation": "Префиксның озынлыгы псевдонимда: {e}"
+  },
+  "Priority (PCP)": {
+    "machine_translated": true,
+    "translation": "Приоритет (PCP)"
+  },
+  "Product": {
+    "machine_translated": true,
+    "translation": "Продукция"
+  },
+  "Protocol": {
+    "machine_translated": true,
+    "translation": "Протокол"
+  },
+  "Reboot": {
+    "machine_translated": true,
+    "translation": "Яңарту"
+  },
+  "Reboot initiated. The system is shutting down.": {
+    "machine_translated": true,
+    "translation": "Яңарту башланды. Система ябыла."
+  },
+  "Reboot or shut down the TrueNAS system.\n\n  • Reboot   – restart the system\n  • Shutdown – power off the system\n\nYou will be prompted for a reason and confirmation\nbefore any action is taken.": {
+    "machine_translated": true,
+    "translation": "TrueNAS системасын кабызыгыз яки ябыгыз.\n\n  • Яңарту - системаны яңадан эшләтеп җибәрү\n  • Сүндерү - системаны сүндерү\n\nСезгә сәбәп һәм раслау соралачак\nниндидер чара күрелгәнче."
+  },
+  "Reboot the TrueNAS system.\n\nYou will be prompted to enter a reason for the reboot\nbefore the system restarts.\n\nAll active sessions and shares will be interrupted.": {
+    "machine_translated": true,
+    "translation": "TrueNAS системасын кабызыгыз.\n\nСезгә яңадан башлау өчен сәбәп кертү соралачак\nсистема яңадан башланганчы.\n\nБарлык актив сессияләр һәм акцияләр өзеләчәк."
+  },
+  "Reboot the system?\n\nReason: {r}": {
+    "machine_translated": true,
+    "translation": "Системаны кабызыгыз?\n\nСәбәп: {r}"
+  },
+  "Reboot/Shutdown": {
+    "machine_translated": true,
+    "translation": "Яңарту / туктату"
+  },
+  "Rebooting": {
+    "machine_translated": true,
+    "translation": "Яңарту"
+  },
+  "Renew 2FA Secret": {
+    "machine_translated": true,
+    "translation": "2FA серен яңарту"
+  },
+  "Renew two-factor secret": {
+    "machine_translated": true,
+    "translation": "Ике факторлы серне яңарту"
+  },
+  "Reset": {
+    "machine_translated": true,
+    "translation": "Бетерү"
+  },
+  "Reset Configuration": {
+    "machine_translated": true,
+    "translation": "Конфигурацияне яңадан урнаштыру"
+  },
+  "Reset configuration to defaults": {
+    "machine_translated": true,
+    "translation": "Конфигурацияне килешү буенча кире кайтару"
+  },
+  "Retype new password:": {
+    "machine_translated": true,
+    "translation": "Яңа серсүзне яңадан языгыз:"
+  },
+  "Retype password for {u}:": {
+    "machine_translated": true,
+    "translation": "{U for өчен серсүзне яңадан языгыз:"
+  },
+  "Root user (not recommended)": {
+    "machine_translated": true,
+    "translation": "Тамыр кулланучы (тәкъдим ителми)"
+  },
+  "Save": {
+    "machine_translated": true,
+    "translation": "Саклагыз"
+  },
+  "Saved": {
+    "machine_translated": true,
+    "translation": "Сакланган"
+  },
+  "Secret key: {s}  (for manual entry)": {
+    "machine_translated": true,
+    "translation": "Серле ачкыч: {s} (кул белән керү өчен)"
+  },
+  "Select Administrator": {
+    "machine_translated": true,
+    "translation": "Администраторны сайлагыз"
+  },
+  "Serial": {
+    "machine_translated": true,
+    "translation": "Серия"
+  },
+  "Set Up Administrator": {
+    "machine_translated": true,
+    "translation": "Администратор куегыз"
+  },
+  "Set to 0 to use the system default MTU": {
+    "machine_translated": true,
+    "translation": "MTU системасын куллану өчен 0 итеп куегыз"
+  },
+  "Set up local administrator": {
+    "machine_translated": true,
+    "translation": "Localирле администратор куегыз"
+  },
+  "Set up two-factor authentication": {
+    "machine_translated": true,
+    "translation": "Ике факторлы аутентификацияне урнаштырыгыз"
+  },
+  "Settings Saved": {
+    "machine_translated": true,
+    "translation": "Көйләүләр сакланган"
+  },
+  "Shut down the TrueNAS system.\n\nYou will be prompted to enter a reason for the shutdown\nbefore the system powers off.\n\nAll active sessions and shares will be interrupted.": {
+    "machine_translated": true,
+    "translation": "TrueNAS системасын ябу.\n\nСезгә ябылуның сәбәбен кертү соралачак\nсистема сүнгәнче.\n\nБарлык актив сессияләр һәм акцияләр өзеләчәк."
+  },
+  "Shut down the system?\n\nReason: {r}": {
+    "machine_translated": true,
+    "translation": "Системаны ябу?\n\nСәбәп: {r}"
+  },
+  "Shutdown": {
+    "machine_translated": true,
+    "translation": "Сүндерү"
+  },
+  "Shutdown initiated. The system is powering off.": {
+    "machine_translated": true,
+    "translation": "Ябу башланды. Система сүнә."
+  },
+  "Shutting Down": {
+    "machine_translated": true,
+    "translation": "Сүндерү"
+  },
+  "Specify a bare IP address (no prefix length)": {
+    "machine_translated": true,
+    "translation": "Ялан IP адресын күрсәтегез (префикс озынлыгы юк)"
+  },
+  "Startup": {
+    "machine_translated": true,
+    "translation": "Стартап"
+  },
+  "Startup view": {
+    "machine_translated": true,
+    "translation": "Стартап күренеше"
+  },
+  "Static Routes": {
+    "machine_translated": true,
+    "translation": "Статик маршрутлар"
+  },
+  "Static routes": {
+    "machine_translated": true,
+    "translation": "Статик маршрутлар"
+  },
+  "Success": {
+    "machine_translated": true,
+    "translation": "Уңыш"
+  },
+  "System Information": {
+    "machine_translated": true,
+    "translation": "Система турында мәгълүмат"
+  },
+  "TUI preferences saved.\nTheme and locale changes take effect immediately.": {
+    "machine_translated": true,
+    "translation": "TUI өстенлекләре сакланган.\nТема һәм җирле үзгәрешләр шунда ук көченә керә."
+  },
+  "Tab/↑↓: navigate   Enter: confirm   Esc: cancel": {
+    "machine_translated": true,
+    "translation": "Tab / ↑↓: navigate Enter: раслагыз Esc: бетерү"
+  },
+  "Text UI settings": {
+    "machine_translated": true,
+    "translation": "UI көйләүләре"
+  },
+  "Theme": {
+    "machine_translated": true,
+    "translation": "Тема"
+  },
+  "This Node IPs": {
+    "machine_translated": true,
+    "translation": "Бу төен IP"
+  },
+  "This will ERASE all configuration and reset to defaults.\nAre you absolutely sure?": {
+    "machine_translated": true,
+    "translation": "Бу барлык конфигурацияләрне бетерәчәк һәм дефолтка урнаштырачак.\nСез моңа тулысынча ышанасызмы?"
+  },
+  "Time format": {
+    "machine_translated": true,
+    "translation": "Вакыт форматы"
+  },
+  "Timezone": {
+    "machine_translated": true,
+    "translation": "Вакыт зонасы"
+  },
+  "Two-factor authentication has been disabled.": {
+    "machine_translated": true,
+    "translation": "Ике факторлы аутентификация сүндерелгән."
+  },
+  "Type RESET to confirm (case-sensitive):": {
+    "machine_translated": true,
+    "translation": "Раслау өчен RESET языгыз (очракка сизгер):"
+  },
+  "Unavailable": {
+    "machine_translated": true,
+    "translation": "Мөмкин түгел"
+  },
+  "Uptime": {
+    "machine_translated": true,
+    "translation": "Эш вакыты"
+  },
+  "VLAN Settings": {
+    "machine_translated": true,
+    "translation": "VLAN көйләүләре"
+  },
+  "VLAN Tag": {
+    "machine_translated": true,
+    "translation": "VLAN Тэг"
+  },
+  "Version": {
+    "machine_translated": true,
+    "translation": "Вариант"
+  },
+  "View and edit network interface configuration.\n\n  • Enable/disable DHCP and IPv6 auto-configuration\n  • Add or remove static IP aliases\n  • Set MTU, VLAN tag, bridge members, LAG ports, and more\n  • Apply changes (with automatic rollback safety)\n  • Persist changes once the network is confirmed working\n\nPress Enter to select an interface to edit.\nPress [n] to create a new interface, [d] to delete.\nAfter editing, use [a] to Apply and [p] to Persist.": {
+    "machine_translated": true,
+    "translation": "Челтәр интерфейс конфигурациясен карау һәм үзгәртү.\n\n  • DHCP һәм IPv6 авто-конфигурациясен кушу / сүндерү\n  • Статик IP кушаматларын өстәү яки бетерү\n  • MTU, VLAN тегын, күпер әгъзаларын, LAG портларын һәм башкаларны куегыз\n  • changesзгәрешләр кулланыгыз (автоматик кире кайту куркынычсызлыгы белән)\n  Челтәр эшләгәнен раслагач, үзгәрешләрне дәвам итегез\n\nРедакцияләү өчен интерфейс сайлау өчен Enter төймәсенә басыгыз.\nЯңа интерфейс ясау өчен [n] басыгыз, бетерү өчен.\nРедакцияләгәннән соң, [a] куллану өчен һәм [p] куллану өчен кулланыгыз."
+  },
+  "View your account information and manage credentials.\n\n  • View username, UID, roles, and 2FA status\n  • Change your password\n  • Generate a one-time password for single-use login\n  • Set up or renew two-factor authentication\n\nPassword changes take effect immediately.\nOne-time passwords expire after a single login.": {
+    "machine_translated": true,
+    "translation": "Сезнең хисап мәгълүматыгызны карагыз һәм таныклыклар белән идарә итегез.\n\n  • Кулланучының исемен, UID, рольләрне, 2FA статусын карау\n  • Серсүзне үзгәртегез\n  • Бер тапкыр куллану өчен бер тапкыр серсүз ясагыз\n  • Ике факторлы аутентификацияне урнаштыру яки яңарту\n\nСерсүз үзгәртүләре шунда ук көченә керә.\nБер тапкыр кертелгән серсүзләр бер логиннан соң бетә."
+  },
+  "Virtual IPs": {
+    "machine_translated": true,
+    "translation": "Виртуаль IP"
+  },
+  "WARNING: You are logged in as root!": {
+    "machine_translated": true,
+    "translation": "Кисәтү: Сез тамыр булып кердегез!"
+  },
+  "Web UI Authentication Method": {
+    "machine_translated": true,
+    "translation": "Веб UI аутентификация ысулы"
+  },
+  "Without it you may be locked out of this system.": {
+    "machine_translated": true,
+    "translation": "Ансыз сез бу системадан бикләнергә мөмкин."
+  },
+  "Xmit Hash Policy": {
+    "machine_translated": true,
+    "translation": "Xmit Hash политикасы"
+  },
+  "Yes": {
+    "machine_translated": true,
+    "translation": "Әйе"
+  },
+  "Yes, reset": {
+    "machine_translated": true,
+    "translation": "Әйе, яңадан урнаштырыгыз"
+  },
+  "[↑↓] Navigate  [Enter] Edit  [a] Add  [d] Delete  [q] Back": {
+    "machine_translated": true,
+    "translation": "[↑↓] Навигация [Керү] Редакцияләү [a] Кушу [d] Бетерү [q] Артка"
+  },
+  "[↑↓] Navigate  [Enter] Edit  [n] New  [d] Delete  [a] Apply  [p] Persist  [q] Back": {
+    "machine_translated": true,
+    "translation": "[↑↓] Навигация [Керү] Редакцияләү [n] Яңа [г] Бетерү [а] Куллану [р] Туктау"
+  },
+  "[↑↓] Select  [Enter] Edit  [a] Add  [d] Delete  [Esc] Done": {
+    "machine_translated": true,
+    "translation": "[↑↓] Сайлагыз [Enter] Edit [a] Add [d] Delete [Esc] Done"
+  },
+  "midcli is not available on this system.": {
+    "machine_translated": true,
+    "translation": "midcli бу системада мөмкин түгел."
+  },
+  "↑↓ Navigate  Enter Select  Esc Cancel": {
+    "machine_translated": true,
+    "translation": "Enter Enter Navigate Enter Esc Cancel сайлагыз"
+  }
+}

@@ -1,0 +1,866 @@
+{
+  " (no QR tool found)": {
+    "machine_translated": true,
+    "translation": "(ไม่พบเครื่องมือ QR)"
+  },
+  " My Account – {u} ": {
+    "machine_translated": true,
+    "translation": "บัญชีของฉัน – {u}"
+  },
+  " Press Enter to continue": {
+    "machine_translated": true,
+    "translation": "กด Enter เพื่อดำเนินการต่อ"
+  },
+  " Two-Factor Authentication Setup ": {
+    "machine_translated": true,
+    "translation": "การตั้งค่าการรับรองความถูกต้องด้วยสองปัจจัย"
+  },
+  "(Google Authenticator, Authy, etc.) before navigating away.": {
+    "machine_translated": true,
+    "translation": "(Google Authenticator, Authy ฯลฯ) ก่อนออกเดินทาง"
+  },
+  "(no addresses)": {
+    "machine_translated": true,
+    "translation": "(ไม่มีที่อยู่)"
+  },
+  "(none)": {
+    "machine_translated": true,
+    "translation": "(ไม่มี)"
+  },
+  "Access: Read-only": {
+    "machine_translated": true,
+    "translation": "การเข้าถึง: อ่านอย่างเดียว"
+  },
+  "Access: Read/Write": {
+    "machine_translated": true,
+    "translation": "การเข้าถึง: อ่าน/เขียน"
+  },
+  "Actions:": {
+    "machine_translated": true,
+    "translation": "การดำเนินการ:"
+  },
+  "Add Static Route": {
+    "machine_translated": true,
+    "translation": "เพิ่มเส้นทางแบบคงที่"
+  },
+  "Address": {
+    "machine_translated": true,
+    "translation": "ที่อยู่"
+  },
+  "Administrative user (admin)  [recommended]": {
+    "machine_translated": true,
+    "translation": "ผู้ใช้ระดับผู้ดูแลระบบ (ผู้ดูแลระบบ) [แนะนำ]"
+  },
+  "Alias must be in CIDR notation (e.g. 192.168.1.1/24): {e}": {
+    "machine_translated": true,
+    "translation": "นามแฝงต้องอยู่ในรูปแบบ CIDR (เช่น 192.168.1.1/24): {e}"
+  },
+  "Aliases (CIDR)": {
+    "machine_translated": true,
+    "translation": "นามแฝง (CIDR)"
+  },
+  "Appearance": {
+    "machine_translated": true,
+    "translation": "รูปร่าง"
+  },
+  "Applied": {
+    "machine_translated": true,
+    "translation": "สมัครแล้ว"
+  },
+  "Auto-refreshes every {n}s  [r] force refresh": {
+    "machine_translated": true,
+    "translation": "รีเฟรชอัตโนมัติทุกๆ {n} s [r] บังคับให้รีเฟรช"
+  },
+  "Behaviour": {
+    "machine_translated": true,
+    "translation": "พฤติกรรม"
+  },
+  "Bridge Settings": {
+    "machine_translated": true,
+    "translation": "การตั้งค่าสะพาน"
+  },
+  "CPU": {
+    "machine_translated": true,
+    "translation": "ซีพียู"
+  },
+  "Cancel": {
+    "machine_translated": true,
+    "translation": "ยกเลิก"
+  },
+  "Cancelled": {
+    "machine_translated": true,
+    "translation": "ยกเลิก"
+  },
+  "Cannot Change Password": {
+    "machine_translated": true,
+    "translation": "ไม่สามารถเปลี่ยนรหัสผ่านได้"
+  },
+  "Change Password": {
+    "machine_translated": true,
+    "translation": "เปลี่ยนรหัสผ่าน"
+  },
+  "Change local administrator password": {
+    "machine_translated": true,
+    "translation": "เปลี่ยนรหัสผ่านผู้ดูแลระบบภายใน"
+  },
+  "Change password": {
+    "machine_translated": true,
+    "translation": "เปลี่ยนรหัสผ่าน"
+  },
+  "Change the password for a local administrator account.\n\nIf no local administrator has been configured yet, this\noption lets you set up an initial admin or root account.\n\nNote: changing a password will disable two-factor\nauthentication for that account.": {
+    "machine_translated": true,
+    "translation": "เปลี่ยนรหัสผ่านสำหรับบัญชีผู้ดูแลระบบภายใน\n\nหากยังไม่มีการกำหนดค่าผู้ดูแลระบบท้องถิ่น ให้ดำเนินการดังนี้\nตัวเลือกช่วยให้คุณตั้งค่าผู้ดูแลระบบเริ่มต้นหรือบัญชีรูท\n\nหมายเหตุ: การเปลี่ยนรหัสผ่านจะปิดการใช้งานสองปัจจัย\nการรับรองความถูกต้องสำหรับบัญชีนั้น"
+  },
+  "Changes applied. Network will roll back in ~60 seconds\nunless you press [p] to persist them.": {
+    "machine_translated": true,
+    "translation": "เปลี่ยนแปลงแล้ว เครือข่ายจะย้อนกลับภายใน ~60 วินาที\nเว้นแต่คุณจะกด [p] เพื่อคงอยู่"
+  },
+  "Changes applied. Press [p] to persist or they roll back in {n}s.": {
+    "machine_translated": true,
+    "translation": "เปลี่ยนแปลงแล้ว กด [p] เพื่อคงอยู่หรือย้อนกลับใน {n} วินาที"
+  },
+  "Configuration reset cancelled.": {
+    "machine_translated": true,
+    "translation": "การรีเซ็ตการกำหนดค่าถูกยกเลิก"
+  },
+  "Configuration reset initiated.\nThe system will reboot with default settings.": {
+    "machine_translated": true,
+    "translation": "เริ่มต้นการรีเซ็ตการกำหนดค่าแล้ว\nระบบจะรีบูตด้วยการตั้งค่าเริ่มต้น"
+  },
+  "Configure global network settings:\n\n  • Hostname and domain\n  • Default IPv4 and IPv6 gateways\n  • DNS nameservers (up to three)\n\nChanges take effect immediately after saving.": {
+    "machine_translated": true,
+    "translation": "กำหนดการตั้งค่าเครือข่ายทั่วโลก:\n\n  • ชื่อโฮสต์และโดเมน\n  • เกตเวย์ IPv4 และ IPv6 เริ่มต้น\n  • DNS เนมเซิร์ฟเวอร์ (สูงสุดสาม)\n\nการเปลี่ยนแปลงจะมีผลทันทีหลังจากบันทึก"
+  },
+  "Configure network interfaces": {
+    "machine_translated": true,
+    "translation": "กำหนดค่าอินเทอร์เฟซเครือข่าย"
+  },
+  "Configure network settings": {
+    "machine_translated": true,
+    "translation": "กำหนดการตั้งค่าเครือข่าย"
+  },
+  "Configure networking for this TrueNAS system.\n\n  • Interface settings  – DHCP, IP aliases, MTU\n  • Network settings    – Hostname, domain, gateways, DNS\n  • Static routes       – Add and remove static routes\n\nChanges to interfaces require a commit step\nbefore they take effect.": {
+    "machine_translated": true,
+    "translation": "กำหนดค่าเครือข่ายสำหรับระบบ TrueNAS นี้\n\n  • การตั้งค่าอินเทอร์เฟซ - DHCP, นามแฝง IP, MTU\n  • การตั้งค่าเครือข่าย – ชื่อโฮสต์ โดเมน เกตเวย์ DNS\n  • เส้นทางแบบคงที่ – เพิ่มและลบเส้นทางแบบคงที่\n\nการเปลี่ยนแปลงอินเทอร์เฟซจำเป็นต้องมีขั้นตอนการคอมมิต\nก่อนที่จะมีผลใช้บังคับ"
+  },
+  "Configure static routes": {
+    "machine_translated": true,
+    "translation": "กำหนดค่าเส้นทางแบบคงที่"
+  },
+  "Confirm Delete": {
+    "machine_translated": true,
+    "translation": "ยืนยันการลบ"
+  },
+  "Confirm Reboot": {
+    "machine_translated": true,
+    "translation": "ยืนยันการรีบูต"
+  },
+  "Confirm Reset": {
+    "machine_translated": true,
+    "translation": "ยืนยันการรีเซ็ต"
+  },
+  "Confirm Shutdown": {
+    "machine_translated": true,
+    "translation": "ยืนยันการปิดระบบ"
+  },
+  "Confirm dangerous actions": {
+    "machine_translated": true,
+    "translation": "ยืนยันการกระทำที่เป็นอันตราย"
+  },
+  "Could not load LAG port choices:\n": {
+    "machine_translated": true,
+    "translation": "ไม่สามารถโหลดตัวเลือกพอร์ต LAG:"
+  },
+  "Could not load VLAN parent choices:\n": {
+    "machine_translated": true,
+    "translation": "ไม่สามารถโหลดตัวเลือกพาเรนต์ VLAN:"
+  },
+  "Could not load bridge member choices:\n": {
+    "machine_translated": true,
+    "translation": "ไม่สามารถโหลดตัวเลือกสมาชิกบริดจ์ได้:"
+  },
+  "Create one-time password": {
+    "machine_translated": true,
+    "translation": "สร้างรหัสผ่านครั้งเดียว"
+  },
+  "Create one-time password for \"{u}\"": {
+    "machine_translated": true,
+    "translation": "สร้างรหัสผ่านแบบใช้ครั้งเดียวสำหรับ \"{u}\""
+  },
+  "Created": {
+    "machine_translated": true,
+    "translation": "สร้าง"
+  },
+  "Current password:": {
+    "machine_translated": true,
+    "translation": "รหัสผ่านปัจจุบัน:"
+  },
+  "Customise the TrueNAS TUI for your user account.\n\n  • Theme: default (blue), dark (green), high-contrast\n  • Startup view: system info pane or menu description\n  • Confirm dangerous actions (reboot, shutdown, reset)\n  • Language and date/time display formats\n\nSettings are saved to your account and persist across\nsessions on any client.": {
+    "machine_translated": true,
+    "translation": "ปรับแต่ง TrueNAS TUI สำหรับบัญชีผู้ใช้ของคุณ\n\n  • ธีม: ค่าเริ่มต้น (สีน้ำเงิน) สีเข้ม (สีเขียว) คอนทราสต์สูง\n  • มุมมองเริ่มต้น: บานหน้าต่างข้อมูลระบบหรือคำอธิบายเมนู\n  • ยืนยันการกระทำที่เป็นอันตราย (รีบูต ปิดเครื่อง รีเซ็ต)\n  • รูปแบบการแสดงภาษาและวันที่/เวลา\n\nการตั้งค่าจะถูกบันทึกลงในบัญชีของคุณและคงอยู่ต่อไป\nเซสชันบนไคลเอนต์ใด ๆ"
+  },
+  "Date format": {
+    "machine_translated": true,
+    "translation": "รูปแบบวันที่"
+  },
+  "Delete Route": {
+    "machine_translated": true,
+    "translation": "ลบเส้นทาง"
+  },
+  "Delete interface {name}?": {
+    "machine_translated": true,
+    "translation": "ลบอินเทอร์เฟซ {name} หรือไม่"
+  },
+  "Delete static route {dest}?": {
+    "machine_translated": true,
+    "translation": "ลบเส้นทางคงที่ {dest} หรือไม่"
+  },
+  "Deleted": {
+    "machine_translated": true,
+    "translation": "ลบแล้ว"
+  },
+  "Description": {
+    "machine_translated": true,
+    "translation": "คำอธิบาย"
+  },
+  "Destination (CIDR)": {
+    "machine_translated": true,
+    "translation": "ปลายทาง (CIDR)"
+  },
+  "Disable Two-Factor Authentication": {
+    "machine_translated": true,
+    "translation": "ปิดการใช้งานการรับรองความถูกต้องด้วยสองปัจจัย"
+  },
+  "Disable two-factor authentication": {
+    "machine_translated": true,
+    "translation": "ปิดใช้งานการรับรองความถูกต้องด้วยสองปัจจัย"
+  },
+  "Disable two-factor authentication for {u}?\nYou will no longer need an OTP to log in.": {
+    "machine_translated": true,
+    "translation": "ปิดการใช้งานการรับรองความถูกต้องด้วยสองปัจจัยสำหรับ {u}?\nคุณไม่จำเป็นต้องมี OTP เพื่อเข้าสู่ระบบอีกต่อไป"
+  },
+  "Disabled": {
+    "machine_translated": true,
+    "translation": "พิการ"
+  },
+  "Domain": {
+    "machine_translated": true,
+    "translation": "โดเมน"
+  },
+  "Edit Static Route": {
+    "machine_translated": true,
+    "translation": "แก้ไขเส้นทางแบบคงที่"
+  },
+  "Enabled": {
+    "machine_translated": true,
+    "translation": "เปิดใช้งานแล้ว"
+  },
+  "Enter: confirm  Esc: cancel": {
+    "machine_translated": true,
+    "translation": "เข้าสู่: ยืนยัน Esc: ยกเลิก"
+  },
+  "Erase all TrueNAS configuration and reset to factory\ndefaults.\n\nWARNING: This is irreversible. All settings including\nnetwork configuration, shares, users, and storage pools\nwill be erased.\n\nYou will be prompted to confirm twice before proceeding.": {
+    "machine_translated": true,
+    "translation": "ลบการกำหนดค่า TrueNAS ทั้งหมดและรีเซ็ตเป็นค่าเริ่มต้นจากโรงงาน\nค่าเริ่มต้น\n\nคำเตือน: สิ่งนี้ไม่สามารถย้อนกลับได้ การตั้งค่าทั้งหมดรวมทั้ง\nการกำหนดค่าเครือข่าย การแชร์ ผู้ใช้ และพูลการจัดเก็บข้อมูล\nจะถูกลบออก\n\nคุณจะได้รับแจ้งให้ยืนยันสองครั้งก่อนดำเนินการต่อ"
+  },
+  "Error": {
+    "machine_translated": true,
+    "translation": "ข้อผิดพลาด"
+  },
+  "Failover Critical": {
+    "machine_translated": true,
+    "translation": "วิกฤติเมื่อเกิดข้อผิดพลาด"
+  },
+  "Failover Group": {
+    "machine_translated": true,
+    "translation": "กลุ่มเฟลโอเวอร์"
+  },
+  "Failover Settings": {
+    "machine_translated": true,
+    "translation": "การตั้งค่าเฟลโอเวอร์"
+  },
+  "Gateway": {
+    "machine_translated": true,
+    "translation": "เกตเวย์"
+  },
+  "Generate a single-use temporary password for the\ncurrently authenticated user.\n\nThe one-time password can be used to log in once\nand is invalidated immediately after use.": {
+    "machine_translated": true,
+    "translation": "สร้างรหัสผ่านชั่วคราวแบบใช้ครั้งเดียวสำหรับ\nผู้ใช้ที่ได้รับการรับรองความถูกต้องในปัจจุบัน\n\nรหัสผ่านแบบใช้ครั้งเดียวสามารถใช้เพื่อเข้าสู่ระบบได้ครั้งเดียว\nและจะถือเป็นโมฆะทันทีหลังการใช้งาน"
+  },
+  "Generate one-time password": {
+    "machine_translated": true,
+    "translation": "สร้างรหัสผ่านครั้งเดียว"
+  },
+  "Generating a new 2FA secret will invalidate your current\nauthenticator app configuration. Continue?": {
+    "machine_translated": true,
+    "translation": "การสร้างความลับ 2FA ใหม่จะทำให้ปัจจุบันของคุณเป็นโมฆะ\nการกำหนดค่าแอปตรวจสอบความถูกต้อง ดำเนินการต่อ?"
+  },
+  "Hostname": {
+    "machine_translated": true,
+    "translation": "ชื่อโฮสต์"
+  },
+  "IMPORTANT: Scan this QR code with your authenticator app": {
+    "machine_translated": true,
+    "translation": "สิ่งสำคัญ: สแกนโค้ด QR นี้ด้วยแอปยืนยันตัวตนของคุณ"
+  },
+  "IP Address": {
+    "machine_translated": true,
+    "translation": "ที่อยู่ IP"
+  },
+  "IPv4 DHCP": {
+    "machine_translated": true,
+    "translation": "IPv4 DHCP"
+  },
+  "IPv4 Gateway": {
+    "machine_translated": true,
+    "translation": "เกตเวย์ IPv4"
+  },
+  "IPv6 Auto": {
+    "machine_translated": true,
+    "translation": "IPv6 อัตโนมัติ"
+  },
+  "IPv6 Gateway": {
+    "machine_translated": true,
+    "translation": "เกตเวย์ IPv6"
+  },
+  "Interface": {
+    "machine_translated": true,
+    "translation": "อินเทอร์เฟซ"
+  },
+  "Interface Settings": {
+    "machine_translated": true,
+    "translation": "การตั้งค่าอินเทอร์เฟซ"
+  },
+  "Interface Type": {
+    "machine_translated": true,
+    "translation": "ประเภทอินเทอร์เฟซ"
+  },
+  "Interface name is required.": {
+    "machine_translated": true,
+    "translation": "ต้องระบุชื่ออินเทอร์เฟซ"
+  },
+  "Interface settings": {
+    "machine_translated": true,
+    "translation": "การตั้งค่าอินเทอร์เฟซ"
+  },
+  "Interface {name} created.\nUse [a] from the list to apply changes.": {
+    "machine_translated": true,
+    "translation": "สร้างอินเทอร์เฟซ {name} แล้ว\nใช้ [a] จากรายการเพื่อใช้การเปลี่ยนแปลง"
+  },
+  "Interface {name} deleted.\nUse [a] from the list to apply changes.": {
+    "machine_translated": true,
+    "translation": "ลบอินเทอร์เฟซ {name} แล้ว\nใช้ [a] จากรายการเพื่อใช้การเปลี่ยนแปลง"
+  },
+  "Interface {name} updated.\nUse [a] from the list to apply changes.": {
+    "machine_translated": true,
+    "translation": "อัปเดตอินเทอร์เฟซ {name} แล้ว\nใช้ [a] จากรายการเพื่อใช้การเปลี่ยนแปลง"
+  },
+  "Invalid IP address in alias: {e}": {
+    "machine_translated": true,
+    "translation": "ที่อยู่ IP ไม่ถูกต้องในนามแฝง: {e}"
+  },
+  "Invalid IP address: {s}": {
+    "machine_translated": true,
+    "translation": "ที่อยู่ IP ไม่ถูกต้อง: {s}"
+  },
+  "Invalid prefix length in alias: {e}": {
+    "machine_translated": true,
+    "translation": "ความยาวคำนำหน้าไม่ถูกต้องในนามแฝง: {e}"
+  },
+  "LACPDU Rate": {
+    "machine_translated": true,
+    "translation": "อัตรา LACPDU"
+  },
+  "Language": {
+    "machine_translated": true,
+    "translation": "ภาษา"
+  },
+  "Link Aggregation Settings": {
+    "machine_translated": true,
+    "translation": "การตั้งค่าการรวมลิงก์"
+  },
+  "Load Average": {
+    "machine_translated": true,
+    "translation": "โหลดเฉลี่ย"
+  },
+  "Local administrator {u} set up successfully.": {
+    "machine_translated": true,
+    "translation": "ผู้ดูแลระบบภายในเครื่อง {u} ตั้งค่าสำเร็จแล้ว"
+  },
+  "Locale": {
+    "machine_translated": true,
+    "translation": "สถานที่"
+  },
+  "MTU": {
+    "machine_translated": true,
+    "translation": "มธ"
+  },
+  "Manage static network routes.\n\n  • View existing static routes\n  • Add new routes (destination, gateway, description)\n  • Edit or delete existing routes\n\nKeys: Enter = Edit,  a = Add,  d = Delete,  q = Back": {
+    "machine_translated": true,
+    "translation": "จัดการเส้นทางเครือข่ายแบบคงที่\n\n  • ดูเส้นทางคงที่ที่มีอยู่\n  • เพิ่มเส้นทางใหม่ (ปลายทาง เกตเวย์ คำอธิบาย)\n  • แก้ไขหรือลบเส้นทางที่มีอยู่\n\nปุ่ม: Enter = แก้ไข, a = เพิ่ม, d = ลบ, q = ย้อนกลับ"
+  },
+  "Manufacturer": {
+    "machine_translated": true,
+    "translation": "ผู้ผลิต"
+  },
+  "Members": {
+    "machine_translated": true,
+    "translation": "สมาชิก"
+  },
+  "Memory": {
+    "machine_translated": true,
+    "translation": "หน่วยความจำ"
+  },
+  "My account": {
+    "machine_translated": true,
+    "translation": "บัญชีของฉัน"
+  },
+  "Name": {
+    "machine_translated": true,
+    "translation": "ชื่อ"
+  },
+  "Nameserver 1": {
+    "machine_translated": true,
+    "translation": "เนมเซิร์ฟเวอร์ 1"
+  },
+  "Nameserver 2": {
+    "machine_translated": true,
+    "translation": "เนมเซิร์ฟเวอร์ 2"
+  },
+  "Nameserver 3": {
+    "machine_translated": true,
+    "translation": "เนมเซิร์ฟเวอร์ 3"
+  },
+  "Network": {
+    "machine_translated": true,
+    "translation": "เครือข่าย"
+  },
+  "Network Configuration": {
+    "machine_translated": true,
+    "translation": "การกำหนดค่าเครือข่าย"
+  },
+  "Network Interfaces": {
+    "machine_translated": true,
+    "translation": "อินเทอร์เฟซเครือข่าย"
+  },
+  "Network changes persisted successfully.": {
+    "machine_translated": true,
+    "translation": "การเปลี่ยนแปลงเครือข่ายยังคงอยู่สำเร็จ"
+  },
+  "Network settings": {
+    "machine_translated": true,
+    "translation": "การตั้งค่าเครือข่าย"
+  },
+  "Network settings updated successfully.": {
+    "machine_translated": true,
+    "translation": "อัปเดตการตั้งค่าเครือข่ายเรียบร้อยแล้ว"
+  },
+  "New Interface – Step 1": {
+    "machine_translated": true,
+    "translation": "อินเทอร์เฟซใหม่ – ขั้นตอนที่ 1"
+  },
+  "New Interface – Step 2": {
+    "machine_translated": true,
+    "translation": "อินเทอร์เฟซใหม่ – ขั้นตอนที่ 2"
+  },
+  "New password for {u}:": {
+    "machine_translated": true,
+    "translation": "รหัสผ่านใหม่สำหรับ {u}:"
+  },
+  "No": {
+    "machine_translated": true,
+    "translation": "เลขที่"
+  },
+  "No local administrators found.": {
+    "machine_translated": true,
+    "translation": "ไม่พบผู้ดูแลระบบท้องถิ่น"
+  },
+  "No provisioning URI returned from server.": {
+    "machine_translated": true,
+    "translation": "ไม่มีการส่งคืน URI การจัดเตรียมจากเซิร์ฟเวอร์"
+  },
+  "No static routes configured.": {
+    "machine_translated": true,
+    "translation": "ไม่มีการกำหนดค่าเส้นทางแบบคงที่"
+  },
+  "No terminal QR code tool was found on this system.\n\nInstall \"qr\" or \"qrcode-terminal\" to use this feature.": {
+    "machine_translated": true,
+    "translation": "ไม่พบเครื่องมือรหัส QR เทอร์มินัลบนระบบนี้\n\nติดตั้ง \"qr\" หรือ \"qrcode-terminal\" เพื่อใช้คุณสมบัตินี้"
+  },
+  "Not Found": {
+    "machine_translated": true,
+    "translation": "ไม่พบ"
+  },
+  "Not a valid member: {v}": {
+    "machine_translated": true,
+    "translation": "ไม่ใช่สมาชิกที่ถูกต้อง: {v}"
+  },
+  "Not a valid port: {v}": {
+    "machine_translated": true,
+    "translation": "ไม่ใช่พอร์ตที่ถูกต้อง: {v}"
+  },
+  "One-Time Password": {
+    "machine_translated": true,
+    "translation": "รหัสผ่านแบบใช้ครั้งเดียว"
+  },
+  "One-time password for \"{u}\":\n\n  {otp}\n\nThis password can only be used once.\nDialog closes automatically after {t} seconds.": {
+    "machine_translated": true,
+    "translation": "รหัสผ่านครั้งเดียวสำหรับ \"{u}\":\n\n  {otp}\n\nรหัสผ่านนี้สามารถใช้ได้เพียงครั้งเดียวเท่านั้น\nกล่องโต้ตอบจะปิดโดยอัตโนมัติหลังจาก {t} วินาที"
+  },
+  "Open Linux Shell": {
+    "machine_translated": true,
+    "translation": "เปิดลินุกซ์เชลล์"
+  },
+  "Open TrueNAS CLI Shell": {
+    "machine_translated": true,
+    "translation": "เปิดเชลล์ TrueNAS CLI"
+  },
+  "Open a Linux shell (bash/zsh).\n\nSuspends the TUI and opens your login shell.\nType \"exit\" or press Ctrl+D to return to the TUI.": {
+    "machine_translated": true,
+    "translation": "เปิดเชลล์ Linux (bash/zsh)\n\nระงับ TUI และเปิดเชลล์การเข้าสู่ระบบของคุณ\nพิมพ์ \"exit\" หรือกด Ctrl+D เพื่อกลับไปยัง TUI"
+  },
+  "Open the TrueNAS interactive CLI shell (midcli).\n\nReplaces the TUI with the full midcli command-line\ninterface. The TUI restarts after you exit midcli.": {
+    "machine_translated": true,
+    "translation": "เปิดเชลล์ CLI แบบโต้ตอบ TrueNAS (midcli)\n\nแทนที่ TUI ด้วยบรรทัดคำสั่ง midcli แบบเต็ม\nอินเตอร์เฟซ TUI จะรีสตาร์ทหลังจากที่คุณออกจาก midcli"
+  },
+  "Other Settings": {
+    "machine_translated": true,
+    "translation": "การตั้งค่าอื่นๆ"
+  },
+  "Parent Interface": {
+    "machine_translated": true,
+    "translation": "อินเทอร์เฟซผู้ปกครอง"
+  },
+  "Password changed successfully.": {
+    "machine_translated": true,
+    "translation": "เปลี่ยนรหัสผ่านเรียบร้อยแล้ว"
+  },
+  "Password changes are only supported for local accounts.\nThis account is managed by an external directory service.": {
+    "machine_translated": true,
+    "translation": "รองรับการเปลี่ยนรหัสผ่านสำหรับบัญชีท้องถิ่นเท่านั้น\nบัญชีนี้ได้รับการจัดการโดยบริการไดเรกทอรีภายนอก"
+  },
+  "Password for {u} changed successfully.\nTwo-factor authentication has been disabled.": {
+    "machine_translated": true,
+    "translation": "เปลี่ยนรหัสผ่านสำหรับ {u} สำเร็จแล้ว\nการรับรองความถูกต้องด้วยสองปัจจัยถูกปิดใช้งาน"
+  },
+  "Password for {u}:": {
+    "machine_translated": true,
+    "translation": "รหัสผ่านสำหรับ {u}:"
+  },
+  "Password must be at least {n} characters.": {
+    "machine_translated": true,
+    "translation": "รหัสผ่านต้องมีอักขระอย่างน้อย {n} ตัว"
+  },
+  "Passwords do not match.": {
+    "machine_translated": true,
+    "translation": "รหัสผ่านไม่ตรงกัน"
+  },
+  "Pending changes. Press [a] to apply.": {
+    "machine_translated": true,
+    "translation": "รอดำเนินการเปลี่ยนแปลง กด [a] เพื่อสมัคร"
+  },
+  "Persisted": {
+    "machine_translated": true,
+    "translation": "ยังคงอยู่"
+  },
+  "Please enter the reason for the system reboot\n(leave blank to cancel):": {
+    "machine_translated": true,
+    "translation": "กรุณาระบุเหตุผลในการรีบูตระบบ\n(เว้นว่างไว้เพื่อยกเลิก):"
+  },
+  "Please enter the reason for the system shutdown\n(leave blank to cancel):": {
+    "machine_translated": true,
+    "translation": "กรุณาระบุเหตุผลในการปิดระบบ\n(เว้นว่างไว้เพื่อยกเลิก):"
+  },
+  "Port": {
+    "machine_translated": true,
+    "translation": "ท่าเรือ"
+  },
+  "Ports": {
+    "machine_translated": true,
+    "translation": "พอร์ต"
+  },
+  "Power Control": {
+    "machine_translated": true,
+    "translation": "การควบคุมพลังงาน"
+  },
+  "Prefix length out of range in alias: {e}": {
+    "machine_translated": true,
+    "translation": "ความยาวคำนำหน้าอยู่นอกช่วงในนามแฝง: {e}"
+  },
+  "Priority (PCP)": {
+    "machine_translated": true,
+    "translation": "ลำดับความสำคัญ (PCP)"
+  },
+  "Product": {
+    "machine_translated": true,
+    "translation": "ผลิตภัณฑ์"
+  },
+  "Protocol": {
+    "machine_translated": true,
+    "translation": "โปรโตคอล"
+  },
+  "Reboot": {
+    "machine_translated": true,
+    "translation": "รีบูต"
+  },
+  "Reboot initiated. The system is shutting down.": {
+    "machine_translated": true,
+    "translation": "เริ่มต้นการรีบูตแล้ว ระบบกำลังปิดตัวลง"
+  },
+  "Reboot or shut down the TrueNAS system.\n\n  • Reboot   – restart the system\n  • Shutdown – power off the system\n\nYou will be prompted for a reason and confirmation\nbefore any action is taken.": {
+    "machine_translated": true,
+    "translation": "รีบูตหรือปิดระบบ TrueNAS\n\n  • รีบูต – รีสตาร์ทระบบ\n  • Shutdown – ปิดระบบ\n\nคุณจะได้รับแจ้งเหตุผลและการยืนยัน\nก่อนที่จะดำเนินการใดๆ"
+  },
+  "Reboot the TrueNAS system.\n\nYou will be prompted to enter a reason for the reboot\nbefore the system restarts.\n\nAll active sessions and shares will be interrupted.": {
+    "machine_translated": true,
+    "translation": "รีบูตระบบ TrueNAS\n\nคุณจะได้รับแจ้งให้ป้อนเหตุผลในการรีบูต\nก่อนที่ระบบจะรีสตาร์ท\n\nเซสชันและการแชร์ที่ใช้งานอยู่ทั้งหมดจะถูกขัดจังหวะ"
+  },
+  "Reboot the system?\n\nReason: {r}": {
+    "machine_translated": true,
+    "translation": "รีบูทระบบ?\n\nเหตุผล: {r}"
+  },
+  "Reboot/Shutdown": {
+    "machine_translated": true,
+    "translation": "รีบูต/ปิดเครื่อง"
+  },
+  "Rebooting": {
+    "machine_translated": true,
+    "translation": "กำลังรีบูตเครื่อง"
+  },
+  "Renew 2FA Secret": {
+    "machine_translated": true,
+    "translation": "ต่ออายุความลับ 2FA"
+  },
+  "Renew two-factor secret": {
+    "machine_translated": true,
+    "translation": "ต่ออายุความลับสองปัจจัย"
+  },
+  "Reset": {
+    "machine_translated": true,
+    "translation": "รีเซ็ต"
+  },
+  "Reset Configuration": {
+    "machine_translated": true,
+    "translation": "รีเซ็ตการกำหนดค่า"
+  },
+  "Reset configuration to defaults": {
+    "machine_translated": true,
+    "translation": "รีเซ็ตการกำหนดค่าเป็นค่าเริ่มต้น"
+  },
+  "Retype new password:": {
+    "machine_translated": true,
+    "translation": "พิมพ์รหัสผ่านใหม่อีกครั้ง:"
+  },
+  "Retype password for {u}:": {
+    "machine_translated": true,
+    "translation": "พิมพ์รหัสผ่านอีกครั้งสำหรับ {u}:"
+  },
+  "Root user (not recommended)": {
+    "machine_translated": true,
+    "translation": "ผู้ใช้รูท (ไม่แนะนำ)"
+  },
+  "Save": {
+    "machine_translated": true,
+    "translation": "บันทึก"
+  },
+  "Saved": {
+    "machine_translated": true,
+    "translation": "บันทึกแล้ว"
+  },
+  "Secret key: {s}  (for manual entry)": {
+    "machine_translated": true,
+    "translation": "รหัสลับ: {s} (สำหรับการป้อนด้วยตนเอง)"
+  },
+  "Select Administrator": {
+    "machine_translated": true,
+    "translation": "เลือกผู้ดูแลระบบ"
+  },
+  "Serial": {
+    "machine_translated": true,
+    "translation": "อนุกรม"
+  },
+  "Set Up Administrator": {
+    "machine_translated": true,
+    "translation": "ตั้งค่าผู้ดูแลระบบ"
+  },
+  "Set to 0 to use the system default MTU": {
+    "machine_translated": true,
+    "translation": "ตั้งค่าเป็น 0 เพื่อใช้ MTU ดีฟอลต์ของระบบ"
+  },
+  "Set up local administrator": {
+    "machine_translated": true,
+    "translation": "ตั้งค่าผู้ดูแลระบบท้องถิ่น"
+  },
+  "Set up two-factor authentication": {
+    "machine_translated": true,
+    "translation": "ตั้งค่าการตรวจสอบสิทธิ์แบบสองปัจจัย"
+  },
+  "Settings Saved": {
+    "machine_translated": true,
+    "translation": "บันทึกการตั้งค่าแล้ว"
+  },
+  "Shut down the TrueNAS system.\n\nYou will be prompted to enter a reason for the shutdown\nbefore the system powers off.\n\nAll active sessions and shares will be interrupted.": {
+    "machine_translated": true,
+    "translation": "ปิดระบบ TrueNAS\n\nคุณจะได้รับแจ้งให้ป้อนเหตุผลในการปิดระบบ\nก่อนที่ระบบจะปิด\n\nเซสชันและการแชร์ที่ใช้งานอยู่ทั้งหมดจะถูกขัดจังหวะ"
+  },
+  "Shut down the system?\n\nReason: {r}": {
+    "machine_translated": true,
+    "translation": "ปิดระบบ?\n\nเหตุผล: {r}"
+  },
+  "Shutdown": {
+    "machine_translated": true,
+    "translation": "ปิดเครื่อง"
+  },
+  "Shutdown initiated. The system is powering off.": {
+    "machine_translated": true,
+    "translation": "เริ่มการปิดระบบแล้ว ระบบกำลังปิดเครื่อง"
+  },
+  "Shutting Down": {
+    "machine_translated": true,
+    "translation": "กำลังปิดเครื่อง"
+  },
+  "Specify a bare IP address (no prefix length)": {
+    "machine_translated": true,
+    "translation": "ระบุที่อยู่ IP เปล่า (ไม่มีความยาวคำนำหน้า)"
+  },
+  "Startup": {
+    "machine_translated": true,
+    "translation": "การเริ่มต้น"
+  },
+  "Startup view": {
+    "machine_translated": true,
+    "translation": "มุมมองเริ่มต้น"
+  },
+  "Static Routes": {
+    "machine_translated": true,
+    "translation": "เส้นทางแบบคงที่"
+  },
+  "Static routes": {
+    "machine_translated": true,
+    "translation": "เส้นทางแบบคงที่"
+  },
+  "Success": {
+    "machine_translated": true,
+    "translation": "ความสำเร็จ"
+  },
+  "System Information": {
+    "machine_translated": true,
+    "translation": "ข้อมูลระบบ"
+  },
+  "TUI preferences saved.\nTheme and locale changes take effect immediately.": {
+    "machine_translated": true,
+    "translation": "บันทึกการตั้งค่า TUI แล้ว\nการเปลี่ยนแปลงธีมและสถานที่จะมีผลทันที"
+  },
+  "Tab/↑↓: navigate   Enter: confirm   Esc: cancel": {
+    "machine_translated": true,
+    "translation": "Tab/↑↓: นำทาง Enter: ยืนยัน Esc: ยกเลิก"
+  },
+  "Text UI settings": {
+    "machine_translated": true,
+    "translation": "การตั้งค่า UI ข้อความ"
+  },
+  "Theme": {
+    "machine_translated": true,
+    "translation": "ธีม"
+  },
+  "This Node IPs": {
+    "machine_translated": true,
+    "translation": "IP ของโหนดนี้"
+  },
+  "This will ERASE all configuration and reset to defaults.\nAre you absolutely sure?": {
+    "machine_translated": true,
+    "translation": "การดำเนินการนี้จะลบการกำหนดค่าทั้งหมดและรีเซ็ตเป็นค่าเริ่มต้น\nคุณแน่ใจจริงๆเหรอ?"
+  },
+  "Time format": {
+    "machine_translated": true,
+    "translation": "รูปแบบเวลา"
+  },
+  "Timezone": {
+    "machine_translated": true,
+    "translation": "เขตเวลา"
+  },
+  "Two-factor authentication has been disabled.": {
+    "machine_translated": true,
+    "translation": "การรับรองความถูกต้องด้วยสองปัจจัยถูกปิดใช้งาน"
+  },
+  "Type RESET to confirm (case-sensitive):": {
+    "machine_translated": true,
+    "translation": "พิมพ์ RESET เพื่อยืนยัน (คำนึงถึงตัวพิมพ์เล็กและใหญ่):"
+  },
+  "Unavailable": {
+    "machine_translated": true,
+    "translation": "ไม่พร้อมใช้งาน"
+  },
+  "Uptime": {
+    "machine_translated": true,
+    "translation": "เวลาทำงาน"
+  },
+  "VLAN Settings": {
+    "machine_translated": true,
+    "translation": "การตั้งค่า VLAN"
+  },
+  "VLAN Tag": {
+    "machine_translated": true,
+    "translation": "แท็ก VLAN"
+  },
+  "Version": {
+    "machine_translated": true,
+    "translation": "เวอร์ชัน"
+  },
+  "View and edit network interface configuration.\n\n  • Enable/disable DHCP and IPv6 auto-configuration\n  • Add or remove static IP aliases\n  • Set MTU, VLAN tag, bridge members, LAG ports, and more\n  • Apply changes (with automatic rollback safety)\n  • Persist changes once the network is confirmed working\n\nPress Enter to select an interface to edit.\nPress [n] to create a new interface, [d] to delete.\nAfter editing, use [a] to Apply and [p] to Persist.": {
+    "machine_translated": true,
+    "translation": "ดูและแก้ไขการกำหนดค่าอินเทอร์เฟซเครือข่าย\n\n  • เปิด/ปิดการกำหนดค่าอัตโนมัติของ DHCP และ IPv6\n  • เพิ่มหรือลบนามแฝง IP แบบคงที่\n  • ตั้งค่า MTU, แท็ก VLAN, สมาชิกบริดจ์, พอร์ต LAG และอื่นๆ\n  • ใช้การเปลี่ยนแปลง (พร้อมความปลอดภัยในการย้อนกลับอัตโนมัติ)\n  • คงการเปลี่ยนแปลงเมื่อเครือข่ายได้รับการยืนยันว่าใช้งานได้\n\nกด Enter เพื่อเลือกอินเทอร์เฟซที่จะแก้ไข\nกด [n] เพื่อสร้างอินเทอร์เฟซใหม่ [d] เพื่อลบ\nหลังจากแก้ไข ให้ใช้ [a] เพื่อนำไปใช้ และ [p] เพื่อคงอยู่"
+  },
+  "View your account information and manage credentials.\n\n  • View username, UID, roles, and 2FA status\n  • Change your password\n  • Generate a one-time password for single-use login\n  • Set up or renew two-factor authentication\n\nPassword changes take effect immediately.\nOne-time passwords expire after a single login.": {
+    "machine_translated": true,
+    "translation": "ดูข้อมูลบัญชีของคุณและจัดการข้อมูลรับรอง\n\n  • ดูชื่อผู้ใช้ UID บทบาท และสถานะ 2FA\n  • เปลี่ยนรหัสผ่านของคุณ\n  • สร้างรหัสผ่านแบบใช้ครั้งเดียวสำหรับการเข้าสู่ระบบแบบใช้ครั้งเดียว\n  • ตั้งค่าหรือต่ออายุการรับรองความถูกต้องด้วยสองปัจจัย\n\nการเปลี่ยนรหัสผ่านจะมีผลทันที\nรหัสผ่านแบบครั้งเดียวจะหมดอายุหลังจากการเข้าสู่ระบบครั้งเดียว"
+  },
+  "Virtual IPs": {
+    "machine_translated": true,
+    "translation": "IP เสมือน"
+  },
+  "WARNING: You are logged in as root!": {
+    "machine_translated": true,
+    "translation": "คำเตือน: คุณเข้าสู่ระบบในฐานะรูท!"
+  },
+  "Web UI Authentication Method": {
+    "machine_translated": true,
+    "translation": "วิธีการตรวจสอบสิทธิ์เว็บ UI"
+  },
+  "Without it you may be locked out of this system.": {
+    "machine_translated": true,
+    "translation": "หากไม่มีสิ่งนี้ คุณอาจถูกล็อคออกจากระบบนี้"
+  },
+  "Xmit Hash Policy": {
+    "machine_translated": true,
+    "translation": "นโยบายแฮชของ Xmit"
+  },
+  "Yes": {
+    "machine_translated": true,
+    "translation": "ใช่"
+  },
+  "Yes, reset": {
+    "machine_translated": true,
+    "translation": "ใช่ รีเซ็ต"
+  },
+  "[↑↓] Navigate  [Enter] Edit  [a] Add  [d] Delete  [q] Back": {
+    "machine_translated": true,
+    "translation": "[↑↓] นำทาง [Enter] แก้ไข [a] เพิ่ม [d] ลบ [q] ย้อนกลับ"
+  },
+  "[↑↓] Navigate  [Enter] Edit  [n] New  [d] Delete  [a] Apply  [p] Persist  [q] Back": {
+    "machine_translated": true,
+    "translation": "[↑↓] นำทาง [Enter] แก้ไข [n] ใหม่ [d] ลบ [a] ใช้ [p] คงอยู่ [q] กลับ"
+  },
+  "[↑↓] Select  [Enter] Edit  [a] Add  [d] Delete  [Esc] Done": {
+    "machine_translated": true,
+    "translation": "[↑↓] เลือก [Enter] แก้ไข [a] เพิ่ม [d] ลบ [Esc] เสร็จสิ้น"
+  },
+  "midcli is not available on this system.": {
+    "machine_translated": true,
+    "translation": "midcli ไม่พร้อมใช้งานบนระบบนี้"
+  },
+  "↑↓ Navigate  Enter Select  Esc Cancel": {
+    "machine_translated": true,
+    "translation": "↑↓ นำทาง เข้าสู่ เลือก Esc ยกเลิก"
+  }
+}

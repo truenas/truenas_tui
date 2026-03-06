@@ -1,0 +1,866 @@
+{
+  " (no QR tool found)": {
+    "machine_translated": true,
+    "translation": "（未找到二維碼工具）"
+  },
+  " My Account – {u} ": {
+    "machine_translated": true,
+    "translation": "我的帳戶 – {u}"
+  },
+  " Press Enter to continue": {
+    "machine_translated": true,
+    "translation": "按 Enter 繼續"
+  },
+  " Two-Factor Authentication Setup ": {
+    "machine_translated": true,
+    "translation": "雙重身份驗證設定"
+  },
+  "(Google Authenticator, Authy, etc.) before navigating away.": {
+    "machine_translated": true,
+    "translation": "（Google Authenticator、Authy 等），然後再離開。"
+  },
+  "(no addresses)": {
+    "machine_translated": true,
+    "translation": "（無地址）"
+  },
+  "(none)": {
+    "machine_translated": true,
+    "translation": "（沒有任何）"
+  },
+  "Access: Read-only": {
+    "machine_translated": true,
+    "translation": "存取權限：唯讀"
+  },
+  "Access: Read/Write": {
+    "machine_translated": true,
+    "translation": "訪問：讀/寫"
+  },
+  "Actions:": {
+    "machine_translated": true,
+    "translation": "行動："
+  },
+  "Add Static Route": {
+    "machine_translated": true,
+    "translation": "增加靜態路由"
+  },
+  "Address": {
+    "machine_translated": true,
+    "translation": "位址"
+  },
+  "Administrative user (admin)  [recommended]": {
+    "machine_translated": true,
+    "translation": "管理用戶（admin）[推薦]"
+  },
+  "Alias must be in CIDR notation (e.g. 192.168.1.1/24): {e}": {
+    "machine_translated": true,
+    "translation": "別名必須採用 CIDR 表示法（例如 192.168.1.1/24）：{e}"
+  },
+  "Aliases (CIDR)": {
+    "machine_translated": true,
+    "translation": "別名 (CIDR)"
+  },
+  "Appearance": {
+    "machine_translated": true,
+    "translation": "外貌"
+  },
+  "Applied": {
+    "machine_translated": true,
+    "translation": "應用"
+  },
+  "Auto-refreshes every {n}s  [r] force refresh": {
+    "machine_translated": true,
+    "translation": "每 {n} 秒自動刷新一次 [r] 強制刷新"
+  },
+  "Behaviour": {
+    "machine_translated": true,
+    "translation": "行為"
+  },
+  "Bridge Settings": {
+    "machine_translated": true,
+    "translation": "橋接設定"
+  },
+  "CPU": {
+    "machine_translated": true,
+    "translation": "CPU"
+  },
+  "Cancel": {
+    "machine_translated": true,
+    "translation": "取消"
+  },
+  "Cancelled": {
+    "machine_translated": true,
+    "translation": "取消"
+  },
+  "Cannot Change Password": {
+    "machine_translated": true,
+    "translation": "無法更改密碼"
+  },
+  "Change Password": {
+    "machine_translated": true,
+    "translation": "變更密碼"
+  },
+  "Change local administrator password": {
+    "machine_translated": true,
+    "translation": "修改本機管理員密碼"
+  },
+  "Change password": {
+    "machine_translated": true,
+    "translation": "更改密碼"
+  },
+  "Change the password for a local administrator account.\n\nIf no local administrator has been configured yet, this\noption lets you set up an initial admin or root account.\n\nNote: changing a password will disable two-factor\nauthentication for that account.": {
+    "machine_translated": true,
+    "translation": "變更本機管理員帳戶的密碼。\n\n如果尚未配置本機管理員，則此\n選項可讓您設定初始管理員或 root 帳戶。\n\n注意：更改密碼將停用雙重因素\n該帳戶的身份驗證。"
+  },
+  "Changes applied. Network will roll back in ~60 seconds\nunless you press [p] to persist them.": {
+    "machine_translated": true,
+    "translation": "已套用更改。網路將在大約 60 秒內回滾\n除非你按 [p] 來保留它們。"
+  },
+  "Changes applied. Press [p] to persist or they roll back in {n}s.": {
+    "machine_translated": true,
+    "translation": "已套用更改。按 [p] 繼續，否則會在 {n} 秒後回滾。"
+  },
+  "Configuration reset cancelled.": {
+    "machine_translated": true,
+    "translation": "配置重置已取消。"
+  },
+  "Configuration reset initiated.\nThe system will reboot with default settings.": {
+    "machine_translated": true,
+    "translation": "配置重置已啟動。\n系統將以預設設定重新啟動。"
+  },
+  "Configure global network settings:\n\n  • Hostname and domain\n  • Default IPv4 and IPv6 gateways\n  • DNS nameservers (up to three)\n\nChanges take effect immediately after saving.": {
+    "machine_translated": true,
+    "translation": "設定全域網路設定：\n\n  • 主機名稱和網域\n  • 預設 IPv4 和 IPv6 網關\n  • DNS 名稱伺服器（最多三個）\n\n儲存後變更立即生效。"
+  },
+  "Configure network interfaces": {
+    "machine_translated": true,
+    "translation": "設定網路介面"
+  },
+  "Configure network settings": {
+    "machine_translated": true,
+    "translation": "設定網路設定"
+  },
+  "Configure networking for this TrueNAS system.\n\n  • Interface settings  – DHCP, IP aliases, MTU\n  • Network settings    – Hostname, domain, gateways, DNS\n  • Static routes       – Add and remove static routes\n\nChanges to interfaces require a commit step\nbefore they take effect.": {
+    "machine_translated": true,
+    "translation": "為此 TrueNAS 系統配置網路。\n\n  • 介面設定 – DHCP、IP 別名、MTU\n  • 網路設定 – 主機名稱、網域、閘道、DNS\n  • 靜態路由 – 新增和刪除靜態路由\n\n對介面的變更需要提交步驟\n在它們生效之前。"
+  },
+  "Configure static routes": {
+    "machine_translated": true,
+    "translation": "配置靜態路由"
+  },
+  "Confirm Delete": {
+    "machine_translated": true,
+    "translation": "確認刪除"
+  },
+  "Confirm Reboot": {
+    "machine_translated": true,
+    "translation": "確認重啟"
+  },
+  "Confirm Reset": {
+    "machine_translated": true,
+    "translation": "確認重置"
+  },
+  "Confirm Shutdown": {
+    "machine_translated": true,
+    "translation": "確認關機"
+  },
+  "Confirm dangerous actions": {
+    "machine_translated": true,
+    "translation": "確認危險動作"
+  },
+  "Could not load LAG port choices:\n": {
+    "machine_translated": true,
+    "translation": "無法載入 LAG 連接埠選擇："
+  },
+  "Could not load VLAN parent choices:\n": {
+    "machine_translated": true,
+    "translation": "無法載入 VLAN 父選擇："
+  },
+  "Could not load bridge member choices:\n": {
+    "machine_translated": true,
+    "translation": "無法載入橋接成員選擇："
+  },
+  "Create one-time password": {
+    "machine_translated": true,
+    "translation": "建立一次性密碼"
+  },
+  "Create one-time password for \"{u}\"": {
+    "machine_translated": true,
+    "translation": "為「{u}」建立一次性密碼"
+  },
+  "Created": {
+    "machine_translated": true,
+    "translation": "建立"
+  },
+  "Current password:": {
+    "machine_translated": true,
+    "translation": "目前密碼："
+  },
+  "Customise the TrueNAS TUI for your user account.\n\n  • Theme: default (blue), dark (green), high-contrast\n  • Startup view: system info pane or menu description\n  • Confirm dangerous actions (reboot, shutdown, reset)\n  • Language and date/time display formats\n\nSettings are saved to your account and persist across\nsessions on any client.": {
+    "machine_translated": true,
+    "translation": "為您的使用者帳戶自訂 TrueNAS TUI。\n\n  • 主題：預設（藍色）、深色（綠色）、高對比\n  • 啟動檢視：系統資訊窗格或功能表說明\n  • 確認危險操作（重新啟動、關閉、重設）\n  • 語言和日期/時間顯示格式\n\n設定將保存到您的帳戶並持續存在\n任何客戶端上的會話。"
+  },
+  "Date format": {
+    "machine_translated": true,
+    "translation": "日期格式"
+  },
+  "Delete Route": {
+    "machine_translated": true,
+    "translation": "刪除路線"
+  },
+  "Delete interface {name}?": {
+    "machine_translated": true,
+    "translation": "刪除介面{name}？"
+  },
+  "Delete static route {dest}?": {
+    "machine_translated": true,
+    "translation": "刪除靜態路由{dest}？"
+  },
+  "Deleted": {
+    "machine_translated": true,
+    "translation": "已刪除"
+  },
+  "Description": {
+    "machine_translated": true,
+    "translation": "說明"
+  },
+  "Destination (CIDR)": {
+    "machine_translated": true,
+    "translation": "目的地 (CIDR)"
+  },
+  "Disable Two-Factor Authentication": {
+    "machine_translated": true,
+    "translation": "禁用雙重認證"
+  },
+  "Disable two-factor authentication": {
+    "machine_translated": true,
+    "translation": "禁用雙重認證"
+  },
+  "Disable two-factor authentication for {u}?\nYou will no longer need an OTP to log in.": {
+    "machine_translated": true,
+    "translation": "禁用 {u} 的雙重認證？\n您將不再需要 OTP 即可登入。"
+  },
+  "Disabled": {
+    "machine_translated": true,
+    "translation": "已停用"
+  },
+  "Domain": {
+    "machine_translated": true,
+    "translation": "網域"
+  },
+  "Edit Static Route": {
+    "machine_translated": true,
+    "translation": "編輯靜態路由"
+  },
+  "Enabled": {
+    "machine_translated": true,
+    "translation": "啟用"
+  },
+  "Enter: confirm  Esc: cancel": {
+    "machine_translated": true,
+    "translation": "Enter：確認 Esc：取消"
+  },
+  "Erase all TrueNAS configuration and reset to factory\ndefaults.\n\nWARNING: This is irreversible. All settings including\nnetwork configuration, shares, users, and storage pools\nwill be erased.\n\nYou will be prompted to confirm twice before proceeding.": {
+    "machine_translated": true,
+    "translation": "清除所有 TrueNAS 配置並重置為原廠設置\n預設值。\n\n警告：這是不可逆轉的。所有設定包括\n網路配置、共享、使用者和儲存池\n將被刪除。\n\n在繼續之前，系統將提示您確認兩次。"
+  },
+  "Error": {
+    "machine_translated": true,
+    "translation": "錯誤"
+  },
+  "Failover Critical": {
+    "machine_translated": true,
+    "translation": "故障轉移至關重要"
+  },
+  "Failover Group": {
+    "machine_translated": true,
+    "translation": "故障切換組"
+  },
+  "Failover Settings": {
+    "machine_translated": true,
+    "translation": "故障轉移設定"
+  },
+  "Gateway": {
+    "machine_translated": true,
+    "translation": "閘道"
+  },
+  "Generate a single-use temporary password for the\ncurrently authenticated user.\n\nThe one-time password can be used to log in once\nand is invalidated immediately after use.": {
+    "machine_translated": true,
+    "translation": "產生一次性臨時密碼\n目前已驗證的使用者。\n\n一次性密碼可用於登入一次\n並使用後立即失效。"
+  },
+  "Generate one-time password": {
+    "machine_translated": true,
+    "translation": "產生一次性密碼"
+  },
+  "Generating a new 2FA secret will invalidate your current\nauthenticator app configuration. Continue?": {
+    "machine_translated": true,
+    "translation": "產生新的 2FA 金鑰將使您目前的金鑰無效\n驗證器應用程式配置。繼續？"
+  },
+  "Hostname": {
+    "machine_translated": true,
+    "translation": "主機名稱"
+  },
+  "IMPORTANT: Scan this QR code with your authenticator app": {
+    "machine_translated": true,
+    "translation": "重要提示：使用您的身份驗證器應用程式掃描此二維碼"
+  },
+  "IP Address": {
+    "machine_translated": true,
+    "translation": "IP 位址"
+  },
+  "IPv4 DHCP": {
+    "machine_translated": true,
+    "translation": "IPv4 動態主機設定協定"
+  },
+  "IPv4 Gateway": {
+    "machine_translated": true,
+    "translation": "IPv4網關"
+  },
+  "IPv6 Auto": {
+    "machine_translated": true,
+    "translation": "IPv6自動"
+  },
+  "IPv6 Gateway": {
+    "machine_translated": true,
+    "translation": "IPv6網關"
+  },
+  "Interface": {
+    "machine_translated": true,
+    "translation": "介面"
+  },
+  "Interface Settings": {
+    "machine_translated": true,
+    "translation": "介面設定"
+  },
+  "Interface Type": {
+    "machine_translated": true,
+    "translation": "介面類型"
+  },
+  "Interface name is required.": {
+    "machine_translated": true,
+    "translation": "介面名稱為必填項。"
+  },
+  "Interface settings": {
+    "machine_translated": true,
+    "translation": "介面設定"
+  },
+  "Interface {name} created.\nUse [a] from the list to apply changes.": {
+    "machine_translated": true,
+    "translation": "介面 {name} 已建立。\n使用清單中的 [a] 套用變更。"
+  },
+  "Interface {name} deleted.\nUse [a] from the list to apply changes.": {
+    "machine_translated": true,
+    "translation": "介面 {name} 已刪除。\n使用清單中的 [a] 套用變更。"
+  },
+  "Interface {name} updated.\nUse [a] from the list to apply changes.": {
+    "machine_translated": true,
+    "translation": "介面 {name} 已更新。\n使用清單中的 [a] 套用變更。"
+  },
+  "Invalid IP address in alias: {e}": {
+    "machine_translated": true,
+    "translation": "別名中的 IP 位址無效：{e}"
+  },
+  "Invalid IP address: {s}": {
+    "machine_translated": true,
+    "translation": "無效的 IP 位址：{s}"
+  },
+  "Invalid prefix length in alias: {e}": {
+    "machine_translated": true,
+    "translation": "別名中的前綴長度無效：{e}"
+  },
+  "LACPDU Rate": {
+    "machine_translated": true,
+    "translation": "LACPDU 速率"
+  },
+  "Language": {
+    "machine_translated": true,
+    "translation": "語言"
+  },
+  "Link Aggregation Settings": {
+    "machine_translated": true,
+    "translation": "鏈路聚合設定"
+  },
+  "Load Average": {
+    "machine_translated": true,
+    "translation": "平均負載"
+  },
+  "Local administrator {u} set up successfully.": {
+    "machine_translated": true,
+    "translation": "本機管理員{u}設定成功。"
+  },
+  "Locale": {
+    "machine_translated": true,
+    "translation": "語言環境"
+  },
+  "MTU": {
+    "machine_translated": true,
+    "translation": "MTU"
+  },
+  "Manage static network routes.\n\n  • View existing static routes\n  • Add new routes (destination, gateway, description)\n  • Edit or delete existing routes\n\nKeys: Enter = Edit,  a = Add,  d = Delete,  q = Back": {
+    "machine_translated": true,
+    "translation": "管理靜態網路路由。\n\n  • 查看現有靜態路由\n  • 新增路由（目的地、網關、描述）\n  • 編輯或刪除現有路線\n\n鍵：Enter = 編輯、a = 新增、d = 刪除、q = 返回"
+  },
+  "Manufacturer": {
+    "machine_translated": true,
+    "translation": "製造商"
+  },
+  "Members": {
+    "machine_translated": true,
+    "translation": "成員"
+  },
+  "Memory": {
+    "machine_translated": true,
+    "translation": "記憶體"
+  },
+  "My account": {
+    "machine_translated": true,
+    "translation": "我的帳戶"
+  },
+  "Name": {
+    "machine_translated": true,
+    "translation": "名稱"
+  },
+  "Nameserver 1": {
+    "machine_translated": true,
+    "translation": "名稱伺服器 1"
+  },
+  "Nameserver 2": {
+    "machine_translated": true,
+    "translation": "名稱伺服器2"
+  },
+  "Nameserver 3": {
+    "machine_translated": true,
+    "translation": "名稱伺服器 3"
+  },
+  "Network": {
+    "machine_translated": true,
+    "translation": "網路"
+  },
+  "Network Configuration": {
+    "machine_translated": true,
+    "translation": "網路配置"
+  },
+  "Network Interfaces": {
+    "machine_translated": true,
+    "translation": "網路介面"
+  },
+  "Network changes persisted successfully.": {
+    "machine_translated": true,
+    "translation": "網路變更成功保留。"
+  },
+  "Network settings": {
+    "machine_translated": true,
+    "translation": "網路設定"
+  },
+  "Network settings updated successfully.": {
+    "machine_translated": true,
+    "translation": "網路設定更新成功。"
+  },
+  "New Interface – Step 1": {
+    "machine_translated": true,
+    "translation": "新介面 – 步驟 1"
+  },
+  "New Interface – Step 2": {
+    "machine_translated": true,
+    "translation": "新介面 – 第 2 步"
+  },
+  "New password for {u}:": {
+    "machine_translated": true,
+    "translation": "{u} 的新密碼："
+  },
+  "No": {
+    "machine_translated": true,
+    "translation": "否"
+  },
+  "No local administrators found.": {
+    "machine_translated": true,
+    "translation": "未找到本機管理員。"
+  },
+  "No provisioning URI returned from server.": {
+    "machine_translated": true,
+    "translation": "伺服器未傳回配置 URI。"
+  },
+  "No static routes configured.": {
+    "machine_translated": true,
+    "translation": "沒有配置靜態路由。"
+  },
+  "No terminal QR code tool was found on this system.\n\nInstall \"qr\" or \"qrcode-terminal\" to use this feature.": {
+    "machine_translated": true,
+    "translation": "該系統未找到終端二維碼工具。\n\n安裝“qr”或“qrcode-terminal”即可使用此功能。"
+  },
+  "Not Found": {
+    "machine_translated": true,
+    "translation": "未找到"
+  },
+  "Not a valid member: {v}": {
+    "machine_translated": true,
+    "translation": "不是有效會員：{v}"
+  },
+  "Not a valid port: {v}": {
+    "machine_translated": true,
+    "translation": "不是有效連接埠：{v}"
+  },
+  "One-Time Password": {
+    "machine_translated": true,
+    "translation": "一次性密碼"
+  },
+  "One-time password for \"{u}\":\n\n  {otp}\n\nThis password can only be used once.\nDialog closes automatically after {t} seconds.": {
+    "machine_translated": true,
+    "translation": "「{u}」的一次性密碼：\n\n  {otp}\n\n此密碼只能使用一次。\n對話框在 {t} 秒後自動關閉。"
+  },
+  "Open Linux Shell": {
+    "machine_translated": true,
+    "translation": "打開 Linux 保護殼"
+  },
+  "Open TrueNAS CLI Shell": {
+    "machine_translated": true,
+    "translation": "打開 TrueNAS CLI Shell"
+  },
+  "Open a Linux shell (bash/zsh).\n\nSuspends the TUI and opens your login shell.\nType \"exit\" or press Ctrl+D to return to the TUI.": {
+    "machine_translated": true,
+    "translation": "開啟 Linux shell (bash/zsh)。\n\n掛起 TUI 並開啟您的登入 shell。\n輸入“exit”或按 Ctrl+D 返回 TUI。"
+  },
+  "Open the TrueNAS interactive CLI shell (midcli).\n\nReplaces the TUI with the full midcli command-line\ninterface. The TUI restarts after you exit midcli.": {
+    "machine_translated": true,
+    "translation": "開啟 TrueNAS 互動式 CLI shell (midcli)。\n\n將 TUI 替換為完整的 midcli 命令列\n介面。退出 midcli 後，TUI 將重新啟動。"
+  },
+  "Other Settings": {
+    "machine_translated": true,
+    "translation": "其他設定"
+  },
+  "Parent Interface": {
+    "machine_translated": true,
+    "translation": "父介面"
+  },
+  "Password changed successfully.": {
+    "machine_translated": true,
+    "translation": "密碼更改成功。"
+  },
+  "Password changes are only supported for local accounts.\nThis account is managed by an external directory service.": {
+    "machine_translated": true,
+    "translation": "僅本機帳戶支援更改密碼。\n此帳戶由外部目錄服務管理。"
+  },
+  "Password for {u} changed successfully.\nTwo-factor authentication has been disabled.": {
+    "machine_translated": true,
+    "translation": "{u} 的密碼已成功變更。\n雙重身份驗證已被停用。"
+  },
+  "Password for {u}:": {
+    "machine_translated": true,
+    "translation": "{u} 的密碼："
+  },
+  "Password must be at least {n} characters.": {
+    "machine_translated": true,
+    "translation": "密碼必須至少包含 {n} 個字元。"
+  },
+  "Passwords do not match.": {
+    "machine_translated": true,
+    "translation": "密碼不符。"
+  },
+  "Pending changes. Press [a] to apply.": {
+    "machine_translated": true,
+    "translation": "待更改。按 [a] 應用。"
+  },
+  "Persisted": {
+    "machine_translated": true,
+    "translation": "堅持"
+  },
+  "Please enter the reason for the system reboot\n(leave blank to cancel):": {
+    "machine_translated": true,
+    "translation": "請輸入系統重新啟動的原因\n（留空取消）："
+  },
+  "Please enter the reason for the system shutdown\n(leave blank to cancel):": {
+    "machine_translated": true,
+    "translation": "請輸入系統關閉的原因\n（留空取消）："
+  },
+  "Port": {
+    "machine_translated": true,
+    "translation": "連接埠"
+  },
+  "Ports": {
+    "machine_translated": true,
+    "translation": "連接埠"
+  },
+  "Power Control": {
+    "machine_translated": true,
+    "translation": "電源控制"
+  },
+  "Prefix length out of range in alias: {e}": {
+    "machine_translated": true,
+    "translation": "別名中的前綴長度超出範圍：{e}"
+  },
+  "Priority (PCP)": {
+    "machine_translated": true,
+    "translation": "優先（PCP）"
+  },
+  "Product": {
+    "machine_translated": true,
+    "translation": "產品"
+  },
+  "Protocol": {
+    "machine_translated": true,
+    "translation": "協定"
+  },
+  "Reboot": {
+    "machine_translated": true,
+    "translation": "重啟"
+  },
+  "Reboot initiated. The system is shutting down.": {
+    "machine_translated": true,
+    "translation": "已啟動重新啟動。系統正在關閉。"
+  },
+  "Reboot or shut down the TrueNAS system.\n\n  • Reboot   – restart the system\n  • Shutdown – power off the system\n\nYou will be prompted for a reason and confirmation\nbefore any action is taken.": {
+    "machine_translated": true,
+    "translation": "重新啟動或關閉 TrueNAS 系統。\n\n  • 重新啟動 – 重新啟動系統\n  • 關機 – 關閉系統電源\n\n系統將提示您輸入原因並進行確認\n在採取任何行動之前。"
+  },
+  "Reboot the TrueNAS system.\n\nYou will be prompted to enter a reason for the reboot\nbefore the system restarts.\n\nAll active sessions and shares will be interrupted.": {
+    "machine_translated": true,
+    "translation": "重新啟動 TrueNAS 系統。\n\n系統會提示您輸入重新啟動的原因\n在系統重新啟動之前。\n\n所有活動會話和共享都將中斷。"
+  },
+  "Reboot the system?\n\nReason: {r}": {
+    "machine_translated": true,
+    "translation": "重新啟動系統嗎？\n\n原因：{r}"
+  },
+  "Reboot/Shutdown": {
+    "machine_translated": true,
+    "translation": "重啟/關機"
+  },
+  "Rebooting": {
+    "machine_translated": true,
+    "translation": "重新啟動"
+  },
+  "Renew 2FA Secret": {
+    "machine_translated": true,
+    "translation": "更新 2FA 秘密"
+  },
+  "Renew two-factor secret": {
+    "machine_translated": true,
+    "translation": "更新雙因素秘密"
+  },
+  "Reset": {
+    "machine_translated": true,
+    "translation": "重置"
+  },
+  "Reset Configuration": {
+    "machine_translated": true,
+    "translation": "重置組態"
+  },
+  "Reset configuration to defaults": {
+    "machine_translated": true,
+    "translation": "將配置重設為預設值"
+  },
+  "Retype new password:": {
+    "machine_translated": true,
+    "translation": "重新輸入新密碼："
+  },
+  "Retype password for {u}:": {
+    "machine_translated": true,
+    "translation": "重新輸入 {u} 的密碼："
+  },
+  "Root user (not recommended)": {
+    "machine_translated": true,
+    "translation": "root用戶（不推薦）"
+  },
+  "Save": {
+    "machine_translated": true,
+    "translation": "儲存"
+  },
+  "Saved": {
+    "machine_translated": true,
+    "translation": "已儲存"
+  },
+  "Secret key: {s}  (for manual entry)": {
+    "machine_translated": true,
+    "translation": "金鑰：{s}（用於手動輸入）"
+  },
+  "Select Administrator": {
+    "machine_translated": true,
+    "translation": "選擇管理員"
+  },
+  "Serial": {
+    "machine_translated": true,
+    "translation": "序號"
+  },
+  "Set Up Administrator": {
+    "machine_translated": true,
+    "translation": "設定管理員"
+  },
+  "Set to 0 to use the system default MTU": {
+    "machine_translated": true,
+    "translation": "設定為 0 以使用系統預設 MTU"
+  },
+  "Set up local administrator": {
+    "machine_translated": true,
+    "translation": "設定本機管理員"
+  },
+  "Set up two-factor authentication": {
+    "machine_translated": true,
+    "translation": "設定雙重認證"
+  },
+  "Settings Saved": {
+    "machine_translated": true,
+    "translation": "設定已儲存"
+  },
+  "Shut down the TrueNAS system.\n\nYou will be prompted to enter a reason for the shutdown\nbefore the system powers off.\n\nAll active sessions and shares will be interrupted.": {
+    "machine_translated": true,
+    "translation": "關閉 TrueNAS 系統。\n\n系統將提示您輸入關閉原因\n在系統關閉電源之前。\n\n所有活動會話和共享都將中斷。"
+  },
+  "Shut down the system?\n\nReason: {r}": {
+    "machine_translated": true,
+    "translation": "關閉系統？\n\n原因：{r}"
+  },
+  "Shutdown": {
+    "machine_translated": true,
+    "translation": "關機"
+  },
+  "Shutdown initiated. The system is powering off.": {
+    "machine_translated": true,
+    "translation": "已開始關閉。系統正在關閉電源。"
+  },
+  "Shutting Down": {
+    "machine_translated": true,
+    "translation": "關閉"
+  },
+  "Specify a bare IP address (no prefix length)": {
+    "machine_translated": true,
+    "translation": "指定裸IP位址（無前綴長度）"
+  },
+  "Startup": {
+    "machine_translated": true,
+    "translation": "啟動"
+  },
+  "Startup view": {
+    "machine_translated": true,
+    "translation": "啟動視圖"
+  },
+  "Static Routes": {
+    "machine_translated": true,
+    "translation": "靜態路由"
+  },
+  "Static routes": {
+    "machine_translated": true,
+    "translation": "靜態路由"
+  },
+  "Success": {
+    "machine_translated": true,
+    "translation": "成功"
+  },
+  "System Information": {
+    "machine_translated": true,
+    "translation": "系統資訊"
+  },
+  "TUI preferences saved.\nTheme and locale changes take effect immediately.": {
+    "machine_translated": true,
+    "translation": "TUI 偏好設定已儲存。\n主題和區域設定變更立即生效。"
+  },
+  "Tab/↑↓: navigate   Enter: confirm   Esc: cancel": {
+    "machine_translated": true,
+    "translation": "Tab/↑↓：導覽 Enter：確認 Esc：取消"
+  },
+  "Text UI settings": {
+    "machine_translated": true,
+    "translation": "文字使用者介面設定"
+  },
+  "Theme": {
+    "machine_translated": true,
+    "translation": "主題"
+  },
+  "This Node IPs": {
+    "machine_translated": true,
+    "translation": "該節點IP"
+  },
+  "This will ERASE all configuration and reset to defaults.\nAre you absolutely sure?": {
+    "machine_translated": true,
+    "translation": "這將刪除所有配置並重置為預設值。\n你絕對確定嗎？"
+  },
+  "Time format": {
+    "machine_translated": true,
+    "translation": "時間格式"
+  },
+  "Timezone": {
+    "machine_translated": true,
+    "translation": "時區"
+  },
+  "Two-factor authentication has been disabled.": {
+    "machine_translated": true,
+    "translation": "雙重身份驗證已被停用。"
+  },
+  "Type RESET to confirm (case-sensitive):": {
+    "machine_translated": true,
+    "translation": "鍵入 RESET 進行確認（區分大小寫）："
+  },
+  "Unavailable": {
+    "machine_translated": true,
+    "translation": "不可用"
+  },
+  "Uptime": {
+    "machine_translated": true,
+    "translation": "運作時間"
+  },
+  "VLAN Settings": {
+    "machine_translated": true,
+    "translation": "VLAN 設定"
+  },
+  "VLAN Tag": {
+    "machine_translated": true,
+    "translation": "VLAN 標籤"
+  },
+  "Version": {
+    "machine_translated": true,
+    "translation": "版本"
+  },
+  "View and edit network interface configuration.\n\n  • Enable/disable DHCP and IPv6 auto-configuration\n  • Add or remove static IP aliases\n  • Set MTU, VLAN tag, bridge members, LAG ports, and more\n  • Apply changes (with automatic rollback safety)\n  • Persist changes once the network is confirmed working\n\nPress Enter to select an interface to edit.\nPress [n] to create a new interface, [d] to delete.\nAfter editing, use [a] to Apply and [p] to Persist.": {
+    "machine_translated": true,
+    "translation": "檢視和編輯網路介面配置。\n\n  • 啟用/停用 DHCP 和 IPv6 自動配置\n  • 新增或刪除靜態IP 別名\n  • 設定MTU、VLAN 標記、橋接器成員、LAG 連接埠等\n  • 應用變更（具有自動回滾安全性）\n  • 確認網路正常運作後保留更改\n\n按 Enter 鍵選擇要編輯的介面。\n按 [n] 建立新接口，按 [d] 刪除。\n編輯後，使用 [a] 應用，使用 [p] 保留。"
+  },
+  "View your account information and manage credentials.\n\n  • View username, UID, roles, and 2FA status\n  • Change your password\n  • Generate a one-time password for single-use login\n  • Set up or renew two-factor authentication\n\nPassword changes take effect immediately.\nOne-time passwords expire after a single login.": {
+    "machine_translated": true,
+    "translation": "查看您的帳戶資訊並管理憑證。\n\n  • 查看使用者名稱、UID、角色和 2FA 狀態\n  • 更改您的密碼\n  • 產生一次性登入密碼\n  • 設定或更新雙重認證\n\n密碼更改立即生效。\n一次性密碼在單一登入後就會過期。"
+  },
+  "Virtual IPs": {
+    "machine_translated": true,
+    "translation": "虛擬IP"
+  },
+  "WARNING: You are logged in as root!": {
+    "machine_translated": true,
+    "translation": "警告：您已以 root 身分登入！"
+  },
+  "Web UI Authentication Method": {
+    "machine_translated": true,
+    "translation": "Web使用者介面認證方式"
+  },
+  "Without it you may be locked out of this system.": {
+    "machine_translated": true,
+    "translation": "如果沒有它，您可能會被鎖定在該系統之外。"
+  },
+  "Xmit Hash Policy": {
+    "machine_translated": true,
+    "translation": "Xmit 哈希策略"
+  },
+  "Yes": {
+    "machine_translated": true,
+    "translation": "是"
+  },
+  "Yes, reset": {
+    "machine_translated": true,
+    "translation": "是的，重置"
+  },
+  "[↑↓] Navigate  [Enter] Edit  [a] Add  [d] Delete  [q] Back": {
+    "machine_translated": true,
+    "translation": "[↑↓] 導覽 [Enter] 編輯 [a] 新增 [d] 刪除 [q] 返回"
+  },
+  "[↑↓] Navigate  [Enter] Edit  [n] New  [d] Delete  [a] Apply  [p] Persist  [q] Back": {
+    "machine_translated": true,
+    "translation": "[↑↓] 導覽 [Enter] 編輯 [n] 新建 [d] 刪除 [a] 應用 [p] 保留 [q] 返回"
+  },
+  "[↑↓] Select  [Enter] Edit  [a] Add  [d] Delete  [Esc] Done": {
+    "machine_translated": true,
+    "translation": "[↑↓] 選擇 [Enter] 編輯 [a] 新增 [d] 刪除 [Esc] 完成"
+  },
+  "midcli is not available on this system.": {
+    "machine_translated": true,
+    "translation": "midcli 在此系統上不可用。"
+  },
+  "↑↓ Navigate  Enter Select  Esc Cancel": {
+    "machine_translated": true,
+    "translation": "↑↓ 導覽 Enter 選擇 Esc 取消"
+  }
+}

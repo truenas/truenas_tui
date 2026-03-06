@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "truenas-tui"
+description = "TrueNAS Terminal User Interface"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+dynamic = ["version"]
+dependencies = ["truenas-api-client"]
+
+[project.scripts]
+truenas-tui = "truenas_tui.main:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["truenas_tui*"]
+
+[tool.setuptools.package-data]
+truenas_tui = ["locale/**/LC_MESSAGES/*.mo"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = [".", "tests"]
+

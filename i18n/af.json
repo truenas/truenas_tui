@@ -1,0 +1,866 @@
+{
+  " (no QR tool found)": {
+    "machine_translated": true,
+    "translation": "(geen QR-instrument gevind nie)"
+  },
+  " My Account – {u} ": {
+    "machine_translated": true,
+    "translation": "My rekening – {u}"
+  },
+  " Press Enter to continue": {
+    "machine_translated": true,
+    "translation": "Druk Enter om voort te gaan"
+  },
+  " Two-Factor Authentication Setup ": {
+    "machine_translated": true,
+    "translation": "Twee-faktor-verifikasie-opstelling"
+  },
+  "(Google Authenticator, Authy, etc.) before navigating away.": {
+    "machine_translated": true,
+    "translation": "(Google Authenticator, Authy, ens.) voordat jy weg navigeer."
+  },
+  "(no addresses)": {
+    "machine_translated": true,
+    "translation": "(geen adresse)"
+  },
+  "(none)": {
+    "machine_translated": true,
+    "translation": "(geen)"
+  },
+  "Access: Read-only": {
+    "machine_translated": true,
+    "translation": "Toegang: Leesalleen"
+  },
+  "Access: Read/Write": {
+    "machine_translated": true,
+    "translation": "Toegang: Lees/Skryf"
+  },
+  "Actions:": {
+    "machine_translated": true,
+    "translation": "Aksies:"
+  },
+  "Add Static Route": {
+    "machine_translated": true,
+    "translation": "Voeg statiese roete by"
+  },
+  "Address": {
+    "machine_translated": true,
+    "translation": "Adres"
+  },
+  "Administrative user (admin)  [recommended]": {
+    "machine_translated": true,
+    "translation": "Administratiewe gebruiker (admin) [aanbeveel]"
+  },
+  "Alias must be in CIDR notation (e.g. 192.168.1.1/24): {e}": {
+    "machine_translated": true,
+    "translation": "Alias ​​moet in CIDR-notasie wees (bv. 192.168.1.1/24): {e}"
+  },
+  "Aliases (CIDR)": {
+    "machine_translated": true,
+    "translation": "Aliases (CIDR)"
+  },
+  "Appearance": {
+    "machine_translated": true,
+    "translation": "Voorkoms"
+  },
+  "Applied": {
+    "machine_translated": true,
+    "translation": "Toegepas"
+  },
+  "Auto-refreshes every {n}s  [r] force refresh": {
+    "machine_translated": true,
+    "translation": "Outo-verfris elke {n}s [r] dwing verfris"
+  },
+  "Behaviour": {
+    "machine_translated": true,
+    "translation": "Gedrag"
+  },
+  "Bridge Settings": {
+    "machine_translated": true,
+    "translation": "Bruginstellings"
+  },
+  "CPU": {
+    "machine_translated": true,
+    "translation": "SVE"
+  },
+  "Cancel": {
+    "machine_translated": true,
+    "translation": "Kanselleer"
+  },
+  "Cancelled": {
+    "machine_translated": true,
+    "translation": "Gekanselleer"
+  },
+  "Cannot Change Password": {
+    "machine_translated": true,
+    "translation": "Kan nie wagwoord verander nie"
+  },
+  "Change Password": {
+    "machine_translated": true,
+    "translation": "Verander wagwoord"
+  },
+  "Change local administrator password": {
+    "machine_translated": true,
+    "translation": "Verander plaaslike administrateur wagwoord"
+  },
+  "Change password": {
+    "machine_translated": true,
+    "translation": "Verander wagwoord"
+  },
+  "Change the password for a local administrator account.\n\nIf no local administrator has been configured yet, this\noption lets you set up an initial admin or root account.\n\nNote: changing a password will disable two-factor\nauthentication for that account.": {
+    "machine_translated": true,
+    "translation": "Verander die wagwoord vir 'n plaaslike administrateur rekening.\n\nAs geen plaaslike administrateur nog gekonfigureer is nie, dit\nopsie laat jou 'n aanvanklike administrateur of wortelrekening opstel.\n\nLet wel: die verandering van 'n wagwoord sal twee-faktor deaktiveer\nstawing vir daardie rekening."
+  },
+  "Changes applied. Network will roll back in ~60 seconds\nunless you press [p] to persist them.": {
+    "machine_translated": true,
+    "translation": "Veranderinge toegepas. Netwerk sal oor ~60 sekondes terugrol\ntensy jy [p] druk om hulle te volhard."
+  },
+  "Changes applied. Press [p] to persist or they roll back in {n}s.": {
+    "machine_translated": true,
+    "translation": "Veranderinge toegepas. Druk [p] om aan te hou of hulle rol terug in {n}s."
+  },
+  "Configuration reset cancelled.": {
+    "machine_translated": true,
+    "translation": "Konfigurasieterugstelling gekanselleer."
+  },
+  "Configuration reset initiated.\nThe system will reboot with default settings.": {
+    "machine_translated": true,
+    "translation": "Konfigurasieterugstelling is begin.\nDie stelsel sal herlaai met verstekinstellings."
+  },
+  "Configure global network settings:\n\n  • Hostname and domain\n  • Default IPv4 and IPv6 gateways\n  • DNS nameservers (up to three)\n\nChanges take effect immediately after saving.": {
+    "machine_translated": true,
+    "translation": "Stel globale netwerkinstellings op:\n\n  • Gasheernaam en domein\n  • Verstek IPv4- en IPv6-poorte\n  • DNS-naambedieners (tot drie)\n\nVeranderinge tree onmiddellik in werking nadat dit gestoor is."
+  },
+  "Configure network interfaces": {
+    "machine_translated": true,
+    "translation": "Stel netwerkkoppelvlakke op"
+  },
+  "Configure network settings": {
+    "machine_translated": true,
+    "translation": "Stel netwerkinstellings op"
+  },
+  "Configure networking for this TrueNAS system.\n\n  • Interface settings  – DHCP, IP aliases, MTU\n  • Network settings    – Hostname, domain, gateways, DNS\n  • Static routes       – Add and remove static routes\n\nChanges to interfaces require a commit step\nbefore they take effect.": {
+    "machine_translated": true,
+    "translation": "Stel netwerk vir hierdie TrueNAS-stelsel op.\n\n  • Interface-instellings – DHCP, IP-aliasse, MTU\n  • Netwerkinstellings – Gasheernaam, domein, poorte, DNS\n  • Statiese roetes – Voeg statiese roetes by en verwyder dit\n\nVeranderinge aan koppelvlakke vereis 'n commit-stap\nvoordat hulle in werking tree."
+  },
+  "Configure static routes": {
+    "machine_translated": true,
+    "translation": "Stel statiese roetes op"
+  },
+  "Confirm Delete": {
+    "machine_translated": true,
+    "translation": "Bevestig uitvee"
+  },
+  "Confirm Reboot": {
+    "machine_translated": true,
+    "translation": "Bevestig herlaai"
+  },
+  "Confirm Reset": {
+    "machine_translated": true,
+    "translation": "Bevestig terugstelling"
+  },
+  "Confirm Shutdown": {
+    "machine_translated": true,
+    "translation": "Bevestig afskakeling"
+  },
+  "Confirm dangerous actions": {
+    "machine_translated": true,
+    "translation": "Bevestig gevaarlike aksies"
+  },
+  "Could not load LAG port choices:\n": {
+    "machine_translated": true,
+    "translation": "Kon nie LAG-poortkeuses laai nie:"
+  },
+  "Could not load VLAN parent choices:\n": {
+    "machine_translated": true,
+    "translation": "Kon nie VLAN-ouerkeuses laai nie:"
+  },
+  "Could not load bridge member choices:\n": {
+    "machine_translated": true,
+    "translation": "Kon nie bruglid-keuses laai nie:"
+  },
+  "Create one-time password": {
+    "machine_translated": true,
+    "translation": "Skep eenmalige wagwoord"
+  },
+  "Create one-time password for \"{u}\"": {
+    "machine_translated": true,
+    "translation": "Skep eenmalige wagwoord vir \"{u}\""
+  },
+  "Created": {
+    "machine_translated": true,
+    "translation": "Geskep"
+  },
+  "Current password:": {
+    "machine_translated": true,
+    "translation": "Huidige wagwoord:"
+  },
+  "Customise the TrueNAS TUI for your user account.\n\n  • Theme: default (blue), dark (green), high-contrast\n  • Startup view: system info pane or menu description\n  • Confirm dangerous actions (reboot, shutdown, reset)\n  • Language and date/time display formats\n\nSettings are saved to your account and persist across\nsessions on any client.": {
+    "machine_translated": true,
+    "translation": "Pas die TrueNAS TUI vir jou gebruikersrekening aan.\n\n  • Tema: verstek (blou), donker (groen), hoë kontras\n  • Opstartaansig: stelselinligtingpaneel of kieslysbeskrywing\n  • Bevestig gevaarlike handelinge (herlaai, afskakel, herstel)\n  • Taal en datum/tyd vertoon formate\n\nInstellings word in jou rekening gestoor en bly oor\nsessies op enige kliënt."
+  },
+  "Date format": {
+    "machine_translated": true,
+    "translation": "Datum formaat"
+  },
+  "Delete Route": {
+    "machine_translated": true,
+    "translation": "Vee roete uit"
+  },
+  "Delete interface {name}?": {
+    "machine_translated": true,
+    "translation": "Vee koppelvlak {name} uit?"
+  },
+  "Delete static route {dest}?": {
+    "machine_translated": true,
+    "translation": "Vee statiese roete {bestemming} uit?"
+  },
+  "Deleted": {
+    "machine_translated": true,
+    "translation": "Geskrap"
+  },
+  "Description": {
+    "machine_translated": true,
+    "translation": "Beskrywing"
+  },
+  "Destination (CIDR)": {
+    "machine_translated": true,
+    "translation": "Bestemming (CIDR)"
+  },
+  "Disable Two-Factor Authentication": {
+    "machine_translated": true,
+    "translation": "Deaktiveer twee-faktor-verifikasie"
+  },
+  "Disable two-factor authentication": {
+    "machine_translated": true,
+    "translation": "Deaktiveer tweefaktor-verifikasie"
+  },
+  "Disable two-factor authentication for {u}?\nYou will no longer need an OTP to log in.": {
+    "machine_translated": true,
+    "translation": "Deaktiveer twee-faktor-stawing vir {u}?\nJy sal nie meer 'n OTP nodig hê om aan te meld nie."
+  },
+  "Disabled": {
+    "machine_translated": true,
+    "translation": "Gestrem"
+  },
+  "Domain": {
+    "machine_translated": true,
+    "translation": "Domein"
+  },
+  "Edit Static Route": {
+    "machine_translated": true,
+    "translation": "Wysig statiese roete"
+  },
+  "Enabled": {
+    "machine_translated": true,
+    "translation": "Geaktiveer"
+  },
+  "Enter: confirm  Esc: cancel": {
+    "machine_translated": true,
+    "translation": "Voer in: bevestig Esc: kanselleer"
+  },
+  "Erase all TrueNAS configuration and reset to factory\ndefaults.\n\nWARNING: This is irreversible. All settings including\nnetwork configuration, shares, users, and storage pools\nwill be erased.\n\nYou will be prompted to confirm twice before proceeding.": {
+    "machine_translated": true,
+    "translation": "Vee alle TrueNAS-konfigurasie uit en stel terug na die fabriek\nverstek.\n\nWAARSKUWING: Dit is onomkeerbaar. Alle instellings insluitend\nnetwerkopstelling, aandele, gebruikers en bergingpoele\nuitgewis sal word.\n\nJy sal gevra word om twee keer te bevestig voordat jy voortgaan."
+  },
+  "Error": {
+    "machine_translated": true,
+    "translation": "Fout"
+  },
+  "Failover Critical": {
+    "machine_translated": true,
+    "translation": "Failover Kritiek"
+  },
+  "Failover Group": {
+    "machine_translated": true,
+    "translation": "Mislukkingsgroep"
+  },
+  "Failover Settings": {
+    "machine_translated": true,
+    "translation": "Failover-instellings"
+  },
+  "Gateway": {
+    "machine_translated": true,
+    "translation": "Gateway"
+  },
+  "Generate a single-use temporary password for the\ncurrently authenticated user.\n\nThe one-time password can be used to log in once\nand is invalidated immediately after use.": {
+    "machine_translated": true,
+    "translation": "Genereer 'n eenmalige tydelike wagwoord vir die\ntans geverifieerde gebruiker.\n\nDie eenmalige wagwoord kan gebruik word om een keer aan te meld\nen word ongeldig onmiddellik na gebruik."
+  },
+  "Generate one-time password": {
+    "machine_translated": true,
+    "translation": "Genereer eenmalige wagwoord"
+  },
+  "Generating a new 2FA secret will invalidate your current\nauthenticator app configuration. Continue?": {
+    "machine_translated": true,
+    "translation": "Die generering van 'n nuwe 2FA-geheim sal jou huidige ongeldig maak\nAuthenticator-app-konfigurasie. Gaan voort?"
+  },
+  "Hostname": {
+    "machine_translated": true,
+    "translation": "Gasheernaam"
+  },
+  "IMPORTANT: Scan this QR code with your authenticator app": {
+    "machine_translated": true,
+    "translation": "BELANGRIK: Skandeer hierdie QR-kode met jou verifikasie-toepassing"
+  },
+  "IP Address": {
+    "machine_translated": true,
+    "translation": "IP-adres"
+  },
+  "IPv4 DHCP": {
+    "machine_translated": true,
+    "translation": "IPv4 DHCP"
+  },
+  "IPv4 Gateway": {
+    "machine_translated": true,
+    "translation": "IPv4-poort"
+  },
+  "IPv6 Auto": {
+    "machine_translated": true,
+    "translation": "IPv6 Outo"
+  },
+  "IPv6 Gateway": {
+    "machine_translated": true,
+    "translation": "IPv6-poort"
+  },
+  "Interface": {
+    "machine_translated": true,
+    "translation": "Koppelvlak"
+  },
+  "Interface Settings": {
+    "machine_translated": true,
+    "translation": "Interface instellings"
+  },
+  "Interface Type": {
+    "machine_translated": true,
+    "translation": "Tipe koppelvlak"
+  },
+  "Interface name is required.": {
+    "machine_translated": true,
+    "translation": "Interfacenaam word vereis."
+  },
+  "Interface settings": {
+    "machine_translated": true,
+    "translation": "Interface instellings"
+  },
+  "Interface {name} created.\nUse [a] from the list to apply changes.": {
+    "machine_translated": true,
+    "translation": "Interface {name} geskep.\nGebruik [a] uit die lys om veranderinge toe te pas."
+  },
+  "Interface {name} deleted.\nUse [a] from the list to apply changes.": {
+    "machine_translated": true,
+    "translation": "Interface {name} is uitgevee.\nGebruik [a] uit die lys om veranderinge toe te pas."
+  },
+  "Interface {name} updated.\nUse [a] from the list to apply changes.": {
+    "machine_translated": true,
+    "translation": "Interface {name} opgedateer.\nGebruik [a] uit die lys om veranderinge toe te pas."
+  },
+  "Invalid IP address in alias: {e}": {
+    "machine_translated": true,
+    "translation": "Ongeldige IP-adres in alias: {e}"
+  },
+  "Invalid IP address: {s}": {
+    "machine_translated": true,
+    "translation": "Ongeldige IP-adres: {s}"
+  },
+  "Invalid prefix length in alias: {e}": {
+    "machine_translated": true,
+    "translation": "Ongeldige voorvoegsellengte in alias: {e}"
+  },
+  "LACPDU Rate": {
+    "machine_translated": true,
+    "translation": "LACPDU-koers"
+  },
+  "Language": {
+    "machine_translated": true,
+    "translation": "Taal"
+  },
+  "Link Aggregation Settings": {
+    "machine_translated": true,
+    "translation": "Skakel Aggregasie-instellings"
+  },
+  "Load Average": {
+    "machine_translated": true,
+    "translation": "Laai Gemiddeld"
+  },
+  "Local administrator {u} set up successfully.": {
+    "machine_translated": true,
+    "translation": "Plaaslike administrateur {u} is suksesvol opgestel."
+  },
+  "Locale": {
+    "machine_translated": true,
+    "translation": "Lokaal"
+  },
+  "MTU": {
+    "machine_translated": true,
+    "translation": "MTU"
+  },
+  "Manage static network routes.\n\n  • View existing static routes\n  • Add new routes (destination, gateway, description)\n  • Edit or delete existing routes\n\nKeys: Enter = Edit,  a = Add,  d = Delete,  q = Back": {
+    "machine_translated": true,
+    "translation": "Bestuur statiese netwerkroetes.\n\n  • Bekyk bestaande statiese roetes\n  • Voeg nuwe roetes by (bestemming, poort, beskrywing)\n  • Redigeer of skrap bestaande roetes\n\nSleutels: Enter = Redigeer, a = Voeg by, d = Skrap, q = Terug"
+  },
+  "Manufacturer": {
+    "machine_translated": true,
+    "translation": "Vervaardiger"
+  },
+  "Members": {
+    "machine_translated": true,
+    "translation": "Lede"
+  },
+  "Memory": {
+    "machine_translated": true,
+    "translation": "Geheue"
+  },
+  "My account": {
+    "machine_translated": true,
+    "translation": "My rekening"
+  },
+  "Name": {
+    "machine_translated": true,
+    "translation": "Naam"
+  },
+  "Nameserver 1": {
+    "machine_translated": true,
+    "translation": "Naambediener 1"
+  },
+  "Nameserver 2": {
+    "machine_translated": true,
+    "translation": "Naambediener 2"
+  },
+  "Nameserver 3": {
+    "machine_translated": true,
+    "translation": "Naambediener 3"
+  },
+  "Network": {
+    "machine_translated": true,
+    "translation": "Netwerk"
+  },
+  "Network Configuration": {
+    "machine_translated": true,
+    "translation": "Netwerk konfigurasie"
+  },
+  "Network Interfaces": {
+    "machine_translated": true,
+    "translation": "Netwerk koppelvlakke"
+  },
+  "Network changes persisted successfully.": {
+    "machine_translated": true,
+    "translation": "Netwerkveranderinge het suksesvol voortgeduur."
+  },
+  "Network settings": {
+    "machine_translated": true,
+    "translation": "Netwerk instellings"
+  },
+  "Network settings updated successfully.": {
+    "machine_translated": true,
+    "translation": "Netwerkinstellings is suksesvol opgedateer."
+  },
+  "New Interface – Step 1": {
+    "machine_translated": true,
+    "translation": "Nuwe koppelvlak – Stap 1"
+  },
+  "New Interface – Step 2": {
+    "machine_translated": true,
+    "translation": "Nuwe koppelvlak – Stap 2"
+  },
+  "New password for {u}:": {
+    "machine_translated": true,
+    "translation": "Nuwe wagwoord vir {u}:"
+  },
+  "No": {
+    "machine_translated": true,
+    "translation": "Nee"
+  },
+  "No local administrators found.": {
+    "machine_translated": true,
+    "translation": "Geen plaaslike administrateurs gevind nie."
+  },
+  "No provisioning URI returned from server.": {
+    "machine_translated": true,
+    "translation": "Geen voorsiening-URI is van bediener af teruggestuur nie."
+  },
+  "No static routes configured.": {
+    "machine_translated": true,
+    "translation": "Geen statiese roetes opgestel nie."
+  },
+  "No terminal QR code tool was found on this system.\n\nInstall \"qr\" or \"qrcode-terminal\" to use this feature.": {
+    "machine_translated": true,
+    "translation": "Geen terminale QR-kode-instrument is op hierdie stelsel gevind nie.\n\nInstalleer \"qr\" of \"qrcode-terminal\" om hierdie kenmerk te gebruik."
+  },
+  "Not Found": {
+    "machine_translated": true,
+    "translation": "Nie gevind nie"
+  },
+  "Not a valid member: {v}": {
+    "machine_translated": true,
+    "translation": "Nie 'n geldige lid nie: {v}"
+  },
+  "Not a valid port: {v}": {
+    "machine_translated": true,
+    "translation": "Nie 'n geldige poort nie: {v}"
+  },
+  "One-Time Password": {
+    "machine_translated": true,
+    "translation": "Eenmalige wagwoord"
+  },
+  "One-time password for \"{u}\":\n\n  {otp}\n\nThis password can only be used once.\nDialog closes automatically after {t} seconds.": {
+    "machine_translated": true,
+    "translation": "Eenmalige wagwoord vir \"{u}\":\n\n  {otp}\n\nHierdie wagwoord kan slegs een keer gebruik word.\nDialoog sluit outomaties na {t} sekondes."
+  },
+  "Open Linux Shell": {
+    "machine_translated": true,
+    "translation": "Maak Linux Shell oop"
+  },
+  "Open TrueNAS CLI Shell": {
+    "machine_translated": true,
+    "translation": "Maak TrueNAS CLI Shell oop"
+  },
+  "Open a Linux shell (bash/zsh).\n\nSuspends the TUI and opens your login shell.\nType \"exit\" or press Ctrl+D to return to the TUI.": {
+    "machine_translated": true,
+    "translation": "Maak 'n Linux-dop oop (bash/zsh).\n\nSkors die TUI op en maak jou aanmelddop oop.\nTik \"exit\" of druk Ctrl+D om terug te keer na die TUI."
+  },
+  "Open the TrueNAS interactive CLI shell (midcli).\n\nReplaces the TUI with the full midcli command-line\ninterface. The TUI restarts after you exit midcli.": {
+    "machine_translated": true,
+    "translation": "Maak die TrueNAS interaktiewe CLI-dop (midcli) oop.\n\nVervang die TUI met die volledige midcli-opdragreël\nkoppelvlak. Die TUI begin weer nadat jy midcli verlaat het."
+  },
+  "Other Settings": {
+    "machine_translated": true,
+    "translation": "Ander instellings"
+  },
+  "Parent Interface": {
+    "machine_translated": true,
+    "translation": "Ouer-koppelvlak"
+  },
+  "Password changed successfully.": {
+    "machine_translated": true,
+    "translation": "Wagwoord suksesvol verander."
+  },
+  "Password changes are only supported for local accounts.\nThis account is managed by an external directory service.": {
+    "machine_translated": true,
+    "translation": "Wagwoordveranderings word slegs vir plaaslike rekeninge ondersteun.\nHierdie rekening word deur 'n eksterne gidsdiens bestuur."
+  },
+  "Password for {u} changed successfully.\nTwo-factor authentication has been disabled.": {
+    "machine_translated": true,
+    "translation": "Wagwoord vir {u} is suksesvol verander.\nTwee-faktor-stawing is gedeaktiveer."
+  },
+  "Password for {u}:": {
+    "machine_translated": true,
+    "translation": "Wagwoord vir {u}:"
+  },
+  "Password must be at least {n} characters.": {
+    "machine_translated": true,
+    "translation": "Wagwoord moet ten minste {n} karakters wees."
+  },
+  "Passwords do not match.": {
+    "machine_translated": true,
+    "translation": "Wagwoorde stem nie ooreen nie."
+  },
+  "Pending changes. Press [a] to apply.": {
+    "machine_translated": true,
+    "translation": "Hangende veranderinge. Druk [a] om aansoek te doen."
+  },
+  "Persisted": {
+    "machine_translated": true,
+    "translation": "Het volgehou"
+  },
+  "Please enter the reason for the system reboot\n(leave blank to cancel):": {
+    "machine_translated": true,
+    "translation": "Voer asseblief die rede vir die stelselherlaai in\n(laat leeg om te kanselleer):"
+  },
+  "Please enter the reason for the system shutdown\n(leave blank to cancel):": {
+    "machine_translated": true,
+    "translation": "Voer asseblief die rede vir die stelselafsluiting in\n(laat leeg om te kanselleer):"
+  },
+  "Port": {
+    "machine_translated": true,
+    "translation": "Port"
+  },
+  "Ports": {
+    "machine_translated": true,
+    "translation": "Hawens"
+  },
+  "Power Control": {
+    "machine_translated": true,
+    "translation": "Kragbeheer"
+  },
+  "Prefix length out of range in alias: {e}": {
+    "machine_translated": true,
+    "translation": "Voorvoegsellengte buite omvang in alias: {e}"
+  },
+  "Priority (PCP)": {
+    "machine_translated": true,
+    "translation": "Prioriteit (PCP)"
+  },
+  "Product": {
+    "machine_translated": true,
+    "translation": "Produk"
+  },
+  "Protocol": {
+    "machine_translated": true,
+    "translation": "Protokol"
+  },
+  "Reboot": {
+    "machine_translated": true,
+    "translation": "Herlaai"
+  },
+  "Reboot initiated. The system is shutting down.": {
+    "machine_translated": true,
+    "translation": "Herlaai is begin. Die stelsel is besig om af te sluit."
+  },
+  "Reboot or shut down the TrueNAS system.\n\n  • Reboot   – restart the system\n  • Shutdown – power off the system\n\nYou will be prompted for a reason and confirmation\nbefore any action is taken.": {
+    "machine_translated": true,
+    "translation": "Herlaai of skakel die TrueNAS-stelsel af.\n\n  • Herlaai – herbegin die stelsel\n  • Afskakeling – skakel die stelsel af\n\nJy sal vir 'n rede en bevestiging gevra word\nvoordat enige aksie geneem word."
+  },
+  "Reboot the TrueNAS system.\n\nYou will be prompted to enter a reason for the reboot\nbefore the system restarts.\n\nAll active sessions and shares will be interrupted.": {
+    "machine_translated": true,
+    "translation": "Herlaai die TrueNAS-stelsel.\n\nU sal gevra word om 'n rede vir die herlaai in te voer\nvoordat die stelsel weer begin.\n\nAlle aktiewe sessies en delings sal onderbreek word."
+  },
+  "Reboot the system?\n\nReason: {r}": {
+    "machine_translated": true,
+    "translation": "Herlaai die stelsel?\n\nRede: {r}"
+  },
+  "Reboot/Shutdown": {
+    "machine_translated": true,
+    "translation": "Herlaai/Sluit af"
+  },
+  "Rebooting": {
+    "machine_translated": true,
+    "translation": "Herlaai tans"
+  },
+  "Renew 2FA Secret": {
+    "machine_translated": true,
+    "translation": "Hernu 2FA Secret"
+  },
+  "Renew two-factor secret": {
+    "machine_translated": true,
+    "translation": "Hernu twee-faktor geheim"
+  },
+  "Reset": {
+    "machine_translated": true,
+    "translation": "Stel terug"
+  },
+  "Reset Configuration": {
+    "machine_translated": true,
+    "translation": "Stel konfigurasie terug"
+  },
+  "Reset configuration to defaults": {
+    "machine_translated": true,
+    "translation": "Stel konfigurasie terug na verstek"
+  },
+  "Retype new password:": {
+    "machine_translated": true,
+    "translation": "Tik nuwe wagwoord weer in:"
+  },
+  "Retype password for {u}:": {
+    "machine_translated": true,
+    "translation": "Hertik wagwoord vir {u}:"
+  },
+  "Root user (not recommended)": {
+    "machine_translated": true,
+    "translation": "Wortelgebruiker (nie aanbeveel nie)"
+  },
+  "Save": {
+    "machine_translated": true,
+    "translation": "Stoor"
+  },
+  "Saved": {
+    "machine_translated": true,
+    "translation": "Gestoor"
+  },
+  "Secret key: {s}  (for manual entry)": {
+    "machine_translated": true,
+    "translation": "Geheime sleutel: {s} (vir handmatige invoer)"
+  },
+  "Select Administrator": {
+    "machine_translated": true,
+    "translation": "Kies Administrateur"
+  },
+  "Serial": {
+    "machine_translated": true,
+    "translation": "Reeks"
+  },
+  "Set Up Administrator": {
+    "machine_translated": true,
+    "translation": "Stel administrateur op"
+  },
+  "Set to 0 to use the system default MTU": {
+    "machine_translated": true,
+    "translation": "Stel op 0 om die stelsel verstek MTU te gebruik"
+  },
+  "Set up local administrator": {
+    "machine_translated": true,
+    "translation": "Stel plaaslike administrateur op"
+  },
+  "Set up two-factor authentication": {
+    "machine_translated": true,
+    "translation": "Stel twee-faktor-verifikasie op"
+  },
+  "Settings Saved": {
+    "machine_translated": true,
+    "translation": "Instellings gestoor"
+  },
+  "Shut down the TrueNAS system.\n\nYou will be prompted to enter a reason for the shutdown\nbefore the system powers off.\n\nAll active sessions and shares will be interrupted.": {
+    "machine_translated": true,
+    "translation": "Skakel die TrueNAS-stelsel af.\n\nJy sal gevra word om 'n rede vir die afsluiting in te voer\nvoordat die stelsel afskakel.\n\nAlle aktiewe sessies en delings sal onderbreek word."
+  },
+  "Shut down the system?\n\nReason: {r}": {
+    "machine_translated": true,
+    "translation": "Sluit die stelsel af?\n\nRede: {r}"
+  },
+  "Shutdown": {
+    "machine_translated": true,
+    "translation": "Afskakeling"
+  },
+  "Shutdown initiated. The system is powering off.": {
+    "machine_translated": true,
+    "translation": "Afskakeling begin. Die stelsel is besig om af te skakel."
+  },
+  "Shutting Down": {
+    "machine_translated": true,
+    "translation": "Sluit af"
+  },
+  "Specify a bare IP address (no prefix length)": {
+    "machine_translated": true,
+    "translation": "Spesifiseer 'n blote IP-adres (geen voorvoegsellengte nie)"
+  },
+  "Startup": {
+    "machine_translated": true,
+    "translation": "Opstart"
+  },
+  "Startup view": {
+    "machine_translated": true,
+    "translation": "Opstart-aansig"
+  },
+  "Static Routes": {
+    "machine_translated": true,
+    "translation": "Statiese roetes"
+  },
+  "Static routes": {
+    "machine_translated": true,
+    "translation": "Statiese roetes"
+  },
+  "Success": {
+    "machine_translated": true,
+    "translation": "Sukses"
+  },
+  "System Information": {
+    "machine_translated": true,
+    "translation": "Stelselinligting"
+  },
+  "TUI preferences saved.\nTheme and locale changes take effect immediately.": {
+    "machine_translated": true,
+    "translation": "TUI-voorkeure gestoor.\nTema- en plekveranderings tree onmiddellik in werking."
+  },
+  "Tab/↑↓: navigate   Enter: confirm   Esc: cancel": {
+    "machine_translated": true,
+    "translation": "Tab/↑↓: navigeer Enter: bevestig Esc: kanselleer"
+  },
+  "Text UI settings": {
+    "machine_translated": true,
+    "translation": "Teks-UI-instellings"
+  },
+  "Theme": {
+    "machine_translated": true,
+    "translation": "Tema"
+  },
+  "This Node IPs": {
+    "machine_translated": true,
+    "translation": "Hierdie Node IP's"
+  },
+  "This will ERASE all configuration and reset to defaults.\nAre you absolutely sure?": {
+    "machine_translated": true,
+    "translation": "Dit sal alle konfigurasie VEE en terugstel na verstek.\nIs jy absoluut seker?"
+  },
+  "Time format": {
+    "machine_translated": true,
+    "translation": "Tydformaat"
+  },
+  "Timezone": {
+    "machine_translated": true,
+    "translation": "Tydsone"
+  },
+  "Two-factor authentication has been disabled.": {
+    "machine_translated": true,
+    "translation": "Twee-faktor-stawing is gedeaktiveer."
+  },
+  "Type RESET to confirm (case-sensitive):": {
+    "machine_translated": true,
+    "translation": "Tik RESET om te bevestig (hooflettergevoelig):"
+  },
+  "Unavailable": {
+    "machine_translated": true,
+    "translation": "Onbeskikbaar"
+  },
+  "Uptime": {
+    "machine_translated": true,
+    "translation": "Optyd"
+  },
+  "VLAN Settings": {
+    "machine_translated": true,
+    "translation": "VLAN-instellings"
+  },
+  "VLAN Tag": {
+    "machine_translated": true,
+    "translation": "VLAN Tag"
+  },
+  "Version": {
+    "machine_translated": true,
+    "translation": "Weergawe"
+  },
+  "View and edit network interface configuration.\n\n  • Enable/disable DHCP and IPv6 auto-configuration\n  • Add or remove static IP aliases\n  • Set MTU, VLAN tag, bridge members, LAG ports, and more\n  • Apply changes (with automatic rollback safety)\n  • Persist changes once the network is confirmed working\n\nPress Enter to select an interface to edit.\nPress [n] to create a new interface, [d] to delete.\nAfter editing, use [a] to Apply and [p] to Persist.": {
+    "machine_translated": true,
+    "translation": "Bekyk en wysig netwerkkoppelvlakkonfigurasie.\n\n  • Aktiveer/deaktiveer DHCP- en IPv6-outokonfigurasie\n  • Voeg statiese IP-aliasse by of verwyder\n  • Stel MTU, VLAN-merker, bruglede, LAG-poorte, en meer\n  • Pas veranderinge toe (met outomatiese terugrolveiligheid)\n  • Hou veranderinge aan sodra die netwerk bevestig is dat dit werk\n\nDruk Enter om 'n koppelvlak te kies om te wysig.\nDruk [n] om 'n nuwe koppelvlak te skep, [d] om te skrap.\nNa redigering, gebruik [a] om toe te pas en [p] om aan te hou."
+  },
+  "View your account information and manage credentials.\n\n  • View username, UID, roles, and 2FA status\n  • Change your password\n  • Generate a one-time password for single-use login\n  • Set up or renew two-factor authentication\n\nPassword changes take effect immediately.\nOne-time passwords expire after a single login.": {
+    "machine_translated": true,
+    "translation": "Bekyk jou rekeninginligting en bestuur geloofsbriewe.\n\n  • Bekyk gebruikernaam, UID, rolle en 2FA-status\n  • Verander jou wagwoord\n  • Genereer 'n eenmalige wagwoord vir eenmalige aanmelding\n  • Stel twee-faktor-verifikasie op of hernu\n\nWagwoordveranderings tree onmiddellik in werking.\nEenmalige wagwoorde verval na 'n enkele aanmelding."
+  },
+  "Virtual IPs": {
+    "machine_translated": true,
+    "translation": "Virtuele IP's"
+  },
+  "WARNING: You are logged in as root!": {
+    "machine_translated": true,
+    "translation": "WAARSKUWING: Jy is aangemeld as root!"
+  },
+  "Web UI Authentication Method": {
+    "machine_translated": true,
+    "translation": "Web-UI-verifikasiemetode"
+  },
+  "Without it you may be locked out of this system.": {
+    "machine_translated": true,
+    "translation": "Daarsonder kan jy uit hierdie stelsel gesluit word."
+  },
+  "Xmit Hash Policy": {
+    "machine_translated": true,
+    "translation": "Xmit Hash-beleid"
+  },
+  "Yes": {
+    "machine_translated": true,
+    "translation": "Ja"
+  },
+  "Yes, reset": {
+    "machine_translated": true,
+    "translation": "Ja, herstel"
+  },
+  "[↑↓] Navigate  [Enter] Edit  [a] Add  [d] Delete  [q] Back": {
+    "machine_translated": true,
+    "translation": "[↑↓] Navigeer [Enter] Wysig [a] Voeg by [d] Skrap [q] Terug"
+  },
+  "[↑↓] Navigate  [Enter] Edit  [n] New  [d] Delete  [a] Apply  [p] Persist  [q] Back": {
+    "machine_translated": true,
+    "translation": "[↑↓] Navigeer [Enter] Wysig [n] Nuut [d] Skrap [a] Pas toe [p] Volhard [q] Terug"
+  },
+  "[↑↓] Select  [Enter] Edit  [a] Add  [d] Delete  [Esc] Done": {
+    "machine_translated": true,
+    "translation": "[↑↓] Kies [Enter] Wysig [a] Voeg [d] Skrap [Esc] Klaar"
+  },
+  "midcli is not available on this system.": {
+    "machine_translated": true,
+    "translation": "midcli is nie op hierdie stelsel beskikbaar nie."
+  },
+  "↑↓ Navigate  Enter Select  Esc Cancel": {
+    "machine_translated": true,
+    "translation": "↑↓ Navigeer Enter Kies Esc Kanselleer"
+  }
+}

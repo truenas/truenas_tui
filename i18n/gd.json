@@ -1,0 +1,866 @@
+{
+  " (no QR tool found)": {
+    "machine_translated": true,
+    "translation": "(cha deach inneal QR a lorg)"
+  },
+  " My Account – {u} ": {
+    "machine_translated": true,
+    "translation": "An Cunntas agam - {u}"
+  },
+  " Press Enter to continue": {
+    "machine_translated": true,
+    "translation": "Brùth Enter gus leantainn air adhart"
+  },
+  " Two-Factor Authentication Setup ": {
+    "machine_translated": true,
+    "translation": "Suidheachadh dearbhaidh dà-fhactaraidh"
+  },
+  "(Google Authenticator, Authy, etc.) before navigating away.": {
+    "machine_translated": true,
+    "translation": "(Google Authenticator, Authy, etc.) mus tèid thu air falbh."
+  },
+  "(no addresses)": {
+    "machine_translated": true,
+    "translation": "(gun seòlaidhean)"
+  },
+  "(none)": {
+    "machine_translated": true,
+    "translation": "(chan eil)"
+  },
+  "Access: Read-only": {
+    "machine_translated": true,
+    "translation": "Cothrom: Leughadh a-mhàin"
+  },
+  "Access: Read/Write": {
+    "machine_translated": true,
+    "translation": "Cothrom: Leugh/Sgrìobh"
+  },
+  "Actions:": {
+    "machine_translated": true,
+    "translation": "Gnìomhan:"
+  },
+  "Add Static Route": {
+    "machine_translated": true,
+    "translation": "Cuir ris an t-slighe statach"
+  },
+  "Address": {
+    "machine_translated": true,
+    "translation": "Seòladh"
+  },
+  "Administrative user (admin)  [recommended]": {
+    "machine_translated": true,
+    "translation": "Cleachdaiche rianachd (rianachd) [air a mholadh]"
+  },
+  "Alias must be in CIDR notation (e.g. 192.168.1.1/24): {e}": {
+    "machine_translated": true,
+    "translation": "Feumaidh alias a bhith ann an comharradh CIDR (m.e. 192.168.1.1/24): {e}"
+  },
+  "Aliases (CIDR)": {
+    "machine_translated": true,
+    "translation": "Aliases (CIDR)"
+  },
+  "Appearance": {
+    "machine_translated": true,
+    "translation": "Coltas"
+  },
+  "Applied": {
+    "machine_translated": true,
+    "translation": "Air a chur an sàs"
+  },
+  "Auto-refreshes every {n}s  [r] force refresh": {
+    "machine_translated": true,
+    "translation": "Ag ùrachadh gu fèin-obrachail a h-uile {n}s[r] feachd ùrachadh"
+  },
+  "Behaviour": {
+    "machine_translated": true,
+    "translation": "Giùlan"
+  },
+  "Bridge Settings": {
+    "machine_translated": true,
+    "translation": "Roghainnean drochaid"
+  },
+  "CPU": {
+    "machine_translated": true,
+    "translation": "CPU"
+  },
+  "Cancel": {
+    "machine_translated": true,
+    "translation": "Sguir dheth"
+  },
+  "Cancelled": {
+    "machine_translated": true,
+    "translation": "Air a chur dheth"
+  },
+  "Cannot Change Password": {
+    "machine_translated": true,
+    "translation": "Chan urrainn dhuinn am facal-faire atharrachadh"
+  },
+  "Change Password": {
+    "machine_translated": true,
+    "translation": "Atharraich Facal-faire"
+  },
+  "Change local administrator password": {
+    "machine_translated": true,
+    "translation": "Atharraich facal-faire rianadair ionadail"
+  },
+  "Change password": {
+    "machine_translated": true,
+    "translation": "Atharraich am facal-faire"
+  },
+  "Change the password for a local administrator account.\n\nIf no local administrator has been configured yet, this\noption lets you set up an initial admin or root account.\n\nNote: changing a password will disable two-factor\nauthentication for that account.": {
+    "machine_translated": true,
+    "translation": "Atharraich am facal-faire airson cunntas rianadair ionadail.\n\nMura h-eil rianaire ionadail air a rèiteachadh fhathast, seo\nLeigidh an roghainn leat cunntas rianachd no root tùsail a stèidheachadh.\n\nThoir an aire: le bhith ag atharrachadh facal-faire cuiridh sin à comas dà-fhactaraidh\ndearbhadh airson a’ chunntais sin."
+  },
+  "Changes applied. Network will roll back in ~60 seconds\nunless you press [p] to persist them.": {
+    "machine_translated": true,
+    "translation": "Atharraichean air an cur an sàs. Thèid an lìonra air ais ann an ~ 60 diog\nmura brùth thu [p] gus leantainn orra."
+  },
+  "Changes applied. Press [p] to persist or they roll back in {n}s.": {
+    "machine_translated": true,
+    "translation": "Atharraichean air an cur an sàs. Brùth [p] gus leantainn air adhart no rolaich iad air ais ann an {n}s."
+  },
+  "Configuration reset cancelled.": {
+    "machine_translated": true,
+    "translation": "Chaidh ath-shuidheachadh rèiteachaidh a chuir dheth."
+  },
+  "Configuration reset initiated.\nThe system will reboot with default settings.": {
+    "machine_translated": true,
+    "translation": "Ath-shuidheachadh rèiteachaidh air a thòiseachadh.\nTòisichidh an siostam leis na roghainnean bunaiteach."
+  },
+  "Configure global network settings:\n\n  • Hostname and domain\n  • Default IPv4 and IPv6 gateways\n  • DNS nameservers (up to three)\n\nChanges take effect immediately after saving.": {
+    "machine_translated": true,
+    "translation": "Dèan rèiteachadh air roghainnean lìonra cruinne:\n\n  • Ainm aoigheachd agus àrainn\n  • Default geataichean IPv4 agus IPv6\n  • DNS nameservers (suas ri trì)\n\nBidh atharrachaidhean a’ tighinn gu buil sa bhad às deidh sàbhaladh."
+  },
+  "Configure network interfaces": {
+    "machine_translated": true,
+    "translation": "Dèan rèiteachadh air eadar-aghaidh lìonra"
+  },
+  "Configure network settings": {
+    "machine_translated": true,
+    "translation": "Dèan rèiteachadh air roghainnean lìonra"
+  },
+  "Configure networking for this TrueNAS system.\n\n  • Interface settings  – DHCP, IP aliases, MTU\n  • Network settings    – Hostname, domain, gateways, DNS\n  • Static routes       – Add and remove static routes\n\nChanges to interfaces require a commit step\nbefore they take effect.": {
+    "machine_translated": true,
+    "translation": "Dèan rèiteachadh air lìonrachadh airson an t-siostam TrueNAS seo.\n\n  • Roghainnean eadar-aghaidh – DHCP, ailias IP, MTU\n  • Roghainnean lìonra - Ainm aoigheachd, àrainn, geataichean, DNS\n  • Slighean staitigeach – Cuir ris agus thoir air falbh slighean staitigeach\n\nFeumaidh atharrachaidhean air eadar-aghaidh ceum gealltanas\nmus tig iad gu buil."
+  },
+  "Configure static routes": {
+    "machine_translated": true,
+    "translation": "Dèan rèiteachadh air slighean statach"
+  },
+  "Confirm Delete": {
+    "machine_translated": true,
+    "translation": "Dearbhaich Sguab às"
+  },
+  "Confirm Reboot": {
+    "machine_translated": true,
+    "translation": "Dearbhaich Ath-thòiseachadh"
+  },
+  "Confirm Reset": {
+    "machine_translated": true,
+    "translation": "Dearbhaich Ath-shuidheachadh"
+  },
+  "Confirm Shutdown": {
+    "machine_translated": true,
+    "translation": "Dearbhaich Shutdown"
+  },
+  "Confirm dangerous actions": {
+    "machine_translated": true,
+    "translation": "Dearbhaich gnìomhan cunnartach"
+  },
+  "Could not load LAG port choices:\n": {
+    "machine_translated": true,
+    "translation": "Cha b' urrainn dhuinn roghainnean puirt LAG a luchdachadh:"
+  },
+  "Could not load VLAN parent choices:\n": {
+    "machine_translated": true,
+    "translation": "Cha b' urrainn dhuinn roghainnean phàrant VLAN a luchdachadh:"
+  },
+  "Could not load bridge member choices:\n": {
+    "machine_translated": true,
+    "translation": "Cha b' urrainn dhuinn roghainnean ball drochaid a luchdachadh:"
+  },
+  "Create one-time password": {
+    "machine_translated": true,
+    "translation": "Cruthaich facal-faire aon-ùine"
+  },
+  "Create one-time password for \"{u}\"": {
+    "machine_translated": true,
+    "translation": "Cruthaich facal-faire aon-ùine airson \"{u}\""
+  },
+  "Created": {
+    "machine_translated": true,
+    "translation": "Chruthaich"
+  },
+  "Current password:": {
+    "machine_translated": true,
+    "translation": "Facal-faire gnàthaichte:"
+  },
+  "Customise the TrueNAS TUI for your user account.\n\n  • Theme: default (blue), dark (green), high-contrast\n  • Startup view: system info pane or menu description\n  • Confirm dangerous actions (reboot, shutdown, reset)\n  • Language and date/time display formats\n\nSettings are saved to your account and persist across\nsessions on any client.": {
+    "machine_translated": true,
+    "translation": "Gnàthaich an TrueNAS TUI airson do chunntas cleachdaiche.\n\n  • Cuspair: default (gorm), dorcha (uaine), àrd-coimeas\n  • Sealladh tòiseachaidh: pane fiosrachaidh siostam no tuairisgeul clàr\n  • Dearbhaich gnìomhan cunnartach (ath-thòiseachadh, dùnadh, ath-shuidheachadh)\n  • Cruthan taisbeanaidh cànan is ceann-latha/ùine\n\nThèid na roghainnean a shàbhaladh don chunntas agad agus leanaidh iad a-null\nseiseanan air neach-dèiligidh sam bith."
+  },
+  "Date format": {
+    "machine_translated": true,
+    "translation": "Cruth ceann-latha"
+  },
+  "Delete Route": {
+    "machine_translated": true,
+    "translation": "Sguab às an t-slighe"
+  },
+  "Delete interface {name}?": {
+    "machine_translated": true,
+    "translation": "Sguab às eadar-aghaidh {name}?"
+  },
+  "Delete static route {dest}?": {
+    "machine_translated": true,
+    "translation": "A bheil thu airson an t-slighe statach {dest} a sguabadh às?"
+  },
+  "Deleted": {
+    "machine_translated": true,
+    "translation": "Air a sguabadh às"
+  },
+  "Description": {
+    "machine_translated": true,
+    "translation": "Tuairisgeul"
+  },
+  "Destination (CIDR)": {
+    "machine_translated": true,
+    "translation": "Ceann-uidhe (CIDR)"
+  },
+  "Disable Two-Factor Authentication": {
+    "machine_translated": true,
+    "translation": "Cuir à comas Dearbhadh Dà-Factor"
+  },
+  "Disable two-factor authentication": {
+    "machine_translated": true,
+    "translation": "Cuir à comas dearbhadh dà-fhactaraidh"
+  },
+  "Disable two-factor authentication for {u}?\nYou will no longer need an OTP to log in.": {
+    "machine_translated": true,
+    "translation": "Cuir à comas dearbhadh dà-fhactaraidh airson {u}?\nCha bhith feum agad air OTP tuilleadh gus logadh a-steach."
+  },
+  "Disabled": {
+    "machine_translated": true,
+    "translation": "Ciorramach"
+  },
+  "Domain": {
+    "machine_translated": true,
+    "translation": "Fearann"
+  },
+  "Edit Static Route": {
+    "machine_translated": true,
+    "translation": "Deasaich Static Route"
+  },
+  "Enabled": {
+    "machine_translated": true,
+    "translation": "Air a chomasachadh"
+  },
+  "Enter: confirm  Esc: cancel": {
+    "machine_translated": true,
+    "translation": "Cuir a-steach: dearbhaich Esc: cuir dheth"
+  },
+  "Erase all TrueNAS configuration and reset to factory\ndefaults.\n\nWARNING: This is irreversible. All settings including\nnetwork configuration, shares, users, and storage pools\nwill be erased.\n\nYou will be prompted to confirm twice before proceeding.": {
+    "machine_translated": true,
+    "translation": "Sguab às a h-uile rèiteachadh TrueNAS agus ath-shuidheachadh gu factaraidh\neasbhaidhean.\n\nRABHADH: Tha seo do-sheachanta. A h-uile suidheachadh a’ gabhail a-steach\nrèiteachadh lìonra, earrannan, luchd-cleachdaidh, agus amaran stòraidh\nthèid a dhubhadh às.\n\nThèid iarraidh ort dearbhadh dà uair mus lean thu air adhart."
+  },
+  "Error": {
+    "machine_translated": true,
+    "translation": "Mearachd"
+  },
+  "Failover Critical": {
+    "machine_translated": true,
+    "translation": "Failover Critical"
+  },
+  "Failover Group": {
+    "machine_translated": true,
+    "translation": "Buidheann Failover"
+  },
+  "Failover Settings": {
+    "machine_translated": true,
+    "translation": "Roghainnean Failover"
+  },
+  "Gateway": {
+    "machine_translated": true,
+    "translation": "Geata"
+  },
+  "Generate a single-use temporary password for the\ncurrently authenticated user.\n\nThe one-time password can be used to log in once\nand is invalidated immediately after use.": {
+    "machine_translated": true,
+    "translation": "Cruthaich facal-faire sealach aon-chleachdadh airson an\ncleachdaiche dearbhte an-dràsta.\n\nFaodar am facal-faire aon-ùine a chleachdadh airson logadh a-steach aon uair\nagus tha e neo-dhligheach dìreach às deidh a chleachdadh."
+  },
+  "Generate one-time password": {
+    "machine_translated": true,
+    "translation": "Cruthaich facal-faire aon-ùine"
+  },
+  "Generating a new 2FA secret will invalidate your current\nauthenticator app configuration. Continue?": {
+    "machine_translated": true,
+    "translation": "Le bhith a’ gineadh dìomhaireachd 2FA ùr bheir sin neo-dhligheach don t-sruth agad\nrèiteachadh app dearbhadair. Lean air adhart?"
+  },
+  "Hostname": {
+    "machine_translated": true,
+    "translation": "Ainm an òstair"
+  },
+  "IMPORTANT: Scan this QR code with your authenticator app": {
+    "machine_translated": true,
+    "translation": "CUDROMACH: Sgan an còd QR seo leis an aplacaid dearbhaidh agad"
+  },
+  "IP Address": {
+    "machine_translated": true,
+    "translation": "Seòladh IP"
+  },
+  "IPv4 DHCP": {
+    "machine_translated": true,
+    "translation": "IPv4 DHCP"
+  },
+  "IPv4 Gateway": {
+    "machine_translated": true,
+    "translation": "Geata IPv4"
+  },
+  "IPv6 Auto": {
+    "machine_translated": true,
+    "translation": "IPv6 Auto"
+  },
+  "IPv6 Gateway": {
+    "machine_translated": true,
+    "translation": "IPv6 Geata"
+  },
+  "Interface": {
+    "machine_translated": true,
+    "translation": "Eadar-aghaidh"
+  },
+  "Interface Settings": {
+    "machine_translated": true,
+    "translation": "Roghainnean eadar-aghaidh"
+  },
+  "Interface Type": {
+    "machine_translated": true,
+    "translation": "Seòrsa eadar-aghaidh"
+  },
+  "Interface name is required.": {
+    "machine_translated": true,
+    "translation": "Tha feum air ainm eadar-aghaidh."
+  },
+  "Interface settings": {
+    "machine_translated": true,
+    "translation": "Suidheachaidhean eadar-aghaidh"
+  },
+  "Interface {name} created.\nUse [a] from the list to apply changes.": {
+    "machine_translated": true,
+    "translation": "Eadar-aghaidh {name} air a chruthachadh.\nCleachd [a] bhon liosta gus atharraichean a chur an sàs."
+  },
+  "Interface {name} deleted.\nUse [a] from the list to apply changes.": {
+    "machine_translated": true,
+    "translation": "Eadar-aghaidh {name} air a sguabadh às.\nCleachd [a] bhon liosta gus atharraichean a chur an sàs."
+  },
+  "Interface {name} updated.\nUse [a] from the list to apply changes.": {
+    "machine_translated": true,
+    "translation": "Eadar-aghaidh {name} air ùrachadh.\nCleachd [a] bhon liosta gus atharraichean a chur an sàs."
+  },
+  "Invalid IP address in alias: {e}": {
+    "machine_translated": true,
+    "translation": "Seòladh IP mì-dhligheach san alias: {e}"
+  },
+  "Invalid IP address: {s}": {
+    "machine_translated": true,
+    "translation": "Seòladh IP mì-dhligheach: {s}"
+  },
+  "Invalid prefix length in alias: {e}": {
+    "machine_translated": true,
+    "translation": "Fad ro-leasachan mì-dhligheach ann an alias: {e}"
+  },
+  "LACPDU Rate": {
+    "machine_translated": true,
+    "translation": "Ìre LACPDU"
+  },
+  "Language": {
+    "machine_translated": true,
+    "translation": "Cànain"
+  },
+  "Link Aggregation Settings": {
+    "machine_translated": true,
+    "translation": "Ceanglaichean Aggregation Settings"
+  },
+  "Load Average": {
+    "machine_translated": true,
+    "translation": "Luchdaich a-nuas cuibheasach"
+  },
+  "Local administrator {u} set up successfully.": {
+    "machine_translated": true,
+    "translation": "Shoirbhich leis an rianaire ionadail {u}."
+  },
+  "Locale": {
+    "machine_translated": true,
+    "translation": "Ionadail"
+  },
+  "MTU": {
+    "machine_translated": true,
+    "translation": "MTU"
+  },
+  "Manage static network routes.\n\n  • View existing static routes\n  • Add new routes (destination, gateway, description)\n  • Edit or delete existing routes\n\nKeys: Enter = Edit,  a = Add,  d = Delete,  q = Back": {
+    "machine_translated": true,
+    "translation": "Stiùirich slighean lìonra statach.\n\n  • Seall slighean staitigeach a th' ann mar-thà\n  • Cuir slighean ùra ris (ceann-uidhe, geata, tuairisgeul)\n  • Deasaich no cuir às do shlighean a tha ann mar-thà\n\nIuchraichean: Cuir a-steach = Deasaich, a = Cuir ris, d = Sguab às, q = Air ais"
+  },
+  "Manufacturer": {
+    "machine_translated": true,
+    "translation": "Dèanadair"
+  },
+  "Members": {
+    "machine_translated": true,
+    "translation": "Buill"
+  },
+  "Memory": {
+    "machine_translated": true,
+    "translation": "Cuimhne"
+  },
+  "My account": {
+    "machine_translated": true,
+    "translation": "Mo chunntas"
+  },
+  "Name": {
+    "machine_translated": true,
+    "translation": "Ainm"
+  },
+  "Nameserver 1": {
+    "machine_translated": true,
+    "translation": "Frithealaiche ainm 1"
+  },
+  "Nameserver 2": {
+    "machine_translated": true,
+    "translation": "Frithealaiche ainm 2"
+  },
+  "Nameserver 3": {
+    "machine_translated": true,
+    "translation": "Frithealaiche ainm 3"
+  },
+  "Network": {
+    "machine_translated": true,
+    "translation": "Lìonra"
+  },
+  "Network Configuration": {
+    "machine_translated": true,
+    "translation": "Rèiteachadh lìonra"
+  },
+  "Network Interfaces": {
+    "machine_translated": true,
+    "translation": "Eadar-aghaidh lìonra"
+  },
+  "Network changes persisted successfully.": {
+    "machine_translated": true,
+    "translation": "Lean atharrachaidhean lìonra gu soirbheachail."
+  },
+  "Network settings": {
+    "machine_translated": true,
+    "translation": "Roghainnean lìonra"
+  },
+  "Network settings updated successfully.": {
+    "machine_translated": true,
+    "translation": "Chaidh roghainnean lìonra ùrachadh gu soirbheachail."
+  },
+  "New Interface – Step 1": {
+    "machine_translated": true,
+    "translation": "Eadar-aghaidh ùr - Ceum 1"
+  },
+  "New Interface – Step 2": {
+    "machine_translated": true,
+    "translation": "Eadar-aghaidh ùr - Ceum 2"
+  },
+  "New password for {u}:": {
+    "machine_translated": true,
+    "translation": "Facal-faire ùr airson {u}:"
+  },
+  "No": {
+    "machine_translated": true,
+    "translation": "Chan eil"
+  },
+  "No local administrators found.": {
+    "machine_translated": true,
+    "translation": "Cha deach rianadair ionadail a lorg."
+  },
+  "No provisioning URI returned from server.": {
+    "machine_translated": true,
+    "translation": "Cha do thill URI solarachaidh bhon fhrithealaiche."
+  },
+  "No static routes configured.": {
+    "machine_translated": true,
+    "translation": "Chan eil slighean statach air an rèiteachadh."
+  },
+  "No terminal QR code tool was found on this system.\n\nInstall \"qr\" or \"qrcode-terminal\" to use this feature.": {
+    "machine_translated": true,
+    "translation": "Cha deach inneal còd QR terminal a lorg air an t-siostam seo.\n\nStàlaich \"qr\" no \"qrcode-terminal\" gus am feart seo a chleachdadh."
+  },
+  "Not Found": {
+    "machine_translated": true,
+    "translation": "Gun a lorg"
+  },
+  "Not a valid member: {v}": {
+    "machine_translated": true,
+    "translation": "Chan e ball dligheach a th’ ann: {v}"
+  },
+  "Not a valid port: {v}": {
+    "machine_translated": true,
+    "translation": "Chan e port dligheach a th’ ann: {v}"
+  },
+  "One-Time Password": {
+    "machine_translated": true,
+    "translation": "Facal-faire aon-ùine"
+  },
+  "One-time password for \"{u}\":\n\n  {otp}\n\nThis password can only be used once.\nDialog closes automatically after {t} seconds.": {
+    "machine_translated": true,
+    "translation": "Facal-faire aon-ùine airson \"{u}\":\n\n  {otp}\n\nChan urrainnear am facal-faire seo a chleachdadh ach aon turas.\nBidh còmhradh a’ dùnadh gu fèin-ghluasadach às deidh {t} diog."
+  },
+  "Open Linux Shell": {
+    "machine_translated": true,
+    "translation": "Fosgail Linux Shell"
+  },
+  "Open TrueNAS CLI Shell": {
+    "machine_translated": true,
+    "translation": "Fosgail TrueNAS CLI Shell"
+  },
+  "Open a Linux shell (bash/zsh).\n\nSuspends the TUI and opens your login shell.\nType \"exit\" or press Ctrl+D to return to the TUI.": {
+    "machine_translated": true,
+    "translation": "Fosgail slige Linux (bash/zsh).\n\nA’ cuir stad air an TUI agus a’ fosgladh do shlige logadh a-steach.\nTaidhp \"fàgail\" no brùth Ctrl + D gus tilleadh chun TUI."
+  },
+  "Open the TrueNAS interactive CLI shell (midcli).\n\nReplaces the TUI with the full midcli command-line\ninterface. The TUI restarts after you exit midcli.": {
+    "machine_translated": true,
+    "translation": "Fosgail an slige CLI eadar-ghnìomhach TrueNAS (midcli).\n\nCuir an loidhne-àithne iomlan midcli an àite an TUI\neadar-aghaidh. Tòisichidh an TUI às deidh dhut midcli fhàgail."
+  },
+  "Other Settings": {
+    "machine_translated": true,
+    "translation": "Roghainnean eile"
+  },
+  "Parent Interface": {
+    "machine_translated": true,
+    "translation": "Eadar-aghaidh Phàrant"
+  },
+  "Password changed successfully.": {
+    "machine_translated": true,
+    "translation": "Chaidh am facal-faire atharrachadh gu soirbheachail."
+  },
+  "Password changes are only supported for local accounts.\nThis account is managed by an external directory service.": {
+    "machine_translated": true,
+    "translation": "Chan eil taic ri atharrachadh facal-faire ach airson cunntasan ionadail.\nTha an cunntas seo air a stiùireadh le seirbheis eòlaire taobh a-muigh."
+  },
+  "Password for {u} changed successfully.\nTwo-factor authentication has been disabled.": {
+    "machine_translated": true,
+    "translation": "Dh'atharraich am facal-faire airson {u} gu soirbheachail.\nChaidh dearbhadh dà-fhactaraidh a chur à comas."
+  },
+  "Password for {u}:": {
+    "machine_translated": true,
+    "translation": "Facal-faire airson {u}:"
+  },
+  "Password must be at least {n} characters.": {
+    "machine_translated": true,
+    "translation": "Feumaidh am facal-faire a bhith co-dhiù {n} caractaran."
+  },
+  "Passwords do not match.": {
+    "machine_translated": true,
+    "translation": "Chan eil faclan-faire co-ionnan."
+  },
+  "Pending changes. Press [a] to apply.": {
+    "machine_translated": true,
+    "translation": "A’ feitheamh atharraichean. Brùth [a] gus tagradh a dhèanamh."
+  },
+  "Persisted": {
+    "machine_translated": true,
+    "translation": "Leanadh"
+  },
+  "Please enter the reason for the system reboot\n(leave blank to cancel):": {
+    "machine_translated": true,
+    "translation": "Feuch an cuir thu a-steach an adhbhar airson ath-thòiseachadh an t-siostaim\n(fàg bàn airson a chuir dheth):"
+  },
+  "Please enter the reason for the system shutdown\n(leave blank to cancel):": {
+    "machine_translated": true,
+    "translation": "Feuch an cuir thu a-steach an adhbhar airson an siostam a dhùnadh\n(fàg bàn airson a chuir dheth):"
+  },
+  "Port": {
+    "machine_translated": true,
+    "translation": "Port"
+  },
+  "Ports": {
+    "machine_translated": true,
+    "translation": "Puirt"
+  },
+  "Power Control": {
+    "machine_translated": true,
+    "translation": "Smachd cumhachd"
+  },
+  "Prefix length out of range in alias: {e}": {
+    "machine_translated": true,
+    "translation": "Ro-leasachan fad a-mach à raon ann an alias: {e}"
+  },
+  "Priority (PCP)": {
+    "machine_translated": true,
+    "translation": "Prìomhachas (PCP)"
+  },
+  "Product": {
+    "machine_translated": true,
+    "translation": "Bathar"
+  },
+  "Protocol": {
+    "machine_translated": true,
+    "translation": "Pròtacal"
+  },
+  "Reboot": {
+    "machine_translated": true,
+    "translation": "Ath-thòisich"
+  },
+  "Reboot initiated. The system is shutting down.": {
+    "machine_translated": true,
+    "translation": "Ath-thòiseachadh air a thòiseachadh. Tha an siostam a’ dùnadh."
+  },
+  "Reboot or shut down the TrueNAS system.\n\n  • Reboot   – restart the system\n  • Shutdown – power off the system\n\nYou will be prompted for a reason and confirmation\nbefore any action is taken.": {
+    "machine_translated": true,
+    "translation": "Ath-thòisich no dùin an siostam TrueNAS.\n\n  • Reboot - ath-thòiseachadh an t-siostam\n  • Shutdown – cumhachd far an t-siostam\n\nThèid iarraidh ort airson adhbhar agus dearbhadh\nmus tèid gnìomh sam bith a dhèanamh."
+  },
+  "Reboot the TrueNAS system.\n\nYou will be prompted to enter a reason for the reboot\nbefore the system restarts.\n\nAll active sessions and shares will be interrupted.": {
+    "machine_translated": true,
+    "translation": "Ath-thòisich an siostam TrueNAS.\n\nThèid iarraidh ort adhbhar a chuir a-steach airson an ath-thòiseachadh\nmus tòisich an siostam.\n\nThèid stad a chuir air a h-uile seisean gnìomhach agus cuibhreann."
+  },
+  "Reboot the system?\n\nReason: {r}": {
+    "machine_translated": true,
+    "translation": "Ath-thòisich an siostam?\n\nAdhbhar: {r}"
+  },
+  "Reboot/Shutdown": {
+    "machine_translated": true,
+    "translation": "Ath-thòiseachadh / dùnadh"
+  },
+  "Rebooting": {
+    "machine_translated": true,
+    "translation": "Ath-thòiseachadh"
+  },
+  "Renew 2FA Secret": {
+    "machine_translated": true,
+    "translation": "Ùraich 2FA Secret"
+  },
+  "Renew two-factor secret": {
+    "machine_translated": true,
+    "translation": "Luchdaich a-nuas an dìomhair dà-fhactaraidh"
+  },
+  "Reset": {
+    "machine_translated": true,
+    "translation": "Ath-shuidhich"
+  },
+  "Reset Configuration": {
+    "machine_translated": true,
+    "translation": "Ath-shuidheachadh Configuration"
+  },
+  "Reset configuration to defaults": {
+    "machine_translated": true,
+    "translation": "Ath-shuidhich an rèiteachadh gu roghainnean bunaiteach"
+  },
+  "Retype new password:": {
+    "machine_translated": true,
+    "translation": "Ath-sgrìobh am facal-faire ùr:"
+  },
+  "Retype password for {u}:": {
+    "machine_translated": true,
+    "translation": "Ath-sgrìobh am facal-faire airson {u}:"
+  },
+  "Root user (not recommended)": {
+    "machine_translated": true,
+    "translation": "Cleachdaiche root (chan eil e air a mholadh)"
+  },
+  "Save": {
+    "machine_translated": true,
+    "translation": "Sàbhail"
+  },
+  "Saved": {
+    "machine_translated": true,
+    "translation": "Air a shàbhaladh"
+  },
+  "Secret key: {s}  (for manual entry)": {
+    "machine_translated": true,
+    "translation": "Iuchair dhìomhair: {s} (airson inntrigeadh làimhe)"
+  },
+  "Select Administrator": {
+    "machine_translated": true,
+    "translation": "Tagh Rianaire"
+  },
+  "Serial": {
+    "machine_translated": true,
+    "translation": "Sreathach"
+  },
+  "Set Up Administrator": {
+    "machine_translated": true,
+    "translation": "Stèidhich Rianadair"
+  },
+  "Set to 0 to use the system default MTU": {
+    "machine_translated": true,
+    "translation": "Suidhich gu 0 gus MTU bunaiteach an t-siostaim a chleachdadh"
+  },
+  "Set up local administrator": {
+    "machine_translated": true,
+    "translation": "Stèidhich rianadair ionadail"
+  },
+  "Set up two-factor authentication": {
+    "machine_translated": true,
+    "translation": "Stèidhich dearbhadh dà-fhactaraidh"
+  },
+  "Settings Saved": {
+    "machine_translated": true,
+    "translation": "Roghainnean air an sàbhaladh"
+  },
+  "Shut down the TrueNAS system.\n\nYou will be prompted to enter a reason for the shutdown\nbefore the system powers off.\n\nAll active sessions and shares will be interrupted.": {
+    "machine_translated": true,
+    "translation": "Cuir dheth an siostam TrueNAS.\n\nThèid iarraidh ort adhbhar a chuir a-steach airson an dùnadh\nmus tig an siostam dheth.\n\nThèid stad a chuir air a h-uile seisean gnìomhach agus cuibhreann."
+  },
+  "Shut down the system?\n\nReason: {r}": {
+    "machine_translated": true,
+    "translation": "An siostam a dhùnadh sìos?\n\nAdhbhar: {r}"
+  },
+  "Shutdown": {
+    "machine_translated": true,
+    "translation": "Dùin sìos"
+  },
+  "Shutdown initiated. The system is powering off.": {
+    "machine_translated": true,
+    "translation": "Shutdown air a thòiseachadh. Tha an siostam cumhachd dheth."
+  },
+  "Shutting Down": {
+    "machine_translated": true,
+    "translation": "A' Sguabadh sìos"
+  },
+  "Specify a bare IP address (no prefix length)": {
+    "machine_translated": true,
+    "translation": "Sònraich seòladh IP lom (gun fhaid ro-leasachan)"
+  },
+  "Startup": {
+    "machine_translated": true,
+    "translation": "Tòisich"
+  },
+  "Startup view": {
+    "machine_translated": true,
+    "translation": "Sealladh tòiseachaidh"
+  },
+  "Static Routes": {
+    "machine_translated": true,
+    "translation": "Slighean Statach"
+  },
+  "Static routes": {
+    "machine_translated": true,
+    "translation": "Slighean statach"
+  },
+  "Success": {
+    "machine_translated": true,
+    "translation": "Soirbheachas"
+  },
+  "System Information": {
+    "machine_translated": true,
+    "translation": "Fiosrachadh mun t-siostam"
+  },
+  "TUI preferences saved.\nTheme and locale changes take effect immediately.": {
+    "machine_translated": true,
+    "translation": "Roghainnean TUI air an sàbhaladh.\nBidh atharrachaidhean cuspair agus locale a’ tighinn gu buil sa bhad."
+  },
+  "Tab/↑↓: navigate   Enter: confirm   Esc: cancel": {
+    "machine_translated": true,
+    "translation": "Tab/↑↓: seòladh Enter: dearbhaich Esc: cuir dheth"
+  },
+  "Text UI settings": {
+    "machine_translated": true,
+    "translation": "Teacs roghainnean UI"
+  },
+  "Theme": {
+    "machine_translated": true,
+    "translation": "Cuspair"
+  },
+  "This Node IPs": {
+    "machine_translated": true,
+    "translation": "Tha an Node IP seo"
+  },
+  "This will ERASE all configuration and reset to defaults.\nAre you absolutely sure?": {
+    "machine_translated": true,
+    "translation": "Sguabaidh seo às a h-uile rèiteachadh agus ath-shuidhichidh e gu roghainnean bunaiteach.\nA bheil thu gu tur cinnteach?"
+  },
+  "Time format": {
+    "machine_translated": true,
+    "translation": "Cruth ùine"
+  },
+  "Timezone": {
+    "machine_translated": true,
+    "translation": "Sòn ùine"
+  },
+  "Two-factor authentication has been disabled.": {
+    "machine_translated": true,
+    "translation": "Chaidh dearbhadh dà-fhactaraidh a chur à comas."
+  },
+  "Type RESET to confirm (case-sensitive):": {
+    "machine_translated": true,
+    "translation": "Seòrsa RESET airson dearbhadh (mothachail air cùis):"
+  },
+  "Unavailable": {
+    "machine_translated": true,
+    "translation": "Chan eil ri fhaighinn"
+  },
+  "Uptime": {
+    "machine_translated": true,
+    "translation": "Ùine suas"
+  },
+  "VLAN Settings": {
+    "machine_translated": true,
+    "translation": "Roghainnean VLAN"
+  },
+  "VLAN Tag": {
+    "machine_translated": true,
+    "translation": "Tag VLAN"
+  },
+  "Version": {
+    "machine_translated": true,
+    "translation": "Tionndadh"
+  },
+  "View and edit network interface configuration.\n\n  • Enable/disable DHCP and IPv6 auto-configuration\n  • Add or remove static IP aliases\n  • Set MTU, VLAN tag, bridge members, LAG ports, and more\n  • Apply changes (with automatic rollback safety)\n  • Persist changes once the network is confirmed working\n\nPress Enter to select an interface to edit.\nPress [n] to create a new interface, [d] to delete.\nAfter editing, use [a] to Apply and [p] to Persist.": {
+    "machine_translated": true,
+    "translation": "Faic agus deasaich rèiteachadh eadar-aghaidh lìonra.\n\n  • Dèan comas / cuir à comas rèiteachadh fèin-ghluasadach DHCP agus IPv6\n  • Cuir ris no thoir air falbh aliases IP statach\n  • Suidhich MTU, VLAN tag, buill drochaid, puirt LAG, agus barrachd\n  • Cuir a-steach atharrachaidhean (le fèin-ghluasadach rollback sàbhailteachd)\n  • Leanaidh atharrachaidhean aon uair 's gu bheil an lìonra air a dhearbhadh gu bheil e ag obair\n\nBrùth Enter gus eadar-aghaidh a thaghadh airson a dheasachadh.\nBrùth [n] gus eadar-aghaidh ùr a chruthachadh, [d] airson sguabadh às.\nÀs deidh deasachadh, cleachd [a] gus Cuir a-steach agus [p] gus Persist."
+  },
+  "View your account information and manage credentials.\n\n  • View username, UID, roles, and 2FA status\n  • Change your password\n  • Generate a one-time password for single-use login\n  • Set up or renew two-factor authentication\n\nPassword changes take effect immediately.\nOne-time passwords expire after a single login.": {
+    "machine_translated": true,
+    "translation": "Thoir sùil air an fhiosrachadh cunntais agad agus stiùirich teisteanasan.\n\n  • Seall ainm-cleachdaidh, UID, dreuchdan, agus inbhe 2FA\n  • Atharraich am facal-faire agad\n  • Cruthaich facal-faire aon-ùine airson logadh a-steach aon-chleachdadh\n  • Stèidhich no ùraich dearbhadh dà-fhactaraidh\n\nBidh atharrachaidhean facal-faire a’ tighinn gu buil sa bhad.\nThig faclan-faire aon-ùine gu crìch às deidh aon logadh a-steach."
+  },
+  "Virtual IPs": {
+    "machine_translated": true,
+    "translation": "Mas-fhìor IPs"
+  },
+  "WARNING: You are logged in as root!": {
+    "machine_translated": true,
+    "translation": "RABHADH: Tha thu air logadh a-steach mar root!"
+  },
+  "Web UI Authentication Method": {
+    "machine_translated": true,
+    "translation": "Dòigh dearbhaidh UI lìn"
+  },
+  "Without it you may be locked out of this system.": {
+    "machine_translated": true,
+    "translation": "Às aonais is dòcha gu bheil thu glaiste a-mach às an t-siostam seo."
+  },
+  "Xmit Hash Policy": {
+    "machine_translated": true,
+    "translation": "Poileasaidh Xmit Hash"
+  },
+  "Yes": {
+    "machine_translated": true,
+    "translation": "Tha"
+  },
+  "Yes, reset": {
+    "machine_translated": true,
+    "translation": "Tha, ath-shuidheachadh"
+  },
+  "[↑↓] Navigate  [Enter] Edit  [a] Add  [d] Delete  [q] Back": {
+    "machine_translated": true,
+    "translation": "[↑↓] Seòl [Cuir a-steach] Deasaich [a] Cuir ris [d] Sguab às [q] Air ais"
+  },
+  "[↑↓] Navigate  [Enter] Edit  [n] New  [d] Delete  [a] Apply  [p] Persist  [q] Back": {
+    "machine_translated": true,
+    "translation": "[↑↓] Seòl [Cuir a-steach] Deasaich [n] Ùr [d] Sguab às [a] Cuir a-steach [p] Lean air adhart [q] Air ais"
+  },
+  "[↑↓] Select  [Enter] Edit  [a] Add  [d] Delete  [Esc] Done": {
+    "machine_translated": true,
+    "translation": "[↑↓] Tagh [Cuir a-steach] Deasaich [a] Cuir ris [d] Sguab às [Esc] Dèante"
+  },
+  "midcli is not available on this system.": {
+    "machine_translated": true,
+    "translation": "chan eil midcli ri fhaighinn air an t-siostam seo."
+  },
+  "↑↓ Navigate  Enter Select  Esc Cancel": {
+    "machine_translated": true,
+    "translation": "↑↓ Seòl a-steach Tagh Esc Sguir"
+  }
+}

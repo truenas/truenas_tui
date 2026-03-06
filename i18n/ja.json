@@ -1,0 +1,866 @@
+{
+  " (no QR tool found)": {
+    "machine_translated": true,
+    "translation": "(QRツールが見つかりませんでした)"
+  },
+  " My Account – {u} ": {
+    "machine_translated": true,
+    "translation": "私のアカウント – {u}"
+  },
+  " Press Enter to continue": {
+    "machine_translated": true,
+    "translation": "続行するには Enter キーを押してください"
+  },
+  " Two-Factor Authentication Setup ": {
+    "machine_translated": true,
+    "translation": "二要素認証のセットアップ"
+  },
+  "(Google Authenticator, Authy, etc.) before navigating away.": {
+    "machine_translated": true,
+    "translation": "(Google Authenticator、Authy など) を確認してから、移動してください。"
+  },
+  "(no addresses)": {
+    "machine_translated": true,
+    "translation": "(住所なし)"
+  },
+  "(none)": {
+    "machine_translated": true,
+    "translation": "（なし）"
+  },
+  "Access: Read-only": {
+    "machine_translated": true,
+    "translation": "アクセス: 読み取り専用"
+  },
+  "Access: Read/Write": {
+    "machine_translated": true,
+    "translation": "アクセス: 読み取り/書き込み"
+  },
+  "Actions:": {
+    "machine_translated": true,
+    "translation": "アクション:"
+  },
+  "Add Static Route": {
+    "machine_translated": true,
+    "translation": "静的ルートを追加"
+  },
+  "Address": {
+    "machine_translated": true,
+    "translation": "アドレス"
+  },
+  "Administrative user (admin)  [recommended]": {
+    "machine_translated": true,
+    "translation": "管理者ユーザー（admin） [推奨]"
+  },
+  "Alias must be in CIDR notation (e.g. 192.168.1.1/24): {e}": {
+    "machine_translated": true,
+    "translation": "エイリアスは CIDR 表記である必要があります (例: 192.168.1.1/24): {e}"
+  },
+  "Aliases (CIDR)": {
+    "machine_translated": true,
+    "translation": "エイリアス (CIDR)"
+  },
+  "Appearance": {
+    "machine_translated": true,
+    "translation": "外観"
+  },
+  "Applied": {
+    "machine_translated": true,
+    "translation": "適用済み"
+  },
+  "Auto-refreshes every {n}s  [r] force refresh": {
+    "machine_translated": true,
+    "translation": "{n} 秒ごとに自動更新 [r] 強制更新"
+  },
+  "Behaviour": {
+    "machine_translated": true,
+    "translation": "行動"
+  },
+  "Bridge Settings": {
+    "machine_translated": true,
+    "translation": "ブリッジ設定"
+  },
+  "CPU": {
+    "machine_translated": true,
+    "translation": "CPU"
+  },
+  "Cancel": {
+    "machine_translated": true,
+    "translation": "キャンセル"
+  },
+  "Cancelled": {
+    "machine_translated": true,
+    "translation": "キャンセル"
+  },
+  "Cannot Change Password": {
+    "machine_translated": true,
+    "translation": "パスワードを変更できません"
+  },
+  "Change Password": {
+    "machine_translated": true,
+    "translation": "パスワードの変更"
+  },
+  "Change local administrator password": {
+    "machine_translated": true,
+    "translation": "ローカル管理者のパスワードを変更する"
+  },
+  "Change password": {
+    "machine_translated": true,
+    "translation": "パスワードを変更する"
+  },
+  "Change the password for a local administrator account.\n\nIf no local administrator has been configured yet, this\noption lets you set up an initial admin or root account.\n\nNote: changing a password will disable two-factor\nauthentication for that account.": {
+    "machine_translated": true,
+    "translation": "ローカル管理者アカウントのパスワードを変更します。\n\nローカル管理者がまだ設定されていない場合は、\nオプションを使用すると、初期管理者アカウントまたは root アカウントをセットアップできます。\n\n注: パスワードを変更すると、2 要素認証が無効になります。\nそのアカウントの認証。"
+  },
+  "Changes applied. Network will roll back in ~60 seconds\nunless you press [p] to persist them.": {
+    "machine_translated": true,
+    "translation": "変更が適用されました。ネットワークは 60 秒以内にロールバックされます\n[p] を押して永続化しない限り。"
+  },
+  "Changes applied. Press [p] to persist or they roll back in {n}s.": {
+    "machine_translated": true,
+    "translation": "変更が適用されました。 [p] を押して継続するか、{n} 秒後にロールバックします。"
+  },
+  "Configuration reset cancelled.": {
+    "machine_translated": true,
+    "translation": "設定のリセットがキャンセルされました。"
+  },
+  "Configuration reset initiated.\nThe system will reboot with default settings.": {
+    "machine_translated": true,
+    "translation": "構成のリセットが開始されました。\nシステムはデフォルト設定で再起動します。"
+  },
+  "Configure global network settings:\n\n  • Hostname and domain\n  • Default IPv4 and IPv6 gateways\n  • DNS nameservers (up to three)\n\nChanges take effect immediately after saving.": {
+    "machine_translated": true,
+    "translation": "グローバルネットワーク設定を構成します。\n\n  • ホスト名とドメイン\n  • デフォルトの IPv4 および IPv6 ゲートウェイ\n  • DNS ネームサーバー (最大 3 つ)\n\n変更は保存後すぐに有効になります。"
+  },
+  "Configure network interfaces": {
+    "machine_translated": true,
+    "translation": "ネットワークインターフェースを構成する"
+  },
+  "Configure network settings": {
+    "machine_translated": true,
+    "translation": "ネットワーク設定を構成する"
+  },
+  "Configure networking for this TrueNAS system.\n\n  • Interface settings  – DHCP, IP aliases, MTU\n  • Network settings    – Hostname, domain, gateways, DNS\n  • Static routes       – Add and remove static routes\n\nChanges to interfaces require a commit step\nbefore they take effect.": {
+    "machine_translated": true,
+    "translation": "この TrueNAS システムのネットワークを構成します。\n\n  • インターフェース設定 – DHCP、IP エイリアス、MTU\n  • ネットワーク設定 – ホスト名、ドメイン、ゲートウェイ、DNS\n  • 静的ルート – 静的ルートの追加と削除\n\nインターフェースの変更にはコミット手順が必要です\n効果が出る前に。"
+  },
+  "Configure static routes": {
+    "machine_translated": true,
+    "translation": "静的ルートを構成する"
+  },
+  "Confirm Delete": {
+    "machine_translated": true,
+    "translation": "削除の確認"
+  },
+  "Confirm Reboot": {
+    "machine_translated": true,
+    "translation": "再起動の確認"
+  },
+  "Confirm Reset": {
+    "machine_translated": true,
+    "translation": "リセットの確認"
+  },
+  "Confirm Shutdown": {
+    "machine_translated": true,
+    "translation": "シャットダウンの確認"
+  },
+  "Confirm dangerous actions": {
+    "machine_translated": true,
+    "translation": "危険行為の確認"
+  },
+  "Could not load LAG port choices:\n": {
+    "machine_translated": true,
+    "translation": "LAG ポートの選択を読み込めませんでした:"
+  },
+  "Could not load VLAN parent choices:\n": {
+    "machine_translated": true,
+    "translation": "VLAN 親の選択をロードできませんでした:"
+  },
+  "Could not load bridge member choices:\n": {
+    "machine_translated": true,
+    "translation": "ブリッジ メンバーの選択肢を読み込めませんでした:"
+  },
+  "Create one-time password": {
+    "machine_translated": true,
+    "translation": "ワンタイムパスワードを作成する"
+  },
+  "Create one-time password for \"{u}\"": {
+    "machine_translated": true,
+    "translation": "「{u}」のワンタイムパスワードを作成する"
+  },
+  "Created": {
+    "machine_translated": true,
+    "translation": "作成されました"
+  },
+  "Current password:": {
+    "machine_translated": true,
+    "translation": "現在のパスワード："
+  },
+  "Customise the TrueNAS TUI for your user account.\n\n  • Theme: default (blue), dark (green), high-contrast\n  • Startup view: system info pane or menu description\n  • Confirm dangerous actions (reboot, shutdown, reset)\n  • Language and date/time display formats\n\nSettings are saved to your account and persist across\nsessions on any client.": {
+    "machine_translated": true,
+    "translation": "ユーザー アカウントに合わせて TrueNAS TUI をカスタマイズします。\n\n  • テーマ: デフォルト (青)、ダーク (緑)、ハイコントラスト\n  • スタートアップ ビュー: システム情報ペインまたはメニューの説明\n  • 危険な行為の確認（再起動、シャットダウン、リセット）\n  • 言語と日付/時刻の表示形式\n\n設定はアカウントに保存され、次の期間にわたって維持されます\n任意のクライアント上でセッションを実行できます。"
+  },
+  "Date format": {
+    "machine_translated": true,
+    "translation": "日付形式"
+  },
+  "Delete Route": {
+    "machine_translated": true,
+    "translation": "ルートの削除"
+  },
+  "Delete interface {name}?": {
+    "machine_translated": true,
+    "translation": "インターフェース {name} を削除しますか?"
+  },
+  "Delete static route {dest}?": {
+    "machine_translated": true,
+    "translation": "静的ルート {dest} を削除しますか?"
+  },
+  "Deleted": {
+    "machine_translated": true,
+    "translation": "削除されました"
+  },
+  "Description": {
+    "machine_translated": true,
+    "translation": "説明"
+  },
+  "Destination (CIDR)": {
+    "machine_translated": true,
+    "translation": "宛先 (CIDR)"
+  },
+  "Disable Two-Factor Authentication": {
+    "machine_translated": true,
+    "translation": "二要素認証を無効にする"
+  },
+  "Disable two-factor authentication": {
+    "machine_translated": true,
+    "translation": "二要素認証を無効にする"
+  },
+  "Disable two-factor authentication for {u}?\nYou will no longer need an OTP to log in.": {
+    "machine_translated": true,
+    "translation": "{u} の 2 要素認証を無効にしますか?\nログインするために OTP は必要なくなります。"
+  },
+  "Disabled": {
+    "machine_translated": true,
+    "translation": "無効"
+  },
+  "Domain": {
+    "machine_translated": true,
+    "translation": "ドメイン"
+  },
+  "Edit Static Route": {
+    "machine_translated": true,
+    "translation": "静的ルートを編集"
+  },
+  "Enabled": {
+    "machine_translated": true,
+    "translation": "有効"
+  },
+  "Enter: confirm  Esc: cancel": {
+    "machine_translated": true,
+    "translation": "Enter: 確認 Esc: キャンセル"
+  },
+  "Erase all TrueNAS configuration and reset to factory\ndefaults.\n\nWARNING: This is irreversible. All settings including\nnetwork configuration, shares, users, and storage pools\nwill be erased.\n\nYou will be prompted to confirm twice before proceeding.": {
+    "machine_translated": true,
+    "translation": "すべての TrueNAS 構成を消去し、工場出荷時の状態にリセットします\nデフォルト。\n\n警告: これは元に戻すことはできません。を含むすべての設定\nネットワーク構成、共有、ユーザー、およびストレージプール\n消去されます。\n\n続行する前に、確認を 2 回求められます。"
+  },
+  "Error": {
+    "machine_translated": true,
+    "translation": "エラー"
+  },
+  "Failover Critical": {
+    "machine_translated": true,
+    "translation": "フェイルオーバークリティカル"
+  },
+  "Failover Group": {
+    "machine_translated": true,
+    "translation": "フェイルオーバーグループ"
+  },
+  "Failover Settings": {
+    "machine_translated": true,
+    "translation": "フェイルオーバー設定"
+  },
+  "Gateway": {
+    "machine_translated": true,
+    "translation": "ゲートウェイ"
+  },
+  "Generate a single-use temporary password for the\ncurrently authenticated user.\n\nThe one-time password can be used to log in once\nand is invalidated immediately after use.": {
+    "machine_translated": true,
+    "translation": "の 1 回限りの一時パスワードを生成します。\n現在認証されているユーザー。\n\nワンタイムパスワードは1回限りのログインに使用できます\n使用後は直ちに無効となります。"
+  },
+  "Generate one-time password": {
+    "machine_translated": true,
+    "translation": "ワンタイムパスワードを生成する"
+  },
+  "Generating a new 2FA secret will invalidate your current\nauthenticator app configuration. Continue?": {
+    "machine_translated": true,
+    "translation": "新しい 2FA シークレットを生成すると、現在のシークレットが無効になります。\n認証アプリの構成。続く？"
+  },
+  "Hostname": {
+    "machine_translated": true,
+    "translation": "ホスト名"
+  },
+  "IMPORTANT: Scan this QR code with your authenticator app": {
+    "machine_translated": true,
+    "translation": "重要: 認証アプリでこの QR コードをスキャンします"
+  },
+  "IP Address": {
+    "machine_translated": true,
+    "translation": "IPアドレス"
+  },
+  "IPv4 DHCP": {
+    "machine_translated": true,
+    "translation": "IPv4 DHCP"
+  },
+  "IPv4 Gateway": {
+    "machine_translated": true,
+    "translation": "IPv4ゲートウェイ"
+  },
+  "IPv6 Auto": {
+    "machine_translated": true,
+    "translation": "IPv6自動"
+  },
+  "IPv6 Gateway": {
+    "machine_translated": true,
+    "translation": "IPv6ゲートウェイ"
+  },
+  "Interface": {
+    "machine_translated": true,
+    "translation": "インターフェイス"
+  },
+  "Interface Settings": {
+    "machine_translated": true,
+    "translation": "インターフェイス設定"
+  },
+  "Interface Type": {
+    "machine_translated": true,
+    "translation": "インターフェースの種類"
+  },
+  "Interface name is required.": {
+    "machine_translated": true,
+    "translation": "インターフェース名は必須です。"
+  },
+  "Interface settings": {
+    "machine_translated": true,
+    "translation": "インターフェース設定"
+  },
+  "Interface {name} created.\nUse [a] from the list to apply changes.": {
+    "machine_translated": true,
+    "translation": "インターフェース {name} が作成されました。\n変更を適用するには、リストの [a] を使用します。"
+  },
+  "Interface {name} deleted.\nUse [a] from the list to apply changes.": {
+    "machine_translated": true,
+    "translation": "インターフェース {name} が削除されました。\n変更を適用するには、リストの [a] を使用します。"
+  },
+  "Interface {name} updated.\nUse [a] from the list to apply changes.": {
+    "machine_translated": true,
+    "translation": "インターフェース {name} が更新されました。\n変更を適用するには、リストの [a] を使用します。"
+  },
+  "Invalid IP address in alias: {e}": {
+    "machine_translated": true,
+    "translation": "エイリアスの IP アドレスが無効です: {e}"
+  },
+  "Invalid IP address: {s}": {
+    "machine_translated": true,
+    "translation": "無効な IP アドレス: {s}"
+  },
+  "Invalid prefix length in alias: {e}": {
+    "machine_translated": true,
+    "translation": "エイリアスのプレフィックス長が無効です: {e}"
+  },
+  "LACPDU Rate": {
+    "machine_translated": true,
+    "translation": "LACPDU レート"
+  },
+  "Language": {
+    "machine_translated": true,
+    "translation": "言語"
+  },
+  "Link Aggregation Settings": {
+    "machine_translated": true,
+    "translation": "リンクアグリゲーションの設定"
+  },
+  "Load Average": {
+    "machine_translated": true,
+    "translation": "負荷平均"
+  },
+  "Local administrator {u} set up successfully.": {
+    "machine_translated": true,
+    "translation": "ローカル管理者 {u} が正常にセットアップされました。"
+  },
+  "Locale": {
+    "machine_translated": true,
+    "translation": "ロケール"
+  },
+  "MTU": {
+    "machine_translated": true,
+    "translation": "MTU"
+  },
+  "Manage static network routes.\n\n  • View existing static routes\n  • Add new routes (destination, gateway, description)\n  • Edit or delete existing routes\n\nKeys: Enter = Edit,  a = Add,  d = Delete,  q = Back": {
+    "machine_translated": true,
+    "translation": "静的ネットワークルートを管理します。\n\n  • 既存の静的ルートを表示する\n  • 新しいルートの追加 (宛先、ゲートウェイ、説明)\n  • 既存のルートを編集または削除する\n\nキー: Enter = 編集、a = 追加、d = 削除、q = 戻る"
+  },
+  "Manufacturer": {
+    "machine_translated": true,
+    "translation": "メーカー"
+  },
+  "Members": {
+    "machine_translated": true,
+    "translation": "メンバー"
+  },
+  "Memory": {
+    "machine_translated": true,
+    "translation": "メモリ"
+  },
+  "My account": {
+    "machine_translated": true,
+    "translation": "私のアカウント"
+  },
+  "Name": {
+    "machine_translated": true,
+    "translation": "名前"
+  },
+  "Nameserver 1": {
+    "machine_translated": true,
+    "translation": "ネームサーバー1"
+  },
+  "Nameserver 2": {
+    "machine_translated": true,
+    "translation": "ネームサーバー2"
+  },
+  "Nameserver 3": {
+    "machine_translated": true,
+    "translation": "ネームサーバー3"
+  },
+  "Network": {
+    "machine_translated": true,
+    "translation": "ネットワーク"
+  },
+  "Network Configuration": {
+    "machine_translated": true,
+    "translation": "ネットワーク設定"
+  },
+  "Network Interfaces": {
+    "machine_translated": true,
+    "translation": "ネットワークインターフェース"
+  },
+  "Network changes persisted successfully.": {
+    "machine_translated": true,
+    "translation": "ネットワークの変更は正常に維持されました。"
+  },
+  "Network settings": {
+    "machine_translated": true,
+    "translation": "ネットワーク設定"
+  },
+  "Network settings updated successfully.": {
+    "machine_translated": true,
+    "translation": "ネットワーク設定が正常に更新されました。"
+  },
+  "New Interface – Step 1": {
+    "machine_translated": true,
+    "translation": "新しいインターフェース – ステップ 1"
+  },
+  "New Interface – Step 2": {
+    "machine_translated": true,
+    "translation": "新しいインターフェース – ステップ 2"
+  },
+  "New password for {u}:": {
+    "machine_translated": true,
+    "translation": "{u} の新しいパスワード:"
+  },
+  "No": {
+    "machine_translated": true,
+    "translation": "いいえ"
+  },
+  "No local administrators found.": {
+    "machine_translated": true,
+    "translation": "ローカル管理者が見つかりませんでした。"
+  },
+  "No provisioning URI returned from server.": {
+    "machine_translated": true,
+    "translation": "サーバーからプロビジョニング URI が返されませんでした。"
+  },
+  "No static routes configured.": {
+    "machine_translated": true,
+    "translation": "静的ルートが設定されていません。"
+  },
+  "No terminal QR code tool was found on this system.\n\nInstall \"qr\" or \"qrcode-terminal\" to use this feature.": {
+    "machine_translated": true,
+    "translation": "このシステムでは端末 QR コード ツールが見つかりませんでした。\n\nこの機能を利用するには「qr」または「qrcode-terminal」をインストールしてください。"
+  },
+  "Not Found": {
+    "machine_translated": true,
+    "translation": "見つかりません"
+  },
+  "Not a valid member: {v}": {
+    "machine_translated": true,
+    "translation": "有効なメンバーではありません: {v}"
+  },
+  "Not a valid port: {v}": {
+    "machine_translated": true,
+    "translation": "有効なポートではありません: {v}"
+  },
+  "One-Time Password": {
+    "machine_translated": true,
+    "translation": "ワンタイムパスワード"
+  },
+  "One-time password for \"{u}\":\n\n  {otp}\n\nThis password can only be used once.\nDialog closes automatically after {t} seconds.": {
+    "machine_translated": true,
+    "translation": "「{u}」のワンタイムパスワード:\n\n  {otp}\n\nこのパスワードは 1 回のみ使用できます。\nダイアログは {t} 秒後に自動的に閉じます。"
+  },
+  "Open Linux Shell": {
+    "machine_translated": true,
+    "translation": "Linux シェルを開く"
+  },
+  "Open TrueNAS CLI Shell": {
+    "machine_translated": true,
+    "translation": "TrueNAS CLI シェルを開く"
+  },
+  "Open a Linux shell (bash/zsh).\n\nSuspends the TUI and opens your login shell.\nType \"exit\" or press Ctrl+D to return to the TUI.": {
+    "machine_translated": true,
+    "translation": "Linux シェル (bash/zsh) を開きます。\n\nTUI を一時停止し、ログイン シェルを開きます。\n「exit」と入力するか、Ctrl+D を押して TUI に戻ります。"
+  },
+  "Open the TrueNAS interactive CLI shell (midcli).\n\nReplaces the TUI with the full midcli command-line\ninterface. The TUI restarts after you exit midcli.": {
+    "machine_translated": true,
+    "translation": "TrueNAS インタラクティブ CLI シェル (midcli) を開きます。\n\nTUI を完全な Midcli コマンドラインに置き換えます。\nインターフェース。 TUI は、midcli を終了すると再起動します。"
+  },
+  "Other Settings": {
+    "machine_translated": true,
+    "translation": "その他の設定"
+  },
+  "Parent Interface": {
+    "machine_translated": true,
+    "translation": "親インターフェイス"
+  },
+  "Password changed successfully.": {
+    "machine_translated": true,
+    "translation": "パスワードが正常に変更されました。"
+  },
+  "Password changes are only supported for local accounts.\nThis account is managed by an external directory service.": {
+    "machine_translated": true,
+    "translation": "パスワードの変更はローカル アカウントでのみサポートされます。\nこのアカウントは外部ディレクトリ サービスによって管理されます。"
+  },
+  "Password for {u} changed successfully.\nTwo-factor authentication has been disabled.": {
+    "machine_translated": true,
+    "translation": "{u} のパスワードが正常に変更されました。\n二要素認証が無効になっています。"
+  },
+  "Password for {u}:": {
+    "machine_translated": true,
+    "translation": "{u} のパスワード:"
+  },
+  "Password must be at least {n} characters.": {
+    "machine_translated": true,
+    "translation": "パスワードは少なくとも {n} 文字でなければなりません。"
+  },
+  "Passwords do not match.": {
+    "machine_translated": true,
+    "translation": "パスワードが一致しません。"
+  },
+  "Pending changes. Press [a] to apply.": {
+    "machine_translated": true,
+    "translation": "保留中の変更。 [a]を押して適用します。"
+  },
+  "Persisted": {
+    "machine_translated": true,
+    "translation": "永続的"
+  },
+  "Please enter the reason for the system reboot\n(leave blank to cancel):": {
+    "machine_translated": true,
+    "translation": "システムを再起動する理由を入力してください\n(キャンセルするには空白のままにします):"
+  },
+  "Please enter the reason for the system shutdown\n(leave blank to cancel):": {
+    "machine_translated": true,
+    "translation": "システムシャットダウンの理由を入力してください\n(キャンセルするには空白のままにします):"
+  },
+  "Port": {
+    "machine_translated": true,
+    "translation": "ポート"
+  },
+  "Ports": {
+    "machine_translated": true,
+    "translation": "ポート"
+  },
+  "Power Control": {
+    "machine_translated": true,
+    "translation": "電力制御"
+  },
+  "Prefix length out of range in alias: {e}": {
+    "machine_translated": true,
+    "translation": "エイリアスのプレフィックス長が範囲外です: {e}"
+  },
+  "Priority (PCP)": {
+    "machine_translated": true,
+    "translation": "優先順位 (PCP)"
+  },
+  "Product": {
+    "machine_translated": true,
+    "translation": "製品"
+  },
+  "Protocol": {
+    "machine_translated": true,
+    "translation": "プロトコル"
+  },
+  "Reboot": {
+    "machine_translated": true,
+    "translation": "再起動"
+  },
+  "Reboot initiated. The system is shutting down.": {
+    "machine_translated": true,
+    "translation": "再起動が開始されました。システムがシャットダウン中です。"
+  },
+  "Reboot or shut down the TrueNAS system.\n\n  • Reboot   – restart the system\n  • Shutdown – power off the system\n\nYou will be prompted for a reason and confirmation\nbefore any action is taken.": {
+    "machine_translated": true,
+    "translation": "TrueNAS システムを再起動またはシャットダウンします。\n\n  • 再起動 - システムを再起動します。\n  • シャットダウン – システムの電源を切ります。\n\n理由と確認を求められます\n何らかのアクションが取られる前に。"
+  },
+  "Reboot the TrueNAS system.\n\nYou will be prompted to enter a reason for the reboot\nbefore the system restarts.\n\nAll active sessions and shares will be interrupted.": {
+    "machine_translated": true,
+    "translation": "TrueNAS システムを再起動します。\n\n再起動の理由を入力するよう求められます\nシステムが再起動する前に。\n\nすべてのアクティブなセッションと共有は中断されます。"
+  },
+  "Reboot the system?\n\nReason: {r}": {
+    "machine_translated": true,
+    "translation": "システムを再起動しますか?\n\n理由: {r}"
+  },
+  "Reboot/Shutdown": {
+    "machine_translated": true,
+    "translation": "再起動/シャットダウン"
+  },
+  "Rebooting": {
+    "machine_translated": true,
+    "translation": "再起動中"
+  },
+  "Renew 2FA Secret": {
+    "machine_translated": true,
+    "translation": "2FA シークレットを更新する"
+  },
+  "Renew two-factor secret": {
+    "machine_translated": true,
+    "translation": "2要素シークレットを更新する"
+  },
+  "Reset": {
+    "machine_translated": true,
+    "translation": "リセット"
+  },
+  "Reset Configuration": {
+    "machine_translated": true,
+    "translation": "構成のリセット"
+  },
+  "Reset configuration to defaults": {
+    "machine_translated": true,
+    "translation": "設定をデフォルトにリセットする"
+  },
+  "Retype new password:": {
+    "machine_translated": true,
+    "translation": "新しいパスワードを再入力します:"
+  },
+  "Retype password for {u}:": {
+    "machine_translated": true,
+    "translation": "{u} のパスワードを再入力します:"
+  },
+  "Root user (not recommended)": {
+    "machine_translated": true,
+    "translation": "root ユーザー (推奨されません)"
+  },
+  "Save": {
+    "machine_translated": true,
+    "translation": "保存"
+  },
+  "Saved": {
+    "machine_translated": true,
+    "translation": "保存されました"
+  },
+  "Secret key: {s}  (for manual entry)": {
+    "machine_translated": true,
+    "translation": "秘密キー: {s} (手動入力用)"
+  },
+  "Select Administrator": {
+    "machine_translated": true,
+    "translation": "管理者の選択"
+  },
+  "Serial": {
+    "machine_translated": true,
+    "translation": "シリアル"
+  },
+  "Set Up Administrator": {
+    "machine_translated": true,
+    "translation": "管理者のセットアップ"
+  },
+  "Set to 0 to use the system default MTU": {
+    "machine_translated": true,
+    "translation": "システムのデフォルトの MTU を使用するには、0 に設定します。"
+  },
+  "Set up local administrator": {
+    "machine_translated": true,
+    "translation": "ローカル管理者のセットアップ"
+  },
+  "Set up two-factor authentication": {
+    "machine_translated": true,
+    "translation": "二要素認証を設定する"
+  },
+  "Settings Saved": {
+    "machine_translated": true,
+    "translation": "設定が保存されました"
+  },
+  "Shut down the TrueNAS system.\n\nYou will be prompted to enter a reason for the shutdown\nbefore the system powers off.\n\nAll active sessions and shares will be interrupted.": {
+    "machine_translated": true,
+    "translation": "TrueNAS システムをシャットダウンします。\n\nシャットダウンの理由を入力するように求められます\nシステムの電源がオフになる前に。\n\nすべてのアクティブなセッションと共有は中断されます。"
+  },
+  "Shut down the system?\n\nReason: {r}": {
+    "machine_translated": true,
+    "translation": "システムをシャットダウンしますか?\n\n理由: {r}"
+  },
+  "Shutdown": {
+    "machine_translated": true,
+    "translation": "シャットダウン"
+  },
+  "Shutdown initiated. The system is powering off.": {
+    "machine_translated": true,
+    "translation": "シャットダウンが開始されました。システムの電源がオフになっています。"
+  },
+  "Shutting Down": {
+    "machine_translated": true,
+    "translation": "シャットダウン中"
+  },
+  "Specify a bare IP address (no prefix length)": {
+    "machine_translated": true,
+    "translation": "ベア IP アドレス (プレフィックス長なし) を指定します。"
+  },
+  "Startup": {
+    "machine_translated": true,
+    "translation": "起動する"
+  },
+  "Startup view": {
+    "machine_translated": true,
+    "translation": "スタートアップビュー"
+  },
+  "Static Routes": {
+    "machine_translated": true,
+    "translation": "静的ルート"
+  },
+  "Static routes": {
+    "machine_translated": true,
+    "translation": "静的ルート"
+  },
+  "Success": {
+    "machine_translated": true,
+    "translation": "成功"
+  },
+  "System Information": {
+    "machine_translated": true,
+    "translation": "システム情報"
+  },
+  "TUI preferences saved.\nTheme and locale changes take effect immediately.": {
+    "machine_translated": true,
+    "translation": "TUI 設定が保存されました。\nテーマとロケールの変更はすぐに有効になります。"
+  },
+  "Tab/↑↓: navigate   Enter: confirm   Esc: cancel": {
+    "machine_translated": true,
+    "translation": "Tab/↑↓: 移動 Enter: 確認 Esc: キャンセル"
+  },
+  "Text UI settings": {
+    "machine_translated": true,
+    "translation": "テキストUIの設定"
+  },
+  "Theme": {
+    "machine_translated": true,
+    "translation": "テーマ"
+  },
+  "This Node IPs": {
+    "machine_translated": true,
+    "translation": "このノードの IP"
+  },
+  "This will ERASE all configuration and reset to defaults.\nAre you absolutely sure?": {
+    "machine_translated": true,
+    "translation": "これにより、すべての設定が消去され、デフォルトにリセットされます。\n絶対に間違いありませんか？"
+  },
+  "Time format": {
+    "machine_translated": true,
+    "translation": "時刻形式"
+  },
+  "Timezone": {
+    "machine_translated": true,
+    "translation": "タイムゾーン"
+  },
+  "Two-factor authentication has been disabled.": {
+    "machine_translated": true,
+    "translation": "二要素認証が無効になっています。"
+  },
+  "Type RESET to confirm (case-sensitive):": {
+    "machine_translated": true,
+    "translation": "RESET と入力して確認します (大文字と小文字が区別されます)。"
+  },
+  "Unavailable": {
+    "machine_translated": true,
+    "translation": "利用不可"
+  },
+  "Uptime": {
+    "machine_translated": true,
+    "translation": "稼働時間"
+  },
+  "VLAN Settings": {
+    "machine_translated": true,
+    "translation": "VLAN設定"
+  },
+  "VLAN Tag": {
+    "machine_translated": true,
+    "translation": "VLANタグ"
+  },
+  "Version": {
+    "machine_translated": true,
+    "translation": "バージョン"
+  },
+  "View and edit network interface configuration.\n\n  • Enable/disable DHCP and IPv6 auto-configuration\n  • Add or remove static IP aliases\n  • Set MTU, VLAN tag, bridge members, LAG ports, and more\n  • Apply changes (with automatic rollback safety)\n  • Persist changes once the network is confirmed working\n\nPress Enter to select an interface to edit.\nPress [n] to create a new interface, [d] to delete.\nAfter editing, use [a] to Apply and [p] to Persist.": {
+    "machine_translated": true,
+    "translation": "ネットワークインターフェース構成を表示および編集します。\n\n  • DHCP および IPv6 の自動構成を有効/無効にする\n  • 静的 IP エイリアスの追加または削除\n  • MTU、VLANタグ、ブリッジメンバー、LAGポートなどを設定します。\n  • 変更を適用する (自動ロールバック安全機能付き)\n  • ネットワークが動作していることを確認したら、変更を永続化します。\n\nEnter を押して、編集するインターフェイスを選択します。\n新しいインターフェイスを作成するには [n] を押し、削除するには [d] を押します。\n編集後、[a] を使用して適用し、[p] を使用して永続化します。"
+  },
+  "View your account information and manage credentials.\n\n  • View username, UID, roles, and 2FA status\n  • Change your password\n  • Generate a one-time password for single-use login\n  • Set up or renew two-factor authentication\n\nPassword changes take effect immediately.\nOne-time passwords expire after a single login.": {
+    "machine_translated": true,
+    "translation": "アカウント情報を表示し、資格情報を管理します。\n\n  • ユーザー名、UID、役割、2FA ステータスの表示\n  • パスワードを変更する\n  • 一回限りのログイン用にワンタイムパスワードを生成する\n  • 2 要素認証を設定または更新する\n\nパスワードの変更はすぐに有効になります。\nワンタイム パスワードは 1 回ログインすると期限切れになります。"
+  },
+  "Virtual IPs": {
+    "machine_translated": true,
+    "translation": "仮想IP"
+  },
+  "WARNING: You are logged in as root!": {
+    "machine_translated": true,
+    "translation": "警告: あなたは root としてログインしています。"
+  },
+  "Web UI Authentication Method": {
+    "machine_translated": true,
+    "translation": "Web UIの認証方式"
+  },
+  "Without it you may be locked out of this system.": {
+    "machine_translated": true,
+    "translation": "これがないと、このシステムからロックアウトされる可能性があります。"
+  },
+  "Xmit Hash Policy": {
+    "machine_translated": true,
+    "translation": "Xmit ハッシュ ポリシー"
+  },
+  "Yes": {
+    "machine_translated": true,
+    "translation": "はい"
+  },
+  "Yes, reset": {
+    "machine_translated": true,
+    "translation": "はい、リセットします"
+  },
+  "[↑↓] Navigate  [Enter] Edit  [a] Add  [d] Delete  [q] Back": {
+    "machine_translated": true,
+    "translation": "[↑↓] 移動 [Enter] 編集 [a] 追加 [d] 削除 [q] 戻る"
+  },
+  "[↑↓] Navigate  [Enter] Edit  [n] New  [d] Delete  [a] Apply  [p] Persist  [q] Back": {
+    "machine_translated": true,
+    "translation": "[↑↓] 移動 [Enter] 編集 [n] 新規 [d] 削除 [a] 適用 [p] 永続 [q] 戻る"
+  },
+  "[↑↓] Select  [Enter] Edit  [a] Add  [d] Delete  [Esc] Done": {
+    "machine_translated": true,
+    "translation": "[↑↓] 選択 [Enter] 編集 [a] 追加 [d] 削除 [Esc] 完了"
+  },
+  "midcli is not available on this system.": {
+    "machine_translated": true,
+    "translation": "このシステムでは、midcli は使用できません。"
+  },
+  "↑↓ Navigate  Enter Select  Esc Cancel": {
+    "machine_translated": true,
+    "translation": "↑↓ ナビゲート Enter 選択 Esc キャンセル"
+  }
+}

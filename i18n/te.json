@@ -1,0 +1,866 @@
+{
+  " (no QR tool found)": {
+    "machine_translated": true,
+    "translation": "(QR సాధనం కనుగొనబడలేదు)"
+  },
+  " My Account – {u} ": {
+    "machine_translated": true,
+    "translation": "నా ఖాతా – {u}"
+  },
+  " Press Enter to continue": {
+    "machine_translated": true,
+    "translation": "కొనసాగించడానికి ఎంటర్ నొక్కండి"
+  },
+  " Two-Factor Authentication Setup ": {
+    "machine_translated": true,
+    "translation": "రెండు-కారకాల ప్రమాణీకరణ సెటప్"
+  },
+  "(Google Authenticator, Authy, etc.) before navigating away.": {
+    "machine_translated": true,
+    "translation": "(Google Authenticator, Authy, మొదలైనవి) నావిగేట్ చేయడానికి ముందు."
+  },
+  "(no addresses)": {
+    "machine_translated": true,
+    "translation": "(చిరునామాలు లేవు)"
+  },
+  "(none)": {
+    "machine_translated": true,
+    "translation": "(ఏదీ లేదు)"
+  },
+  "Access: Read-only": {
+    "machine_translated": true,
+    "translation": "యాక్సెస్: చదవడానికి మాత్రమే"
+  },
+  "Access: Read/Write": {
+    "machine_translated": true,
+    "translation": "యాక్సెస్: చదవండి/వ్రాయండి"
+  },
+  "Actions:": {
+    "machine_translated": true,
+    "translation": "చర్యలు:"
+  },
+  "Add Static Route": {
+    "machine_translated": true,
+    "translation": "స్టాటిక్ రూట్ జోడించండి"
+  },
+  "Address": {
+    "machine_translated": true,
+    "translation": "చిరునామా"
+  },
+  "Administrative user (admin)  [recommended]": {
+    "machine_translated": true,
+    "translation": "అడ్మినిస్ట్రేటివ్ యూజర్ (అడ్మిన్) [సిఫార్సు చేయబడింది]"
+  },
+  "Alias must be in CIDR notation (e.g. 192.168.1.1/24): {e}": {
+    "machine_translated": true,
+    "translation": "మారుపేరు తప్పనిసరిగా CIDR సంజ్ఞామానంలో ఉండాలి (ఉదా. 192.168.1.1/24): {e}"
+  },
+  "Aliases (CIDR)": {
+    "machine_translated": true,
+    "translation": "మారుపేర్లు (CIDR)"
+  },
+  "Appearance": {
+    "machine_translated": true,
+    "translation": "స్వరూపం"
+  },
+  "Applied": {
+    "machine_translated": true,
+    "translation": "దరఖాస్తు చేసుకున్నారు"
+  },
+  "Auto-refreshes every {n}s  [r] force refresh": {
+    "machine_translated": true,
+    "translation": "ప్రతి {n}s [r] ఫోర్స్ రిఫ్రెష్‌ని ఆటో-రిఫ్రెష్ చేస్తుంది"
+  },
+  "Behaviour": {
+    "machine_translated": true,
+    "translation": "ప్రవర్తన"
+  },
+  "Bridge Settings": {
+    "machine_translated": true,
+    "translation": "వంతెన సెట్టింగ్‌లు"
+  },
+  "CPU": {
+    "machine_translated": true,
+    "translation": "CPU"
+  },
+  "Cancel": {
+    "machine_translated": true,
+    "translation": "రద్దు చేయి"
+  },
+  "Cancelled": {
+    "machine_translated": true,
+    "translation": "రద్దు చేయబడింది"
+  },
+  "Cannot Change Password": {
+    "machine_translated": true,
+    "translation": "పాస్‌వర్డ్‌ని మార్చలేరు"
+  },
+  "Change Password": {
+    "machine_translated": true,
+    "translation": "పాస్‌వర్డ్ మార్చండి"
+  },
+  "Change local administrator password": {
+    "machine_translated": true,
+    "translation": "స్థానిక అడ్మినిస్ట్రేటర్ పాస్‌వర్డ్‌ని మార్చండి"
+  },
+  "Change password": {
+    "machine_translated": true,
+    "translation": "పాస్వర్డ్ మార్చండి"
+  },
+  "Change the password for a local administrator account.\n\nIf no local administrator has been configured yet, this\noption lets you set up an initial admin or root account.\n\nNote: changing a password will disable two-factor\nauthentication for that account.": {
+    "machine_translated": true,
+    "translation": "స్థానిక నిర్వాహక ఖాతా కోసం పాస్‌వర్డ్‌ను మార్చండి.\n\nస్థానిక నిర్వాహకుడు ఇంకా కాన్ఫిగర్ చేయకపోతే, ఇది\nఎంపిక ప్రారంభ నిర్వాహకుడు లేదా రూట్ ఖాతాను సెటప్ చేయడానికి మిమ్మల్ని అనుమతిస్తుంది.\n\nగమనిక: పాస్‌వర్డ్‌ను మార్చడం రెండు-కారకాలని నిలిపివేస్తుంది\nఆ ఖాతా కోసం ప్రమాణీకరణ."
+  },
+  "Changes applied. Network will roll back in ~60 seconds\nunless you press [p] to persist them.": {
+    "machine_translated": true,
+    "translation": "మార్పులు వర్తింపజేయబడ్డాయి. నెట్‌వర్క్ ~60 సెకన్లలో వెనక్కి వస్తుంది\nమీరు వాటిని కొనసాగించడానికి [p] నొక్కితే తప్ప."
+  },
+  "Changes applied. Press [p] to persist or they roll back in {n}s.": {
+    "machine_translated": true,
+    "translation": "మార్పులు వర్తింపజేయబడ్డాయి. కొనసాగించడానికి [p] నొక్కండి లేదా అవి {n}sలో వెనక్కి వస్తాయి."
+  },
+  "Configuration reset cancelled.": {
+    "machine_translated": true,
+    "translation": "కాన్ఫిగరేషన్ రీసెట్ రద్దు చేయబడింది."
+  },
+  "Configuration reset initiated.\nThe system will reboot with default settings.": {
+    "machine_translated": true,
+    "translation": "కాన్ఫిగరేషన్ రీసెట్ ప్రారంభించబడింది.\nసిస్టమ్ డిఫాల్ట్ సెట్టింగ్‌లతో రీబూట్ అవుతుంది."
+  },
+  "Configure global network settings:\n\n  • Hostname and domain\n  • Default IPv4 and IPv6 gateways\n  • DNS nameservers (up to three)\n\nChanges take effect immediately after saving.": {
+    "machine_translated": true,
+    "translation": "గ్లోబల్ నెట్‌వర్క్ సెట్టింగ్‌లను కాన్ఫిగర్ చేయండి:\n\n  • హోస్ట్ పేరు మరియు డొమైన్\n  • డిఫాల్ట్ IPv4 మరియు IPv6 గేట్‌వేలు\n  • DNS నేమ్‌సర్వర్‌లు (మూడు వరకు)\n\nసేవ్ చేసిన వెంటనే మార్పులు అమలులోకి వస్తాయి."
+  },
+  "Configure network interfaces": {
+    "machine_translated": true,
+    "translation": "నెట్‌వర్క్ ఇంటర్‌ఫేస్‌లను కాన్ఫిగర్ చేయండి"
+  },
+  "Configure network settings": {
+    "machine_translated": true,
+    "translation": "నెట్‌వర్క్ సెట్టింగ్‌లను కాన్ఫిగర్ చేయండి"
+  },
+  "Configure networking for this TrueNAS system.\n\n  • Interface settings  – DHCP, IP aliases, MTU\n  • Network settings    – Hostname, domain, gateways, DNS\n  • Static routes       – Add and remove static routes\n\nChanges to interfaces require a commit step\nbefore they take effect.": {
+    "machine_translated": true,
+    "translation": "ఈ TrueNAS సిస్టమ్ కోసం నెట్‌వర్కింగ్‌ని కాన్ఫిగర్ చేయండి.\n\n  • ఇంటర్‌ఫేస్ సెట్టింగ్‌లు – DHCP, IP మారుపేర్లు, MTU\n  • నెట్‌వర్క్ సెట్టింగ్‌లు – హోస్ట్ పేరు, డొమైన్, గేట్‌వేలు, DNS\n  • స్టాటిక్ రూట్‌లు – స్టాటిక్ రూట్‌లను జోడించండి మరియు తీసివేయండి\n\nఇంటర్‌ఫేస్‌లకు మార్పులకు నిబద్ధత దశ అవసరం\nఅవి అమలులోకి రాకముందే."
+  },
+  "Configure static routes": {
+    "machine_translated": true,
+    "translation": "స్టాటిక్ మార్గాలను కాన్ఫిగర్ చేయండి"
+  },
+  "Confirm Delete": {
+    "machine_translated": true,
+    "translation": "తొలగించడాన్ని నిర్ధారించండి"
+  },
+  "Confirm Reboot": {
+    "machine_translated": true,
+    "translation": "రీబూట్‌ని నిర్ధారించండి"
+  },
+  "Confirm Reset": {
+    "machine_translated": true,
+    "translation": "రీసెట్‌ని నిర్ధారించండి"
+  },
+  "Confirm Shutdown": {
+    "machine_translated": true,
+    "translation": "షట్‌డౌన్‌ని నిర్ధారించండి"
+  },
+  "Confirm dangerous actions": {
+    "machine_translated": true,
+    "translation": "ప్రమాదకరమైన చర్యలను నిర్ధారించండి"
+  },
+  "Could not load LAG port choices:\n": {
+    "machine_translated": true,
+    "translation": "LAG పోర్ట్ ఎంపికలను లోడ్ చేయడం సాధ్యపడలేదు:"
+  },
+  "Could not load VLAN parent choices:\n": {
+    "machine_translated": true,
+    "translation": "VLAN పేరెంట్ ఎంపికలను లోడ్ చేయడం సాధ్యపడలేదు:"
+  },
+  "Could not load bridge member choices:\n": {
+    "machine_translated": true,
+    "translation": "వంతెన సభ్యుల ఎంపికలను లోడ్ చేయడం సాధ్యపడలేదు:"
+  },
+  "Create one-time password": {
+    "machine_translated": true,
+    "translation": "వన్-టైమ్ పాస్‌వర్డ్‌ని సృష్టించండి"
+  },
+  "Create one-time password for \"{u}\"": {
+    "machine_translated": true,
+    "translation": "\"{u}\" కోసం ఒక-పర్యాయ పాస్‌వర్డ్‌ని సృష్టించండి"
+  },
+  "Created": {
+    "machine_translated": true,
+    "translation": "సృష్టించబడింది"
+  },
+  "Current password:": {
+    "machine_translated": true,
+    "translation": "ప్రస్తుత పాస్‌వర్డ్:"
+  },
+  "Customise the TrueNAS TUI for your user account.\n\n  • Theme: default (blue), dark (green), high-contrast\n  • Startup view: system info pane or menu description\n  • Confirm dangerous actions (reboot, shutdown, reset)\n  • Language and date/time display formats\n\nSettings are saved to your account and persist across\nsessions on any client.": {
+    "machine_translated": true,
+    "translation": "మీ వినియోగదారు ఖాతా కోసం TrueNAS TUIని అనుకూలీకరించండి.\n\n  • థీమ్: డిఫాల్ట్ (నీలం), ముదురు (ఆకుపచ్చ), అధిక-కాంట్రాస్ట్\n  • ప్రారంభ వీక్షణ: సిస్టమ్ సమాచార పేన్ లేదా మెను వివరణ\n  • ప్రమాదకరమైన చర్యలను నిర్ధారించండి (రీబూట్, షట్‌డౌన్, రీసెట్)\n  • భాష మరియు తేదీ/సమయం ప్రదర్శన ఫార్మాట్‌లు\n\nసెట్టింగ్‌లు మీ ఖాతాలో సేవ్ చేయబడతాయి మరియు అంతటా కొనసాగుతాయి\nఏదైనా క్లయింట్‌పై సెషన్‌లు."
+  },
+  "Date format": {
+    "machine_translated": true,
+    "translation": "తేదీ ఫార్మాట్"
+  },
+  "Delete Route": {
+    "machine_translated": true,
+    "translation": "మార్గాన్ని తొలగించండి"
+  },
+  "Delete interface {name}?": {
+    "machine_translated": true,
+    "translation": "ఇంటర్‌ఫేస్ {name}ని తొలగించాలా?"
+  },
+  "Delete static route {dest}?": {
+    "machine_translated": true,
+    "translation": "స్టాటిక్ రూట్ {dest}ని తొలగించాలా?"
+  },
+  "Deleted": {
+    "machine_translated": true,
+    "translation": "తొలగించబడింది"
+  },
+  "Description": {
+    "machine_translated": true,
+    "translation": "వివరణ"
+  },
+  "Destination (CIDR)": {
+    "machine_translated": true,
+    "translation": "గమ్యం (CIDR)"
+  },
+  "Disable Two-Factor Authentication": {
+    "machine_translated": true,
+    "translation": "రెండు-కారకాల ప్రమాణీకరణను నిలిపివేయండి"
+  },
+  "Disable two-factor authentication": {
+    "machine_translated": true,
+    "translation": "రెండు-కారకాల ప్రమాణీకరణను నిలిపివేయండి"
+  },
+  "Disable two-factor authentication for {u}?\nYou will no longer need an OTP to log in.": {
+    "machine_translated": true,
+    "translation": "{u} కోసం రెండు-కారకాల ప్రమాణీకరణను నిలిపివేయాలా?\nమీరు లాగిన్ చేయడానికి ఇకపై OTP అవసరం లేదు."
+  },
+  "Disabled": {
+    "machine_translated": true,
+    "translation": "వికలాంగుడు"
+  },
+  "Domain": {
+    "machine_translated": true,
+    "translation": "డొమైన్"
+  },
+  "Edit Static Route": {
+    "machine_translated": true,
+    "translation": "స్టాటిక్ మార్గాన్ని సవరించండి"
+  },
+  "Enabled": {
+    "machine_translated": true,
+    "translation": "ప్రారంభించబడింది"
+  },
+  "Enter: confirm  Esc: cancel": {
+    "machine_translated": true,
+    "translation": "నమోదు చేయండి: నిర్ధారించండి Esc: రద్దు చేయండి"
+  },
+  "Erase all TrueNAS configuration and reset to factory\ndefaults.\n\nWARNING: This is irreversible. All settings including\nnetwork configuration, shares, users, and storage pools\nwill be erased.\n\nYou will be prompted to confirm twice before proceeding.": {
+    "machine_translated": true,
+    "translation": "అన్ని TrueNAS కాన్ఫిగరేషన్‌ను తొలగించి, ఫ్యాక్టరీకి రీసెట్ చేయండి\nడిఫాల్ట్‌లు.\n\nహెచ్చరిక: ఇది కోలుకోలేనిది. సహా అన్ని సెట్టింగ్‌లు\nనెట్‌వర్క్ కాన్ఫిగరేషన్, షేర్‌లు, యూజర్‌లు మరియు స్టోరేజ్ పూల్స్\nతుడిచివేయబడుతుంది.\n\nకొనసాగడానికి ముందు మీరు రెండుసార్లు ధృవీకరించమని ప్రాంప్ట్ చేయబడతారు."
+  },
+  "Error": {
+    "machine_translated": true,
+    "translation": "లోపం"
+  },
+  "Failover Critical": {
+    "machine_translated": true,
+    "translation": "ఫెయిల్ఓవర్ క్రిటికల్"
+  },
+  "Failover Group": {
+    "machine_translated": true,
+    "translation": "ఫెయిల్‌ఓవర్ గ్రూప్"
+  },
+  "Failover Settings": {
+    "machine_translated": true,
+    "translation": "ఫెయిల్‌ఓవర్ సెట్టింగ్‌లు"
+  },
+  "Gateway": {
+    "machine_translated": true,
+    "translation": "గేట్‌వే"
+  },
+  "Generate a single-use temporary password for the\ncurrently authenticated user.\n\nThe one-time password can be used to log in once\nand is invalidated immediately after use.": {
+    "machine_translated": true,
+    "translation": "కోసం ఒక సింగిల్ యూజ్ తాత్కాలిక పాస్‌వర్డ్‌ను రూపొందించండి\nప్రస్తుతం ప్రమాణీకరించబడిన వినియోగదారు.\n\nఒకసారి లాగిన్ అవ్వడానికి వన్ టైమ్ పాస్‌వర్డ్‌ని ఉపయోగించవచ్చు\nమరియు ఉపయోగం తర్వాత వెంటనే చెల్లదు."
+  },
+  "Generate one-time password": {
+    "machine_translated": true,
+    "translation": "వన్-టైమ్ పాస్‌వర్డ్‌ను రూపొందించండి"
+  },
+  "Generating a new 2FA secret will invalidate your current\nauthenticator app configuration. Continue?": {
+    "machine_translated": true,
+    "translation": "కొత్త 2FA రహస్యాన్ని రూపొందించడం వలన మీ కరెంట్ చెల్లదు\nAuthenticator యాప్ కాన్ఫిగరేషన్. కొనసాగించాలా?"
+  },
+  "Hostname": {
+    "machine_translated": true,
+    "translation": "హోస్ట్ పేరు"
+  },
+  "IMPORTANT: Scan this QR code with your authenticator app": {
+    "machine_translated": true,
+    "translation": "ముఖ్యమైనది: మీ ప్రామాణీకరణ యాప్‌తో ఈ QR కోడ్‌ని స్కాన్ చేయండి"
+  },
+  "IP Address": {
+    "machine_translated": true,
+    "translation": "IP చిరునామా"
+  },
+  "IPv4 DHCP": {
+    "machine_translated": true,
+    "translation": "IPv4 DHCP"
+  },
+  "IPv4 Gateway": {
+    "machine_translated": true,
+    "translation": "IPv4 గేట్‌వే"
+  },
+  "IPv6 Auto": {
+    "machine_translated": true,
+    "translation": "IPv6 ఆటో"
+  },
+  "IPv6 Gateway": {
+    "machine_translated": true,
+    "translation": "IPv6 గేట్‌వే"
+  },
+  "Interface": {
+    "machine_translated": true,
+    "translation": "ఇంటర్ఫేస్"
+  },
+  "Interface Settings": {
+    "machine_translated": true,
+    "translation": "ఇంటర్ఫేస్ సెట్టింగులు"
+  },
+  "Interface Type": {
+    "machine_translated": true,
+    "translation": "ఇంటర్ఫేస్ రకం"
+  },
+  "Interface name is required.": {
+    "machine_translated": true,
+    "translation": "ఇంటర్‌ఫేస్ పేరు అవసరం."
+  },
+  "Interface settings": {
+    "machine_translated": true,
+    "translation": "ఇంటర్ఫేస్ సెట్టింగులు"
+  },
+  "Interface {name} created.\nUse [a] from the list to apply changes.": {
+    "machine_translated": true,
+    "translation": "ఇంటర్‌ఫేస్ {name} సృష్టించబడింది.\nమార్పులను వర్తింపజేయడానికి జాబితా నుండి [a] ఉపయోగించండి."
+  },
+  "Interface {name} deleted.\nUse [a] from the list to apply changes.": {
+    "machine_translated": true,
+    "translation": "ఇంటర్‌ఫేస్ {name} తొలగించబడింది.\nమార్పులను వర్తింపజేయడానికి జాబితా నుండి [a] ఉపయోగించండి."
+  },
+  "Interface {name} updated.\nUse [a] from the list to apply changes.": {
+    "machine_translated": true,
+    "translation": "ఇంటర్‌ఫేస్ {name} నవీకరించబడింది.\nమార్పులను వర్తింపజేయడానికి జాబితా నుండి [a] ఉపయోగించండి."
+  },
+  "Invalid IP address in alias: {e}": {
+    "machine_translated": true,
+    "translation": "మారుపేరులో చెల్లని IP చిరునామా: {e}"
+  },
+  "Invalid IP address: {s}": {
+    "machine_translated": true,
+    "translation": "చెల్లని IP చిరునామా: {s}"
+  },
+  "Invalid prefix length in alias: {e}": {
+    "machine_translated": true,
+    "translation": "మారుపేరులో చెల్లని ఉపసర్గ పొడవు: {e}"
+  },
+  "LACPDU Rate": {
+    "machine_translated": true,
+    "translation": "LACPDU రేటు"
+  },
+  "Language": {
+    "machine_translated": true,
+    "translation": "భాష"
+  },
+  "Link Aggregation Settings": {
+    "machine_translated": true,
+    "translation": "లింక్ అగ్రిగేషన్ సెట్టింగ్‌లు"
+  },
+  "Load Average": {
+    "machine_translated": true,
+    "translation": "లోడ్ సగటు"
+  },
+  "Local administrator {u} set up successfully.": {
+    "machine_translated": true,
+    "translation": "స్థానిక అడ్మినిస్ట్రేటర్ {u} విజయవంతంగా సెటప్ చేయబడింది."
+  },
+  "Locale": {
+    "machine_translated": true,
+    "translation": "లొకేల్"
+  },
+  "MTU": {
+    "machine_translated": true,
+    "translation": "MTU"
+  },
+  "Manage static network routes.\n\n  • View existing static routes\n  • Add new routes (destination, gateway, description)\n  • Edit or delete existing routes\n\nKeys: Enter = Edit,  a = Add,  d = Delete,  q = Back": {
+    "machine_translated": true,
+    "translation": "స్టాటిక్ నెట్‌వర్క్ మార్గాలను నిర్వహించండి.\n\n  • ఇప్పటికే ఉన్న స్టాటిక్ మార్గాలను వీక్షించండి\n  • కొత్త మార్గాలను జోడించండి (గమ్యం, గేట్‌వే, వివరణ)\n  • ఇప్పటికే ఉన్న మార్గాలను సవరించండి లేదా తొలగించండి\n\nకీలు: ఎంటర్ = సవరించు, a = జోడించు, d = తొలగించు, q = వెనుకకు"
+  },
+  "Manufacturer": {
+    "machine_translated": true,
+    "translation": "తయారీదారు"
+  },
+  "Members": {
+    "machine_translated": true,
+    "translation": "సభ్యులు"
+  },
+  "Memory": {
+    "machine_translated": true,
+    "translation": "జ్ఞాపకశక్తి"
+  },
+  "My account": {
+    "machine_translated": true,
+    "translation": "నా ఖాతా"
+  },
+  "Name": {
+    "machine_translated": true,
+    "translation": "పేరు"
+  },
+  "Nameserver 1": {
+    "machine_translated": true,
+    "translation": "నేమ్‌సర్వర్ 1"
+  },
+  "Nameserver 2": {
+    "machine_translated": true,
+    "translation": "నేమ్‌సర్వర్ 2"
+  },
+  "Nameserver 3": {
+    "machine_translated": true,
+    "translation": "నేమ్‌సర్వర్ 3"
+  },
+  "Network": {
+    "machine_translated": true,
+    "translation": "నెట్‌వర్క్"
+  },
+  "Network Configuration": {
+    "machine_translated": true,
+    "translation": "నెట్‌వర్క్ కాన్ఫిగరేషన్"
+  },
+  "Network Interfaces": {
+    "machine_translated": true,
+    "translation": "నెట్‌వర్క్ ఇంటర్‌ఫేస్‌లు"
+  },
+  "Network changes persisted successfully.": {
+    "machine_translated": true,
+    "translation": "నెట్‌వర్క్ మార్పులు విజయవంతంగా కొనసాగాయి."
+  },
+  "Network settings": {
+    "machine_translated": true,
+    "translation": "నెట్‌వర్క్ సెట్టింగ్‌లు"
+  },
+  "Network settings updated successfully.": {
+    "machine_translated": true,
+    "translation": "నెట్‌వర్క్ సెట్టింగ్‌లు విజయవంతంగా నవీకరించబడ్డాయి."
+  },
+  "New Interface – Step 1": {
+    "machine_translated": true,
+    "translation": "కొత్త ఇంటర్‌ఫేస్ - దశ 1"
+  },
+  "New Interface – Step 2": {
+    "machine_translated": true,
+    "translation": "కొత్త ఇంటర్‌ఫేస్ - దశ 2"
+  },
+  "New password for {u}:": {
+    "machine_translated": true,
+    "translation": "{u} కోసం కొత్త పాస్‌వర్డ్:"
+  },
+  "No": {
+    "machine_translated": true,
+    "translation": "నం"
+  },
+  "No local administrators found.": {
+    "machine_translated": true,
+    "translation": "స్థానిక నిర్వాహకులు కనుగొనబడలేదు."
+  },
+  "No provisioning URI returned from server.": {
+    "machine_translated": true,
+    "translation": "సర్వర్ నుండి ఎటువంటి ప్రొవిజనింగ్ URI అందించబడలేదు."
+  },
+  "No static routes configured.": {
+    "machine_translated": true,
+    "translation": "స్థిర మార్గాలు ఏవీ కాన్ఫిగర్ చేయబడలేదు."
+  },
+  "No terminal QR code tool was found on this system.\n\nInstall \"qr\" or \"qrcode-terminal\" to use this feature.": {
+    "machine_translated": true,
+    "translation": "ఈ సిస్టమ్‌లో టెర్మినల్ QR కోడ్ సాధనం కనుగొనబడలేదు.\n\nఈ లక్షణాన్ని ఉపయోగించడానికి \"qr\" లేదా \"qrcode-terminal\"ని ఇన్‌స్టాల్ చేయండి."
+  },
+  "Not Found": {
+    "machine_translated": true,
+    "translation": "దొరకలేదు"
+  },
+  "Not a valid member: {v}": {
+    "machine_translated": true,
+    "translation": "చెల్లుబాటు అయ్యే సభ్యుడు కాదు: {v}"
+  },
+  "Not a valid port: {v}": {
+    "machine_translated": true,
+    "translation": "చెల్లుబాటు అయ్యే పోర్ట్ కాదు: {v}"
+  },
+  "One-Time Password": {
+    "machine_translated": true,
+    "translation": "వన్-టైమ్ పాస్‌వర్డ్"
+  },
+  "One-time password for \"{u}\":\n\n  {otp}\n\nThis password can only be used once.\nDialog closes automatically after {t} seconds.": {
+    "machine_translated": true,
+    "translation": "\"{u}\" కోసం వన్-టైమ్ పాస్‌వర్డ్:\n\n  {otp}\n\nఈ పాస్‌వర్డ్‌ని ఒకసారి మాత్రమే ఉపయోగించవచ్చు.\nడైలాగ్ {t} సెకన్ల తర్వాత స్వయంచాలకంగా మూసివేయబడుతుంది."
+  },
+  "Open Linux Shell": {
+    "machine_translated": true,
+    "translation": "Linux షెల్ తెరవండి"
+  },
+  "Open TrueNAS CLI Shell": {
+    "machine_translated": true,
+    "translation": "TrueNAS CLI షెల్ తెరవండి"
+  },
+  "Open a Linux shell (bash/zsh).\n\nSuspends the TUI and opens your login shell.\nType \"exit\" or press Ctrl+D to return to the TUI.": {
+    "machine_translated": true,
+    "translation": "Linux షెల్ (bash/zsh) తెరవండి.\n\nTUIని సస్పెండ్ చేస్తుంది మరియు మీ లాగిన్ షెల్‌ను తెరుస్తుంది.\nTUIకి తిరిగి రావడానికి \"నిష్క్రమించు\" అని టైప్ చేయండి లేదా Ctrl+D నొక్కండి."
+  },
+  "Open the TrueNAS interactive CLI shell (midcli).\n\nReplaces the TUI with the full midcli command-line\ninterface. The TUI restarts after you exit midcli.": {
+    "machine_translated": true,
+    "translation": "TrueNAS ఇంటరాక్టివ్ CLI షెల్ (మిడ్‌క్లి) తెరవండి.\n\nTUIని పూర్తి midcli కమాండ్-లైన్‌తో భర్తీ చేస్తుంది\nఇంటర్ఫేస్. మీరు midcli నుండి నిష్క్రమించిన తర్వాత TUI పునఃప్రారంభించబడుతుంది."
+  },
+  "Other Settings": {
+    "machine_translated": true,
+    "translation": "ఇతర సెట్టింగ్‌లు"
+  },
+  "Parent Interface": {
+    "machine_translated": true,
+    "translation": "పేరెంట్ ఇంటర్ఫేస్"
+  },
+  "Password changed successfully.": {
+    "machine_translated": true,
+    "translation": "పాస్‌వర్డ్ విజయవంతంగా మార్చబడింది."
+  },
+  "Password changes are only supported for local accounts.\nThis account is managed by an external directory service.": {
+    "machine_translated": true,
+    "translation": "పాస్‌వర్డ్ మార్పులకు స్థానిక ఖాతాలకు మాత్రమే మద్దతు ఉంది.\nఈ ఖాతా బాహ్య డైరెక్టరీ సేవ ద్వారా నిర్వహించబడుతుంది."
+  },
+  "Password for {u} changed successfully.\nTwo-factor authentication has been disabled.": {
+    "machine_translated": true,
+    "translation": "{u} కోసం పాస్‌వర్డ్ విజయవంతంగా మార్చబడింది.\nరెండు-కారకాల ప్రమాణీకరణ నిలిపివేయబడింది."
+  },
+  "Password for {u}:": {
+    "machine_translated": true,
+    "translation": "{u} కోసం పాస్‌వర్డ్:"
+  },
+  "Password must be at least {n} characters.": {
+    "machine_translated": true,
+    "translation": "పాస్‌వర్డ్ తప్పనిసరిగా కనీసం {n} అక్షరాలు ఉండాలి."
+  },
+  "Passwords do not match.": {
+    "machine_translated": true,
+    "translation": "పాస్‌వర్డ్‌లు సరిపోలడం లేదు."
+  },
+  "Pending changes. Press [a] to apply.": {
+    "machine_translated": true,
+    "translation": "పెండింగ్‌లో ఉన్న మార్పులు. దరఖాస్తు చేయడానికి [a] నొక్కండి."
+  },
+  "Persisted": {
+    "machine_translated": true,
+    "translation": "పట్టుబట్టారు"
+  },
+  "Please enter the reason for the system reboot\n(leave blank to cancel):": {
+    "machine_translated": true,
+    "translation": "దయచేసి సిస్టమ్ రీబూట్ కోసం కారణాన్ని నమోదు చేయండి\n(రద్దు చేయడానికి ఖాళీగా ఉంచండి):"
+  },
+  "Please enter the reason for the system shutdown\n(leave blank to cancel):": {
+    "machine_translated": true,
+    "translation": "దయచేసి సిస్టమ్ షట్‌డౌన్‌కు కారణాన్ని నమోదు చేయండి\n(రద్దు చేయడానికి ఖాళీగా ఉంచండి):"
+  },
+  "Port": {
+    "machine_translated": true,
+    "translation": "పోర్ట్"
+  },
+  "Ports": {
+    "machine_translated": true,
+    "translation": "ఓడరేవులు"
+  },
+  "Power Control": {
+    "machine_translated": true,
+    "translation": "పవర్ కంట్రోల్"
+  },
+  "Prefix length out of range in alias: {e}": {
+    "machine_translated": true,
+    "translation": "అలియాస్‌లో ఉపసర్గ పొడవు పరిధి లేదు: {e}"
+  },
+  "Priority (PCP)": {
+    "machine_translated": true,
+    "translation": "ప్రాధాన్యత (PCP)"
+  },
+  "Product": {
+    "machine_translated": true,
+    "translation": "ఉత్పత్తి"
+  },
+  "Protocol": {
+    "machine_translated": true,
+    "translation": "ప్రోటోకాల్"
+  },
+  "Reboot": {
+    "machine_translated": true,
+    "translation": "రీబూట్ చేయండి"
+  },
+  "Reboot initiated. The system is shutting down.": {
+    "machine_translated": true,
+    "translation": "రీబూట్ ప్రారంభించబడింది. సిస్టమ్ షట్ డౌన్ అవుతోంది."
+  },
+  "Reboot or shut down the TrueNAS system.\n\n  • Reboot   – restart the system\n  • Shutdown – power off the system\n\nYou will be prompted for a reason and confirmation\nbefore any action is taken.": {
+    "machine_translated": true,
+    "translation": "TrueNAS సిస్టమ్‌ను రీబూట్ చేయండి లేదా షట్ డౌన్ చేయండి.\n\n  • రీబూట్ - సిస్టమ్ పునఃప్రారంభించండి\n  • షట్డౌన్ - సిస్టమ్ పవర్ ఆఫ్\n\nమీరు కారణం మరియు నిర్ధారణ కోసం ప్రాంప్ట్ చేయబడతారు\nఏదైనా చర్య తీసుకునే ముందు."
+  },
+  "Reboot the TrueNAS system.\n\nYou will be prompted to enter a reason for the reboot\nbefore the system restarts.\n\nAll active sessions and shares will be interrupted.": {
+    "machine_translated": true,
+    "translation": "TrueNAS సిస్టమ్‌ను రీబూట్ చేయండి.\n\nరీబూట్ చేయడానికి కారణాన్ని నమోదు చేయమని మీరు ప్రాంప్ట్ చేయబడతారు\nసిస్టమ్ పునఃప్రారంభించే ముందు.\n\nఅన్ని సక్రియ సెషన్‌లు మరియు షేర్‌లకు అంతరాయం ఏర్పడుతుంది."
+  },
+  "Reboot the system?\n\nReason: {r}": {
+    "machine_translated": true,
+    "translation": "సిస్టమ్‌ను రీబూట్ చేయాలా?\n\nకారణం: {r}"
+  },
+  "Reboot/Shutdown": {
+    "machine_translated": true,
+    "translation": "రీబూట్/షట్‌డౌన్"
+  },
+  "Rebooting": {
+    "machine_translated": true,
+    "translation": "రీబూట్ చేస్తోంది"
+  },
+  "Renew 2FA Secret": {
+    "machine_translated": true,
+    "translation": "2FA రహస్యాన్ని పునరుద్ధరించండి"
+  },
+  "Renew two-factor secret": {
+    "machine_translated": true,
+    "translation": "రెండు-కారకాల రహస్యాన్ని పునరుద్ధరించండి"
+  },
+  "Reset": {
+    "machine_translated": true,
+    "translation": "రీసెట్ చేయండి"
+  },
+  "Reset Configuration": {
+    "machine_translated": true,
+    "translation": "రీసెట్ కాన్ఫిగరేషన్"
+  },
+  "Reset configuration to defaults": {
+    "machine_translated": true,
+    "translation": "కాన్ఫిగరేషన్‌ను డిఫాల్ట్‌లకు రీసెట్ చేయండి"
+  },
+  "Retype new password:": {
+    "machine_translated": true,
+    "translation": "కొత్త పాస్‌వర్డ్‌ని మళ్లీ టైప్ చేయండి:"
+  },
+  "Retype password for {u}:": {
+    "machine_translated": true,
+    "translation": "{u} కోసం పాస్‌వర్డ్‌ని మళ్లీ టైప్ చేయండి:"
+  },
+  "Root user (not recommended)": {
+    "machine_translated": true,
+    "translation": "రూట్ వినియోగదారు (సిఫార్సు చేయబడలేదు)"
+  },
+  "Save": {
+    "machine_translated": true,
+    "translation": "సేవ్ చేయండి"
+  },
+  "Saved": {
+    "machine_translated": true,
+    "translation": "సేవ్ చేయబడింది"
+  },
+  "Secret key: {s}  (for manual entry)": {
+    "machine_translated": true,
+    "translation": "రహస్య కీ: {s} (మాన్యువల్ ఎంట్రీ కోసం)"
+  },
+  "Select Administrator": {
+    "machine_translated": true,
+    "translation": "నిర్వాహకుడిని ఎంచుకోండి"
+  },
+  "Serial": {
+    "machine_translated": true,
+    "translation": "సీరియల్"
+  },
+  "Set Up Administrator": {
+    "machine_translated": true,
+    "translation": "నిర్వాహకుడిని సెటప్ చేయండి"
+  },
+  "Set to 0 to use the system default MTU": {
+    "machine_translated": true,
+    "translation": "సిస్టమ్ డిఫాల్ట్ MTUని ఉపయోగించడానికి 0కి సెట్ చేయండి"
+  },
+  "Set up local administrator": {
+    "machine_translated": true,
+    "translation": "స్థానిక నిర్వాహకుడిని సెటప్ చేయండి"
+  },
+  "Set up two-factor authentication": {
+    "machine_translated": true,
+    "translation": "రెండు-కారకాల ప్రమాణీకరణను సెటప్ చేయండి"
+  },
+  "Settings Saved": {
+    "machine_translated": true,
+    "translation": "సెట్టింగ్‌లు సేవ్ చేయబడ్డాయి"
+  },
+  "Shut down the TrueNAS system.\n\nYou will be prompted to enter a reason for the shutdown\nbefore the system powers off.\n\nAll active sessions and shares will be interrupted.": {
+    "machine_translated": true,
+    "translation": "TrueNAS సిస్టమ్‌ను షట్ డౌన్ చేయండి.\n\nషట్‌డౌన్ కోసం కారణాన్ని నమోదు చేయమని మీరు ప్రాంప్ట్ చేయబడతారు\nసిస్టమ్ పవర్ ఆఫ్ అయ్యే ముందు.\n\nఅన్ని సక్రియ సెషన్‌లు మరియు షేర్‌లకు అంతరాయం ఏర్పడుతుంది."
+  },
+  "Shut down the system?\n\nReason: {r}": {
+    "machine_translated": true,
+    "translation": "సిస్టమ్‌ను మూసివేయాలా?\n\nకారణం: {r}"
+  },
+  "Shutdown": {
+    "machine_translated": true,
+    "translation": "షట్డౌన్"
+  },
+  "Shutdown initiated. The system is powering off.": {
+    "machine_translated": true,
+    "translation": "షట్‌డౌన్ ప్రారంభించబడింది. సిస్టమ్ పవర్ ఆఫ్ అవుతోంది."
+  },
+  "Shutting Down": {
+    "machine_translated": true,
+    "translation": "షట్ డౌన్"
+  },
+  "Specify a bare IP address (no prefix length)": {
+    "machine_translated": true,
+    "translation": "బేర్ IP చిరునామాను పేర్కొనండి (ఉపసర్గ పొడవు లేదు)"
+  },
+  "Startup": {
+    "machine_translated": true,
+    "translation": "స్టార్టప్"
+  },
+  "Startup view": {
+    "machine_translated": true,
+    "translation": "ప్రారంభ వీక్షణ"
+  },
+  "Static Routes": {
+    "machine_translated": true,
+    "translation": "స్టాటిక్ మార్గాలు"
+  },
+  "Static routes": {
+    "machine_translated": true,
+    "translation": "స్టాటిక్ మార్గాలు"
+  },
+  "Success": {
+    "machine_translated": true,
+    "translation": "విజయం"
+  },
+  "System Information": {
+    "machine_translated": true,
+    "translation": "సిస్టమ్ సమాచారం"
+  },
+  "TUI preferences saved.\nTheme and locale changes take effect immediately.": {
+    "machine_translated": true,
+    "translation": "TUI ప్రాధాన్యతలు సేవ్ చేయబడ్డాయి.\nథీమ్ మరియు లొకేల్ మార్పులు వెంటనే అమలులోకి వస్తాయి."
+  },
+  "Tab/↑↓: navigate   Enter: confirm   Esc: cancel": {
+    "machine_translated": true,
+    "translation": "టాబ్/↑↓: నావిగేట్ నమోదు చేయండి: Escని నిర్ధారించండి: రద్దు చేయండి"
+  },
+  "Text UI settings": {
+    "machine_translated": true,
+    "translation": "టెక్స్ట్ UI సెట్టింగ్‌లు"
+  },
+  "Theme": {
+    "machine_translated": true,
+    "translation": "థీమ్"
+  },
+  "This Node IPs": {
+    "machine_translated": true,
+    "translation": "ఈ నోడ్ IPలు"
+  },
+  "This will ERASE all configuration and reset to defaults.\nAre you absolutely sure?": {
+    "machine_translated": true,
+    "translation": "ఇది అన్ని కాన్ఫిగరేషన్‌లను ఎరేస్ చేస్తుంది మరియు డిఫాల్ట్‌లకు రీసెట్ చేస్తుంది.\nమీరు ఖచ్చితంగా ఉన్నారా?"
+  },
+  "Time format": {
+    "machine_translated": true,
+    "translation": "సమయ ఆకృతి"
+  },
+  "Timezone": {
+    "machine_translated": true,
+    "translation": "సమయమండలి"
+  },
+  "Two-factor authentication has been disabled.": {
+    "machine_translated": true,
+    "translation": "రెండు-కారకాల ప్రమాణీకరణ నిలిపివేయబడింది."
+  },
+  "Type RESET to confirm (case-sensitive):": {
+    "machine_translated": true,
+    "translation": "నిర్ధారించడానికి రీసెట్ టైప్ చేయండి (కేస్-సెన్సిటివ్):"
+  },
+  "Unavailable": {
+    "machine_translated": true,
+    "translation": "అందుబాటులో లేదు"
+  },
+  "Uptime": {
+    "machine_translated": true,
+    "translation": "సమయము"
+  },
+  "VLAN Settings": {
+    "machine_translated": true,
+    "translation": "VLAN సెట్టింగ్‌లు"
+  },
+  "VLAN Tag": {
+    "machine_translated": true,
+    "translation": "VLAN ట్యాగ్"
+  },
+  "Version": {
+    "machine_translated": true,
+    "translation": "వెర్షన్"
+  },
+  "View and edit network interface configuration.\n\n  • Enable/disable DHCP and IPv6 auto-configuration\n  • Add or remove static IP aliases\n  • Set MTU, VLAN tag, bridge members, LAG ports, and more\n  • Apply changes (with automatic rollback safety)\n  • Persist changes once the network is confirmed working\n\nPress Enter to select an interface to edit.\nPress [n] to create a new interface, [d] to delete.\nAfter editing, use [a] to Apply and [p] to Persist.": {
+    "machine_translated": true,
+    "translation": "నెట్‌వర్క్ ఇంటర్‌ఫేస్ కాన్ఫిగరేషన్‌ను వీక్షించండి మరియు సవరించండి.\n\n  • DHCP మరియు IPv6 ఆటో-కాన్ఫిగరేషన్‌ను ప్రారంభించండి/నిలిపివేయండి\n  • స్టాటిక్ IP మారుపేర్లను జోడించండి లేదా తీసివేయండి\n  • MTU, VLAN ట్యాగ్, వంతెన సభ్యులు, LAG పోర్ట్‌లు మరియు మరిన్నింటిని సెట్ చేయండి\n  • మార్పులను వర్తింపజేయండి (ఆటోమేటిక్ రోల్‌బ్యాక్ భద్రతతో)\n  • నెట్‌వర్క్ పని చేస్తున్నట్లు నిర్ధారించబడిన తర్వాత మార్పులను కొనసాగించండి\n\nసవరించడానికి ఇంటర్‌ఫేస్‌ను ఎంచుకోవడానికి ఎంటర్ నొక్కండి.\nకొత్త ఇంటర్‌ఫేస్‌ని సృష్టించడానికి [n], తొలగించడానికి [d] నొక్కండి.\nసవరించిన తర్వాత, వర్తింపజేయడానికి [a] మరియు పెర్సిస్ట్ చేయడానికి [p] ఉపయోగించండి."
+  },
+  "View your account information and manage credentials.\n\n  • View username, UID, roles, and 2FA status\n  • Change your password\n  • Generate a one-time password for single-use login\n  • Set up or renew two-factor authentication\n\nPassword changes take effect immediately.\nOne-time passwords expire after a single login.": {
+    "machine_translated": true,
+    "translation": "మీ ఖాతా సమాచారాన్ని వీక్షించండి మరియు ఆధారాలను నిర్వహించండి.\n\n  • వినియోగదారు పేరు, UID, పాత్రలు మరియు 2FA స్థితిని వీక్షించండి\n  • మీ పాస్వర్డ్ను మార్చండి\n  • సింగిల్ యూజ్ లాగిన్ కోసం వన్-టైమ్ పాస్‌వర్డ్‌ను రూపొందించండి\n  • రెండు-కారకాల ప్రమాణీకరణను సెటప్ చేయండి లేదా పునరుద్ధరించండి\n\nపాస్‌వర్డ్ మార్పులు వెంటనే అమలులోకి వస్తాయి.\nఒకే లాగిన్ తర్వాత వన్-టైమ్ పాస్‌వర్డ్‌ల గడువు ముగుస్తుంది."
+  },
+  "Virtual IPs": {
+    "machine_translated": true,
+    "translation": "వర్చువల్ IPలు"
+  },
+  "WARNING: You are logged in as root!": {
+    "machine_translated": true,
+    "translation": "హెచ్చరిక: మీరు రూట్‌గా లాగిన్ చేసారు!"
+  },
+  "Web UI Authentication Method": {
+    "machine_translated": true,
+    "translation": "వెబ్ UI ప్రమాణీకరణ పద్ధతి"
+  },
+  "Without it you may be locked out of this system.": {
+    "machine_translated": true,
+    "translation": "అది లేకుండా మీరు ఈ సిస్టమ్ నుండి లాక్ చేయబడవచ్చు."
+  },
+  "Xmit Hash Policy": {
+    "machine_translated": true,
+    "translation": "Xmit హాష్ పాలసీ"
+  },
+  "Yes": {
+    "machine_translated": true,
+    "translation": "అవును"
+  },
+  "Yes, reset": {
+    "machine_translated": true,
+    "translation": "అవును, రీసెట్ చేయండి"
+  },
+  "[↑↓] Navigate  [Enter] Edit  [a] Add  [d] Delete  [q] Back": {
+    "machine_translated": true,
+    "translation": "[↑↓] నావిగేట్ [నమోదు] సవరించు [a] జోడించు [d] తొలగించు [q] వెనుకకు"
+  },
+  "[↑↓] Navigate  [Enter] Edit  [n] New  [d] Delete  [a] Apply  [p] Persist  [q] Back": {
+    "machine_translated": true,
+    "translation": "[↑↓] నావిగేట్ [నమోదు] సవరించు [n] కొత్త [d] తొలగించు [a] వర్తించు [p] కొనసాగించు [q] వెనుకకు"
+  },
+  "[↑↓] Select  [Enter] Edit  [a] Add  [d] Delete  [Esc] Done": {
+    "machine_translated": true,
+    "translation": "[↑↓] ఎంచుకోండి [నమోదు చేయండి] సవరించండి [a] జోడించండి [d] తొలగించండి [Esc] పూర్తయింది"
+  },
+  "midcli is not available on this system.": {
+    "machine_translated": true,
+    "translation": "ఈ సిస్టమ్‌లో midcli అందుబాటులో లేదు."
+  },
+  "↑↓ Navigate  Enter Select  Esc Cancel": {
+    "machine_translated": true,
+    "translation": "↑↓ నావిగేట్ చేయండి ఎంటర్ ఎంచుకోండి Esc రద్దు చేయండి"
+  }
+}

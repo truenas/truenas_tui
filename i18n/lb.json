@@ -1,0 +1,866 @@
+{
+  " (no QR tool found)": {
+    "machine_translated": true,
+    "translation": "(kee QR-Tool fonnt)"
+  },
+  " My Account – {u} ": {
+    "machine_translated": true,
+    "translation": "Mäi Kont - {u}"
+  },
+  " Press Enter to continue": {
+    "machine_translated": true,
+    "translation": "Press Enter fir weiderzemaachen"
+  },
+  " Two-Factor Authentication Setup ": {
+    "machine_translated": true,
+    "translation": "Zwee-Faktor Authentifikatioun Setup"
+  },
+  "(Google Authenticator, Authy, etc.) before navigating away.": {
+    "machine_translated": true,
+    "translation": "(Google Authenticator, Authy, etc.) ier Dir fort navigéiert."
+  },
+  "(no addresses)": {
+    "machine_translated": true,
+    "translation": "(keng Adressen)"
+  },
+  "(none)": {
+    "machine_translated": true,
+    "translation": "(keen)"
+  },
+  "Access: Read-only": {
+    "machine_translated": true,
+    "translation": "Zougang: Lies-nëmmen"
+  },
+  "Access: Read/Write": {
+    "machine_translated": true,
+    "translation": "Zougang: Liesen / Schreiwen"
+  },
+  "Actions:": {
+    "machine_translated": true,
+    "translation": "Aktiounen:"
+  },
+  "Add Static Route": {
+    "machine_translated": true,
+    "translation": "Füügt statesch Route"
+  },
+  "Address": {
+    "machine_translated": true,
+    "translation": "Adress"
+  },
+  "Administrative user (admin)  [recommended]": {
+    "machine_translated": true,
+    "translation": "Administrativ Benotzer (Admin) [recommandéiert]"
+  },
+  "Alias must be in CIDR notation (e.g. 192.168.1.1/24): {e}": {
+    "machine_translated": true,
+    "translation": "Alias ​​muss an der CIDR Notatioun sinn (zB 192.168.1.1/24): {e}"
+  },
+  "Aliases (CIDR)": {
+    "machine_translated": true,
+    "translation": "Aliasen (CIDR)"
+  },
+  "Appearance": {
+    "machine_translated": true,
+    "translation": "Ausgesinn"
+  },
+  "Applied": {
+    "machine_translated": true,
+    "translation": "ugewannt"
+  },
+  "Auto-refreshes every {n}s  [r] force refresh": {
+    "machine_translated": true,
+    "translation": "Automatesch erfrëscht all {n}s [r] Kraaft Erfrëschung"
+  },
+  "Behaviour": {
+    "machine_translated": true,
+    "translation": "Verhalen"
+  },
+  "Bridge Settings": {
+    "machine_translated": true,
+    "translation": "Bréck Astellunge"
+  },
+  "CPU": {
+    "machine_translated": true,
+    "translation": "CPU"
+  },
+  "Cancel": {
+    "machine_translated": true,
+    "translation": "Ofbriechen"
+  },
+  "Cancelled": {
+    "machine_translated": true,
+    "translation": "Annuléiert"
+  },
+  "Cannot Change Password": {
+    "machine_translated": true,
+    "translation": "Kann net Passwuert änneren"
+  },
+  "Change Password": {
+    "machine_translated": true,
+    "translation": "Passwuert änneren"
+  },
+  "Change local administrator password": {
+    "machine_translated": true,
+    "translation": "Änneren lokal Administrateur Passwuert"
+  },
+  "Change password": {
+    "machine_translated": true,
+    "translation": "Passwuert änneren"
+  },
+  "Change the password for a local administrator account.\n\nIf no local administrator has been configured yet, this\noption lets you set up an initial admin or root account.\n\nNote: changing a password will disable two-factor\nauthentication for that account.": {
+    "machine_translated": true,
+    "translation": "Ännert d'Passwuert fir e lokalen Administrateur Kont.\n\nWann nach kee lokalen Administrateur konfiguréiert ass, dëst\nOptioun léisst Iech en initialen Admin oder Root Kont opstellen.\n\nBemierkung: e Passwuert änneren wäert zwee-Faktor ausschalten\nAuthentifikatioun fir dee Kont."
+  },
+  "Changes applied. Network will roll back in ~60 seconds\nunless you press [p] to persist them.": {
+    "machine_translated": true,
+    "translation": "Ännerungen applizéiert. Network wäert zréck an ~ 60 Sekonnen\nausser Dir dréckt [p] fir se z'erhalen."
+  },
+  "Changes applied. Press [p] to persist or they roll back in {n}s.": {
+    "machine_translated": true,
+    "translation": "Ännerungen applizéiert. Dréckt [p] fir ze bestoen oder se rullen zréck an {n}s."
+  },
+  "Configuration reset cancelled.": {
+    "machine_translated": true,
+    "translation": "Configuratioun zréckgesat annuléiert."
+  },
+  "Configuration reset initiated.\nThe system will reboot with default settings.": {
+    "machine_translated": true,
+    "translation": "Configuratioun zréckgesat initiéiert.\nDe System wäert mat Standardastellungen nei starten."
+  },
+  "Configure global network settings:\n\n  • Hostname and domain\n  • Default IPv4 and IPv6 gateways\n  • DNS nameservers (up to three)\n\nChanges take effect immediately after saving.": {
+    "machine_translated": true,
+    "translation": "Global Netzwierk Astellunge konfiguréieren:\n\n  • Hostnumm an Domain\n  • Standard IPv4 an IPv6 Paarte\n  • DNS Nummserver (bis zu dräi)\n\nÄnnerungen trëtt direkt no der Spuere a Kraaft."
+  },
+  "Configure network interfaces": {
+    "machine_translated": true,
+    "translation": "Netzschnëttplazen konfiguréieren"
+  },
+  "Configure network settings": {
+    "machine_translated": true,
+    "translation": "Netz Astellunge konfiguréieren"
+  },
+  "Configure networking for this TrueNAS system.\n\n  • Interface settings  – DHCP, IP aliases, MTU\n  • Network settings    – Hostname, domain, gateways, DNS\n  • Static routes       – Add and remove static routes\n\nChanges to interfaces require a commit step\nbefore they take effect.": {
+    "machine_translated": true,
+    "translation": "Vernetzung fir dësen TrueNAS System konfiguréieren.\n\n  • Interface Astellunge - DHCP, IP Aliasen, MTU\n  • Network Astellunge - Hostnumm, Domain, Paarte, DNS\n  • statesch routes - Addéieren an ewechhuelen statesch routes\n\nÄnnerunge fir Interfaces erfuerderen e Commit Schrëtt\nier se a Kraaft trieden."
+  },
+  "Configure static routes": {
+    "machine_translated": true,
+    "translation": "Configuréieren statesch routes"
+  },
+  "Confirm Delete": {
+    "machine_translated": true,
+    "translation": "Confirméieren Läschen"
+  },
+  "Confirm Reboot": {
+    "machine_translated": true,
+    "translation": "Confirméieren Restart"
+  },
+  "Confirm Reset": {
+    "machine_translated": true,
+    "translation": "Confirméieren Reset"
+  },
+  "Confirm Shutdown": {
+    "machine_translated": true,
+    "translation": "Confirméieren Shutdown"
+  },
+  "Confirm dangerous actions": {
+    "machine_translated": true,
+    "translation": "Bestätegt geféierlech Aktiounen"
+  },
+  "Could not load LAG port choices:\n": {
+    "machine_translated": true,
+    "translation": "Konnt LAG Portwahlen net lueden:"
+  },
+  "Could not load VLAN parent choices:\n": {
+    "machine_translated": true,
+    "translation": "Konnt VLAN Elterendeelwahlen net lueden:"
+  },
+  "Could not load bridge member choices:\n": {
+    "machine_translated": true,
+    "translation": "Konnt d'Bréck Member Wiel net lueden:"
+  },
+  "Create one-time password": {
+    "machine_translated": true,
+    "translation": "Erstellt een eemolegt Passwuert"
+  },
+  "Create one-time password for \"{u}\"": {
+    "machine_translated": true,
+    "translation": "Erstellt een eemolegt Passwuert fir \"{u}\""
+  },
+  "Created": {
+    "machine_translated": true,
+    "translation": "Geschaf"
+  },
+  "Current password:": {
+    "machine_translated": true,
+    "translation": "Aktuell Passwuert:"
+  },
+  "Customise the TrueNAS TUI for your user account.\n\n  • Theme: default (blue), dark (green), high-contrast\n  • Startup view: system info pane or menu description\n  • Confirm dangerous actions (reboot, shutdown, reset)\n  • Language and date/time display formats\n\nSettings are saved to your account and persist across\nsessions on any client.": {
+    "machine_translated": true,
+    "translation": "Personnaliséiert den TrueNAS TUI fir Äre Benotzerkont.\n\n  • Thema: Standard (blo), donkel (gréng), héich Kontrast\n  • Startup Vue: System Info Pane oder Menü Beschreiwung\n  • Bestätegt geféierlech Aktiounen (Restart, Shutdown, Reset)\n  • Sprooch an Datum / Zäit Display Formater\n\nAstellunge ginn op Äre Kont gespäichert a bestoe weider\nSessiounen op all Client."
+  },
+  "Date format": {
+    "machine_translated": true,
+    "translation": "Datum Format"
+  },
+  "Delete Route": {
+    "machine_translated": true,
+    "translation": "Route läschen"
+  },
+  "Delete interface {name}?": {
+    "machine_translated": true,
+    "translation": "Interface {Numm} läschen?"
+  },
+  "Delete static route {dest}?": {
+    "machine_translated": true,
+    "translation": "Statesch Streck {dest} läschen?"
+  },
+  "Deleted": {
+    "machine_translated": true,
+    "translation": "Geläscht"
+  },
+  "Description": {
+    "machine_translated": true,
+    "translation": "Beschreiwung"
+  },
+  "Destination (CIDR)": {
+    "machine_translated": true,
+    "translation": "Destinatioun (CIDR)"
+  },
+  "Disable Two-Factor Authentication": {
+    "machine_translated": true,
+    "translation": "Zwee-Faktor Authentifikatioun auszeschalten"
+  },
+  "Disable two-factor authentication": {
+    "machine_translated": true,
+    "translation": "Zwee-Faktor Authentifikatioun auszeschalten"
+  },
+  "Disable two-factor authentication for {u}?\nYou will no longer need an OTP to log in.": {
+    "machine_translated": true,
+    "translation": "Zwee-Faktor Authentifikatioun fir {u} auszeschalten?\nDir braucht keen OTP méi fir Iech anzeloggen."
+  },
+  "Disabled": {
+    "machine_translated": true,
+    "translation": "Behënnert"
+  },
+  "Domain": {
+    "machine_translated": true,
+    "translation": "Domain"
+  },
+  "Edit Static Route": {
+    "machine_translated": true,
+    "translation": "Ännerung statesch Route"
+  },
+  "Enabled": {
+    "machine_translated": true,
+    "translation": "Aktivéiert"
+  },
+  "Enter: confirm  Esc: cancel": {
+    "machine_translated": true,
+    "translation": "Gitt: confirméieren Esc: annuléieren"
+  },
+  "Erase all TrueNAS configuration and reset to factory\ndefaults.\n\nWARNING: This is irreversible. All settings including\nnetwork configuration, shares, users, and storage pools\nwill be erased.\n\nYou will be prompted to confirm twice before proceeding.": {
+    "machine_translated": true,
+    "translation": "Läscht all TrueNAS Konfiguratioun an zréckgesat op d'Fabréck\nDefaults.\n\nOPGEPASST: Dëst ass irreversibel. All Astellungen inklusiv\nNetzwierkkonfiguratioun, Aktien, Benotzer a Späicherpools\nwäert geläscht ginn.\n\nDir wäert gefrot ginn zweemol ze bestätegen ier Dir weidergeet."
+  },
+  "Error": {
+    "machine_translated": true,
+    "translation": "Feeler"
+  },
+  "Failover Critical": {
+    "machine_translated": true,
+    "translation": "Failover Kritesch"
+  },
+  "Failover Group": {
+    "machine_translated": true,
+    "translation": "Failover Group"
+  },
+  "Failover Settings": {
+    "machine_translated": true,
+    "translation": "Failover Astellungen"
+  },
+  "Gateway": {
+    "machine_translated": true,
+    "translation": "Gateway"
+  },
+  "Generate a single-use temporary password for the\ncurrently authenticated user.\n\nThe one-time password can be used to log in once\nand is invalidated immediately after use.": {
+    "machine_translated": true,
+    "translation": "Generéiere engem eenzege benotzen temporäre Passwuert fir de\naktuell authentifizéiert Benotzer.\n\nD'One-Zäit Passwuert kann benotzt ginn eemol aloggen\na gëtt direkt nom Gebrauch ongëlteg."
+  },
+  "Generate one-time password": {
+    "machine_translated": true,
+    "translation": "Generéiere eent-Zäit Passwuert"
+  },
+  "Generating a new 2FA secret will invalidate your current\nauthenticator app configuration. Continue?": {
+    "machine_translated": true,
+    "translation": "En neit 2FA Geheimnis ze generéieren wäert Är aktuell ongëlteg maachen\nAuthenticator App Konfiguratioun. Fuert weider?"
+  },
+  "Hostname": {
+    "machine_translated": true,
+    "translation": "Hostnumm"
+  },
+  "IMPORTANT: Scan this QR code with your authenticator app": {
+    "machine_translated": true,
+    "translation": "WICHTEG: Scann dëse QR Code mat Ärer Authentifizéierer App"
+  },
+  "IP Address": {
+    "machine_translated": true,
+    "translation": "IP Adress"
+  },
+  "IPv4 DHCP": {
+    "machine_translated": true,
+    "translation": "IPv4 DHCP"
+  },
+  "IPv4 Gateway": {
+    "machine_translated": true,
+    "translation": "IPv4 Gateway"
+  },
+  "IPv6 Auto": {
+    "machine_translated": true,
+    "translation": "IPv6 Auto"
+  },
+  "IPv6 Gateway": {
+    "machine_translated": true,
+    "translation": "IPv6 Gateway"
+  },
+  "Interface": {
+    "machine_translated": true,
+    "translation": "Interface"
+  },
+  "Interface Settings": {
+    "machine_translated": true,
+    "translation": "Interface Astellunge"
+  },
+  "Interface Type": {
+    "machine_translated": true,
+    "translation": "Interface Typ"
+  },
+  "Interface name is required.": {
+    "machine_translated": true,
+    "translation": "Interface Numm ass néideg."
+  },
+  "Interface settings": {
+    "machine_translated": true,
+    "translation": "Interface Astellunge"
+  },
+  "Interface {name} created.\nUse [a] from the list to apply changes.": {
+    "machine_translated": true,
+    "translation": "Interface {Name} erstallt.\nBenotzt [a] aus der Lëscht fir Ännerungen z'applizéieren."
+  },
+  "Interface {name} deleted.\nUse [a] from the list to apply changes.": {
+    "machine_translated": true,
+    "translation": "Interface {Numm} geläscht.\nBenotzt [a] aus der Lëscht fir Ännerungen z'applizéieren."
+  },
+  "Interface {name} updated.\nUse [a] from the list to apply changes.": {
+    "machine_translated": true,
+    "translation": "Interface {Name} aktualiséiert.\nBenotzt [a] aus der Lëscht fir Ännerungen z'applizéieren."
+  },
+  "Invalid IP address in alias: {e}": {
+    "machine_translated": true,
+    "translation": "Ongülteg IP Adress am Alias: {e}"
+  },
+  "Invalid IP address: {s}": {
+    "machine_translated": true,
+    "translation": "Invalid IP Adress: {s}"
+  },
+  "Invalid prefix length in alias: {e}": {
+    "machine_translated": true,
+    "translation": "Ongülteg Präfixlängt am Alias: {e}"
+  },
+  "LACPDU Rate": {
+    "machine_translated": true,
+    "translation": "LACPDU Taux"
+  },
+  "Language": {
+    "machine_translated": true,
+    "translation": "Sprooch"
+  },
+  "Link Aggregation Settings": {
+    "machine_translated": true,
+    "translation": "Link Aggregatioun Astellunge"
+  },
+  "Load Average": {
+    "machine_translated": true,
+    "translation": "Lueden Duerchschnëtt"
+  },
+  "Local administrator {u} set up successfully.": {
+    "machine_translated": true,
+    "translation": "Lokal Administrateur {u} erfollegräich ageriicht."
+  },
+  "Locale": {
+    "machine_translated": true,
+    "translation": "Lokal"
+  },
+  "MTU": {
+    "machine_translated": true,
+    "translation": "MTU"
+  },
+  "Manage static network routes.\n\n  • View existing static routes\n  • Add new routes (destination, gateway, description)\n  • Edit or delete existing routes\n\nKeys: Enter = Edit,  a = Add,  d = Delete,  q = Back": {
+    "machine_translated": true,
+    "translation": "Managen statesch Reseau routes.\n\n  • View bestehend statesch routes\n  • Füügt nei Strecken (Destinatioun, Paart, Beschreiwung)\n  • Ännerung oder läschen bestehend routes\n\nSchlësselen: Enter = Edit, a = Add, d = Läschen, q = Back"
+  },
+  "Manufacturer": {
+    "machine_translated": true,
+    "translation": "Fabrikant beschwéiert"
+  },
+  "Members": {
+    "machine_translated": true,
+    "translation": "Memberen"
+  },
+  "Memory": {
+    "machine_translated": true,
+    "translation": "Erënnerung"
+  },
+  "My account": {
+    "machine_translated": true,
+    "translation": "Mäi Kont"
+  },
+  "Name": {
+    "machine_translated": true,
+    "translation": "Numm"
+  },
+  "Nameserver 1": {
+    "machine_translated": true,
+    "translation": "Nummserver 1"
+  },
+  "Nameserver 2": {
+    "machine_translated": true,
+    "translation": "Nummserver 2"
+  },
+  "Nameserver 3": {
+    "machine_translated": true,
+    "translation": "Nummserver 3"
+  },
+  "Network": {
+    "machine_translated": true,
+    "translation": "Reseau"
+  },
+  "Network Configuration": {
+    "machine_translated": true,
+    "translation": "Network Configuratioun"
+  },
+  "Network Interfaces": {
+    "machine_translated": true,
+    "translation": "Netzwierk Schnëttplazen"
+  },
+  "Network changes persisted successfully.": {
+    "machine_translated": true,
+    "translation": "Netzwierk Ännerungen sinn erfollegräich bestoe bliwwen."
+  },
+  "Network settings": {
+    "machine_translated": true,
+    "translation": "Reseau Astellunge"
+  },
+  "Network settings updated successfully.": {
+    "machine_translated": true,
+    "translation": "Netzwierk Astellunge erfollegräich aktualiséiert."
+  },
+  "New Interface – Step 1": {
+    "machine_translated": true,
+    "translation": "Neien Interface - Schrëtt 1"
+  },
+  "New Interface – Step 2": {
+    "machine_translated": true,
+    "translation": "Neien Interface - Schrëtt 2"
+  },
+  "New password for {u}:": {
+    "machine_translated": true,
+    "translation": "Neit Passwuert fir {u}:"
+  },
+  "No": {
+    "machine_translated": true,
+    "translation": "Nee"
+  },
+  "No local administrators found.": {
+    "machine_translated": true,
+    "translation": "Keng lokal Administrateuren fonnt."
+  },
+  "No provisioning URI returned from server.": {
+    "machine_translated": true,
+    "translation": "Keng Bestëmmung URI vum Server zréck."
+  },
+  "No static routes configured.": {
+    "machine_translated": true,
+    "translation": "Keng statesch routes konfiguréiert."
+  },
+  "No terminal QR code tool was found on this system.\n\nInstall \"qr\" or \"qrcode-terminal\" to use this feature.": {
+    "machine_translated": true,
+    "translation": "Keen Terminal QR Code Tool gouf op dësem System fonnt.\n\nInstalléiert \"qr\" oder \"qrcode-Terminal\" fir dës Fonktioun ze benotzen."
+  },
+  "Not Found": {
+    "machine_translated": true,
+    "translation": "Net fonnt"
+  },
+  "Not a valid member: {v}": {
+    "machine_translated": true,
+    "translation": "Net gëltege Member: {v}"
+  },
+  "Not a valid port: {v}": {
+    "machine_translated": true,
+    "translation": "Net e gültege Port: {v}"
+  },
+  "One-Time Password": {
+    "machine_translated": true,
+    "translation": "One-Time Passwuert"
+  },
+  "One-time password for \"{u}\":\n\n  {otp}\n\nThis password can only be used once.\nDialog closes automatically after {t} seconds.": {
+    "machine_translated": true,
+    "translation": "Eemol Passwuert fir \"{u}\":\n\n  {otp}\n\nDëst Passwuert kann nëmmen eemol benotzt ginn.\nDialog mécht automatesch no {t} Sekonnen zou."
+  },
+  "Open Linux Shell": {
+    "machine_translated": true,
+    "translation": "Open Linux Shell"
+  },
+  "Open TrueNAS CLI Shell": {
+    "machine_translated": true,
+    "translation": "Open TrueNAS CLI Shell"
+  },
+  "Open a Linux shell (bash/zsh).\n\nSuspends the TUI and opens your login shell.\nType \"exit\" or press Ctrl+D to return to the TUI.": {
+    "machine_translated": true,
+    "translation": "Öffnen eng Linux Shell (bash / zsh).\n\nSuspendéiert den TUI an mécht Är Login Shell op.\nTyp \"exit\" oder dréckt Ctrl + D fir zréck op den TUI."
+  },
+  "Open the TrueNAS interactive CLI shell (midcli).\n\nReplaces the TUI with the full midcli command-line\ninterface. The TUI restarts after you exit midcli.": {
+    "machine_translated": true,
+    "translation": "Öffnen d'TrueNAS interaktiv CLI Shell (midcli).\n\nErsetzt den TUI mat der voller Midcli Kommandozeil\nInterface. D'TUI restarts nodeems Dir midcli fortgaang ass."
+  },
+  "Other Settings": {
+    "machine_translated": true,
+    "translation": "Aner Astellungen"
+  },
+  "Parent Interface": {
+    "machine_translated": true,
+    "translation": "Elteren Interface"
+  },
+  "Password changed successfully.": {
+    "machine_translated": true,
+    "translation": "Passwuert erfollegräich geännert."
+  },
+  "Password changes are only supported for local accounts.\nThis account is managed by an external directory service.": {
+    "machine_translated": true,
+    "translation": "Passwuert Ännerungen ginn nëmme fir lokal Konten ënnerstëtzt.\nDëse Kont gëtt vun engem externen Verzeechnesservice geréiert."
+  },
+  "Password for {u} changed successfully.\nTwo-factor authentication has been disabled.": {
+    "machine_translated": true,
+    "translation": "Passwuert fir {u} erfollegräich geännert.\nZwee-Faktor Authentifikatioun ass ausgeschalt ginn."
+  },
+  "Password for {u}:": {
+    "machine_translated": true,
+    "translation": "Passwuert fir {u}:"
+  },
+  "Password must be at least {n} characters.": {
+    "machine_translated": true,
+    "translation": "Passwuert muss mindestens {n} Zeeche sinn."
+  },
+  "Passwords do not match.": {
+    "machine_translated": true,
+    "translation": "Passwierder passen net."
+  },
+  "Pending changes. Press [a] to apply.": {
+    "machine_translated": true,
+    "translation": "Erwaardung Ännerungen. Dréckt [a] fir ze bewerben."
+  },
+  "Persisted": {
+    "machine_translated": true,
+    "translation": "Ausgehalen"
+  },
+  "Please enter the reason for the system reboot\n(leave blank to cancel):": {
+    "machine_translated": true,
+    "translation": "Gitt w.e.g. de Grond fir de System nei op\n(loosst eidel fir ze annuléieren):"
+  },
+  "Please enter the reason for the system shutdown\n(leave blank to cancel):": {
+    "machine_translated": true,
+    "translation": "Gitt w.e.g. de Grond fir de System Shutdown un\n(loosst eidel fir ze annuléieren):"
+  },
+  "Port": {
+    "machine_translated": true,
+    "translation": "Port"
+  },
+  "Ports": {
+    "machine_translated": true,
+    "translation": "Häfen"
+  },
+  "Power Control": {
+    "machine_translated": true,
+    "translation": "Muecht Kontroll"
+  },
+  "Prefix length out of range in alias: {e}": {
+    "machine_translated": true,
+    "translation": "Präfix Längt ausserhalb vun der Gamme am Alias: {e}"
+  },
+  "Priority (PCP)": {
+    "machine_translated": true,
+    "translation": "Prioritéit (PCP)"
+  },
+  "Product": {
+    "machine_translated": true,
+    "translation": "Produit"
+  },
+  "Protocol": {
+    "machine_translated": true,
+    "translation": "Protokoll"
+  },
+  "Reboot": {
+    "machine_translated": true,
+    "translation": "Restart"
+  },
+  "Reboot initiated. The system is shutting down.": {
+    "machine_translated": true,
+    "translation": "Restart initiéiert. De System gëtt ofgeschalt."
+  },
+  "Reboot or shut down the TrueNAS system.\n\n  • Reboot   – restart the system\n  • Shutdown – power off the system\n\nYou will be prompted for a reason and confirmation\nbefore any action is taken.": {
+    "machine_translated": true,
+    "translation": "Restart oder de TrueNAS System ausschalten.\n\n  • Restart - de System nei starten\n  • Shutdown - de System ausschalten\n\nDir wäert fir e Grond an Bestätegung gefrot ginn\nier all Aktioun geholl gëtt."
+  },
+  "Reboot the TrueNAS system.\n\nYou will be prompted to enter a reason for the reboot\nbefore the system restarts.\n\nAll active sessions and shares will be interrupted.": {
+    "machine_translated": true,
+    "translation": "Restart de TrueNAS System.\n\nDir wäert gefuerdert ginn e Grond fir de Restart anzeginn\nier de System nei start.\n\nAll aktiv Sessiounen an Deele ginn ënnerbrach."
+  },
+  "Reboot the system?\n\nReason: {r}": {
+    "machine_translated": true,
+    "translation": "De System nei starten?\n\nGrond: {r}"
+  },
+  "Reboot/Shutdown": {
+    "machine_translated": true,
+    "translation": "Restart / Shutdown"
+  },
+  "Rebooting": {
+    "machine_translated": true,
+    "translation": "Neistart"
+  },
+  "Renew 2FA Secret": {
+    "machine_translated": true,
+    "translation": "Erneierung 2FA Secret"
+  },
+  "Renew two-factor secret": {
+    "machine_translated": true,
+    "translation": "Zwee-Faktor Geheimnis erneieren"
+  },
+  "Reset": {
+    "machine_translated": true,
+    "translation": "Zerécksetzen"
+  },
+  "Reset Configuration": {
+    "machine_translated": true,
+    "translation": "Reset Configuratioun"
+  },
+  "Reset configuration to defaults": {
+    "machine_translated": true,
+    "translation": "Reset Configuratioun op Defaults"
+  },
+  "Retype new password:": {
+    "machine_translated": true,
+    "translation": "Gitt neit Passwuert erëm:"
+  },
+  "Retype password for {u}:": {
+    "machine_translated": true,
+    "translation": "Gitt Passwuert erëm fir {u}:"
+  },
+  "Root user (not recommended)": {
+    "machine_translated": true,
+    "translation": "Root Benotzer (net recommandéiert)"
+  },
+  "Save": {
+    "machine_translated": true,
+    "translation": "Späicheren"
+  },
+  "Saved": {
+    "machine_translated": true,
+    "translation": "Gespäichert"
+  },
+  "Secret key: {s}  (for manual entry)": {
+    "machine_translated": true,
+    "translation": "Geheimschlëssel: {s} (fir manuell Entrée)"
+  },
+  "Select Administrator": {
+    "machine_translated": true,
+    "translation": "Wielt Administrator"
+  },
+  "Serial": {
+    "machine_translated": true,
+    "translation": "Serial"
+  },
+  "Set Up Administrator": {
+    "machine_translated": true,
+    "translation": "Administrator opsetzen"
+  },
+  "Set to 0 to use the system default MTU": {
+    "machine_translated": true,
+    "translation": "Setzt op 0 fir de System Standard MTU ze benotzen"
+  },
+  "Set up local administrator": {
+    "machine_translated": true,
+    "translation": "Setzt lokalen Administrateur op"
+  },
+  "Set up two-factor authentication": {
+    "machine_translated": true,
+    "translation": "Setzt Zwee-Faktor Authentifikatioun op"
+  },
+  "Settings Saved": {
+    "machine_translated": true,
+    "translation": "Astellunge gespäichert"
+  },
+  "Shut down the TrueNAS system.\n\nYou will be prompted to enter a reason for the shutdown\nbefore the system powers off.\n\nAll active sessions and shares will be interrupted.": {
+    "machine_translated": true,
+    "translation": "Schalt den TrueNAS System aus.\n\nDir wäert gefrot ginn e Grond fir de Shutdown anzeginn\nier de System ausschalt.\n\nAll aktiv Sessiounen an Deele ginn ënnerbrach."
+  },
+  "Shut down the system?\n\nReason: {r}": {
+    "machine_translated": true,
+    "translation": "De System ausschalten?\n\nGrond: {r}"
+  },
+  "Shutdown": {
+    "machine_translated": true,
+    "translation": "Ofschalten"
+  },
+  "Shutdown initiated. The system is powering off.": {
+    "machine_translated": true,
+    "translation": "Shutdown initiéiert. De System schalt aus."
+  },
+  "Shutting Down": {
+    "machine_translated": true,
+    "translation": "Ofschalten"
+  },
+  "Specify a bare IP address (no prefix length)": {
+    "machine_translated": true,
+    "translation": "Gitt eng blo IP Adress un (keng Präfixlängt)"
+  },
+  "Startup": {
+    "machine_translated": true,
+    "translation": "Startup"
+  },
+  "Startup view": {
+    "machine_translated": true,
+    "translation": "Startup Vue"
+  },
+  "Static Routes": {
+    "machine_translated": true,
+    "translation": "Statesch Routen"
+  },
+  "Static routes": {
+    "machine_translated": true,
+    "translation": "Statesch routes"
+  },
+  "Success": {
+    "machine_translated": true,
+    "translation": "Erfolleg"
+  },
+  "System Information": {
+    "machine_translated": true,
+    "translation": "System Informatiounen"
+  },
+  "TUI preferences saved.\nTheme and locale changes take effect immediately.": {
+    "machine_translated": true,
+    "translation": "TUI Virléiften gespäichert.\nThema- a Lokalännerunge ginn direkt a Kraaft."
+  },
+  "Tab/↑↓: navigate   Enter: confirm   Esc: cancel": {
+    "machine_translated": true,
+    "translation": "Tab/↑↓: navigéieren Enter: confirméieren Esc: annuléieren"
+  },
+  "Text UI settings": {
+    "machine_translated": true,
+    "translation": "Text UI Astellungen"
+  },
+  "Theme": {
+    "machine_translated": true,
+    "translation": "Thema"
+  },
+  "This Node IPs": {
+    "machine_translated": true,
+    "translation": "Dës Node IPs"
+  },
+  "This will ERASE all configuration and reset to defaults.\nAre you absolutely sure?": {
+    "machine_translated": true,
+    "translation": "Dëst wäert all Konfiguratioun ERASE an op Default zréckgesat ginn.\nSidd Dir absolut sécher?"
+  },
+  "Time format": {
+    "machine_translated": true,
+    "translation": "Zäit Format"
+  },
+  "Timezone": {
+    "machine_translated": true,
+    "translation": "Zäitzone"
+  },
+  "Two-factor authentication has been disabled.": {
+    "machine_translated": true,
+    "translation": "Zwee-Faktor Authentifikatioun ass ausgeschalt ginn."
+  },
+  "Type RESET to confirm (case-sensitive):": {
+    "machine_translated": true,
+    "translation": "Typ RESET fir ze bestätegen (case-sensibel):"
+  },
+  "Unavailable": {
+    "machine_translated": true,
+    "translation": "Net verfügbar"
+  },
+  "Uptime": {
+    "machine_translated": true,
+    "translation": "Uptime"
+  },
+  "VLAN Settings": {
+    "machine_translated": true,
+    "translation": "VLAN Astellungen"
+  },
+  "VLAN Tag": {
+    "machine_translated": true,
+    "translation": "VLAN Tag"
+  },
+  "Version": {
+    "machine_translated": true,
+    "translation": "Versioun"
+  },
+  "View and edit network interface configuration.\n\n  • Enable/disable DHCP and IPv6 auto-configuration\n  • Add or remove static IP aliases\n  • Set MTU, VLAN tag, bridge members, LAG ports, and more\n  • Apply changes (with automatic rollback safety)\n  • Persist changes once the network is confirmed working\n\nPress Enter to select an interface to edit.\nPress [n] to create a new interface, [d] to delete.\nAfter editing, use [a] to Apply and [p] to Persist.": {
+    "machine_translated": true,
+    "translation": "Gesinn an änneren Reseau Interface Configuratioun.\n\n  • Aktivéiert / auszeschalten DHCP an IPv6 Auto-Configuratioun\n  • Füügt oder läschen statesch IP Aliasen\n  • Set MTU, VLAN Tag, Bréck Memberen, LAG Häfen, a méi\n  • Ännerunge gëllen (mat automatescher Rollback Sécherheet)\n  • Persist Ännerungen eemol d'Netz schaffen confirméiert ass\n\nDréckt Enter fir en Interface ze wielen fir ze änneren.\nDréckt [n] fir en neien Interface ze kreéieren, [d] fir ze läschen.\nNo der Redaktioun, benotzt [a] fir ze gëllen an [p] fir ze bleiwen."
+  },
+  "View your account information and manage credentials.\n\n  • View username, UID, roles, and 2FA status\n  • Change your password\n  • Generate a one-time password for single-use login\n  • Set up or renew two-factor authentication\n\nPassword changes take effect immediately.\nOne-time passwords expire after a single login.": {
+    "machine_translated": true,
+    "translation": "Kuckt Är Kontinformatioun a verwalten Umeldungsinformatiounen.\n\n  • View Benotzernumm, UID, Rollen, an 2FA Status\n  • Äert Passwuert änneren\n  • Generéiere engem eemolege Passwuert fir Single-benotzen Login\n  • Ariichten oder erneieren zwee-Faktor Authentifikatioun\n\nPasswuert Ännerungen trëtt direkt a Kraaft.\nEemol Passwierder lafen no engem eenzege Login aus."
+  },
+  "Virtual IPs": {
+    "machine_translated": true,
+    "translation": "Virtuell IPs"
+  },
+  "WARNING: You are logged in as root!": {
+    "machine_translated": true,
+    "translation": "OPGEPASST: Dir sidd als Root ageloggt!"
+  },
+  "Web UI Authentication Method": {
+    "machine_translated": true,
+    "translation": "Web UI Authentifikatioun Method"
+  },
+  "Without it you may be locked out of this system.": {
+    "machine_translated": true,
+    "translation": "Ouni et kënnt Dir aus dësem System gespaart ginn."
+  },
+  "Xmit Hash Policy": {
+    "machine_translated": true,
+    "translation": "Xmit Hash Politik"
+  },
+  "Yes": {
+    "machine_translated": true,
+    "translation": "Jo"
+  },
+  "Yes, reset": {
+    "machine_translated": true,
+    "translation": "Jo, zréckgesat"
+  },
+  "[↑↓] Navigate  [Enter] Edit  [a] Add  [d] Delete  [q] Back": {
+    "machine_translated": true,
+    "translation": "[↑↓] Navigéieren [Enter] Edit [a] Add [d] Läschen [q] Back"
+  },
+  "[↑↓] Navigate  [Enter] Edit  [n] New  [d] Delete  [a] Apply  [p] Persist  [q] Back": {
+    "machine_translated": true,
+    "translation": "[↑↓] Navigéieren [Enter] Änneren [n] Neien [d] Läschen [a] Bewerben [p] Persist [q] Back"
+  },
+  "[↑↓] Select  [Enter] Edit  [a] Add  [d] Delete  [Esc] Done": {
+    "machine_translated": true,
+    "translation": "[↑↓] Wielt [Enter] Edit [a] Add [d] Delete [Esc] Done"
+  },
+  "midcli is not available on this system.": {
+    "machine_translated": true,
+    "translation": "midcli ass net op dësem System verfügbar."
+  },
+  "↑↓ Navigate  Enter Select  Esc Cancel": {
+    "machine_translated": true,
+    "translation": "↑↓ Navigéieren Enter Wielt Esc Ofbriechen"
+  }
+}

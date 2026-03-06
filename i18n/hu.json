@@ -1,0 +1,866 @@
+{
+  " (no QR tool found)": {
+    "machine_translated": true,
+    "translation": "(nem található QR eszköz)"
+  },
+  " My Account – {u} ": {
+    "machine_translated": true,
+    "translation": "Saját fiók – {u}"
+  },
+  " Press Enter to continue": {
+    "machine_translated": true,
+    "translation": "Nyomja meg az Entert a folytatáshoz"
+  },
+  " Two-Factor Authentication Setup ": {
+    "machine_translated": true,
+    "translation": "Kéttényezős hitelesítés beállítása"
+  },
+  "(Google Authenticator, Authy, etc.) before navigating away.": {
+    "machine_translated": true,
+    "translation": "(Google Authenticator, Authy stb.), mielőtt elnavigálna."
+  },
+  "(no addresses)": {
+    "machine_translated": true,
+    "translation": "(nincs cím)"
+  },
+  "(none)": {
+    "machine_translated": true,
+    "translation": "(egyik sem)"
+  },
+  "Access: Read-only": {
+    "machine_translated": true,
+    "translation": "Hozzáférés: Csak olvasható"
+  },
+  "Access: Read/Write": {
+    "machine_translated": true,
+    "translation": "Hozzáférés: olvasás/írás"
+  },
+  "Actions:": {
+    "machine_translated": true,
+    "translation": "Műveletek:"
+  },
+  "Add Static Route": {
+    "machine_translated": true,
+    "translation": "Statikus útvonal hozzáadása"
+  },
+  "Address": {
+    "machine_translated": true,
+    "translation": "Cím"
+  },
+  "Administrative user (admin)  [recommended]": {
+    "machine_translated": true,
+    "translation": "Adminisztratív felhasználó (adminisztrátor) [ajánlott]"
+  },
+  "Alias must be in CIDR notation (e.g. 192.168.1.1/24): {e}": {
+    "machine_translated": true,
+    "translation": "Az aliasnak CIDR jelöléssel kell lennie (pl. 192.168.1.1/24): {e}"
+  },
+  "Aliases (CIDR)": {
+    "machine_translated": true,
+    "translation": "Alias ​​(CIDR)"
+  },
+  "Appearance": {
+    "machine_translated": true,
+    "translation": "Megjelenés"
+  },
+  "Applied": {
+    "machine_translated": true,
+    "translation": "Alkalmazott"
+  },
+  "Auto-refreshes every {n}s  [r] force refresh": {
+    "machine_translated": true,
+    "translation": "Automatikus frissítés minden {n} másodpercben [r] kényszeríti a frissítést"
+  },
+  "Behaviour": {
+    "machine_translated": true,
+    "translation": "Viselkedés"
+  },
+  "Bridge Settings": {
+    "machine_translated": true,
+    "translation": "Hídbeállítások"
+  },
+  "CPU": {
+    "machine_translated": true,
+    "translation": "CPU"
+  },
+  "Cancel": {
+    "machine_translated": true,
+    "translation": "Mégse"
+  },
+  "Cancelled": {
+    "machine_translated": true,
+    "translation": "Törölve"
+  },
+  "Cannot Change Password": {
+    "machine_translated": true,
+    "translation": "Nem lehet jelszót módosítani"
+  },
+  "Change Password": {
+    "machine_translated": true,
+    "translation": "Jelszó módosítása"
+  },
+  "Change local administrator password": {
+    "machine_translated": true,
+    "translation": "Módosítsa a helyi rendszergazda jelszavát"
+  },
+  "Change password": {
+    "machine_translated": true,
+    "translation": "Jelszó módosítása"
+  },
+  "Change the password for a local administrator account.\n\nIf no local administrator has been configured yet, this\noption lets you set up an initial admin or root account.\n\nNote: changing a password will disable two-factor\nauthentication for that account.": {
+    "machine_translated": true,
+    "translation": "Módosítsa a helyi rendszergazdai fiók jelszavát.\n\nHa még nincs beállítva helyi rendszergazda, akkor ez\nopció lehetővé teszi egy kezdeti rendszergazdai vagy root fiók beállítását.\n\nMegjegyzés: a jelszó megváltoztatása letiltja a kéttényezős funkciót\nhitelesítést az adott fiókhoz."
+  },
+  "Changes applied. Network will roll back in ~60 seconds\nunless you press [p] to persist them.": {
+    "machine_translated": true,
+    "translation": "Változások alkalmazva. A hálózat ~60 másodpercen belül visszaáll\nkivéve, ha megnyomja a [p] gombot a megőrzésükhöz."
+  },
+  "Changes applied. Press [p] to persist or they roll back in {n}s.": {
+    "machine_translated": true,
+    "translation": "Változások alkalmazva. Nyomja meg a [p] gombot a fennmaradáshoz, vagy {n} másodperc múlva visszagördül."
+  },
+  "Configuration reset cancelled.": {
+    "machine_translated": true,
+    "translation": "A konfiguráció visszaállítása megszakítva."
+  },
+  "Configuration reset initiated.\nThe system will reboot with default settings.": {
+    "machine_translated": true,
+    "translation": "A konfiguráció visszaállítása megkezdődött.\nA rendszer újraindul az alapértelmezett beállításokkal."
+  },
+  "Configure global network settings:\n\n  • Hostname and domain\n  • Default IPv4 and IPv6 gateways\n  • DNS nameservers (up to three)\n\nChanges take effect immediately after saving.": {
+    "machine_translated": true,
+    "translation": "Globális hálózati beállítások konfigurálása:\n\n  • Gazdanév és domain\n  • Alapértelmezett IPv4 és IPv6 átjárók\n  • DNS névszerverek (legfeljebb három)\n\nA változtatások a mentés után azonnal életbe lépnek."
+  },
+  "Configure network interfaces": {
+    "machine_translated": true,
+    "translation": "Hálózati interfészek konfigurálása"
+  },
+  "Configure network settings": {
+    "machine_translated": true,
+    "translation": "Konfigurálja a hálózati beállításokat"
+  },
+  "Configure networking for this TrueNAS system.\n\n  • Interface settings  – DHCP, IP aliases, MTU\n  • Network settings    – Hostname, domain, gateways, DNS\n  • Static routes       – Add and remove static routes\n\nChanges to interfaces require a commit step\nbefore they take effect.": {
+    "machine_translated": true,
+    "translation": "Konfigurálja a hálózatot ehhez a TrueNAS rendszerhez.\n\n  • Interfész beállítások – DHCP, IP-álnevek, MTU\n  • Hálózati beállítások – Gazdanév, tartomány, átjárók, DNS\n  • Statikus útvonalak – Statikus útvonalak hozzáadása és eltávolítása\n\nAz interfészek módosításai véglegesítési lépést igényelnek\nmielőtt azok érvénybe lépnek."
+  },
+  "Configure static routes": {
+    "machine_translated": true,
+    "translation": "Statikus útvonalak konfigurálása"
+  },
+  "Confirm Delete": {
+    "machine_translated": true,
+    "translation": "Erősítse meg a Törlést"
+  },
+  "Confirm Reboot": {
+    "machine_translated": true,
+    "translation": "Erősítse meg az Újraindítást"
+  },
+  "Confirm Reset": {
+    "machine_translated": true,
+    "translation": "Erősítse meg a Visszaállítást"
+  },
+  "Confirm Shutdown": {
+    "machine_translated": true,
+    "translation": "Erősítse meg a Leállítást"
+  },
+  "Confirm dangerous actions": {
+    "machine_translated": true,
+    "translation": "Erősítse meg a veszélyes műveleteket"
+  },
+  "Could not load LAG port choices:\n": {
+    "machine_translated": true,
+    "translation": "Nem sikerült betölteni a LAG-port választásokat:"
+  },
+  "Could not load VLAN parent choices:\n": {
+    "machine_translated": true,
+    "translation": "Nem sikerült betölteni a VLAN szülő választásait:"
+  },
+  "Could not load bridge member choices:\n": {
+    "machine_translated": true,
+    "translation": "Nem sikerült betölteni a hídtag választásait:"
+  },
+  "Create one-time password": {
+    "machine_translated": true,
+    "translation": "Hozzon létre egyszeri jelszót"
+  },
+  "Create one-time password for \"{u}\"": {
+    "machine_translated": true,
+    "translation": "Hozzon létre egyszeri jelszót a következőhöz: \"{u}\""
+  },
+  "Created": {
+    "machine_translated": true,
+    "translation": "Létrehozva"
+  },
+  "Current password:": {
+    "machine_translated": true,
+    "translation": "Jelenlegi jelszó:"
+  },
+  "Customise the TrueNAS TUI for your user account.\n\n  • Theme: default (blue), dark (green), high-contrast\n  • Startup view: system info pane or menu description\n  • Confirm dangerous actions (reboot, shutdown, reset)\n  • Language and date/time display formats\n\nSettings are saved to your account and persist across\nsessions on any client.": {
+    "machine_translated": true,
+    "translation": "Szabja testre a TrueNAS TUI-t felhasználói fiókjához.\n\n  • Téma: alapértelmezett (kék), sötét (zöld), nagy kontrasztú\n  • Indítási nézet: rendszerinformációs panel vagy menü leírása\n  • Veszélyes műveletek megerősítése (újraindítás, leállítás, visszaállítás)\n  • Nyelv és dátum/idő megjelenítési formátumok\n\nA beállításokat a rendszer menti a fiókjába, és továbbra is érvényben marad\nmunkamenetek bármely ügyfélen."
+  },
+  "Date format": {
+    "machine_translated": true,
+    "translation": "Dátumformátum"
+  },
+  "Delete Route": {
+    "machine_translated": true,
+    "translation": "Útvonal törlése"
+  },
+  "Delete interface {name}?": {
+    "machine_translated": true,
+    "translation": "Törli a(z) {name} felületet?"
+  },
+  "Delete static route {dest}?": {
+    "machine_translated": true,
+    "translation": "Törli a statikus útvonalat {dest}?"
+  },
+  "Deleted": {
+    "machine_translated": true,
+    "translation": "Törölve"
+  },
+  "Description": {
+    "machine_translated": true,
+    "translation": "Leírás"
+  },
+  "Destination (CIDR)": {
+    "machine_translated": true,
+    "translation": "Cél (CIDR)"
+  },
+  "Disable Two-Factor Authentication": {
+    "machine_translated": true,
+    "translation": "A kéttényezős hitelesítés letiltása"
+  },
+  "Disable two-factor authentication": {
+    "machine_translated": true,
+    "translation": "A kéttényezős hitelesítés letiltása"
+  },
+  "Disable two-factor authentication for {u}?\nYou will no longer need an OTP to log in.": {
+    "machine_translated": true,
+    "translation": "Letiltja a kéttényezős hitelesítést a következőnél: {u}?\nTöbbé nem lesz szüksége OTP-re a bejelentkezéshez."
+  },
+  "Disabled": {
+    "machine_translated": true,
+    "translation": "Letiltva"
+  },
+  "Domain": {
+    "machine_translated": true,
+    "translation": "Domain"
+  },
+  "Edit Static Route": {
+    "machine_translated": true,
+    "translation": "Statikus útvonal szerkesztése"
+  },
+  "Enabled": {
+    "machine_translated": true,
+    "translation": "Engedélyezve"
+  },
+  "Enter: confirm  Esc: cancel": {
+    "machine_translated": true,
+    "translation": "Enter: megerősítés Esc: cancel"
+  },
+  "Erase all TrueNAS configuration and reset to factory\ndefaults.\n\nWARNING: This is irreversible. All settings including\nnetwork configuration, shares, users, and storage pools\nwill be erased.\n\nYou will be prompted to confirm twice before proceeding.": {
+    "machine_translated": true,
+    "translation": "Törölje az összes TrueNAS konfigurációt, és állítsa vissza a gyári beállításokat\nalapértelmezettek.\n\nFIGYELMEZTETÉS: Ez visszafordíthatatlan. Minden beállítás, beleértve\nhálózati konfiguráció, megosztások, felhasználók és tárolókészletek\ntörlésre kerül.\n\nA folytatás előtt kétszer meg kell erősítenie."
+  },
+  "Error": {
+    "machine_translated": true,
+    "translation": "Hiba"
+  },
+  "Failover Critical": {
+    "machine_translated": true,
+    "translation": "Feladatátvétel kritikus"
+  },
+  "Failover Group": {
+    "machine_translated": true,
+    "translation": "Feladatátvételi csoport"
+  },
+  "Failover Settings": {
+    "machine_translated": true,
+    "translation": "Feladatátvételi beállítások"
+  },
+  "Gateway": {
+    "machine_translated": true,
+    "translation": "Átjáró"
+  },
+  "Generate a single-use temporary password for the\ncurrently authenticated user.\n\nThe one-time password can be used to log in once\nand is invalidated immediately after use.": {
+    "machine_translated": true,
+    "translation": "Hozzon létre egy egyszer használatos ideiglenes jelszót a\njelenleg hitelesített felhasználó.\n\nAz egyszeri jelszóval egyszer lehet bejelentkezni\nés használat után azonnal érvénytelenítik."
+  },
+  "Generate one-time password": {
+    "machine_translated": true,
+    "translation": "Egyszeri jelszó generálása"
+  },
+  "Generating a new 2FA secret will invalidate your current\nauthenticator app configuration. Continue?": {
+    "machine_translated": true,
+    "translation": "Ha új 2FA-titkot generál, az érvényteleníti a jelenlegit\nhitelesítő alkalmazás konfigurációja. Folytatja?"
+  },
+  "Hostname": {
+    "machine_translated": true,
+    "translation": "Gazdanév"
+  },
+  "IMPORTANT: Scan this QR code with your authenticator app": {
+    "machine_translated": true,
+    "translation": "FONTOS: Olvassa be ezt a QR-kódot a hitelesítő alkalmazással"
+  },
+  "IP Address": {
+    "machine_translated": true,
+    "translation": "IP-cím"
+  },
+  "IPv4 DHCP": {
+    "machine_translated": true,
+    "translation": "IPv4 DHCP"
+  },
+  "IPv4 Gateway": {
+    "machine_translated": true,
+    "translation": "IPv4 átjáró"
+  },
+  "IPv6 Auto": {
+    "machine_translated": true,
+    "translation": "IPv6 Auto"
+  },
+  "IPv6 Gateway": {
+    "machine_translated": true,
+    "translation": "IPv6 átjáró"
+  },
+  "Interface": {
+    "machine_translated": true,
+    "translation": "Felület"
+  },
+  "Interface Settings": {
+    "machine_translated": true,
+    "translation": "Interfész beállítások"
+  },
+  "Interface Type": {
+    "machine_translated": true,
+    "translation": "Interfész típusa"
+  },
+  "Interface name is required.": {
+    "machine_translated": true,
+    "translation": "Az interfész neve kötelező."
+  },
+  "Interface settings": {
+    "machine_translated": true,
+    "translation": "Interfész beállítások"
+  },
+  "Interface {name} created.\nUse [a] from the list to apply changes.": {
+    "machine_translated": true,
+    "translation": "A(z) {name} interfész létrehozva.\nA módosítások alkalmazásához használja a listából az [a] gombot."
+  },
+  "Interface {name} deleted.\nUse [a] from the list to apply changes.": {
+    "machine_translated": true,
+    "translation": "A(z) {name} interfész törölve.\nA módosítások alkalmazásához használja a listából az [a] gombot."
+  },
+  "Interface {name} updated.\nUse [a] from the list to apply changes.": {
+    "machine_translated": true,
+    "translation": "A(z) {name} kezelőfelület frissítve.\nA módosítások alkalmazásához használja a listából az [a] gombot."
+  },
+  "Invalid IP address in alias: {e}": {
+    "machine_translated": true,
+    "translation": "Érvénytelen IP-cím az aliasban: {e}"
+  },
+  "Invalid IP address: {s}": {
+    "machine_translated": true,
+    "translation": "Érvénytelen IP-cím: {s}"
+  },
+  "Invalid prefix length in alias: {e}": {
+    "machine_translated": true,
+    "translation": "Érvénytelen előtag hossza az aliasban: {e}"
+  },
+  "LACPDU Rate": {
+    "machine_translated": true,
+    "translation": "LACPDU arány"
+  },
+  "Language": {
+    "machine_translated": true,
+    "translation": "Nyelv"
+  },
+  "Link Aggregation Settings": {
+    "machine_translated": true,
+    "translation": "Linkösszesítési beállítások"
+  },
+  "Load Average": {
+    "machine_translated": true,
+    "translation": "Terhelési átlag"
+  },
+  "Local administrator {u} set up successfully.": {
+    "machine_translated": true,
+    "translation": "Helyi rendszergazda {u} sikeresen beállítva."
+  },
+  "Locale": {
+    "machine_translated": true,
+    "translation": "Nyelv"
+  },
+  "MTU": {
+    "machine_translated": true,
+    "translation": "MTU"
+  },
+  "Manage static network routes.\n\n  • View existing static routes\n  • Add new routes (destination, gateway, description)\n  • Edit or delete existing routes\n\nKeys: Enter = Edit,  a = Add,  d = Delete,  q = Back": {
+    "machine_translated": true,
+    "translation": "Statikus hálózati útvonalak kezelése.\n\n  • Meglévő statikus útvonalak megtekintése\n  • Új útvonalak hozzáadása (cél, átjáró, leírás)\n  • Meglévő útvonalak szerkesztése vagy törlése\n\nBillentyűk: Enter = Szerkesztés, a = Hozzáadás, d = Törlés, q = Vissza"
+  },
+  "Manufacturer": {
+    "machine_translated": true,
+    "translation": "Gyártó"
+  },
+  "Members": {
+    "machine_translated": true,
+    "translation": "tagok"
+  },
+  "Memory": {
+    "machine_translated": true,
+    "translation": "Memória"
+  },
+  "My account": {
+    "machine_translated": true,
+    "translation": "Az én fiókom"
+  },
+  "Name": {
+    "machine_translated": true,
+    "translation": "Név"
+  },
+  "Nameserver 1": {
+    "machine_translated": true,
+    "translation": "Névszerver 1"
+  },
+  "Nameserver 2": {
+    "machine_translated": true,
+    "translation": "Névszerver 2"
+  },
+  "Nameserver 3": {
+    "machine_translated": true,
+    "translation": "Névszerver 3"
+  },
+  "Network": {
+    "machine_translated": true,
+    "translation": "Hálózat"
+  },
+  "Network Configuration": {
+    "machine_translated": true,
+    "translation": "Hálózati konfiguráció"
+  },
+  "Network Interfaces": {
+    "machine_translated": true,
+    "translation": "Hálózati interfészek"
+  },
+  "Network changes persisted successfully.": {
+    "machine_translated": true,
+    "translation": "A hálózati változtatások sikeresen folytatódtak."
+  },
+  "Network settings": {
+    "machine_translated": true,
+    "translation": "Hálózati beállítások"
+  },
+  "Network settings updated successfully.": {
+    "machine_translated": true,
+    "translation": "A hálózati beállítások sikeresen frissítve."
+  },
+  "New Interface – Step 1": {
+    "machine_translated": true,
+    "translation": "Új felület – 1. lépés"
+  },
+  "New Interface – Step 2": {
+    "machine_translated": true,
+    "translation": "Új felület – 2. lépés"
+  },
+  "New password for {u}:": {
+    "machine_translated": true,
+    "translation": "Új jelszó a következőhöz: {u}:"
+  },
+  "No": {
+    "machine_translated": true,
+    "translation": "Nem"
+  },
+  "No local administrators found.": {
+    "machine_translated": true,
+    "translation": "Nem található helyi rendszergazda."
+  },
+  "No provisioning URI returned from server.": {
+    "machine_translated": true,
+    "translation": "A kiszolgálótól nem érkezett vissza kiépítési URI."
+  },
+  "No static routes configured.": {
+    "machine_translated": true,
+    "translation": "Nincsenek statikus útvonalak konfigurálva."
+  },
+  "No terminal QR code tool was found on this system.\n\nInstall \"qr\" or \"qrcode-terminal\" to use this feature.": {
+    "machine_translated": true,
+    "translation": "Ezen a rendszeren nem található terminál QR-kód eszköz.\n\nA funkció használatához telepítse a \"qr\" vagy a \"qrcode-terminal\" elemet."
+  },
+  "Not Found": {
+    "machine_translated": true,
+    "translation": "Nem található"
+  },
+  "Not a valid member: {v}": {
+    "machine_translated": true,
+    "translation": "Nem érvényes tag: {v}"
+  },
+  "Not a valid port: {v}": {
+    "machine_translated": true,
+    "translation": "Nem érvényes port: {v}"
+  },
+  "One-Time Password": {
+    "machine_translated": true,
+    "translation": "Egyszeri jelszó"
+  },
+  "One-time password for \"{u}\":\n\n  {otp}\n\nThis password can only be used once.\nDialog closes automatically after {t} seconds.": {
+    "machine_translated": true,
+    "translation": "Egyszeri jelszó a következőhöz: \"{u}\":\n\n  {otp}\n\nEz a jelszó csak egyszer használható.\nA párbeszédablak automatikusan bezárul {t} másodperc után."
+  },
+  "Open Linux Shell": {
+    "machine_translated": true,
+    "translation": "Nyissa meg a Linux Shell-t"
+  },
+  "Open TrueNAS CLI Shell": {
+    "machine_translated": true,
+    "translation": "Nyissa meg a TrueNAS CLI Shell-t"
+  },
+  "Open a Linux shell (bash/zsh).\n\nSuspends the TUI and opens your login shell.\nType \"exit\" or press Ctrl+D to return to the TUI.": {
+    "machine_translated": true,
+    "translation": "Nyisson meg egy Linux shellt (bash/zsh).\n\nFelfüggeszti a TUI-t, és megnyitja a bejelentkezési rendszerhéjat.\nÍrja be az „exit” parancsot, vagy nyomja meg a Ctrl+D billentyűkombinációt a TUI-hoz való visszatéréshez."
+  },
+  "Open the TrueNAS interactive CLI shell (midcli).\n\nReplaces the TUI with the full midcli command-line\ninterface. The TUI restarts after you exit midcli.": {
+    "machine_translated": true,
+    "translation": "Nyissa meg a TrueNAS interaktív CLI-héjat (midcli).\n\nA TUI-t a teljes midcli parancssorra cseréli\ninterfész. A TUI újraindul, miután kilép a midcli-ből."
+  },
+  "Other Settings": {
+    "machine_translated": true,
+    "translation": "Egyéb beállítások"
+  },
+  "Parent Interface": {
+    "machine_translated": true,
+    "translation": "Szülői felület"
+  },
+  "Password changed successfully.": {
+    "machine_translated": true,
+    "translation": "A jelszó sikeresen megváltozott."
+  },
+  "Password changes are only supported for local accounts.\nThis account is managed by an external directory service.": {
+    "machine_translated": true,
+    "translation": "A jelszómódosítás csak a helyi fiókoknál támogatott.\nEzt a fiókot egy külső címtárszolgáltatás kezeli."
+  },
+  "Password for {u} changed successfully.\nTwo-factor authentication has been disabled.": {
+    "machine_translated": true,
+    "translation": "A(z) {u} jelszava sikeresen megváltozott.\nA kéttényezős hitelesítés letiltva."
+  },
+  "Password for {u}:": {
+    "machine_translated": true,
+    "translation": "{u} jelszava:"
+  },
+  "Password must be at least {n} characters.": {
+    "machine_translated": true,
+    "translation": "A jelszónak legalább {n} karakterből kell állnia."
+  },
+  "Passwords do not match.": {
+    "machine_translated": true,
+    "translation": "A jelszavak nem egyeznek."
+  },
+  "Pending changes. Press [a] to apply.": {
+    "machine_translated": true,
+    "translation": "Függőben lévő változtatások. Az alkalmazáshoz nyomja meg az [a] gombot."
+  },
+  "Persisted": {
+    "machine_translated": true,
+    "translation": "Kitartott"
+  },
+  "Please enter the reason for the system reboot\n(leave blank to cancel):": {
+    "machine_translated": true,
+    "translation": "Kérjük, adja meg a rendszer újraindításának okát\n(a törléshez hagyja üresen):"
+  },
+  "Please enter the reason for the system shutdown\n(leave blank to cancel):": {
+    "machine_translated": true,
+    "translation": "Kérjük, adja meg a rendszerleállás okát\n(a törléshez hagyja üresen):"
+  },
+  "Port": {
+    "machine_translated": true,
+    "translation": "Kikötő"
+  },
+  "Ports": {
+    "machine_translated": true,
+    "translation": "Portok"
+  },
+  "Power Control": {
+    "machine_translated": true,
+    "translation": "Teljesítményszabályozás"
+  },
+  "Prefix length out of range in alias: {e}": {
+    "machine_translated": true,
+    "translation": "Az előtag hossza kívül esik az aliasban: {e}"
+  },
+  "Priority (PCP)": {
+    "machine_translated": true,
+    "translation": "Prioritás (PCP)"
+  },
+  "Product": {
+    "machine_translated": true,
+    "translation": "Termék"
+  },
+  "Protocol": {
+    "machine_translated": true,
+    "translation": "Jegyzőkönyv"
+  },
+  "Reboot": {
+    "machine_translated": true,
+    "translation": "Indítsa újra"
+  },
+  "Reboot initiated. The system is shutting down.": {
+    "machine_translated": true,
+    "translation": "Újraindítás elindítva. A rendszer leáll."
+  },
+  "Reboot or shut down the TrueNAS system.\n\n  • Reboot   – restart the system\n  • Shutdown – power off the system\n\nYou will be prompted for a reason and confirmation\nbefore any action is taken.": {
+    "machine_translated": true,
+    "translation": "Indítsa újra vagy állítsa le a TrueNAS rendszert.\n\n  • Újraindítás – a rendszer újraindítása\n  • Leállítás – a rendszer kikapcsolása\n\nA rendszer kérni fogja az okot és a megerősítést\nmielőtt bármilyen intézkedést megtenne."
+  },
+  "Reboot the TrueNAS system.\n\nYou will be prompted to enter a reason for the reboot\nbefore the system restarts.\n\nAll active sessions and shares will be interrupted.": {
+    "machine_translated": true,
+    "translation": "Indítsa újra a TrueNAS rendszert.\n\nA rendszer kéri, hogy adja meg az újraindítás okát\nmielőtt a rendszer újraindulna.\n\nMinden aktív munkamenet és megosztás megszakad."
+  },
+  "Reboot the system?\n\nReason: {r}": {
+    "machine_translated": true,
+    "translation": "Újraindítja a rendszert?\n\nOk: {r}"
+  },
+  "Reboot/Shutdown": {
+    "machine_translated": true,
+    "translation": "Újraindítás/leállítás"
+  },
+  "Rebooting": {
+    "machine_translated": true,
+    "translation": "Újraindítás"
+  },
+  "Renew 2FA Secret": {
+    "machine_translated": true,
+    "translation": "A 2FA Secret megújítása"
+  },
+  "Renew two-factor secret": {
+    "machine_translated": true,
+    "translation": "Újítsd meg a kéttényezős titkot"
+  },
+  "Reset": {
+    "machine_translated": true,
+    "translation": "Reset"
+  },
+  "Reset Configuration": {
+    "machine_translated": true,
+    "translation": "Konfiguráció visszaállítása"
+  },
+  "Reset configuration to defaults": {
+    "machine_translated": true,
+    "translation": "Állítsa vissza a konfigurációt az alapértelmezett értékekre"
+  },
+  "Retype new password:": {
+    "machine_translated": true,
+    "translation": "Írja be újra az új jelszót:"
+  },
+  "Retype password for {u}:": {
+    "machine_translated": true,
+    "translation": "Írja be újra a jelszót a következőhöz: {u}:"
+  },
+  "Root user (not recommended)": {
+    "machine_translated": true,
+    "translation": "Root felhasználó (nem ajánlott)"
+  },
+  "Save": {
+    "machine_translated": true,
+    "translation": "Megtakarítás"
+  },
+  "Saved": {
+    "machine_translated": true,
+    "translation": "Mentve"
+  },
+  "Secret key: {s}  (for manual entry)": {
+    "machine_translated": true,
+    "translation": "Titkos kulcs: {s} (kézi bevitelhez)"
+  },
+  "Select Administrator": {
+    "machine_translated": true,
+    "translation": "Válassza az Adminisztrátor lehetőséget"
+  },
+  "Serial": {
+    "machine_translated": true,
+    "translation": "Sorozatszám"
+  },
+  "Set Up Administrator": {
+    "machine_translated": true,
+    "translation": "Adminisztrátor beállítása"
+  },
+  "Set to 0 to use the system default MTU": {
+    "machine_translated": true,
+    "translation": "Állítsa 0-ra a rendszer alapértelmezett MTU-jának használatához"
+  },
+  "Set up local administrator": {
+    "machine_translated": true,
+    "translation": "Helyi rendszergazda beállítása"
+  },
+  "Set up two-factor authentication": {
+    "machine_translated": true,
+    "translation": "Kétfaktoros hitelesítés beállítása"
+  },
+  "Settings Saved": {
+    "machine_translated": true,
+    "translation": "Beállítások elmentve"
+  },
+  "Shut down the TrueNAS system.\n\nYou will be prompted to enter a reason for the shutdown\nbefore the system powers off.\n\nAll active sessions and shares will be interrupted.": {
+    "machine_translated": true,
+    "translation": "Állítsa le a TrueNAS rendszert.\n\nA rendszer kéri, hogy adja meg a leállás okát\nmielőtt a rendszer kikapcsol.\n\nMinden aktív munkamenet és megosztás megszakad."
+  },
+  "Shut down the system?\n\nReason: {r}": {
+    "machine_translated": true,
+    "translation": "Leállítjuk a rendszert?\n\nOk: {r}"
+  },
+  "Shutdown": {
+    "machine_translated": true,
+    "translation": "Leállítás"
+  },
+  "Shutdown initiated. The system is powering off.": {
+    "machine_translated": true,
+    "translation": "A leállítás megkezdődött. A rendszer kikapcsol."
+  },
+  "Shutting Down": {
+    "machine_translated": true,
+    "translation": "Leállítás"
+  },
+  "Specify a bare IP address (no prefix length)": {
+    "machine_translated": true,
+    "translation": "Csupasz IP-cím megadása (előtag hossza nélkül)"
+  },
+  "Startup": {
+    "machine_translated": true,
+    "translation": "Indítás"
+  },
+  "Startup view": {
+    "machine_translated": true,
+    "translation": "Indítási nézet"
+  },
+  "Static Routes": {
+    "machine_translated": true,
+    "translation": "Statikus útvonalak"
+  },
+  "Static routes": {
+    "machine_translated": true,
+    "translation": "Statikus útvonalak"
+  },
+  "Success": {
+    "machine_translated": true,
+    "translation": "Siker"
+  },
+  "System Information": {
+    "machine_translated": true,
+    "translation": "Rendszerinformációk"
+  },
+  "TUI preferences saved.\nTheme and locale changes take effect immediately.": {
+    "machine_translated": true,
+    "translation": "A TUI-beállítások mentve.\nA téma és a területi beállítások módosításai azonnal életbe lépnek."
+  },
+  "Tab/↑↓: navigate   Enter: confirm   Esc: cancel": {
+    "machine_translated": true,
+    "translation": "Tab/↑↓: navigálás Enter: megerősítés Esc: megszakítás"
+  },
+  "Text UI settings": {
+    "machine_translated": true,
+    "translation": "Szöveges felhasználói felület beállításai"
+  },
+  "Theme": {
+    "machine_translated": true,
+    "translation": "Téma"
+  },
+  "This Node IPs": {
+    "machine_translated": true,
+    "translation": "Ez a csomópont IP-címe"
+  },
+  "This will ERASE all configuration and reset to defaults.\nAre you absolutely sure?": {
+    "machine_translated": true,
+    "translation": "Ezzel TÖRÖLI az összes konfigurációt, és visszaáll az alapértelmezett értékekre.\nTeljesen biztos vagy benne?"
+  },
+  "Time format": {
+    "machine_translated": true,
+    "translation": "Időformátum"
+  },
+  "Timezone": {
+    "machine_translated": true,
+    "translation": "Időzóna"
+  },
+  "Two-factor authentication has been disabled.": {
+    "machine_translated": true,
+    "translation": "A kéttényezős hitelesítés letiltva."
+  },
+  "Type RESET to confirm (case-sensitive):": {
+    "machine_translated": true,
+    "translation": "A megerősítéshez írja be a RESET parancsot (a kis- és nagybetűk megkülönböztetése):"
+  },
+  "Unavailable": {
+    "machine_translated": true,
+    "translation": "Nem elérhető"
+  },
+  "Uptime": {
+    "machine_translated": true,
+    "translation": "Üzemidő"
+  },
+  "VLAN Settings": {
+    "machine_translated": true,
+    "translation": "VLAN beállítások"
+  },
+  "VLAN Tag": {
+    "machine_translated": true,
+    "translation": "VLAN címke"
+  },
+  "Version": {
+    "machine_translated": true,
+    "translation": "Változat"
+  },
+  "View and edit network interface configuration.\n\n  • Enable/disable DHCP and IPv6 auto-configuration\n  • Add or remove static IP aliases\n  • Set MTU, VLAN tag, bridge members, LAG ports, and more\n  • Apply changes (with automatic rollback safety)\n  • Persist changes once the network is confirmed working\n\nPress Enter to select an interface to edit.\nPress [n] to create a new interface, [d] to delete.\nAfter editing, use [a] to Apply and [p] to Persist.": {
+    "machine_translated": true,
+    "translation": "A hálózati interfész konfigurációjának megtekintése és szerkesztése.\n\n  • A DHCP és IPv6 automatikus konfigurálásának engedélyezése/letiltása\n  • Statikus IP-álnevek hozzáadása vagy eltávolítása\n  • MTU, VLAN-címke, hídtagok, LAG-portok és egyebek beállítása\n  • Változások alkalmazása (automatikus visszaállítási biztonsággal)\n  • A változtatások továbbra is fennállnak, miután a hálózat működőképes\n\nNyomja meg az Enter billentyűt a szerkeszteni kívánt felület kiválasztásához.\nNyomja meg az [n] gombot új interfész létrehozásához, a [d] gombot a törléshez.\nA szerkesztés után használja az [a] gombot az Alkalmazáshoz és a [p] gombot a Megmaradáshoz."
+  },
+  "View your account information and manage credentials.\n\n  • View username, UID, roles, and 2FA status\n  • Change your password\n  • Generate a one-time password for single-use login\n  • Set up or renew two-factor authentication\n\nPassword changes take effect immediately.\nOne-time passwords expire after a single login.": {
+    "machine_translated": true,
+    "translation": "Tekintse meg fiókadatait és kezelje a hitelesítő adatokat.\n\n  • Felhasználónév, UID, szerepkörök és 2FA állapot megtekintése\n  • Változtassa meg jelszavát\n  • Egyszeri jelszó létrehozása az egyszeri bejelentkezéshez\n  • Kéttényezős hitelesítés beállítása vagy megújítása\n\nA jelszómódosítások azonnal életbe lépnek.\nAz egyszeri jelszavak egyszeri bejelentkezés után lejárnak."
+  },
+  "Virtual IPs": {
+    "machine_translated": true,
+    "translation": "Virtuális IP-k"
+  },
+  "WARNING: You are logged in as root!": {
+    "machine_translated": true,
+    "translation": "FIGYELMEZTETÉS: Rootként vagy bejelentkezve!"
+  },
+  "Web UI Authentication Method": {
+    "machine_translated": true,
+    "translation": "Webes UI hitelesítési módszer"
+  },
+  "Without it you may be locked out of this system.": {
+    "machine_translated": true,
+    "translation": "Enélkül előfordulhat, hogy ki van zárva ebből a rendszerből."
+  },
+  "Xmit Hash Policy": {
+    "machine_translated": true,
+    "translation": "Xmit Hash Policy"
+  },
+  "Yes": {
+    "machine_translated": true,
+    "translation": "Igen"
+  },
+  "Yes, reset": {
+    "machine_translated": true,
+    "translation": "Igen, reset"
+  },
+  "[↑↓] Navigate  [Enter] Edit  [a] Add  [d] Delete  [q] Back": {
+    "machine_translated": true,
+    "translation": "[↑↓] Navigálás [Enter] Szerkesztés [a] Hozzáadás [d] Törlés [q] Vissza"
+  },
+  "[↑↓] Navigate  [Enter] Edit  [n] New  [d] Delete  [a] Apply  [p] Persist  [q] Back": {
+    "machine_translated": true,
+    "translation": "[↑↓] Navigálás [Enter] Szerkesztés [n] Új [d] Törlés [a] Alkalmaz [p] Megtart [q] Vissza"
+  },
+  "[↑↓] Select  [Enter] Edit  [a] Add  [d] Delete  [Esc] Done": {
+    "machine_translated": true,
+    "translation": "[↑↓] Válassza az [Enter] lehetőséget Szerkesztés [a] Hozzáadás [d] Törlés [Esc] Kész"
+  },
+  "midcli is not available on this system.": {
+    "machine_translated": true,
+    "translation": "A midcli nem érhető el ezen a rendszeren."
+  },
+  "↑↓ Navigate  Enter Select  Esc Cancel": {
+    "machine_translated": true,
+    "translation": "↑↓ Navigálás Enter Válassza az Esc Mégse lehetőséget"
+  }
+}
