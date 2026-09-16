@@ -20,15 +20,12 @@ API:
   interface.lag_ports_choices <name>       → dict of valid LAG port names
   interface.vlan_parent_interface_choices  → dict of valid VLAN parent names
   failover.licensed                        → bool (HA system)
-
-Version notes:
-  No known breaking changes between supported API versions for these calls.
 """
 
 import curses
 import ipaddress
 
-from truenas_tui.api_methods import Method
+from truenas_tui.localization import TRANSLATE
 from truenas_tui.plugins.base import BasePlugin
 from truenas_tui.tui import HardExit, colors, format_error
 from truenas_tui.tui.colors import pair
@@ -43,12 +40,22 @@ from truenas_tui.tui.forms import (
     SectionField,
 )
 
-from .localization import TRANSLATE
-
 _LAG_PROTOCOLS = ["LACP", "FAILOVER", "LOADBALANCE", "ROUNDROBIN", "NONE"]
 _XMIT_POLICIES = ["LAYER2", "LAYER2+3", "LAYER3+4"]
 _LACPDU_RATES = ["SLOW", "FAST"]
 _IFACE_TYPES = ["BRIDGE", "LINK_AGGREGATION", "VLAN"]
+
+# Form result keys copied straight into the API payload, per interface type.
+_TYPE_KEYS = {
+    "VLAN": ("vlan_parent_interface", "vlan_tag", "vlan_pcp"),
+    "BRIDGE": ("bridge_members",),
+    "LINK_AGGREGATION": (
+        "lag_protocol",
+        "lag_ports",
+        "xmit_hash_policy",
+        "lacpdu_rate",
+    ),
+}
 
 
 def _alias_str(alias: dict) -> str:
@@ -160,11 +167,17 @@ def _aliases_to_payload(alias_strings: list[str]) -> list[dict] | str:
     return result
 
 
+def _load_choices(stdscr, session, error_prefix: str, method: str, *args):
+    """Sorted names from an interface.*_choices call, or None after showing the error."""
+    try:
+        return sorted(session.call(method, *args))
+    except Exception as e:
+        message_dialog(stdscr, TRANSLATE("Error"), error_prefix + format_error(e))
+        return None
+
+
 class NetworkInterfacePlugin(BasePlugin):
     REQUIRED_WRITE_ROLES = frozenset({"NETWORK_INTERFACE_WRITE"})
-    LEGACY_INDEX = 1
-    DEFAULT_HIDDEN = True
-    _TRANSLATE = staticmethod(TRANSLATE)
     LABEL = "Configure network interfaces"
     DESCRIPTION = (
         "View and edit network interface configuration.\n"
@@ -181,76 +194,57 @@ class NetworkInterfacePlugin(BasePlugin):
     )
 
     def run(self, stdscr, session) -> None:
-        while True:
-            action = self._list_screen(stdscr, session)
-            if action is None:
-                break
-
-    def _list_screen(self, stdscr, session) -> str | None:
-        try:
-            ifaces = session.call(Method.INTERFACE_QUERY)
-        except Exception as e:
-            message_dialog(stdscr, TRANSLATE("Error"), format_error(e))
-            return None
-
-        status_msg = self._get_status(session)
         selected = 0
+        ifaces = None  # None → reload the list and status before drawing
+        status = ""
         stdscr.keypad(True)
         curses.curs_set(0)
 
         while True:
-            self._draw_list(stdscr, ifaces, selected, status_msg)
+            if ifaces is None:
+                try:
+                    ifaces = session.call("interface.query")
+                except Exception as e:
+                    message_dialog(stdscr, TRANSLATE("Error"), format_error(e))
+                    return
+                status = self._get_status(session)
+                selected = min(selected, max(0, len(ifaces) - 1))
+
+            self._draw_list(stdscr, ifaces, selected, status)
             key = stdscr.getch()
 
             if key == 4:
                 raise HardExit()
             elif key in (27, ord("q")):
-                return None
+                return
             elif key == curses.KEY_UP:
                 selected = max(0, selected - 1)
             elif key == curses.KEY_DOWN:
                 selected = min(max(0, len(ifaces) - 1), selected + 1)
-            elif key in (ord("\n"), ord("\r"), curses.KEY_ENTER):
-                if ifaces:
-                    self._edit_interface(stdscr, session, ifaces[selected])
-                    try:
-                        ifaces = session.call(Method.INTERFACE_QUERY)
-                        selected = min(selected, max(0, len(ifaces) - 1))
-                    except Exception:
-                        pass
-                    status_msg = self._get_status(session)
+            elif key in (ord("\n"), ord("\r"), curses.KEY_ENTER) and ifaces:
+                self._edit_interface(stdscr, session, ifaces[selected])
+                ifaces = None
             elif key == ord("n"):
                 self._create_interface(stdscr, session)
-                try:
-                    ifaces = session.call(Method.INTERFACE_QUERY)
-                    selected = min(selected, max(0, len(ifaces) - 1))
-                except Exception:
-                    pass
-                status_msg = self._get_status(session)
-            elif key == ord("d"):
-                if ifaces:
-                    self._delete_interface(stdscr, session, ifaces[selected])
-                    try:
-                        ifaces = session.call(Method.INTERFACE_QUERY)
-                        selected = min(selected, max(0, len(ifaces) - 1))
-                    except Exception:
-                        pass
-                    status_msg = self._get_status(session)
+                ifaces = None
+            elif key == ord("d") and ifaces:
+                self._delete_interface(stdscr, session, ifaces[selected])
+                ifaces = None
             elif key == ord("a"):
                 self._apply_changes(stdscr, session)
-                status_msg = self._get_status(session)
+                ifaces = None
             elif key == ord("p"):
                 self._persist_changes(stdscr, session)
-                status_msg = self._get_status(session)
+                ifaces = None
 
     def _get_status(self, session) -> str:
         try:
-            waiting = session.call(Method.INTERFACE_CHECKIN_WAITING)
+            waiting = session.call("interface.checkin_waiting")
             if waiting is not None:
                 return TRANSLATE(
                     "Changes applied. Press [p] to persist or they roll back in {n}s."
                 ).format(n=int(waiting))
-            if session.call(Method.INTERFACE_HAS_PENDING_CHANGES):
+            if session.call("interface.has_pending_changes"):
                 return TRANSLATE("Pending changes. Press [a] to apply.")
         except Exception:
             pass
@@ -301,7 +295,7 @@ class NetworkInterfacePlugin(BasePlugin):
 
     def _apply_changes(self, stdscr, session) -> None:
         try:
-            session.call(Method.INTERFACE_COMMIT)
+            session.call("interface.commit")
             message_dialog(
                 stdscr,
                 TRANSLATE("Applied"),
@@ -315,7 +309,7 @@ class NetworkInterfacePlugin(BasePlugin):
 
     def _persist_changes(self, stdscr, session) -> None:
         try:
-            session.call(Method.INTERFACE_CHECKIN)
+            session.call("interface.checkin")
             message_dialog(
                 stdscr,
                 TRANSLATE("Persisted"),
@@ -334,7 +328,7 @@ class NetworkInterfacePlugin(BasePlugin):
         ):
             return
         try:
-            session.call(Method.INTERFACE_DELETE, iface_id)
+            session.call("interface.delete", iface_id)
             message_dialog(
                 stdscr,
                 TRANSLATE("Deleted"),
@@ -350,7 +344,7 @@ class NetworkInterfacePlugin(BasePlugin):
         iface_name = iface.get("name", iface_id)
 
         try:
-            failover_licensed = session.call(Method.FAILOVER_LICENSED)
+            failover_licensed = session.call("failover.licensed")
         except Exception:
             failover_licensed = False
 
@@ -364,13 +358,13 @@ class NetworkInterfacePlugin(BasePlugin):
         if result is None:
             return
 
-        payload = _collect_payload(result, iface, failover_licensed, is_create=False)
+        payload = _collect_payload(result, iface, failover_licensed)
         if isinstance(payload, str):
             message_dialog(stdscr, TRANSLATE("Error"), payload)
             return
 
         try:
-            session.call(Method.INTERFACE_UPDATE, iface_id, payload)
+            session.call("interface.update", iface_id, payload)
             message_dialog(
                 stdscr,
                 TRANSLATE("Saved"),
@@ -432,7 +426,7 @@ class NetworkInterfacePlugin(BasePlugin):
         }
 
         try:
-            failover_licensed = session.call(Method.FAILOVER_LICENSED)
+            failover_licensed = session.call("failover.licensed")
         except Exception:
             failover_licensed = False
 
@@ -447,9 +441,7 @@ class NetworkInterfacePlugin(BasePlugin):
         if result is None:
             return
 
-        payload = _collect_payload(
-            result, stub_iface, failover_licensed, is_create=True
-        )
+        payload = _collect_payload(result, stub_iface, failover_licensed)
         if isinstance(payload, str):
             message_dialog(stdscr, TRANSLATE("Error"), payload)
             return
@@ -460,7 +452,7 @@ class NetworkInterfacePlugin(BasePlugin):
         payload["description"] = description
 
         try:
-            session.call(Method.INTERFACE_CREATE, payload)
+            session.call("interface.create", payload)
             message_dialog(
                 stdscr,
                 TRANSLATE("Created"),
@@ -480,41 +472,35 @@ def _build_edit_fields(
     Returns the field list or None if a prerequisite API call failed.
     """
     iface_type = iface.get("type", "PHYSICAL")
-    fields: list = []
-
-    fields.append(SectionField(key="", label=TRANSLATE("Interface Settings")))
-    fields.append(
+    fields: list = [
+        SectionField(key="", label=TRANSLATE("Interface Settings")),
         FormField(
             key="name",
             label=TRANSLATE("Name"),
             value=iface.get("name", ""),
             readonly=name_readonly,
-        )
-    )
-    fields.append(
+        ),
         FormField(
             key="description",
             label=TRANSLATE("Description"),
             value=iface.get("description", ""),
-        )
-    )
+        ),
+    ]
 
     # DHCP / IPv6 auto: only when NOT HA-licensed (mirrors midcli)
     if not failover_licensed:
-        fields.append(
+        fields += [
             BoolField(
                 key="ipv4_dhcp",
                 label=TRANSLATE("IPv4 DHCP"),
                 value=iface.get("ipv4_dhcp", False),
-            )
-        )
-        fields.append(
+            ),
             BoolField(
                 key="ipv6_auto",
                 label=TRANSLATE("IPv6 Auto"),
                 value=iface.get("ipv6_auto", False),
-            )
-        )
+            ),
+        ]
 
     fields.append(
         ListField(
@@ -531,32 +517,26 @@ def _build_edit_fields(
     )
 
     if failover_licensed:
-        fields.append(SectionField(key="", label=TRANSLATE("Failover Settings")))
-        fields.append(
+        fields += [
+            SectionField(key="", label=TRANSLATE("Failover Settings")),
             BoolField(
                 key="failover_critical",
                 label=TRANSLATE("Failover Critical"),
                 value=iface.get("failover_critical", False),
-            )
-        )
-        fields.append(
+            ),
             IntField(
                 key="failover_group",
                 label=TRANSLATE("Failover Group"),
                 value=iface.get("failover_group") or 1,
                 min_val=1,
-            )
-        )
-        fields.append(
+            ),
             ListField(
                 key="_failover_aliases",
                 label=TRANSLATE("This Node IPs"),
                 value=[a.get("address", "") for a in iface.get("failover_aliases", [])],
                 item_label=TRANSLATE("IP Address"),
                 item_validator=_validate_ip_only,
-            )
-        )
-        fields.append(
+            ),
             ListField(
                 key="_failover_virtual_aliases",
                 label=TRANSLATE("Virtual IPs"),
@@ -566,71 +546,54 @@ def _build_edit_fields(
                 ],
                 item_label=TRANSLATE("IP Address"),
                 item_validator=_validate_ip_only,
-            )
-        )
+            ),
+        ]
 
     if iface_type == "VLAN":
-        try:
-            choices_dict = session.call(Method.INTERFACE_VLAN_PARENT_INTERFACE_CHOICES)
-            choices = (
-                sorted(choices_dict.keys())
-                if isinstance(choices_dict, dict)
-                else sorted(choices_dict)
-            )
-        except Exception as e:
-            message_dialog(
-                stdscr,
-                TRANSLATE("Error"),
-                TRANSLATE("Could not load VLAN parent choices:\n") + format_error(e),
-            )
+        choices = _load_choices(
+            stdscr,
+            session,
+            TRANSLATE("Could not load VLAN parent choices:\n"),
+            "interface.vlan_parent_interface_choices",
+        )
+        if choices is None:
             return None
-        fields.append(SectionField(key="", label=TRANSLATE("VLAN Settings")))
-        fields.append(
+        fields += [
+            SectionField(key="", label=TRANSLATE("VLAN Settings")),
             ChoiceField(
                 key="vlan_parent_interface",
                 label=TRANSLATE("Parent Interface"),
                 choices=choices,
                 value=_choice_idx(choices, iface.get("vlan_parent_interface", "")),
-            )
-        )
-        fields.append(
+            ),
             IntField(
                 key="vlan_tag",
                 label=TRANSLATE("VLAN Tag"),
                 value=iface.get("vlan_tag") or 1,
                 min_val=1,
                 max_val=4094,
-            )
-        )
-        fields.append(
+            ),
             IntField(
                 key="vlan_pcp",
                 label=TRANSLATE("Priority (PCP)"),
                 value=iface.get("vlan_pcp") or 0,
                 min_val=0,
                 max_val=7,
-            )
-        )
+            ),
+        ]
 
     elif iface_type == "BRIDGE":
-        try:
-            choices_dict = session.call(
-                Method.INTERFACE_BRIDGE_MEMBERS_CHOICES, iface.get("name", "")
-            )
-            choices = (
-                sorted(choices_dict.keys())
-                if isinstance(choices_dict, dict)
-                else sorted(choices_dict)
-            )
-        except Exception as e:
-            message_dialog(
-                stdscr,
-                TRANSLATE("Error"),
-                TRANSLATE("Could not load bridge member choices:\n") + format_error(e),
-            )
+        choices = _load_choices(
+            stdscr,
+            session,
+            TRANSLATE("Could not load bridge member choices:\n"),
+            "interface.bridge_members_choices",
+            iface.get("name", ""),
+        )
+        if choices is None:
             return None
-        fields.append(SectionField(key="", label=TRANSLATE("Bridge Settings")))
-        fields.append(
+        fields += [
+            SectionField(key="", label=TRANSLATE("Bridge Settings")),
             ListField(
                 key="bridge_members",
                 label=TRANSLATE("Members"),
@@ -639,38 +602,27 @@ def _build_edit_fields(
                 item_validator=lambda v, c=choices: (
                     None if v in c else TRANSLATE("Not a valid member: {v}").format(v=v)
                 ),
-            )
-        )
+            ),
+        ]
 
     elif iface_type == "LINK_AGGREGATION":
-        try:
-            port_dict = session.call(
-                Method.INTERFACE_LAG_PORTS_CHOICES, iface.get("name", "")
-            )
-            port_choices = (
-                sorted(port_dict.keys())
-                if isinstance(port_dict, dict)
-                else sorted(port_dict)
-            )
-        except Exception as e:
-            message_dialog(
-                stdscr,
-                TRANSLATE("Error"),
-                TRANSLATE("Could not load LAG port choices:\n") + format_error(e),
-            )
-            return None
-        fields.append(
-            SectionField(key="", label=TRANSLATE("Link Aggregation Settings"))
+        port_choices = _load_choices(
+            stdscr,
+            session,
+            TRANSLATE("Could not load LAG port choices:\n"),
+            "interface.lag_ports_choices",
+            iface.get("name", ""),
         )
-        fields.append(
+        if port_choices is None:
+            return None
+        fields += [
+            SectionField(key="", label=TRANSLATE("Link Aggregation Settings")),
             ChoiceField(
                 key="lag_protocol",
                 label=TRANSLATE("Protocol"),
                 choices=_LAG_PROTOCOLS,
                 value=_choice_idx(_LAG_PROTOCOLS, iface.get("lag_protocol", "LACP")),
-            )
-        )
-        fields.append(
+            ),
             ListField(
                 key="lag_ports",
                 label=TRANSLATE("Ports"),
@@ -679,9 +631,7 @@ def _build_edit_fields(
                 item_validator=lambda v, c=port_choices: (
                     None if v in c else TRANSLATE("Not a valid port: {v}").format(v=v)
                 ),
-            )
-        )
-        fields.append(
+            ),
             ChoiceField(
                 key="xmit_hash_policy",
                 label=TRANSLATE("Xmit Hash Policy"),
@@ -689,19 +639,17 @@ def _build_edit_fields(
                 value=_choice_idx(
                     _XMIT_POLICIES, iface.get("xmit_hash_policy", "LAYER2+3")
                 ),
-            )
-        )
-        fields.append(
+            ),
             ChoiceField(
                 key="lacpdu_rate",
                 label=TRANSLATE("LACPDU Rate"),
                 choices=_LACPDU_RATES,
                 value=_choice_idx(_LACPDU_RATES, iface.get("lacpdu_rate", "SLOW")),
-            )
-        )
+            ),
+        ]
 
-    fields.append(SectionField(key="", label=TRANSLATE("Other Settings")))
-    fields.append(
+    fields += [
+        SectionField(key="", label=TRANSLATE("Other Settings")),
         IntField(
             key="mtu",
             label=TRANSLATE("MTU"),
@@ -709,91 +657,52 @@ def _build_edit_fields(
             min_val=0,
             max_val=9000,
             help_text=TRANSLATE("Set to 0 to use the system default MTU"),
-        )
-    )
+        ),
+    ]
 
     return fields
 
 
-def _collect_payload(
-    result: dict, iface: dict, failover_licensed: bool, is_create: bool
-) -> dict | str:
+def _collect_payload(result: dict, iface: dict, failover_licensed: bool) -> dict | str:
     """
     Convert form result into an API payload dict.
     Returns the dict on success or an error string on failure.
     """
-    iface_type = iface.get("type", "PHYSICAL")
-    payload: dict = {}
+    payload: dict = {k: result[k] for k in ("description",) if k in result}
 
-    # description (may be in result if name_readonly=False in create step-2,
-    # or always in the edit form)
-    if "description" in result:
-        payload["description"] = result["description"]
-
-    # DHCP / IPv6 auto
+    # DHCP / IPv6 auto are forced off on HA systems
     if failover_licensed:
-        payload["ipv4_dhcp"] = False
-        payload["ipv6_auto"] = False
+        payload["ipv4_dhcp"] = payload["ipv6_auto"] = False
     else:
-        if "ipv4_dhcp" in result:
-            payload["ipv4_dhcp"] = bool(result["ipv4_dhcp"])
-        if "ipv6_auto" in result:
-            payload["ipv6_auto"] = bool(result["ipv6_auto"])
+        payload.update(
+            {k: result[k] for k in ("ipv4_dhcp", "ipv6_auto") if k in result}
+        )
 
-    # Aliases
-    alias_result = _aliases_to_payload(result.get("_aliases", []))
-    if isinstance(alias_result, str):
-        return alias_result
-    payload["aliases"] = alias_result
+    aliases = _aliases_to_payload(result.get("_aliases", []))
+    if isinstance(aliases, str):
+        return aliases
+    payload["aliases"] = aliases
 
-    # Failover fields (HA only)
     if failover_licensed:
-        if "failover_critical" in result:
-            payload["failover_critical"] = bool(result["failover_critical"])
-        if "failover_group" in result:
-            payload["failover_group"] = int(result["failover_group"])
-        # failover_aliases
-        fa_list = result.get("_failover_aliases", [])
-        fa_payload = []
-        for s in fa_list:
-            err = _validate_ip_only(s)
+        payload.update(
+            {
+                k: result[k]
+                for k in ("failover_critical", "failover_group")
+                if k in result
+            }
+        )
+        for key in ("failover_aliases", "failover_virtual_aliases"):
+            ips = result.get("_" + key, [])
+            err = next(filter(None, map(_validate_ip_only, ips)), None)
             if err:
                 return err
-            fa_payload.append(_parse_ip_only(s))
-        payload["failover_aliases"] = fa_payload
-        # failover_virtual_aliases
-        fva_list = result.get("_failover_virtual_aliases", [])
-        fva_payload = []
-        for s in fva_list:
-            err = _validate_ip_only(s)
-            if err:
-                return err
-            fva_payload.append(_parse_ip_only(s))
-        payload["failover_virtual_aliases"] = fva_payload
+            payload[key] = [_parse_ip_only(s) for s in ips]
 
-    # Type-specific
-    if iface_type == "VLAN":
-        if "vlan_parent_interface" in result:
-            payload["vlan_parent_interface"] = result["vlan_parent_interface"]
-        if "vlan_tag" in result:
-            payload["vlan_tag"] = int(result["vlan_tag"])
-        if "vlan_pcp" in result:
-            payload["vlan_pcp"] = int(result["vlan_pcp"])
-    elif iface_type == "BRIDGE":
-        if "bridge_members" in result:
-            payload["bridge_members"] = list(result["bridge_members"])
-    elif iface_type == "LINK_AGGREGATION":
-        if "lag_protocol" in result:
-            payload["lag_protocol"] = result["lag_protocol"]
-        if "lag_ports" in result:
-            payload["lag_ports"] = list(result["lag_ports"])
-        if "xmit_hash_policy" in result:
-            payload["xmit_hash_policy"] = result["xmit_hash_policy"]
-        if "lacpdu_rate" in result:
-            payload["lacpdu_rate"] = result["lacpdu_rate"]
+    type_keys = _TYPE_KEYS.get(iface.get("type", "PHYSICAL"), ())
+    payload.update({k: result[k] for k in type_keys if k in result})
 
     # MTU — send None if 0 (API treats 0/None as "use default")
-    mtu_val = result.get("mtu", 0)
-    payload["mtu"] = None if (isinstance(mtu_val, int) and mtu_val == 0) else mtu_val
+    mtu = result.get("mtu", 0)
+    payload["mtu"] = None if mtu == 0 else mtu
 
     return payload

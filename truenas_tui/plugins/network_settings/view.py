@@ -9,20 +9,15 @@ API:
   network.configuration.update   → save changes
 """
 
-from truenas_tui.api_methods import Method
+from truenas_tui.localization import TRANSLATE
 from truenas_tui.plugins.base import BasePlugin
 from truenas_tui.tui import format_error
 from truenas_tui.tui.dialogs import message_dialog
 from truenas_tui.tui.forms import Form, FormField
 
-from .localization import TRANSLATE
-
 
 class NetworkSettingsPlugin(BasePlugin):
     REQUIRED_WRITE_ROLES = frozenset({"NETWORK_GENERAL_WRITE"})
-    LEGACY_INDEX = 2
-    DEFAULT_HIDDEN = True
-    _TRANSLATE = staticmethod(TRANSLATE)
     LABEL = "Configure network settings"
     DESCRIPTION = (
         "Configure global network settings:\n"
@@ -36,7 +31,7 @@ class NetworkSettingsPlugin(BasePlugin):
 
     def run(self, stdscr, session) -> None:
         try:
-            cfg = session.call(Method.NETWORK_CONFIGURATION_CONFIG)
+            cfg = session.call("network.configuration.config")
         except Exception as e:
             message_dialog(stdscr, TRANSLATE("Error"), format_error(e))
             return
@@ -84,7 +79,7 @@ class NetworkSettingsPlugin(BasePlugin):
             return
 
         try:
-            session.call(Method.NETWORK_CONFIGURATION_UPDATE, result)
+            session.call("network.configuration.update", result)
             message_dialog(
                 stdscr,
                 TRANSLATE("Success"),

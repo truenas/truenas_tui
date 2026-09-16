@@ -11,6 +11,10 @@ from truenas_tui.localization import TRANSLATE
 
 from . import HardExit, colors
 
+MIN_PASSWORD_LEN = 8
+
+_DISMISS_KEYS = (ord("\n"), ord("\r"), ord(" "), 27, ord("q"), ord("Q"))
+
 
 def _draw_box(win, title: str = "") -> None:
     win.box()
@@ -57,18 +61,14 @@ def _restore_screen(stdscr, saved) -> None:
     stdscr.refresh()
 
 
-def message_dialog(
-    stdscr, title: str, message: str, ok_label: str = "OK", timeout_secs: int = 0
-) -> None:
+def message_dialog(stdscr, title: str, message: str, timeout_secs: int = 0) -> None:
     """Show a message box.  Returns when the user presses Enter/Space/Esc/q.
 
     timeout_secs: if > 0 the dialog auto-dismisses after that many seconds.
     Used for sensitive output (e.g. one-time passwords) that should not linger.
     """
     lines = message.splitlines()
-    width = max(
-        len(ok_label) + 6, max((len(ln) for ln in lines), default=0) + 4, len(title) + 4
-    )
+    width = max(16, max((len(ln) for ln in lines), default=0) + 4, len(title) + 4)
     width = min(width, stdscr.getmaxyx()[1] - 2)
     height = len(lines) + 5  # title border + lines + blank + button row + border
 
@@ -83,55 +83,33 @@ def message_dialog(
         except curses.error:
             pass
 
-    btn_label = f"[ {TRANSLATE(ok_label)} ]"
-    btn_x = max(1, (width - len(btn_label)) // 2)
-    try:
-        win.addstr(
-            height - 2,
-            btn_x,
-            btn_label,
-            curses.color_pair(colors.MENU_SELECTED) | curses.A_BOLD,
-        )
-    except curses.error:
-        pass
-
-    win.refresh()
     curses.curs_set(0)
+    win.timeout(1000 if timeout_secs else -1)  # tick once a second for the countdown
+    remaining = timeout_secs
+    while True:
+        button = f"[ OK ({remaining}s) ]" if timeout_secs else "[ OK ]"
+        try:
+            win.addstr(height - 2, 1, " " * inner_w)
+            win.addstr(
+                height - 2,
+                max(1, (width - len(button)) // 2),
+                button,
+                curses.color_pair(colors.MENU_SELECTED) | curses.A_BOLD,
+            )
+        except curses.error:
+            pass
+        win.refresh()
 
-    if timeout_secs > 0:
-        win.timeout(1000)  # wake up every second to update countdown
-        remaining = timeout_secs
-        while remaining > 0:
-            countdown = f"[ {ok_label} ({remaining}s) ]"
-            cx = max(1, (width - len(countdown)) // 2)
-            try:
-                win.addstr(height - 2, 1, " " * (width - 2))
-                win.addstr(
-                    height - 2,
-                    cx,
-                    countdown,
-                    curses.color_pair(colors.MENU_SELECTED) | curses.A_BOLD,
-                )
-            except curses.error:
-                pass
-            win.refresh()
-            key = win.getch()
-            if key == 4:
-                raise HardExit()
-            if key in (ord("\n"), ord("\r"), ord(" "), 27, ord("q"), ord("Q")):
-                break
-            if key == -1:  # timeout tick
-                remaining -= 1
-        win.timeout(-1)
-    else:
-        while True:
-            key = win.getch()
-            if key == 4:
-                raise HardExit()
-            if key in (ord("\n"), ord("\r"), ord(" "), 27, ord("q"), ord("Q")):
+        key = win.getch()
+        if key == 4:
+            raise HardExit()
+        if key in _DISMISS_KEYS:
+            break
+        if key == -1:  # timeout tick
+            remaining -= 1
+            if remaining <= 0:
                 break
 
-    # Restore
     _restore_screen(stdscr, saved)
     curses.curs_set(1)
 
@@ -315,20 +293,51 @@ def input_dialog(
     return result
 
 
+def new_password_dialog(stdscr, title: str, username: str) -> str | None:
+    """
+    Ask for a new password and its confirmation.
+
+    Returns the password, or None when the user cancelled, left it empty,
+    it was too short, or the two entries did not match (an error dialog is
+    shown for the last two).
+    """
+    pw1 = input_dialog(
+        stdscr,
+        title,
+        TRANSLATE("New password for {u}:").format(u=username),
+        secret=True,
+    )
+    if not pw1:
+        return None
+    if len(pw1) < MIN_PASSWORD_LEN:
+        message_dialog(
+            stdscr,
+            TRANSLATE("Error"),
+            TRANSLATE("Password must be at least {n} characters.").format(
+                n=MIN_PASSWORD_LEN
+            ),
+        )
+        return None
+    pw2 = input_dialog(
+        stdscr,
+        title,
+        TRANSLATE("Retype password for {u}:").format(u=username),
+        secret=True,
+    )
+    if pw2 is None:
+        return None
+    if pw1 != pw2:
+        message_dialog(stdscr, TRANSLATE("Error"), TRANSLATE("Passwords do not match."))
+        return None
+    return pw1
+
+
 def select_dialog(
-    stdscr,
-    title: str,
-    options: list[str],
-    selected: int = 0,
-    y: int | None = None,
-    x: int | None = None,
+    stdscr, title: str, options: list[str], selected: int = 0
 ) -> int | None:
     """
     Scrollable list selection dialog.
     Returns the chosen index or None if cancelled.
-
-    If both y and x are provided the window is placed at that position
-    (left-aligned in the right pane) instead of being centred on screen.
     """
     if not options:
         return None
@@ -338,19 +347,10 @@ def select_dialog(
 
     saved = _save_screen(stdscr)
 
-    if y is not None and x is not None:
-        width = min(max(max_opt_w + 4, len(title) + 4, 30), sw - x - 2)
-        visible_rows = min(len(options), sh - y - 4)
-        height = visible_rows + 4
-        # Clamp so window stays on screen
-        y = max(0, min(y, sh - height))
-        x = max(0, min(x, sw - width))
-        win = curses.newwin(height, width, y, x)
-    else:
-        width = min(max(max_opt_w + 4, len(title) + 4, 30), sw - 4)
-        visible_rows = min(len(options), sh - 6)
-        height = visible_rows + 4
-        win = _center_win(stdscr, height, width)
+    width = min(max(max_opt_w + 4, len(title) + 4, 30), sw - 4)
+    visible_rows = min(len(options), sh - 6)
+    height = visible_rows + 4
+    win = _center_win(stdscr, height, width)
     _draw_box(win, title)
 
     hint = TRANSLATE("↑↓ Navigate  Enter Select  Esc Cancel")

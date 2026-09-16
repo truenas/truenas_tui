@@ -3,7 +3,6 @@ Fake session with hardcoded responses — no network connection required.
 Used by run_mock_tui.py so we can test TUI behaviour with pexpect.
 """
 
-from truenas_tui.api_methods import Method
 from truenas_tui.tui_preferences import TuiPreferences
 
 
@@ -117,8 +116,6 @@ class MockSession:
         self.config = MockConfig()
         self.me = _FAKE_ME
         self.system_info = _FAKE_SYSINFO
-        self.api_version = (25, 10, 0)
-        self.api_versions = [(25, 4, 0), (25, 4, 1), (25, 4, 2), (25, 10, 0)]
         self.tui_prefs = TuiPreferences()
 
     def connect(self):
@@ -150,41 +147,30 @@ class MockSession:
     def version(self):
         return self.system_info["version"]
 
-    def has_role(self, *roles):
-        return bool(self.roles & set(roles))
-
-    @property
-    def date_format(self) -> str:
-        return self.tui_prefs.date_format
-
-    @property
-    def time_format(self) -> str:
-        return self.tui_prefs.time_format
-
     def call(self, method, *args, **kwargs):
         dispatch = {
-            Method.AUTH_ME: lambda: _FAKE_ME,
-            Method.SYSTEM_INFO: lambda: _FAKE_SYSINFO,
-            Method.INTERFACE_QUERY: lambda: _FAKE_INTERFACES,
-            Method.INTERFACE_HAS_PENDING_CHANGES: lambda: False,
-            Method.INTERFACE_CHECKIN_WAITING: lambda: None,
-            Method.INTERFACE_COMMIT: lambda: None,
-            Method.INTERFACE_CHECKIN: lambda: None,
-            Method.INTERFACE_UPDATE: lambda: _FAKE_INTERFACES[0],
-            Method.NETWORK_CONFIGURATION_CONFIG: lambda: _FAKE_NETCFG,
-            Method.NETWORK_CONFIGURATION_UPDATE: lambda: _FAKE_NETCFG,
-            Method.STATICROUTE_QUERY: lambda: [],
-            Method.STATICROUTE_CREATE: lambda: {},
-            Method.STATICROUTE_UPDATE: lambda: {},
-            Method.STATICROUTE_DELETE: lambda: True,
-            Method.USER_HAS_LOCAL_ADMINISTRATOR_SET_UP: lambda: True,
-            Method.PRIVILEGE_LOCAL_ADMINISTRATORS: lambda: _FAKE_ADMINS,
-            Method.USER_UPDATE: lambda: {},
-            Method.AUTH_TWOFACTOR_UPDATE: lambda: {},
-            Method.USER_SETUP_LOCAL_ADMINISTRATOR: lambda: {},
-            Method.AUTH_GENERATE_ONETIME_PASSWORD: lambda: "mock-otp-abc123",
-            Method.USER_SET_PASSWORD: lambda: None,
-            Method.USER_RENEW_2FA_SECRET: lambda: {
+            "auth.me": lambda: _FAKE_ME,
+            "system.info": lambda: _FAKE_SYSINFO,
+            "interface.query": lambda: _FAKE_INTERFACES,
+            "interface.has_pending_changes": lambda: False,
+            "interface.checkin_waiting": lambda: None,
+            "interface.commit": lambda: None,
+            "interface.checkin": lambda: None,
+            "interface.update": lambda: _FAKE_INTERFACES[0],
+            "network.configuration.config": lambda: _FAKE_NETCFG,
+            "network.configuration.update": lambda: _FAKE_NETCFG,
+            "staticroute.query": lambda: [],
+            "staticroute.create": lambda: {},
+            "staticroute.update": lambda: {},
+            "staticroute.delete": lambda: True,
+            "user.has_local_administrator_set_up": lambda: True,
+            "privilege.local_administrators": lambda: _FAKE_ADMINS,
+            "user.update": lambda: {},
+            "auth.twofactor.update": lambda: {},
+            "user.setup_local_administrator": lambda: {},
+            "auth.generate_onetime_password": lambda: "mock-otp-abc123",
+            "user.set_password": lambda: None,
+            "user.renew_2fa_secret": lambda: {
                 **_FAKE_ME,
                 "two_factor_config": {
                     "secret_configured": True,
@@ -197,13 +183,13 @@ class MockSession:
                     "otp_digits": 6,
                 },
             },
-            Method.USER_UNSET_2FA_SECRET: lambda: None,
-            Method.CORE_PING: lambda: "pong",
-            Method.SYSTEM_GENERAL_GET_UI_URLS: lambda: ["https://192.168.1.108"],
-            Method.AUTH_SET_ATTRIBUTE: lambda: None,
-            Method.SYSTEM_CONFIG_RESET: lambda: None,
-            Method.SYSTEM_REBOOT: lambda: None,
-            Method.SYSTEM_SHUTDOWN: lambda: None,
+            "user.unset_2fa_secret": lambda: None,
+            "core.ping": lambda: "pong",
+            "system.general.get_ui_urls": lambda: ["https://192.168.1.108"],
+            "auth.set_attribute": lambda: None,
+            "system.config.reset": lambda: None,
+            "system.reboot": lambda: None,
+            "system.shutdown": lambda: None,
         }
         handler = dispatch.get(method)
         if handler:
@@ -219,10 +205,10 @@ class RecordingMockSession(MockSession):
 
         session = RecordingMockSession()
         # Override specific method responses as needed:
-        session.override(Method.STATICROUTE_QUERY, [my_route])
+        session.override("staticroute.query", [my_route])
         plugin.run(stdscr, session)
-        assert session.was_called(Method.SYSTEM_REBOOT)
-        (args, kwargs) = session.called_with(Method.SYSTEM_REBOOT)[0]
+        assert session.was_called("system.reboot")
+        (args, kwargs) = session.called_with("system.reboot")[0]
     """
 
     def __init__(self):

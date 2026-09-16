@@ -6,7 +6,7 @@ with the TUI using pexpect patterns.  Does not test any plugin internals —
 only the main view shell behaviour.
 
 Legacy mode (--menu):
-  Remote: 8 plugins (indices 1-10, gaps at 7-8), footer "1-10:"
+  Remote: 8 plugins numbered 1-8, footer "1-8:"
   Local:  10 plugins (indices 1-10), footer "1-10:"
 
 Default mode (no --menu):
@@ -89,11 +89,11 @@ class TestHeader:
 
 
 class TestFooterOptionCount:
-    def test_legacy_remote_shows_1_to_10(self):
-        """Legacy remote: max LEGACY_INDEX is 10 (Shutdown), footer shows 1-10."""
+    def test_legacy_remote_shows_1_to_8(self):
+        """Legacy remote: the two shell items are hidden, footer shows 1-8."""
         child = _spawn(menu=True)
         try:
-            child.expect(r"Enter an option from 1-10:", timeout=TIMEOUT)
+            child.expect(r"Enter an option from 1-8:", timeout=TIMEOUT)
         finally:
             child.close(force=True)
 
@@ -171,7 +171,7 @@ class TestExitPaths:
 
 class TestNumberKeyNavigation:
     def test_key_1_activates_first_plugin(self):
-        """Pressing '1' opens plugin with LEGACY_INDEX=1 (network interfaces)."""
+        """Pressing '1' opens the first legacy item (network interfaces)."""
         child = _spawn(menu=True)
         try:
             _boot_legacy(child)
@@ -181,7 +181,7 @@ class TestNumberKeyNavigation:
             child.close(force=True)
 
     def test_key_5_activates_otp_plugin(self):
-        """Pressing '5' opens plugin with LEGACY_INDEX=5 (OTP)."""
+        """Pressing '5' opens the fifth legacy item (OTP)."""
         child = _spawn(menu=True)
         try:
             _boot_legacy(child)
@@ -193,7 +193,7 @@ class TestNumberKeyNavigation:
 
 class TestRefreshKey:
     def test_r_key_does_not_crash(self):
-        """'r' triggers a label+sysinfo refresh; TUI must stay alive afterwards."""
+        """'r' triggers a sysinfo refresh; TUI must stay alive afterwards."""
         child = _spawn(menu=True)
         try:
             _boot_legacy(child)

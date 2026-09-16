@@ -5,8 +5,6 @@ Tests the Config class in truenas_tui.config without network or curses.
 All tests use tmp_path (pytest built-in) to create real temp config files.
 """
 
-import pytest
-
 from truenas_tui.config import Config
 
 
@@ -77,18 +75,6 @@ def test_server_ipv6_bracketed_with_port(tmp_path):
     assert Config(p).server == "[::1]:8443"
 
 
-def test_server_with_spaces_raises(tmp_path):
-    p = _conf(tmp_path, "[truenas]\nserver = not a server\n")
-    with pytest.raises(ValueError):
-        Config(p).server
-
-
-def test_server_with_special_chars_raises(tmp_path):
-    p = _conf(tmp_path, "[truenas]\nserver = 192.168.1.1!\n")
-    with pytest.raises(ValueError):
-        Config(p).server
-
-
 def test_verify_ssl_default_true(tmp_path):
     p = _conf(tmp_path, "[truenas]\nserver = 1.2.3.4\n")
     assert Config(p).verify_ssl is True
@@ -153,18 +139,3 @@ def test_get_api_key_strips_surrounding_whitespace(tmp_path):
     key_file.chmod(0o600)
     p = _conf(tmp_path, f"[truenas]\napi_key_path = {key_file}\n")
     assert Config(p).get_api_key() == "secret-key"
-
-
-def test_ca_cert_none_by_default(tmp_path):
-    p = _conf(tmp_path, "[truenas]\n")
-    assert Config(p).ca_cert is None
-
-
-def test_ca_cert_empty_value_is_none(tmp_path):
-    p = _conf(tmp_path, "[truenas]\nca_cert = \n")
-    assert Config(p).ca_cert is None
-
-
-def test_ca_cert_returns_path(tmp_path):
-    p = _conf(tmp_path, "[truenas]\nca_cert = /etc/ssl/ca.pem\n")
-    assert Config(p).ca_cert == "/etc/ssl/ca.pem"

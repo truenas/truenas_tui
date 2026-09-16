@@ -11,7 +11,6 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
-from truenas_tui.api_methods import Method
 from truenas_tui.tui import HardExit
 from truenas_tui.tui.main_view import MainView, _fmt_bytes, _fmt_load
 
@@ -95,7 +94,6 @@ def _make_plugin(label="Test Plugin", description="A test plugin", can_write=Tru
     plugin.get_label.return_value = label
     plugin.get_description.return_value = description
     plugin.can_write.return_value = can_write
-    plugin.needs_refresh.return_value = False
     return plugin
 
 
@@ -180,8 +178,6 @@ def test_draw_header_root_warning(stdscr):
 def test_draw_footer_shows_plugin_count(stdscr):
     session = _make_session()
     plugins = [_make_plugin(f"Plugin {i}") for i in range(8)]
-    for i, p in enumerate(plugins):
-        p.LEGACY_INDEX = i + 1
     view = _make_view(stdscr, session, plugins, menu_mode=True)
     with patch("truenas_tui.tui.main_view.pair", return_value=0):
         view._draw_footer(24, 80)
@@ -256,9 +252,8 @@ def test_ctrl_d_raises_hard_exit(stdscr):
 def test_number_key_activates_plugin(stdscr):
     session = _make_session()
     plugin = _make_plugin()
-    plugin.LEGACY_INDEX = 1
     view = _make_view(stdscr, session, [plugin], menu_mode=True)
-    # '1' activates plugin with LEGACY_INDEX=1, then 'q' quits
+    # '1' activates the first plugin, then 'q' quits
     stdscr.getch.side_effect = [ord("1"), ord("q")]
 
     with (
@@ -346,10 +341,11 @@ def test_esc_switches_to_info_mode(stdscr):
     assert view._info_mode is True
 
 
-def test_r_key_refreshes_plugins(stdscr):
+def test_r_key_refreshes_system_info(stdscr):
     session = _make_session()
-    plugin = _make_plugin()
-    view = _make_view(stdscr, session, [plugin])
+    view = _make_view(stdscr, session, [_make_plugin()])
+    view._info_mode = False
+    view._info_next_refresh = float("inf")
 
     stdscr.getch.side_effect = [ord("r"), ord("q")]
 
@@ -361,7 +357,7 @@ def test_r_key_refreshes_plugins(stdscr):
     ):
         view.run()
 
-    plugin.refresh.assert_called_once_with(session)
+    session.call.assert_called_with("system.info")
 
 
 def test_enter_activates_selected(stdscr):
@@ -390,13 +386,12 @@ def test_plugin_run_exception_shows_dialog(stdscr):
 
     stdscr.getch.side_effect = [ord("\n"), ord("q")]
 
-    # message_dialog is imported inline inside _activate_selected, so patch at source
     with (
         patch("curses.curs_set"),
         patch("curses.color_pair", return_value=0),
         patch("curses.doupdate"),
         patch("truenas_tui.tui.main_view.pair", return_value=0),
-        patch("truenas_tui.tui.dialogs.message_dialog") as mock_msg,
+        patch("truenas_tui.tui.main_view.message_dialog") as mock_msg,
     ):
         view.run()
 
@@ -421,29 +416,7 @@ def test_timeout_tick_triggers_info_refresh(stdscr):
     ):
         view.run()
 
-    session.call.assert_called_with(Method.SYSTEM_INFO)
-
-
-def test_timeout_tick_plugin_refresh(stdscr):
-    """On a -1 tick in desc mode, needs_refresh() is checked."""
-    session = _make_session()
-    plugin = _make_plugin()
-    plugin.needs_refresh.return_value = True
-    view = _make_view(stdscr, session, [plugin])
-    view._info_mode = False
-    view._info_next_refresh = float("inf")  # prevent info refresh
-
-    stdscr.getch.side_effect = [-1, ord("q")]
-
-    with (
-        patch("curses.curs_set"),
-        patch("curses.color_pair", return_value=0),
-        patch("curses.doupdate"),
-        patch("truenas_tui.tui.main_view.pair", return_value=0),
-    ):
-        view.run()
-
-    plugin.refresh.assert_called_with(session)
+    session.call.assert_called_with("system.info")
 
 
 def test_handle_resize_sets_pending(stdscr):

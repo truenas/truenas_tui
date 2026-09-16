@@ -33,11 +33,13 @@ Right-pane modes:
 
 Keyboard shortcuts:
   Legacy mode only:
-    1–9/0   – directly jump to and activate the plugin with that LEGACY_INDEX
+    1–9     – activate the menu item with that number
+  Default mode only:
+    s       – open the TUI settings form
   Both modes:
     ↑ / ↓   – move selection
     Enter   – activate selected item
-    r       – refresh plugin labels and system info
+    r       – refresh system info
     Esc     – return to system info view
     Ctrl+D / q – quit
 """
@@ -46,11 +48,12 @@ import curses
 import signal
 import time
 
-from truenas_tui.api_methods import Method
 from truenas_tui.localization import TRANSLATE
+from truenas_tui.plugins.tui_settings.view import TuiSettingsPlugin
 
 from . import HardExit, colors, format_error
 from .colors import pair
+from .dialogs import message_dialog
 
 _INFO_REFRESH_SECS = 10
 _MENU_MIN = 24
@@ -96,17 +99,7 @@ class MainView:
                     except curses.error:
                         pass
                 if self._info_mode and time.monotonic() >= self._info_next_refresh:
-                    try:
-                        self.session.system_info = self.session.call(Method.SYSTEM_INFO)
-                    except Exception:
-                        pass
-                    self._info_next_refresh = time.monotonic() + _INFO_REFRESH_SECS
-                if not self._info_mode and self.plugins:
-                    plugin = self.plugins[self.selected]
-                    if plugin.needs_refresh():
-                        plugin.refresh(self.session)
-                continue
-
+                    self._refresh_info()
             elif key == 4:  # Ctrl+D – hard exit
                 raise HardExit()
             elif key in (ord("q"), ord("Q")):  # quit
@@ -122,36 +115,35 @@ class MainView:
                 self.selected = min(len(self.plugins) - 1, self.selected + 1)
             elif key in (ord("\n"), ord("\r"), curses.KEY_ENTER):
                 self._info_mode = False
-                self._activate_selected()
+                if self.plugins:
+                    self._run_plugin(self.plugins[self.selected])
             elif key in (ord("r"), ord("R")):
-                for plugin in self.plugins:
-                    plugin.refresh(self.session)
-                try:
-                    self.session.system_info = self.session.call(Method.SYSTEM_INFO)
-                except Exception:
-                    pass
-                self._info_next_refresh = time.monotonic() + _INFO_REFRESH_SECS
-            elif ord("1") <= key <= ord("9") and self._menu_mode:
-                pressed = key - ord("0")  # '7' → 7
-                for i, plugin in enumerate(self.plugins):
-                    if plugin.LEGACY_INDEX == pressed:
-                        self._info_mode = False
-                        self.selected = i
-                        self._activate_selected()
-                        break
+                self._refresh_info()
+            elif self._menu_mode and ord("1") <= key <= ord("9"):
+                idx = key - ord("1")
+                if idx < len(self.plugins):
+                    self._info_mode = False
+                    self.selected = idx
+                    self._run_plugin(self.plugins[idx])
             elif key in (ord("s"), ord("S")) and not self._menu_mode:
-                from truenas_tui.plugins.tui_settings.view import TuiSettingsPlugin
+                self._run_plugin(TuiSettingsPlugin())
 
-                curses.curs_set(1)
-                try:
-                    TuiSettingsPlugin().run(self.stdscr, self.session)
-                except Exception as e:
-                    from .dialogs import message_dialog
+    def _refresh_info(self) -> None:
+        try:
+            self.session.system_info = self.session.call("system.info")
+        except Exception:
+            pass
+        self._info_next_refresh = time.monotonic() + _INFO_REFRESH_SECS
 
-                    message_dialog(self.stdscr, "Error", format_error(e))
-                finally:
-                    curses.curs_set(0)
-                    self.stdscr.clear()
+    def _run_plugin(self, plugin) -> None:
+        curses.curs_set(1)
+        try:
+            plugin.run(self.stdscr, self.session)
+        except Exception as e:
+            message_dialog(self.stdscr, "Error", format_error(e))
+        finally:
+            curses.curs_set(0)
+            self.stdscr.clear()
 
     def _draw(self) -> None:
         try:
@@ -194,6 +186,13 @@ class MainView:
             except curses.error:
                 pass
 
+    def _divider_x(self, sw: int) -> int:
+        max_label = max(
+            (5 + len(p.get_label(self.session)) for p in self.plugins),
+            default=_MENU_MIN,
+        )
+        return min(max(max_label + 1, _MENU_MIN), int(sw * _MENU_MAX_FRAC))
+
     def _draw_panes(self, sh: int, sw: int) -> None:
         header_rows = 2 if self.session.username == "root" else 1
         footer_rows = 1
@@ -203,12 +202,7 @@ class MainView:
         if pane_bottom <= pane_top:
             return
 
-        max_label = max(
-            (5 + len(p.get_label(self.session)) for p in self.plugins),
-            default=_MENU_MIN,
-        )
-        divider_x = min(max(max_label + 1, _MENU_MIN), int(sw * _MENU_MAX_FRAC))
-
+        divider_x = self._divider_x(sw)
         for row in range(pane_top, pane_bottom + 1):
             try:
                 self.stdscr.addch(row, divider_x, curses.ACS_VLINE, pair(colors.BORDER))
@@ -231,10 +225,7 @@ class MainView:
                 continue
 
             label = plugin.get_label(self.session)
-            if self._menu_mode and plugin.LEGACY_INDEX is not None:
-                prefix = f" {plugin.LEGACY_INDEX:>2}. "
-            else:
-                prefix = "     "
+            prefix = f" {i + 1:>2}. " if self._menu_mode else "     "
             line = (prefix + label)[: width - 1].ljust(width - 1)
 
             attr = (
@@ -360,11 +351,7 @@ class MainView:
 
     def _draw_footer(self, sh: int, sw: int) -> None:
         if self._menu_mode:
-            max_idx = max(
-                (p.LEGACY_INDEX for p in self.plugins if p.LEGACY_INDEX is not None),
-                default=0,
-            )
-            prompt = f" Enter an option from 1-{max_idx}: "
+            prompt = f" Enter an option from 1-{len(self.plugins)}: "
             if self._info_mode:
                 keys = "↑↓/Enter Navigate/Select   r Refresh   ^D/q Quit"
             else:
@@ -384,38 +371,6 @@ class MainView:
             self.stdscr.addstr(sh - 1, 0, footer[:sw], pair(colors.HEADER))
         except curses.error:
             pass
-
-    def _activate_selected(self) -> None:
-        if not self.plugins:
-            return
-        plugin = self.plugins[self.selected]
-
-        # Compute right-pane anchor for positioned dialogs
-        sh, sw = self.stdscr.getmaxyx()
-        header_rows = 2 if self.session.username == "root" else 1
-        max_label = max(
-            (5 + len(p.get_label(self.session)) for p in self.plugins),
-            default=_MENU_MIN,
-        )
-        divider_x = min(max(max_label + 1, _MENU_MIN), int(sw * _MENU_MAX_FRAC))
-        self.session._tui_dialog_x = divider_x + 2
-        self.session._tui_pane_top = header_rows
-
-        curses.curs_set(1)
-        try:
-            plugin.run(self.stdscr, self.session)
-        except Exception as e:
-            from .dialogs import message_dialog
-
-            message_dialog(self.stdscr, "Error", format_error(e))
-        finally:
-            curses.curs_set(0)
-            self.stdscr.clear()
-            for attr in ("_tui_dialog_x", "_tui_pane_top"):
-                try:
-                    delattr(self.session, attr)
-                except AttributeError:
-                    pass
 
     def _handle_resize(self, signum, frame) -> None:
         self._resize_pending = True

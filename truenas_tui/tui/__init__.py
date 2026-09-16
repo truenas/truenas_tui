@@ -13,16 +13,10 @@ def format_error(exc: Exception) -> str:
     """
     Return a user-facing error string from an exception.
 
-    Takes only the first non-empty line of the exception message so that
-    multi-line tracebacks or internal stack details are not exposed through
-    dialog boxes.  Hard-capped at 200 characters to prevent dialog overflow.
+    Uses only the first non-empty line of the message so tracebacks and
+    internal detail do not reach dialog boxes, capped at 200 characters.
     """
-    msg = str(exc)
-    for line in msg.splitlines():
-        line = line.strip()
-        if line:
-            msg = line
-            break
+    msg = next((line.strip() for line in str(exc).splitlines() if line.strip()), "")
     if len(msg) > 200:
         msg = msg[:197] + "..."
     return msg or type(exc).__name__

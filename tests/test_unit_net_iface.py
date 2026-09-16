@@ -2,7 +2,6 @@
 
 from unittest.mock import MagicMock, patch
 
-from truenas_tui.api_methods import Method
 from truenas_tui.plugins.network_interface.view import (
     NetworkInterfacePlugin,
     _alias_str,
@@ -233,7 +232,7 @@ def _make_basic_result(**overrides):
 
 def test_collect_basic_fields():
     result = _make_basic_result(description="My Interface")
-    payload = _collect_payload(result, {"type": "PHYSICAL"}, False, False)
+    payload = _collect_payload(result, {"type": "PHYSICAL"}, False)
     assert isinstance(payload, dict)
     assert payload["description"] == "My Interface"
     assert payload["ipv4_dhcp"] is False
@@ -243,26 +242,26 @@ def test_collect_basic_fields():
 
 def test_collect_mtu_zero():
     result = _make_basic_result(mtu=0)
-    payload = _collect_payload(result, {"type": "PHYSICAL"}, False, False)
+    payload = _collect_payload(result, {"type": "PHYSICAL"}, False)
     assert payload["mtu"] is None  # 0 → None (use system default)
 
 
 def test_collect_mtu_nonzero():
     result = _make_basic_result(mtu=9000)
-    payload = _collect_payload(result, {"type": "PHYSICAL"}, False, False)
+    payload = _collect_payload(result, {"type": "PHYSICAL"}, False)
     assert payload["mtu"] == 9000
 
 
 def test_collect_dhcp_mode():
     result = _make_basic_result(ipv4_dhcp=True, ipv6_auto=True)
-    payload = _collect_payload(result, {"type": "PHYSICAL"}, False, False)
+    payload = _collect_payload(result, {"type": "PHYSICAL"}, False)
     assert payload["ipv4_dhcp"] is True
     assert payload["ipv6_auto"] is True
 
 
 def test_collect_alias_parse_error():
     result = _make_basic_result(_aliases=["bad-no-slash"])
-    payload = _collect_payload(result, {"type": "PHYSICAL"}, False, False)
+    payload = _collect_payload(result, {"type": "PHYSICAL"}, False)
     assert isinstance(payload, str)  # error string returned
 
 
@@ -275,7 +274,7 @@ def test_collect_vlan():
         "vlan_pcp": 2,
         "mtu": 1500,
     }
-    payload = _collect_payload(result, {"type": "VLAN"}, False, False)
+    payload = _collect_payload(result, {"type": "VLAN"}, False)
     assert isinstance(payload, dict)
     assert payload["vlan_parent_interface"] == "eno1"
     assert payload["vlan_tag"] == 100
@@ -290,7 +289,7 @@ def test_collect_bridge():
         "bridge_members": ["eno1", "eno2"],
         "mtu": 0,
     }
-    payload = _collect_payload(result, {"type": "BRIDGE"}, False, False)
+    payload = _collect_payload(result, {"type": "BRIDGE"}, False)
     assert isinstance(payload, dict)
     assert payload["bridge_members"] == ["eno1", "eno2"]
 
@@ -305,7 +304,7 @@ def test_collect_lag():
         "lacpdu_rate": "SLOW",
         "mtu": 0,
     }
-    payload = _collect_payload(result, {"type": "LINK_AGGREGATION"}, False, False)
+    payload = _collect_payload(result, {"type": "LINK_AGGREGATION"}, False)
     assert isinstance(payload, dict)
     assert payload["lag_protocol"] == "LACP"
     assert payload["lag_ports"] == ["eno1", "eno2"]
@@ -323,9 +322,7 @@ def test_collect_failover_licensed():
         "_failover_virtual_aliases": ["10.0.0.254"],
         "mtu": 0,
     }
-    payload = _collect_payload(
-        result, {"type": "PHYSICAL"}, failover_licensed=True, is_create=False
-    )
+    payload = _collect_payload(result, {"type": "PHYSICAL"}, failover_licensed=True)
     assert isinstance(payload, dict)
     # DHCP must be False when HA licensed
     assert payload["ipv4_dhcp"] is False
@@ -348,9 +345,7 @@ def test_collect_failover_invalid_ip():
         "_failover_virtual_aliases": [],
         "mtu": 0,
     }
-    payload = _collect_payload(
-        result, {"type": "PHYSICAL"}, failover_licensed=True, is_create=False
-    )
+    payload = _collect_payload(result, {"type": "PHYSICAL"}, failover_licensed=True)
     assert isinstance(payload, str)  # error string
 
 
@@ -408,7 +403,7 @@ def test_apply_changes_success():
     with patch("truenas_tui.plugins.network_interface.view.message_dialog") as mock_msg:
         plugin._apply_changes(stdscr, session)
 
-    session.call.assert_called_once_with(Method.INTERFACE_COMMIT)
+    session.call.assert_called_once_with("interface.commit")
     mock_msg.assert_called_once()
     # Should show a success dialog (not 'Error')
     call_args = mock_msg.call_args[0]
@@ -434,7 +429,7 @@ def test_persist_changes_success():
     with patch("truenas_tui.plugins.network_interface.view.message_dialog") as mock_msg:
         plugin._persist_changes(stdscr, session)
 
-    session.call.assert_called_once_with(Method.INTERFACE_CHECKIN)
+    session.call.assert_called_once_with("interface.checkin")
     mock_msg.assert_called_once()
 
 
@@ -463,7 +458,7 @@ def test_delete_confirmed():
     ):
         plugin._delete_interface(stdscr, session, iface)
 
-    session.call.assert_called_once_with(Method.INTERFACE_DELETE, "vlan0")
+    session.call.assert_called_once_with("interface.delete", "vlan0")
 
 
 def test_delete_cancelled():

@@ -102,7 +102,7 @@ def test_collect_int_field_invalid_string():
     fields = [IntField(key="mtu", label="MTU", value=0)]
     form = Form(stdscr, "Test", fields)
     # Manually corrupt the buffer to an invalid value
-    form._field_bufs[0] = list("abc")
+    form._state[0] = list("abc")
     result = form._collect()
     assert result["mtu"] == "abc"  # invalid; _validate will catch it
 
@@ -111,7 +111,7 @@ def test_collect_int_field_empty_buffer():
     stdscr = _make_stdscr()
     fields = [IntField(key="mtu", label="MTU", value=0)]
     form = Form(stdscr, "Test", fields)
-    form._field_bufs[0] = []  # cleared
+    form._state[0] = []  # cleared
     result = form._collect()
     assert result["mtu"] == 0  # empty str → 0
 
@@ -289,44 +289,6 @@ def test_advance_wraps_around():
     # n_items = 3 (1 field + Save + Cancel)
     # From Cancel (2), +1 → 0 (FormField, not Section) → returns 0
     assert form._advance(2, +1) == 0
-
-
-def test_field_y_offsets_plain_fields():
-    stdscr = _make_stdscr()
-    fields = [
-        FormField(key="a", label="A", value=""),
-        FormField(key="b", label="B", value=""),
-        FormField(key="c", label="C", value=""),
-    ]
-    form = Form(stdscr, "Test", fields)
-    offsets = form._compute_field_y_offsets()
-    assert offsets == [0, 1, 2]
-
-
-def test_section_fields_take_two_rows():
-    stdscr = _make_stdscr()
-    fields = [
-        SectionField(key="", label="Section"),
-        FormField(key="name", label="Name", value=""),
-    ]
-    form = Form(stdscr, "Test", fields)
-    offsets = form._compute_field_y_offsets()
-    assert offsets[0] == 0  # SectionField starts at 0
-    assert offsets[1] == 2  # FormField starts at 2 (Section takes 2 rows)
-
-
-def test_mixed_field_y_offsets():
-    stdscr = _make_stdscr()
-    fields = [
-        FormField(key="a", label="A", value=""),
-        SectionField(key="", label="S"),
-        FormField(key="b", label="B", value=""),
-    ]
-    form = Form(stdscr, "Test", fields)
-    offsets = form._compute_field_y_offsets()
-    assert offsets[0] == 0  # FormField a
-    assert offsets[1] == 1  # SectionField
-    assert offsets[2] == 3  # FormField b (after SectionField which takes 2 rows)
 
 
 def test_form_esc_returns_none():

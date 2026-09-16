@@ -22,26 +22,25 @@ API:
 import curses
 import shutil
 import subprocess
+import textwrap
 from urllib.parse import parse_qs, urlparse
 
-from truenas_tui.api_methods import Method
+from truenas_tui.localization import TRANSLATE
 from truenas_tui.plugins.base import BasePlugin
+from truenas_tui.plugins.onetime_password.view import show_onetime_password
 from truenas_tui.tui import HardExit, colors, format_error
 from truenas_tui.tui.colors import pair
-from truenas_tui.tui.dialogs import confirm_dialog, input_dialog, message_dialog
-
-from .localization import TRANSLATE
-
-_MIN_PASSWORD_LEN = 8
-_OTP_DISPLAY_TIMEOUT = 30
+from truenas_tui.tui.dialogs import (
+    confirm_dialog,
+    input_dialog,
+    message_dialog,
+    new_password_dialog,
+)
 
 
 def _find_qr_tool() -> str | None:
     """Return path to a terminal QR code tool, or None if unavailable."""
-    for cmd in ("qr", "qrcode-terminal"):
-        if path := shutil.which(cmd):
-            return path
-    return None
+    return next(filter(None, map(shutil.which, ("qr", "qrcode-terminal"))), None)
 
 
 def _render_qr(uri: str, tool_path: str) -> str | None:
@@ -74,46 +73,21 @@ def _extract_secret(uri: str) -> str:
         return ""
 
 
-def _wrap_csv(text: str, width: int) -> list[str]:
-    """Wrap a comma-separated string to fit within *width* columns.
-
-    Breaks only at ', ' boundaries so individual tokens are never split.
-    Returns at least one element.
-    """
-    if not text or len(text) <= width:
-        return [text]
-    parts = [p.strip() for p in text.split(",")]
-    lines: list[str] = []
-    current = ""
-    for part in parts:
-        candidate = f"{current}, {part}" if current else part
-        if len(candidate) <= width:
-            current = candidate
-        else:
-            if current:
-                lines.append(current)
-            current = part
-    if current:
-        lines.append(current)
-    return lines or [text]
-
-
 class MyAccountPlugin(BasePlugin):
-    _TRANSLATE = staticmethod(TRANSLATE)
     LABEL = "My account"
     DESCRIPTION = (
         "View your account information and manage credentials.\n\n"
-        "  \u2022 View username, UID, roles, and 2FA status\n"
-        "  \u2022 Change your password\n"
-        "  \u2022 Generate a one-time password for single-use login\n"
-        "  \u2022 Set up or renew two-factor authentication\n\n"
+        "  • View username, UID, roles, and 2FA status\n"
+        "  • Change your password\n"
+        "  • Generate a one-time password for single-use login\n"
+        "  • Set up or renew two-factor authentication\n\n"
         "Password changes take effect immediately.\n"
         "One-time passwords expire after a single login."
     )
 
     def run(self, stdscr, session) -> None:
         try:
-            me = session.call(Method.AUTH_ME)
+            me = session.call("auth.me")
         except Exception as e:
             message_dialog(stdscr, TRANSLATE("Error"), format_error(e))
             return
@@ -191,7 +165,7 @@ class MyAccountPlugin(BasePlugin):
                 elif selected == 0:
                     self._change_password(stdscr, session, username, is_local)
                 elif selected == 1:
-                    self._generate_otp(stdscr, session, username)
+                    show_onetime_password(stdscr, session, username)
                 elif selected == 2:
                     self._setup_2fa(
                         stdscr, session, username, two_fa_configured, qr_tool
@@ -224,14 +198,13 @@ class MyAccountPlugin(BasePlugin):
             for key, val in info_rows:
                 if row >= sh - 5:
                     break
-                for i, line in enumerate(_wrap_csv(val, val_w)):
+                lines = textwrap.wrap(val, val_w, break_long_words=False) or [""]
+                for i, line in enumerate(lines):
                     if row >= sh - 5:
                         break
                     try:
                         if i == 0:
                             stdscr.addstr(row, 2, f"{key:<{label_w}}", curses.A_BOLD)
-                        else:
-                            stdscr.addstr(row, 2, " " * label_w)
                         stdscr.addstr(row, val_x, line)
                     except curses.error:
                         pass
@@ -275,7 +248,7 @@ class MyAccountPlugin(BasePlugin):
                 row += 1
 
             # Footer
-            footer = " \u2191\u2193 Navigate   Enter Select   Esc/q Back   ^D Quit"
+            footer = " ↑↓ Navigate   Enter Select   Esc/q Back   ^D Quit"
             try:
                 stdscr.addstr(sh - 1, 0, footer[:sw].ljust(sw), pair(colors.HEADER))
             except curses.error:
@@ -298,9 +271,8 @@ class MyAccountPlugin(BasePlugin):
             )
             return
 
-        is_admin = "FULL_ADMIN" in session.roles
-
-        if not is_admin:
+        old_pw = None
+        if "FULL_ADMIN" not in session.roles:
             old_pw = input_dialog(
                 stdscr,
                 TRANSLATE("Change Password"),
@@ -309,49 +281,17 @@ class MyAccountPlugin(BasePlugin):
             )
             if old_pw is None:
                 return
-        else:
-            old_pw = None
 
-        new_pw1 = input_dialog(
-            stdscr,
-            TRANSLATE("Change Password"),
-            TRANSLATE("New password for {u}:").format(u=username),
-            secret=True,
-        )
-        if not new_pw1:
+        new_pw = new_password_dialog(stdscr, TRANSLATE("Change Password"), username)
+        if new_pw is None:
             return
 
-        if len(new_pw1) < _MIN_PASSWORD_LEN:
-            message_dialog(
-                stdscr,
-                TRANSLATE("Error"),
-                TRANSLATE("Password must be at least {n} characters.").format(
-                    n=_MIN_PASSWORD_LEN
-                ),
-            )
-            return
-
-        new_pw2 = input_dialog(
-            stdscr,
-            TRANSLATE("Change Password"),
-            TRANSLATE("Retype new password:"),
-            secret=True,
-        )
-        if new_pw2 is None:
-            return
-
-        if new_pw1 != new_pw2:
-            message_dialog(
-                stdscr, TRANSLATE("Error"), TRANSLATE("Passwords do not match.")
-            )
-            return
-
-        params = {"username": username, "new_password": new_pw1}
+        params = {"username": username, "new_password": new_pw}
         if old_pw is not None:
             params["old_password"] = old_pw
 
         try:
-            session.call(Method.USER_SET_PASSWORD, params)
+            session.call("user.set_password", params)
             message_dialog(
                 stdscr,
                 TRANSLATE("Success"),
@@ -359,27 +299,6 @@ class MyAccountPlugin(BasePlugin):
             )
         except Exception as e:
             message_dialog(stdscr, TRANSLATE("Error"), format_error(e))
-
-    def _generate_otp(self, stdscr, session, username) -> None:
-        try:
-            otp = session.call(
-                Method.AUTH_GENERATE_ONETIME_PASSWORD, {"username": username}
-            )
-        except Exception as e:
-            message_dialog(stdscr, TRANSLATE("Error"), format_error(e))
-            return
-
-        message_dialog(
-            stdscr,
-            TRANSLATE("One-Time Password"),
-            TRANSLATE(
-                'One-time password for "{u}":\n\n'
-                "  {otp}\n\n"
-                "This password can only be used once.\n"
-                "Dialog closes automatically after {t} seconds."
-            ).format(u=username, otp=otp, t=_OTP_DISPLAY_TIMEOUT),
-            timeout_secs=_OTP_DISPLAY_TIMEOUT,
-        )
 
     def _setup_2fa(
         self, stdscr, session, username: str, already_configured: bool, qr_tool: str
@@ -399,7 +318,7 @@ class MyAccountPlugin(BasePlugin):
 
         try:
             result = session.call(
-                Method.USER_RENEW_2FA_SECRET,
+                "user.renew_2fa_secret",
                 username,
                 {"otp_digits": 6, "interval": 30},
             )
@@ -432,7 +351,7 @@ class MyAccountPlugin(BasePlugin):
             return
 
         try:
-            session.call(Method.USER_UNSET_2FA_SECRET, username)
+            session.call("user.unset_2fa_secret", username)
             message_dialog(
                 stdscr,
                 TRANSLATE("Success"),

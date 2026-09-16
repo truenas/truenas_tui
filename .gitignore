@@ -6,7 +6,6 @@ __pycache__/
 dist/
 build/
 *.egg
-truenas_tui/locale/**/*.mo
 
 # Test/coverage artifacts
 .coverage
