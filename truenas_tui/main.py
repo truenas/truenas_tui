@@ -15,6 +15,7 @@ the client will attempt a local AF_UNIX connection to the middleware socket.
 number-key shortcuts, footer "Enter an option from 1-10:").  Without --menu
 the cleaner default mode is used (arrow keys + Enter, no number labels).
 """
+
 import argparse
 import curses
 import sys
@@ -44,20 +45,20 @@ from .plugins.legacy_reboot.view import RebootPlugin
 from .plugins.legacy_shutdown.view import ShutdownPlugin
 
 ALL_PLUGINS = [
-    NetworkPlugin,            # default only (sub-menu wrapping the 3 network plugins)
-    MyAccountPlugin,          # default only
-    PowerControlPlugin,       # default only
-    NetworkInterfacePlugin,   # LEGACY_INDEX=1, DEFAULT_HIDDEN=True
-    NetworkSettingsPlugin,    # LEGACY_INDEX=2, DEFAULT_HIDDEN=True
-    StaticRoutesPlugin,       # LEGACY_INDEX=3, DEFAULT_HIDDEN=True
-    TuiSettingsPlugin,        # DEFAULT_HIDDEN=True (hotkey 's' only)
-    OnetimePasswordPlugin,    # LEGACY_INDEX=5, LEGACY_ONLY=True
-    PasswordPlugin,           # LEGACY_INDEX=4, LEGACY_ONLY=True
-    ResetConfigPlugin,        # LEGACY_INDEX=6, LEGACY_ONLY=True
-    CliShellPlugin,           # LEGACY_INDEX=7, LEGACY_ONLY=True, LOCAL_ONLY=True
-    LinuxShellPlugin,         # LEGACY_INDEX=8, LEGACY_ONLY=True, LOCAL_ONLY=True
-    RebootPlugin,             # LEGACY_INDEX=9, LEGACY_ONLY=True
-    ShutdownPlugin,           # LEGACY_INDEX=10, LEGACY_ONLY=True
+    NetworkPlugin,  # default only (sub-menu wrapping the 3 network plugins)
+    MyAccountPlugin,  # default only
+    PowerControlPlugin,  # default only
+    NetworkInterfacePlugin,  # LEGACY_INDEX=1, DEFAULT_HIDDEN=True
+    NetworkSettingsPlugin,  # LEGACY_INDEX=2, DEFAULT_HIDDEN=True
+    StaticRoutesPlugin,  # LEGACY_INDEX=3, DEFAULT_HIDDEN=True
+    TuiSettingsPlugin,  # DEFAULT_HIDDEN=True (hotkey 's' only)
+    OnetimePasswordPlugin,  # LEGACY_INDEX=5, LEGACY_ONLY=True
+    PasswordPlugin,  # LEGACY_INDEX=4, LEGACY_ONLY=True
+    ResetConfigPlugin,  # LEGACY_INDEX=6, LEGACY_ONLY=True
+    CliShellPlugin,  # LEGACY_INDEX=7, LEGACY_ONLY=True, LOCAL_ONLY=True
+    LinuxShellPlugin,  # LEGACY_INDEX=8, LEGACY_ONLY=True, LOCAL_ONLY=True
+    RebootPlugin,  # LEGACY_INDEX=9, LEGACY_ONLY=True
+    ShutdownPlugin,  # LEGACY_INDEX=10, LEGACY_ONLY=True
 ]
 
 
@@ -78,7 +79,7 @@ def _print_ui_urls(session) -> None:
     if session.config.server:
         # Remote connection: system.general.get_ui_urls is a private method
         # unavailable on the public WebSocket API.  Construct from config.
-        urls = [f'https://{session.config.server}']
+        urls = [f"https://{session.config.server}"]
     else:
         # Local AF_UNIX: private API is allowed, try get_ui_urls first.
         try:
@@ -90,38 +91,39 @@ def _print_ui_urls(session) -> None:
             try:
                 ifaces = session.call(Method.INTERFACE_QUERY)
                 for iface in ifaces:
-                    for alias in (iface.get('state') or {}).get('aliases', []):
-                        if alias.get('type') == 'INET':
+                    for alias in (iface.get("state") or {}).get("aliases", []):
+                        if alias.get("type") == "INET":
                             urls.append(f"https://{alias['address']}")
             except Exception:
                 pass
 
     print()
     if urls:
-        print('The web user interface is at:')
+        print("The web user interface is at:")
         for url in urls:
             print(url)
     else:
-        print('The web interface could not be accessed.')
-        print('Please check network configuration.')
+        print("The web interface could not be accessed.")
+        print("Please check network configuration.")
     print()
     sys.stdout.flush()
 
 
 def _parse_args():
     parser = argparse.ArgumentParser(
-        description='TrueNAS Terminal User Interface',
+        description="TrueNAS Terminal User Interface",
     )
     parser.add_argument(
-        '--config', '-c',
-        metavar='FILE',
+        "--config",
+        "-c",
+        metavar="FILE",
         default=None,
-        help='Path to config file (default: ~/.config/truenas_tui.conf)',
+        help="Path to config file (default: ~/.config/truenas_tui.conf)",
     )
     parser.add_argument(
-        '--menu',
-        action='store_true',
-        help='Legacy midcli-compatible numbered menu mode',
+        "--menu",
+        action="store_true",
+        help="Legacy midcli-compatible numbered menu mode",
     )
     return parser.parse_args()
 
@@ -137,13 +139,16 @@ def _tui_main(stdscr, session: Session, menu_mode: bool = False) -> None:
             key=lambda cls: cls.LEGACY_INDEX,
         )
     else:
-        ordered = [cls for cls in ALL_PLUGINS if not cls.LEGACY_ONLY and not cls.DEFAULT_HIDDEN]
+        ordered = [
+            cls for cls in ALL_PLUGINS if not cls.LEGACY_ONLY and not cls.DEFAULT_HIDDEN
+        ]
 
-    plugins = [p for p in (cls() for cls in ordered)
-               if p.can_activate(user_roles, session)]
+    plugins = [
+        p for p in (cls() for cls in ordered) if p.can_activate(user_roles, session)
+    ]
 
     if not plugins:
-        stdscr.addstr(0, 0, 'No accessible menu items for your role.')
+        stdscr.addstr(0, 0, "No accessible menu items for your role.")
         stdscr.refresh()
         stdscr.getch()
         return
@@ -162,27 +167,30 @@ def main() -> None:
     except FileNotFoundError:
         if config.server is None:
             print(
-                'Error: cannot find the local TrueNAS middleware socket.\n'
-                '\n'
-                'If you are not running this on a TrueNAS system, supply a\n'
-                'config file with the remote server address:\n'
-                '\n'
-                '    truenas-tui --config /path/to/config.conf\n'
-                '\n'
-                'Config file format (~/.config/truenas_tui.conf):\n'
-                '\n'
-                '    [truenas]\n'
-                '    server       = 192.168.1.108\n'
-                '    username     = admin\n'
-                '    api_key_path = /path/to/api.key\n'
-                '    verify_ssl   = true\n',
+                "Error: cannot find the local TrueNAS middleware socket.\n"
+                "\n"
+                "If you are not running this on a TrueNAS system, supply a\n"
+                "config file with the remote server address:\n"
+                "\n"
+                "    truenas-tui --config /path/to/config.conf\n"
+                "\n"
+                "Config file format (~/.config/truenas_tui.conf):\n"
+                "\n"
+                "    [truenas]\n"
+                "    server       = 192.168.1.108\n"
+                "    username     = admin\n"
+                "    api_key_path = /path/to/api.key\n"
+                "    verify_ssl   = true\n",
                 file=sys.stderr,
             )
         else:
-            print(f'Failed to connect to {config.server}: connection refused.', file=sys.stderr)
+            print(
+                f"Failed to connect to {config.server}: connection refused.",
+                file=sys.stderr,
+            )
         sys.exit(1)
     except Exception as e:
-        print(f'Failed to connect to TrueNAS: {e}', file=sys.stderr)
+        print(f"Failed to connect to TrueNAS: {e}", file=sys.stderr)
         sys.exit(1)
 
     _print_ui_urls(session)
@@ -190,10 +198,10 @@ def main() -> None:
     try:
         curses.wrapper(_tui_main, session, args.menu)
     except HardExit:
-        pass   # Ctrl+D hard exit – clean termination
+        pass  # Ctrl+D hard exit – clean termination
     finally:
         session.close()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

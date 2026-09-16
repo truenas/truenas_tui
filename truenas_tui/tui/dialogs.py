@@ -4,16 +4,17 @@ Generic curses dialog helpers.
 All dialogs are modal overlays drawn in the centre of the screen.
 They save/restore the underlying screen content automatically.
 """
+
 import curses
 from . import colors, HardExit
 from truenas_tui.localization import TRANSLATE
 
 
-def _draw_box(win, title: str = '') -> None:
+def _draw_box(win, title: str = "") -> None:
     win.box()
     if title:
         h, w = win.getmaxyx()
-        label = f' {title} '
+        label = f" {title} "
         x = max(1, (w - len(label)) // 2)
         try:
             win.addstr(0, x, label, curses.color_pair(colors.TITLE) | curses.A_BOLD)
@@ -54,15 +55,18 @@ def _restore_screen(stdscr, saved) -> None:
     stdscr.refresh()
 
 
-def message_dialog(stdscr, title: str, message: str, ok_label: str = 'OK',
-                   timeout_secs: int = 0) -> None:
+def message_dialog(
+    stdscr, title: str, message: str, ok_label: str = "OK", timeout_secs: int = 0
+) -> None:
     """Show a message box.  Returns when the user presses Enter/Space/Esc/q.
 
     timeout_secs: if > 0 the dialog auto-dismisses after that many seconds.
     Used for sensitive output (e.g. one-time passwords) that should not linger.
     """
     lines = message.splitlines()
-    width = max(len(ok_label) + 6, max((len(l) for l in lines), default=0) + 4, len(title) + 4)
+    width = max(
+        len(ok_label) + 6, max((len(l) for l in lines), default=0) + 4, len(title) + 4
+    )
     width = min(width, stdscr.getmaxyx()[1] - 2)
     height = len(lines) + 5  # title border + lines + blank + button row + border
 
@@ -77,11 +81,15 @@ def message_dialog(stdscr, title: str, message: str, ok_label: str = 'OK',
         except curses.error:
             pass
 
-    btn_label = f'[ {TRANSLATE(ok_label)} ]'
+    btn_label = f"[ {TRANSLATE(ok_label)} ]"
     btn_x = max(1, (width - len(btn_label)) // 2)
     try:
-        win.addstr(height - 2, btn_x, btn_label,
-                   curses.color_pair(colors.MENU_SELECTED) | curses.A_BOLD)
+        win.addstr(
+            height - 2,
+            btn_x,
+            btn_label,
+            curses.color_pair(colors.MENU_SELECTED) | curses.A_BOLD,
+        )
     except curses.error:
         pass
 
@@ -89,24 +97,28 @@ def message_dialog(stdscr, title: str, message: str, ok_label: str = 'OK',
     curses.curs_set(0)
 
     if timeout_secs > 0:
-        win.timeout(1000)   # wake up every second to update countdown
+        win.timeout(1000)  # wake up every second to update countdown
         remaining = timeout_secs
         while remaining > 0:
-            countdown = f'[ {ok_label} ({remaining}s) ]'
+            countdown = f"[ {ok_label} ({remaining}s) ]"
             cx = max(1, (width - len(countdown)) // 2)
             try:
-                win.addstr(height - 2, 1, ' ' * (width - 2))
-                win.addstr(height - 2, cx, countdown,
-                           curses.color_pair(colors.MENU_SELECTED) | curses.A_BOLD)
+                win.addstr(height - 2, 1, " " * (width - 2))
+                win.addstr(
+                    height - 2,
+                    cx,
+                    countdown,
+                    curses.color_pair(colors.MENU_SELECTED) | curses.A_BOLD,
+                )
             except curses.error:
                 pass
             win.refresh()
             key = win.getch()
             if key == 4:
                 raise HardExit()
-            if key in (ord('\n'), ord('\r'), ord(' '), 27, ord('q'), ord('Q')):
+            if key in (ord("\n"), ord("\r"), ord(" "), 27, ord("q"), ord("Q")):
                 break
-            if key == -1:   # timeout tick
+            if key == -1:  # timeout tick
                 remaining -= 1
         win.timeout(-1)
     else:
@@ -114,7 +126,7 @@ def message_dialog(stdscr, title: str, message: str, ok_label: str = 'OK',
             key = win.getch()
             if key == 4:
                 raise HardExit()
-            if key in (ord('\n'), ord('\r'), ord(' '), 27, ord('q'), ord('Q')):
+            if key in (ord("\n"), ord("\r"), ord(" "), 27, ord("q"), ord("Q")):
                 break
 
     # Restore
@@ -122,18 +134,19 @@ def message_dialog(stdscr, title: str, message: str, ok_label: str = 'OK',
     curses.curs_set(1)
 
 
-def confirm_dialog(stdscr, title: str, message: str,
-                   yes_label: str = 'Yes', no_label: str = 'No') -> bool:
+def confirm_dialog(
+    stdscr, title: str, message: str, yes_label: str = "Yes", no_label: str = "No"
+) -> bool:
     """
     Show a Yes/No confirmation dialog.
     Returns True if user chose Yes, False otherwise.
     Left/Right arrows or y/n switch selection; Enter confirms.
     """
     lines = message.splitlines()
-    btn_row = f'[ {yes_label} ]   [ {no_label} ]'
-    width = max(len(btn_row) + 4,
-                max((len(l) for l in lines), default=0) + 4,
-                len(title) + 4)
+    btn_row = f"[ {yes_label} ]   [ {no_label} ]"
+    width = max(
+        len(btn_row) + 4, max((len(l) for l in lines), default=0) + 4, len(title) + 4
+    )
     width = min(width, stdscr.getmaxyx()[1] - 2)
     height = len(lines) + 5
 
@@ -152,11 +165,19 @@ def confirm_dialog(stdscr, title: str, message: str,
     curses.curs_set(0)
 
     while True:
-        yes_attr = curses.color_pair(colors.MENU_SELECTED) | curses.A_BOLD if choice == 0 else curses.A_NORMAL
-        no_attr  = curses.color_pair(colors.MENU_SELECTED) | curses.A_BOLD if choice == 1 else curses.A_NORMAL
-        yes_btn = f'[ {TRANSLATE(yes_label)} ]'
-        no_btn  = f'[ {TRANSLATE(no_label)} ]'
-        combined = f'{yes_btn}   {no_btn}'
+        yes_attr = (
+            curses.color_pair(colors.MENU_SELECTED) | curses.A_BOLD
+            if choice == 0
+            else curses.A_NORMAL
+        )
+        no_attr = (
+            curses.color_pair(colors.MENU_SELECTED) | curses.A_BOLD
+            if choice == 1
+            else curses.A_NORMAL
+        )
+        yes_btn = f"[ {TRANSLATE(yes_label)} ]"
+        no_btn = f"[ {TRANSLATE(no_label)} ]"
+        combined = f"{yes_btn}   {no_btn}"
         bx = max(1, (width - len(combined)) // 2)
         try:
             win.addstr(height - 2, bx, yes_btn, yes_attr)
@@ -168,15 +189,15 @@ def confirm_dialog(stdscr, title: str, message: str,
         key = win.getch()
         if key == 4:
             raise HardExit()
-        if key in (curses.KEY_LEFT, curses.KEY_RIGHT, ord('\t')):
+        if key in (curses.KEY_LEFT, curses.KEY_RIGHT, ord("\t")):
             choice = 1 - choice
-        elif key in (ord('y'), ord('Y')):
+        elif key in (ord("y"), ord("Y")):
             choice = 0
             break
-        elif key in (ord('n'), ord('N'), 27):
+        elif key in (ord("n"), ord("N"), 27):
             choice = 1
             break
-        elif key in (ord('\n'), ord('\r')):
+        elif key in (ord("\n"), ord("\r")):
             break
 
     _restore_screen(stdscr, saved)
@@ -184,8 +205,9 @@ def confirm_dialog(stdscr, title: str, message: str,
     return choice == 0
 
 
-def input_dialog(stdscr, title: str, prompt: str,
-                 default: str = '', secret: bool = False) -> str | None:
+def input_dialog(
+    stdscr, title: str, prompt: str, default: str = "", secret: bool = False
+) -> str | None:
     """
     Single-line text input dialog.
     Returns the entered string or None if cancelled (Esc/Ctrl+D).
@@ -211,14 +233,13 @@ def input_dialog(stdscr, title: str, prompt: str,
 
     field_y = 1 + len(prompt_lines) + 1
     try:
-        win.addstr(field_y, 1, ' ' * inner_w, curses.color_pair(colors.MENU_SELECTED))
+        win.addstr(field_y, 1, " " * inner_w, curses.color_pair(colors.MENU_SELECTED))
     except curses.error:
         pass
 
-    hint = TRANSLATE('Enter: confirm  Esc: cancel')
+    hint = TRANSLATE("Enter: confirm  Esc: cancel")
     try:
-        win.addstr(height - 2, 2, hint[:inner_w],
-                   curses.color_pair(colors.DIM))
+        win.addstr(height - 2, 2, hint[:inner_w], curses.color_pair(colors.DIM))
     except curses.error:
         pass
 
@@ -231,11 +252,15 @@ def input_dialog(stdscr, title: str, prompt: str,
 
     while True:
         # Draw field
-        display = ('*' * len(buf)) if secret else ''.join(buf)
-        visible = display[scroll:scroll + inner_w]
+        display = ("*" * len(buf)) if secret else "".join(buf)
+        visible = display[scroll : scroll + inner_w]
         try:
-            win.addstr(field_y, 1, visible.ljust(inner_w),
-                       curses.color_pair(colors.MENU_SELECTED))
+            win.addstr(
+                field_y,
+                1,
+                visible.ljust(inner_w),
+                curses.color_pair(colors.MENU_SELECTED),
+            )
             cx = 1 + (cursor - scroll)
             win.move(field_y, cx)
         except curses.error:
@@ -244,13 +269,13 @@ def input_dialog(stdscr, title: str, prompt: str,
 
         key = win.getch()
 
-        if key == 27:           # Esc – cancel
+        if key == 27:  # Esc – cancel
             result = None
             break
-        elif key == 4:          # Ctrl+D – hard exit
+        elif key == 4:  # Ctrl+D – hard exit
             raise HardExit()
-        elif key in (ord('\n'), ord('\r')):
-            result = ''.join(buf)
+        elif key in (ord("\n"), ord("\r")):
+            result = "".join(buf)
             break
         elif key in (curses.KEY_BACKSPACE, 127, 8):
             if cursor > 0:
@@ -263,11 +288,11 @@ def input_dialog(stdscr, title: str, prompt: str,
             cursor = max(0, cursor - 1)
         elif key == curses.KEY_RIGHT:
             cursor = min(len(buf), cursor + 1)
-        elif key == curses.KEY_HOME or key == 1:   # Ctrl+A
+        elif key == curses.KEY_HOME or key == 1:  # Ctrl+A
             cursor = 0
-        elif key == curses.KEY_END or key == 5:    # Ctrl+E
+        elif key == curses.KEY_END or key == 5:  # Ctrl+E
             cursor = len(buf)
-        elif key == 21:         # Ctrl+U – clear
+        elif key == 21:  # Ctrl+U – clear
             buf = []
             cursor = 0
         elif secret and 32 <= key <= 126:
@@ -288,9 +313,14 @@ def input_dialog(stdscr, title: str, prompt: str,
     return result
 
 
-def select_dialog(stdscr, title: str, options: list[str],
-                  selected: int = 0,
-                  y: int | None = None, x: int | None = None) -> int | None:
+def select_dialog(
+    stdscr,
+    title: str,
+    options: list[str],
+    selected: int = 0,
+    y: int | None = None,
+    x: int | None = None,
+) -> int | None:
     """
     Scrollable list selection dialog.
     Returns the chosen index or None if cancelled.
@@ -321,9 +351,9 @@ def select_dialog(stdscr, title: str, options: list[str],
         win = _center_win(stdscr, height, width)
     _draw_box(win, title)
 
-    hint = TRANSLATE('↑↓ Navigate  Enter Select  Esc Cancel')
+    hint = TRANSLATE("↑↓ Navigate  Enter Select  Esc Cancel")
     try:
-        win.addstr(height - 2, 2, hint[:width - 3], curses.color_pair(colors.DIM))
+        win.addstr(height - 2, 2, hint[: width - 3], curses.color_pair(colors.DIM))
     except curses.error:
         pass
 
@@ -345,10 +375,14 @@ def select_dialog(stdscr, title: str, options: list[str],
             idx = scroll_top + i
             if idx >= len(options):
                 break
-            label = options[idx][:inner_w - 2]
-            attr = curses.color_pair(colors.MENU_SELECTED) | curses.A_BOLD if idx == current else curses.A_NORMAL
+            label = options[idx][: inner_w - 2]
+            attr = (
+                curses.color_pair(colors.MENU_SELECTED) | curses.A_BOLD
+                if idx == current
+                else curses.A_NORMAL
+            )
             try:
-                win.addstr(1 + i, 1, f' {label:<{inner_w - 2}} ', attr)
+                win.addstr(1 + i, 1, f" {label:<{inner_w - 2}} ", attr)
             except curses.error:
                 pass
         win.refresh()
@@ -360,14 +394,14 @@ def select_dialog(stdscr, title: str, options: list[str],
             current = max(0, current - 1)
         elif key == curses.KEY_DOWN:
             current = min(len(options) - 1, current + 1)
-        elif key in (ord('\n'), ord('\r')):
+        elif key in (ord("\n"), ord("\r")):
             result = current
             break
-        elif key in (27, ord('q')):   # Esc / q
+        elif key in (27, ord("q")):  # Esc / q
             result = None
             break
-        elif ord('1') <= key <= ord('9'):
-            idx = key - ord('1')
+        elif ord("1") <= key <= ord("9"):
+            idx = key - ord("1")
             if idx < len(options):
                 result = idx
                 break

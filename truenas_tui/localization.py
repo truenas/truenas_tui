@@ -14,18 +14,19 @@ After auth.me is resolved, call setup_locale() once with the user's
 preferred language code (e.g. 'en', 'fr').  The translation cache is
 cleared so all subsequent TRANSLATE() calls use the new language.
 """
+
 import gettext
 import pathlib
 import re
 
-_LOCALE_DIR = pathlib.Path(__file__).parent / 'locale'
+_LOCALE_DIR = pathlib.Path(__file__).parent / "locale"
 
-_language: str = 'en'
+_language: str = "en"
 _cache: dict[str, gettext.NullTranslations] = {}
 
 # Accept only well-formed locale tags: "en", "fr", "zh_CN", "pt_BR", etc.
 # Rejects path traversal strings like "../../etc/passwd".
-_SAFE_LANG_RE = re.compile(r'^[a-zA-Z]{2,3}([_\-][a-zA-Z]{2,4})?$')
+_SAFE_LANG_RE = re.compile(r"^[a-zA-Z]{2,3}([_\-][a-zA-Z]{2,4})?$")
 
 
 def setup_locale(language: str) -> None:
@@ -36,9 +37,9 @@ def setup_locale(language: str) -> None:
     path-traversal attacks via a malicious auth.me response.
     """
     global _language
-    lang = language or 'en'
+    lang = language or "en"
     if not _SAFE_LANG_RE.match(lang):
-        lang = 'en'
+        lang = "en"
     _language = lang
     _cache.clear()
 
@@ -46,8 +47,10 @@ def setup_locale(language: str) -> None:
 def _get(domain: str) -> gettext.NullTranslations:
     if domain not in _cache:
         _cache[domain] = gettext.translation(
-            domain, localedir=str(_LOCALE_DIR),
-            languages=[_language], fallback=True,
+            domain,
+            localedir=str(_LOCALE_DIR),
+            languages=[_language],
+            fallback=True,
         )
     return _cache[domain]
 
@@ -60,6 +63,7 @@ def make_translator(domain: str):
     current language even if setup_locale() is called after the module
     is imported.
     """
+
     def TRANSLATE(message: str) -> str:
         return _get(domain).gettext(message)
 
@@ -70,4 +74,4 @@ def make_translator(domain: str):
 
 
 # Core / main domain used by tui/ and main.py
-TRANSLATE, ngettext = make_translator('truenas_tui')
+TRANSLATE, ngettext = make_translator("truenas_tui")

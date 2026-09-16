@@ -1,6 +1,6 @@
 # test_live_readonly.py requires a live TrueNAS server and a --config flag.
 # Exclude it from automatic collection so plain `pytest` doesn't fail.
-collect_ignore = ['test_live_readonly.py']
+collect_ignore = ["test_live_readonly.py"]
 
 
 """

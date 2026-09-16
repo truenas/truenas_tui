@@ -12,19 +12,22 @@ class CliShellPlugin(BasePlugin):
     LEGACY_INDEX = 7
     LEGACY_ONLY = True
     _TRANSLATE = staticmethod(TRANSLATE)
-    LABEL = ('Open TrueNAS CLI Shell')
+    LABEL = "Open TrueNAS CLI Shell"
     DESCRIPTION = (
-        'Open the TrueNAS interactive CLI shell (midcli).\n'
-        '\n'
-        'Replaces the TUI with the full midcli command-line\n'
-        'interface. The TUI restarts after you exit midcli.'
+        "Open the TrueNAS interactive CLI shell (midcli).\n"
+        "\n"
+        "Replaces the TUI with the full midcli command-line\n"
+        "interface. The TUI restarts after you exit midcli."
     )
 
     def run(self, stdscr, session) -> None:
-        midcli_path = shutil.which('midcli')
+        midcli_path = shutil.which("midcli")
         if not midcli_path:
-            message_dialog(stdscr, TRANSLATE('Not Found'),
-                           TRANSLATE('midcli is not available on this system.'))
+            message_dialog(
+                stdscr,
+                TRANSLATE("Not Found"),
+                TRANSLATE("midcli is not available on this system."),
+            )
             return
         curses.endwin()
         os.execv(midcli_path, [midcli_path])

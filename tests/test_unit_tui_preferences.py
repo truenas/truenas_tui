@@ -1,4 +1,5 @@
 """Unit tests for truenas_tui/tui_preferences.py."""
+
 import pytest
 
 from truenas_tui.tui_preferences import (
@@ -12,18 +13,14 @@ from truenas_tui.tui_preferences import (
 )
 
 
-# ---------------------------------------------------------------------------
-# Constants
-# ---------------------------------------------------------------------------
-
 def test_preferences_key_value():
-    assert TUI_PREFERENCES_KEY == 'tui_preferences'
+    assert TUI_PREFERENCES_KEY == "tui_preferences"
 
 
 def test_valid_themes_contains_expected():
-    assert 'default' in VALID_THEMES
-    assert 'dark' in VALID_THEMES
-    assert 'high_contrast' in VALID_THEMES
+    assert "default" in VALID_THEMES
+    assert "dark" in VALID_THEMES
+    assert "high_contrast" in VALID_THEMES
 
 
 def test_valid_themes_size():
@@ -31,8 +28,8 @@ def test_valid_themes_size():
 
 
 def test_valid_startup_views_contains_expected():
-    assert 'sysinfo' in VALID_STARTUP_VIEWS
-    assert 'menu' in VALID_STARTUP_VIEWS
+    assert "sysinfo" in VALID_STARTUP_VIEWS
+    assert "menu" in VALID_STARTUP_VIEWS
 
 
 def test_valid_startup_views_size():
@@ -44,7 +41,7 @@ def test_date_format_enum_has_eight_values():
 
 
 def test_date_format_enum_iso_value():
-    assert DateFormat.ISO == 'yyyy-MM-dd'
+    assert DateFormat.ISO == "yyyy-MM-dd"
 
 
 def test_time_format_enum_has_three_values():
@@ -52,36 +49,32 @@ def test_time_format_enum_has_three_values():
 
 
 def test_time_format_enum_h24_value():
-    assert TimeFormat.H24 == 'HH:mm:ss'
+    assert TimeFormat.H24 == "HH:mm:ss"
 
 
 def test_languages_contains_english():
-    assert 'en' in LANGUAGES
-    assert LANGUAGES['en'] == 'English'
+    assert "en" in LANGUAGES
+    assert LANGUAGES["en"] == "English"
 
 
 def test_languages_count():
     assert len(LANGUAGES) == 77
 
 
-# ---------------------------------------------------------------------------
-# Default values
-# ---------------------------------------------------------------------------
-
 def test_default_language():
-    assert TuiPreferences().language == 'en'
+    assert TuiPreferences().language == "en"
 
 
 def test_default_date_format():
-    assert TuiPreferences().date_format == 'yyyy-MM-dd'
+    assert TuiPreferences().date_format == "yyyy-MM-dd"
 
 
 def test_default_time_format():
-    assert TuiPreferences().time_format == 'HH:mm:ss'
+    assert TuiPreferences().time_format == "HH:mm:ss"
 
 
 def test_default_theme():
-    assert TuiPreferences().theme == 'default'
+    assert TuiPreferences().theme == "default"
 
 
 def test_default_confirm_dangerous():
@@ -89,146 +82,131 @@ def test_default_confirm_dangerous():
 
 
 def test_default_startup_view():
-    assert TuiPreferences().startup_view == 'sysinfo'
+    assert TuiPreferences().startup_view == "sysinfo"
 
-
-# ---------------------------------------------------------------------------
-# to_dict()
-# ---------------------------------------------------------------------------
 
 def test_to_dict_key_set():
     d = TuiPreferences().to_dict()
     assert set(d.keys()) == {
-        'language', 'date_format', 'time_format',
-        'theme', 'confirm_dangerous', 'startup_view',
+        "language",
+        "date_format",
+        "time_format",
+        "theme",
+        "confirm_dangerous",
+        "startup_view",
     }
 
 
 def test_to_dict_round_trip():
     original = TuiPreferences(
-        language='fr',
-        date_format=DateFormat.SLASH_US,   # 'MM/dd/yyyy'
-        time_format=TimeFormat.H12_AP,     # 'hh:mm:ss aa'
-        theme='dark',
+        language="fr",
+        date_format=DateFormat.SLASH_US,  # 'MM/dd/yyyy'
+        time_format=TimeFormat.H12_AP,  # 'hh:mm:ss aa'
+        theme="dark",
         confirm_dangerous=False,
-        startup_view='menu',
+        startup_view="menu",
     )
     restored = TuiPreferences.from_dict(original.to_dict())
     assert restored == original
 
 
-# ---------------------------------------------------------------------------
-# from_dict() with valid data
-# ---------------------------------------------------------------------------
-
 def test_from_dict_valid():
     d = {
-        'language': 'de',
-        'date_format': 'dd.MM.yyyy',   # DateFormat.DOT_EU
-        'time_format': 'HH:mm:ss',     # TimeFormat.H24
-        'theme': 'dark',
-        'confirm_dangerous': False,
-        'startup_view': 'menu',
+        "language": "de",
+        "date_format": "dd.MM.yyyy",  # DateFormat.DOT_EU
+        "time_format": "HH:mm:ss",  # TimeFormat.H24
+        "theme": "dark",
+        "confirm_dangerous": False,
+        "startup_view": "menu",
     }
     p = TuiPreferences.from_dict(d)
-    assert p.language == 'de'
-    assert p.date_format == 'dd.MM.yyyy'
-    assert p.time_format == 'HH:mm:ss'
-    assert p.theme == 'dark'
+    assert p.language == "de"
+    assert p.date_format == "dd.MM.yyyy"
+    assert p.time_format == "HH:mm:ss"
+    assert p.theme == "dark"
     assert p.confirm_dangerous is False
-    assert p.startup_view == 'menu'
+    assert p.startup_view == "menu"
 
-
-# ---------------------------------------------------------------------------
-# from_dict() invalid enum values → defaults
-# ---------------------------------------------------------------------------
 
 def test_from_dict_invalid_theme_falls_back_to_default():
-    p = TuiPreferences.from_dict({'theme': 'neon_rainbow'})
-    assert p.theme == 'default'
+    p = TuiPreferences.from_dict({"theme": "neon_rainbow"})
+    assert p.theme == "default"
 
 
 def test_from_dict_invalid_startup_view_falls_back_to_sysinfo():
-    p = TuiPreferences.from_dict({'startup_view': 'dashboard'})
-    assert p.startup_view == 'sysinfo'
+    p = TuiPreferences.from_dict({"startup_view": "dashboard"})
+    assert p.startup_view == "sysinfo"
 
 
 def test_from_dict_invalid_date_format_falls_back_to_iso():
-    p = TuiPreferences.from_dict({'date_format': 'DD.MM.YYYY'})
+    p = TuiPreferences.from_dict({"date_format": "DD.MM.YYYY"})
     assert p.date_format == DateFormat.ISO
 
 
 def test_from_dict_invalid_time_format_falls_back_to_h24():
-    p = TuiPreferences.from_dict({'time_format': 'h:mm a'})
+    p = TuiPreferences.from_dict({"time_format": "h:mm a"})
     assert p.time_format == TimeFormat.H24
 
 
 def test_from_dict_invalid_language_falls_back_to_en():
-    p = TuiPreferences.from_dict({'language': 'xx_FAKE'})
-    assert p.language == 'en'
+    p = TuiPreferences.from_dict({"language": "xx_FAKE"})
+    assert p.language == "en"
 
-
-# ---------------------------------------------------------------------------
-# from_dict() None values collapse to defaults (not literal 'None')
-# ---------------------------------------------------------------------------
 
 def test_from_dict_none_language_collapses():
-    p = TuiPreferences.from_dict({'language': None})
-    assert p.language == 'en'
-    assert p.language != 'None'
+    p = TuiPreferences.from_dict({"language": None})
+    assert p.language == "en"
+    assert p.language != "None"
 
 
 def test_from_dict_none_date_format_collapses():
-    p = TuiPreferences.from_dict({'date_format': None})
-    assert p.date_format == 'yyyy-MM-dd'
+    p = TuiPreferences.from_dict({"date_format": None})
+    assert p.date_format == "yyyy-MM-dd"
 
 
 def test_from_dict_none_time_format_collapses():
-    p = TuiPreferences.from_dict({'time_format': None})
-    assert p.time_format == 'HH:mm:ss'
+    p = TuiPreferences.from_dict({"time_format": None})
+    assert p.time_format == "HH:mm:ss"
 
 
 def test_from_dict_none_theme_collapses():
-    p = TuiPreferences.from_dict({'theme': None})
-    assert p.theme == 'default'
+    p = TuiPreferences.from_dict({"theme": None})
+    assert p.theme == "default"
 
 
 def test_from_dict_none_startup_view_collapses():
-    p = TuiPreferences.from_dict({'startup_view': None})
-    assert p.startup_view == 'sysinfo'
+    p = TuiPreferences.from_dict({"startup_view": None})
+    assert p.startup_view == "sysinfo"
 
-
-# ---------------------------------------------------------------------------
-# from_dict() ignores unknown keys
-# ---------------------------------------------------------------------------
 
 def test_from_dict_ignores_unknown_keys():
-    p = TuiPreferences.from_dict({'unknown_key': 'value', 'future_field': 42})
+    p = TuiPreferences.from_dict({"unknown_key": "value", "future_field": 42})
     # Should not raise and should return defaults
-    assert p.language == 'en'
-    assert p.theme == 'default'
+    assert p.language == "en"
+    assert p.theme == "default"
 
-
-# ---------------------------------------------------------------------------
-# from_dict() empty dict → all defaults
-# ---------------------------------------------------------------------------
 
 def test_from_dict_empty_dict():
     p = TuiPreferences.from_dict({})
     assert p == TuiPreferences()
 
 
-# ---------------------------------------------------------------------------
-# confirm_dangerous truthy/falsy coercion
-# ---------------------------------------------------------------------------
-
 def test_confirm_dangerous_truthy_values():
-    assert TuiPreferences.from_dict({'confirm_dangerous': 1}).confirm_dangerous is True
-    assert TuiPreferences.from_dict({'confirm_dangerous': 'yes'}).confirm_dangerous is True
-    assert TuiPreferences.from_dict({'confirm_dangerous': True}).confirm_dangerous is True
+    assert TuiPreferences.from_dict({"confirm_dangerous": 1}).confirm_dangerous is True
+    assert (
+        TuiPreferences.from_dict({"confirm_dangerous": "yes"}).confirm_dangerous is True
+    )
+    assert (
+        TuiPreferences.from_dict({"confirm_dangerous": True}).confirm_dangerous is True
+    )
 
 
 def test_confirm_dangerous_falsy_values():
-    assert TuiPreferences.from_dict({'confirm_dangerous': 0}).confirm_dangerous is False
-    assert TuiPreferences.from_dict({'confirm_dangerous': False}).confirm_dangerous is False
-    assert TuiPreferences.from_dict({'confirm_dangerous': ''}).confirm_dangerous is False
+    assert TuiPreferences.from_dict({"confirm_dangerous": 0}).confirm_dangerous is False
+    assert (
+        TuiPreferences.from_dict({"confirm_dangerous": False}).confirm_dangerous
+        is False
+    )
+    assert (
+        TuiPreferences.from_dict({"confirm_dangerous": ""}).confirm_dangerous is False
+    )

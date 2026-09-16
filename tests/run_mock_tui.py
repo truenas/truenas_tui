@@ -14,6 +14,7 @@ Flags:
 
 Used by test_expect_compat.py and E2E tests as the subprocess target.
 """
+
 import argparse
 import sys
 import os
@@ -40,23 +41,29 @@ def _tui_main(stdscr, session, menu_mode: bool = False):
         )
     else:
         ordered = [cls for cls in ALL_PLUGINS if not cls.LEGACY_ONLY]
-    plugins = [p for p in (cls() for cls in ordered) if p.can_activate(session.roles, session)]
+    plugins = [
+        p for p in (cls() for cls in ordered) if p.can_activate(session.roles, session)
+    ]
     view = MainView(stdscr, session, plugins, menu_mode=menu_mode)
     view.run()
 
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--local', action='store_true',
-                        help='Run with server=None to show LOCAL_ONLY plugins')
-    parser.add_argument('--menu', action='store_true',
-                        help='Enable legacy numbered menu mode')
+    parser.add_argument(
+        "--local",
+        action="store_true",
+        help="Run with server=None to show LOCAL_ONLY plugins",
+    )
+    parser.add_argument(
+        "--menu", action="store_true", help="Enable legacy numbered menu mode"
+    )
     args = parser.parse_args()
 
-    setup_locale('en')
+    setup_locale("en")
     session = MockSession()
     if args.local:
-        session.config.server = None   # instance attr shadows class attr
+        session.config.server = None  # instance attr shadows class attr
 
     _print_ui_urls(session)
     try:
@@ -67,5 +74,5 @@ def main():
         session.close()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

@@ -1,12 +1,9 @@
 """Unit tests for truenas_tui/tui/__init__.py — format_error() and HardExit."""
+
 import pytest
 
 from truenas_tui.tui import format_error, HardExit
 
-
-# ---------------------------------------------------------------------------
-# format_error()
-# ---------------------------------------------------------------------------
 
 def test_format_error_single_line():
     exc = ValueError("something went wrong")
@@ -58,10 +55,6 @@ def test_format_error_exactly_200_chars():
     assert len(result) == 200
     assert not result.endswith("...")
 
-
-# ---------------------------------------------------------------------------
-# HardExit
-# ---------------------------------------------------------------------------
 
 def test_hard_exit_is_base_exception():
     assert isinstance(HardExit(), BaseException)
