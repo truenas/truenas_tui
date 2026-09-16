@@ -10,31 +10,28 @@ SAFE: only read operations — never activates any plugin.
 Usage:
     python3 tests/test_live_readonly.py --config /path/to/config.conf
 """
+
 import argparse
 import ipaddress
 import os
 import sys
 import pexpect
 
-CONTROL_D = '\x04'
-PKG_ROOT  = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PYTHON    = sys.executable
+CONTROL_D = "\x04"
+PKG_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+PYTHON = sys.executable
 
 
 def _spawn(config_path: str) -> pexpect.spawn:
     return pexpect.spawn(
-        PYTHON, ['-m', 'truenas_tui.main', '--config', config_path],
+        PYTHON,
+        ["-m", "truenas_tui.main", "--config", config_path],
         timeout=20,
         dimensions=(24, 80),
         cwd=PKG_ROOT,
-        env={**os.environ, 'TERM': 'xterm'},
+        env={**os.environ, "TERM": "xterm"},
     )
 
-
-# ---------------------------------------------------------------------------
-# Copied verbatim from ixnode/expect.py (the two functions that touch the
-# running-system console).  Only the spawn call is substituted.
-# ---------------------------------------------------------------------------
 
 def wait_for_boot(config_path, timeout=20):
     """Mirrors ixnode/expect.py::wait_for_boot()"""
@@ -68,11 +65,14 @@ def _find_ip_addresses(config_path, itimeout=5, timeout=30):
                     child.sendline(CONTROL_D)
                 else:
                     try:
-                        while child.expect(["http://", "https://"], timeout=1) in [0, 1]:
+                        while child.expect(["http://", "https://"], timeout=1) in [
+                            0,
+                            1,
+                        ]:
                             index = child.expect([":"], timeout=1)
                             timeout -= 2
                             if index == 0:
-                                for line in child.before.decode('utf-8').split('\n'):
+                                for line in child.before.decode("utf-8").split("\n"):
                                     addr = line.strip()
                                     try:
                                         ipaddress.ip_address(addr)
@@ -86,10 +86,6 @@ def _find_ip_addresses(config_path, itimeout=5, timeout=30):
         child.close(force=True)
     return list(ips)
 
-
-# ---------------------------------------------------------------------------
-# Tests
-# ---------------------------------------------------------------------------
 
 def test_wait_for_boot(config_path):
     """ixnode wait_for_boot() detects our TUI as a booted system."""
@@ -114,7 +110,7 @@ TESTS = [
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--config', required=True)
+    parser.add_argument("--config", required=True)
     args = parser.parse_args()
 
     passed = failed = 0
@@ -129,7 +125,7 @@ def main():
             print(f"        {e}")
             failed += 1
 
-    print(f"\n{passed}/{passed + failed} tests passed", end='')
+    print(f"\n{passed}/{passed + failed} tests passed", end="")
     if failed:
         print(f"  ({failed} FAILED)")
         return 1
@@ -137,5 +133,5 @@ def main():
     return 0
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     sys.exit(main())

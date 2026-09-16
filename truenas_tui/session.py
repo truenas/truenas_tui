@@ -7,6 +7,7 @@ Handles:
 - auth.me → user info, privilege roles, UI locale preference
 - Locale initialisation via localization.setup_locale()
 """
+
 import errno
 import threading
 import time
@@ -23,7 +24,7 @@ from .localization import setup_locale
 from .tui_preferences import TuiPreferences, TUI_PREFERENCES_KEY
 
 
-_KEEPALIVE_INTERVAL = 5   # seconds of idle before sending core.ping
+_KEEPALIVE_INTERVAL = 5  # seconds of idle before sending core.ping
 
 
 def _parse_version(ver: str) -> tuple[int, ...]:
@@ -31,8 +32,8 @@ def _parse_version(ver: str) -> tuple[int, ...]:
     Convert a version string like 'v25.10.0' or '25.10.0' into a comparable
     integer tuple (25, 10, 0).
     """
-    ver = ver.lstrip('v')
-    parts = re.split(r'[.\-]', ver)
+    ver = ver.lstrip("v")
+    parts = re.split(r"[.\-]", ver)
     result = []
     for p in parts:
         try:
@@ -93,10 +94,6 @@ class Session:
         self._keepalive_stop = threading.Event()
         self._keepalive_thread: threading.Thread | None = None
 
-    # ------------------------------------------------------------------
-    # Connection lifecycle
-    # ------------------------------------------------------------------
-
     def connect(self) -> None:
         """Open the client connection, authenticate, and fetch metadata."""
         cfg = self.config
@@ -114,7 +111,9 @@ class Session:
         self._client.__enter__()
         key = cfg.get_api_key()
         self._client.login_with_api_key(cfg.username, key)
-        self.api_versions = self._fetch_remote_versions(cfg.server, cfg.verify_ssl, cfg.ca_cert)
+        self.api_versions = self._fetch_remote_versions(
+            cfg.server, cfg.verify_ssl, cfg.ca_cert
+        )
         if self.api_versions:
             self.api_version = self.api_versions[-1]
 
@@ -137,19 +136,19 @@ class Session:
                 try:
                     self.call(Method.CORE_PING)
                 except Exception:
-                    pass   # reconnect (if needed) is handled inside call()
+                    pass  # reconnect (if needed) is handled inside call()
 
     def _reconnect(self, failed_generation: int) -> None:
         """Re-establish the remote connection if the generation hasn't changed."""
         with self._reconnect_lock:
             if self._reconnect_generation != failed_generation:
-                return   # another thread already reconnected
+                return  # another thread already reconnected
             old = self._client
             try:
                 old.__exit__(None, None, None)
             except Exception:
                 pass
-            self._connect_remote(self.config)   # sets self._client on success
+            self._connect_remote(self.config)  # sets self._client on success
             self._reconnect_generation += 1
             self._last_call_time = time.monotonic()
 
@@ -180,7 +179,7 @@ class Session:
 
         # Derive API version from system.info when not set by remote version fetch
         if self.api_version == (0, 0, 0):
-            raw = self.system_info.get('version', '')
+            raw = self.system_info.get("version", "")
             self.api_version = _parse_version(raw)
             self.api_versions = [self.api_version]
 
@@ -188,33 +187,36 @@ class Session:
         # FULL_ADMIN and SHARING_ADMIN both include all READ roles; any of the
         # three is sufficient.  Users with only granular roles (e.g. a custom
         # API key with a single write role) are not supported by this TUI.
-        required = {'FULL_ADMIN', 'SHARING_ADMIN', 'READONLY_ADMIN'}
-        roles = self.me.get('privilege', {}).get('roles', set())
+        required = {"FULL_ADMIN", "SHARING_ADMIN", "READONLY_ADMIN"}
+        roles = self.me.get("privilege", {}).get("roles", set())
         if not (roles & required):
             raise PermissionError(
-                f'Insufficient privileges.  This TUI requires at least '
-                f'READONLY_ADMIN (or FULL_ADMIN / SHARING_ADMIN).  '
-                f'Current roles: {", ".join(sorted(roles)) or "none"}'
+                f"Insufficient privileges.  This TUI requires at least "
+                f"READONLY_ADMIN (or FULL_ADMIN / SHARING_ADMIN).  "
+                f"Current roles: {', '.join(sorted(roles)) or 'none'}"
             )
 
-        attrs   = self.me.get('attributes', {})
-        prefs   = attrs.get('preferences', {})
+        attrs = self.me.get("attributes", {})
+        prefs = attrs.get("preferences", {})
         tui_raw = attrs.get(TUI_PREFERENCES_KEY)
 
         if tui_raw is None:
             # First run: seed from Web UI prefs, then persist.
-            self.tui_prefs = TuiPreferences.from_dict({
-                'language':    prefs.get('language',   'en') or 'en',
-                'date_format': prefs.get('dateFormat', '')   or '',
-                'time_format': prefs.get('timeFormat', '')   or '',
-            })
+            self.tui_prefs = TuiPreferences.from_dict(
+                {
+                    "language": prefs.get("language", "en") or "en",
+                    "date_format": prefs.get("dateFormat", "") or "",
+                    "time_format": prefs.get("timeFormat", "") or "",
+                }
+            )
             try:
                 self._client.call(
                     Method.AUTH_SET_ATTRIBUTE,
-                    TUI_PREFERENCES_KEY, self.tui_prefs.to_dict(),
+                    TUI_PREFERENCES_KEY,
+                    self.tui_prefs.to_dict(),
                 )
             except Exception:
-                pass   # non-fatal; prefs live in-memory only this session
+                pass  # non-fatal; prefs live in-memory only this session
         else:
             self.tui_prefs = TuiPreferences.from_dict(tui_raw)
 
@@ -229,10 +231,6 @@ class Session:
                 pass
             self._client = None
 
-    # ------------------------------------------------------------------
-    # API proxy
-    # ------------------------------------------------------------------
-
     def call(self, method: str, *args, **kwargs):
         """Delegate an API call; reconnect once on connection-aborted errors."""
         self._last_call_time = time.monotonic()
@@ -246,33 +244,29 @@ class Session:
                 return self._client.call(method, *args, **kwargs)
             raise
 
-    # ------------------------------------------------------------------
-    # Convenience properties derived from auth.me / system.info
-    # ------------------------------------------------------------------
-
     @property
     def username(self) -> str:
-        return self.me.get('pw_name', 'unknown')
+        return self.me.get("pw_name", "unknown")
 
     @property
     def roles(self) -> set[str]:
-        return self.me.get('privilege', {}).get('roles', set())
+        return self.me.get("privilege", {}).get("roles", set())
 
     @property
     def role_label(self) -> str:
         roles = self.roles
-        for label in ('FULL_ADMIN', 'SHARING_ADMIN', 'READONLY_ADMIN'):
+        for label in ("FULL_ADMIN", "SHARING_ADMIN", "READONLY_ADMIN"):
             if label in roles:
                 return label
-        return 'CUSTOM'
+        return "CUSTOM"
 
     @property
     def hostname(self) -> str:
-        return self.system_info.get('hostname', 'unknown')
+        return self.system_info.get("hostname", "unknown")
 
     @property
     def version(self) -> str:
-        return self.system_info.get('version', 'unknown')
+        return self.system_info.get("version", "unknown")
 
     def has_role(self, *roles: str) -> bool:
         """Return True if the session has any of the given roles."""

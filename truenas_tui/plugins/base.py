@@ -25,6 +25,7 @@ Class attributes:
       Seconds between automatic label refreshes triggered by the main
       view's tick loop.  0 (default) means never auto-refresh.
 """
+
 import time
 
 
@@ -34,13 +35,13 @@ def _identity(s: str) -> str:
 
 class BasePlugin:
     REQUIRED_WRITE_ROLES: frozenset[str] = frozenset()
-    LOCAL_ONLY: bool = False    # hide when session is remote (config.server set)
-    LEGACY_INDEX: int | None = None   # position in --menu (None = not in legacy menu)
-    LEGACY_ONLY: bool = False         # if True, hidden in default mode
-    DEFAULT_HIDDEN: bool = False      # if True, hidden from default-mode main menu
-    LABEL: str = ''
-    DESCRIPTION: str = ''
-    REFRESH_INTERVAL: int = 0   # seconds; 0 = never auto-refresh
+    LOCAL_ONLY: bool = False  # hide when session is remote (config.server set)
+    LEGACY_INDEX: int | None = None  # position in --menu (None = not in legacy menu)
+    LEGACY_ONLY: bool = False  # if True, hidden in default mode
+    DEFAULT_HIDDEN: bool = False  # if True, hidden from default-mode main menu
+    LABEL: str = ""
+    DESCRIPTION: str = ""
+    REFRESH_INTERVAL: int = 0  # seconds; 0 = never auto-refresh
     # Subclasses set this to their domain's TRANSLATE so labels/descriptions
     # are re-translated on every call (locale may change between sessions).
     _TRANSLATE = staticmethod(_identity)
@@ -69,8 +70,9 @@ class BasePlugin:
         label (e.g. fetched from the API) should override _fetch_label().
         """
         from truenas_tui import localization  # noqa: PLC0415
+
         lang = localization._language
-        if not hasattr(self, '_label_cache') or self._label_lang != lang:
+        if not hasattr(self, "_label_cache") or self._label_lang != lang:
             self._label_cache = self._fetch_label(session)
             self._label_lang = lang
         return self._label_cache
@@ -81,7 +83,7 @@ class BasePlugin:
 
     def refresh(self, session) -> None:
         """Bust the label cache and record the refresh timestamp."""
-        if hasattr(self, '_label_cache'):
+        if hasattr(self, "_label_cache"):
             del self._label_cache
         self._last_refresh = time.monotonic()
 
@@ -89,7 +91,10 @@ class BasePlugin:
         """Return True when REFRESH_INTERVAL seconds have elapsed since last refresh."""
         if self.REFRESH_INTERVAL <= 0:
             return False
-        return time.monotonic() - getattr(self, '_last_refresh', 0) >= self.REFRESH_INTERVAL
+        return (
+            time.monotonic() - getattr(self, "_last_refresh", 0)
+            >= self.REFRESH_INTERVAL
+        )
 
     def get_description(self) -> str:
         return self._TRANSLATE(self.DESCRIPTION)

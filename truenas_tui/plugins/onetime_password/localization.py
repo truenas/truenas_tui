@@ -1,2 +1,3 @@
 from truenas_tui.localization import make_translator
-TRANSLATE, ngettext = make_translator('onetime_password')
+
+TRANSLATE, ngettext = make_translator("onetime_password")

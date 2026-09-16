@@ -9,25 +9,27 @@ ixnode/expect.py, substituting only the spawn call.
 Run with:
     python3 tests/test_expect_compat.py
 """
+
 import ipaddress
 import os
 import sys
 import pexpect
 
-CONTROL_D     = '\x04'
-SCRIPT        = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'run_mock_tui.py')
-PYTHON        = sys.executable
+CONTROL_D = "\x04"
+SCRIPT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "run_mock_tui.py")
+PYTHON = sys.executable
 BOOT_PATTERNS = ["The web user interface is at", "Enter an option from 1-"]
 
 
 def _spawn():
-    return pexpect.spawn(PYTHON, [SCRIPT, '--menu'], timeout=10, dimensions=(24, 80),
-                         env={**os.environ, 'TERM': 'xterm'})
+    return pexpect.spawn(
+        PYTHON,
+        [SCRIPT, "--menu"],
+        timeout=10,
+        dimensions=(24, 80),
+        env={**os.environ, "TERM": "xterm"},
+    )
 
-
-# ---------------------------------------------------------------------------
-# ixnode/expect.py logic copied verbatim (spawn substituted)
-# ---------------------------------------------------------------------------
 
 def _wait_for_boot(timeout=10):
     """Mirrors ixnode wait_for_boot()."""
@@ -55,11 +57,14 @@ def _find_ip_addresses(itimeout=5, timeout=30):
                     child.sendline(CONTROL_D)
                 else:
                     try:
-                        while child.expect(["http://", "https://"], timeout=1) in [0, 1]:
+                        while child.expect(["http://", "https://"], timeout=1) in [
+                            0,
+                            1,
+                        ]:
                             i = child.expect([":"], timeout=1)
                             timeout -= 2
                             if i == 0:
-                                for line in child.before.decode('utf-8').split('\n'):
+                                for line in child.before.decode("utf-8").split("\n"):
                                     addr = line.strip()
                                     try:
                                         ipaddress.ip_address(addr)
@@ -73,10 +78,6 @@ def _find_ip_addresses(itimeout=5, timeout=30):
         child.close(force=True)
     return list(ips)
 
-
-# ---------------------------------------------------------------------------
-# Tests
-# ---------------------------------------------------------------------------
 
 def test_wait_for_boot():
     """ixnode wait_for_boot() detects the TUI as a booted system."""
@@ -95,7 +96,7 @@ def test_find_ip_addresses_extracts_ip():
     ips = _find_ip_addresses()
     assert len(ips) > 0, f"expected at least one IP, got {ips!r}"
     # The mock returns https://192.168.1.108
-    assert '192.168.1.108' in ips, f"expected 192.168.1.108 in {ips!r}"
+    assert "192.168.1.108" in ips, f"expected 192.168.1.108 in {ips!r}"
 
 
 def test_ctrl_d_exits_from_menu():
@@ -114,7 +115,7 @@ def test_plugin_active_ctrl_d_still_exits():
     child = _spawn()
     try:
         child.expect("Enter an option from 1-", timeout=10)
-        child.send('1')
+        child.send("1")
         child.sendline(CONTROL_D)
         child.expect(pexpect.EOF, timeout=5)
     finally:
@@ -143,7 +144,7 @@ def main():
             print(f"        {e}")
             failed += 1
 
-    print(f"\n{passed}/{passed + failed} tests passed", end='')
+    print(f"\n{passed}/{passed + failed} tests passed", end="")
     if failed:
         print(f"  ({failed} FAILED)")
         return 1
@@ -151,5 +152,5 @@ def main():
     return 0
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     sys.exit(main())

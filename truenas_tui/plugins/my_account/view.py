@@ -18,6 +18,7 @@ API:
     username, {otp_digits, interval}   → updated user dict with provisioning_uri
   user.unset_2fa_secret username       → null
 """
+
 import curses
 import shutil
 import subprocess
@@ -37,7 +38,7 @@ _OTP_DISPLAY_TIMEOUT = 30
 
 def _find_qr_tool() -> str | None:
     """Return path to a terminal QR code tool, or None if unavailable."""
-    for cmd in ('qr', 'qrcode-terminal'):
+    for cmd in ("qr", "qrcode-terminal"):
         if path := shutil.which(cmd):
             return path
     return None
@@ -54,7 +55,9 @@ def _render_qr(uri: str, tool_path: str) -> str | None:
         result = subprocess.run(
             [tool_path],
             input=uri,
-            capture_output=True, text=True, timeout=5,
+            capture_output=True,
+            text=True,
+            timeout=5,
         )
         if result.returncode == 0 and result.stdout.strip():
             return result.stdout
@@ -66,9 +69,9 @@ def _render_qr(uri: str, tool_path: str) -> str | None:
 def _extract_secret(uri: str) -> str:
     """Extract base32 secret from an otpauth:// URI."""
     try:
-        return parse_qs(urlparse(uri).query).get('secret', [''])[0]
+        return parse_qs(urlparse(uri).query).get("secret", [""])[0]
     except Exception:
-        return ''
+        return ""
 
 
 def _wrap_csv(text: str, width: int) -> list[str]:
@@ -79,11 +82,11 @@ def _wrap_csv(text: str, width: int) -> list[str]:
     """
     if not text or len(text) <= width:
         return [text]
-    parts = [p.strip() for p in text.split(',')]
+    parts = [p.strip() for p in text.split(",")]
     lines: list[str] = []
-    current = ''
+    current = ""
     for part in parts:
-        candidate = f'{current}, {part}' if current else part
+        candidate = f"{current}, {part}" if current else part
         if len(candidate) <= width:
             current = candidate
         else:
@@ -97,60 +100,66 @@ def _wrap_csv(text: str, width: int) -> list[str]:
 
 class MyAccountPlugin(BasePlugin):
     _TRANSLATE = staticmethod(TRANSLATE)
-    LABEL = ('My account')
+    LABEL = "My account"
     DESCRIPTION = (
-        'View your account information and manage credentials.\n\n'
-        '  \u2022 View username, UID, roles, and 2FA status\n'
-        '  \u2022 Change your password\n'
-        '  \u2022 Generate a one-time password for single-use login\n'
-        '  \u2022 Set up or renew two-factor authentication\n\n'
-        'Password changes take effect immediately.\n'
-        'One-time passwords expire after a single login.'
+        "View your account information and manage credentials.\n\n"
+        "  \u2022 View username, UID, roles, and 2FA status\n"
+        "  \u2022 Change your password\n"
+        "  \u2022 Generate a one-time password for single-use login\n"
+        "  \u2022 Set up or renew two-factor authentication\n\n"
+        "Password changes take effect immediately.\n"
+        "One-time passwords expire after a single login."
     )
 
     def run(self, stdscr, session) -> None:
         try:
             me = session.call(Method.AUTH_ME)
         except Exception as e:
-            message_dialog(stdscr, TRANSLATE('Error'), format_error(e))
+            message_dialog(stdscr, TRANSLATE("Error"), format_error(e))
             return
 
-        username  = me.get('pw_name', session.username)
-        full_name = (me.get('pw_gecos') or '').strip()
-        uid       = str(me.get('pw_uid', ''))
-        source    = me.get('source', 'LOCAL')
-        is_local  = me.get('local', source == 'LOCAL')
-        two_fa_config     = me.get('two_factor_config', {})
-        two_fa_configured = two_fa_config.get('secret_configured', False)
-        roles = sorted(me.get('privilege', {}).get('roles', []))
+        username = me.get("pw_name", session.username)
+        full_name = (me.get("pw_gecos") or "").strip()
+        uid = str(me.get("pw_uid", ""))
+        source = me.get("source", "LOCAL")
+        is_local = me.get("local", source == "LOCAL")
+        two_fa_config = me.get("two_factor_config", {})
+        two_fa_configured = two_fa_config.get("secret_configured", False)
+        roles = sorted(me.get("privilege", {}).get("roles", []))
         # READONLY_ADMIN implies every *_READ role; suppress them to avoid clutter
-        if 'READONLY_ADMIN' in roles:
-            roles = [r for r in roles if not r.endswith('_READ')]
-        roles_str = ', '.join(roles) if roles else TRANSLATE('(none)')
+        if "READONLY_ADMIN" in roles:
+            roles = [r for r in roles if not r.endswith("_READ")]
+        roles_str = ", ".join(roles) if roles else TRANSLATE("(none)")
 
-        info_rows = [('Username', username)]
+        info_rows = [("Username", username)]
         if full_name:
-            info_rows.append(('Full name', full_name))
-        info_rows.extend([
-            ('UID',     uid),
-            ('Source',  source),
-            ('2FA',     TRANSLATE('Enabled') if two_fa_configured else TRANSLATE('Disabled')),
-            ('Roles',   roles_str),
-        ])
+            info_rows.append(("Full name", full_name))
+        info_rows.extend(
+            [
+                ("UID", uid),
+                ("Source", source),
+                (
+                    "2FA",
+                    TRANSLATE("Enabled")
+                    if two_fa_configured
+                    else TRANSLATE("Disabled"),
+                ),
+                ("Roles", roles_str),
+            ]
+        )
 
         qr_tool = _find_qr_tool()
         actions: list[tuple[str, bool]] = [
-            (TRANSLATE('Change password'), is_local),
-            (TRANSLATE('Generate one-time password'), True),
+            (TRANSLATE("Change password"), is_local),
+            (TRANSLATE("Generate one-time password"), True),
         ]
         if not two_fa_configured:
             actions.append(
-                (TRANSLATE('Set up two-factor authentication'), qr_tool is not None))
+                (TRANSLATE("Set up two-factor authentication"), qr_tool is not None)
+            )
         else:
-            actions.append(
-                (TRANSLATE('Renew two-factor secret'), qr_tool is not None))
-            actions.append(
-                (TRANSLATE('Disable two-factor authentication'), True))
+            actions.append((TRANSLATE("Renew two-factor secret"), qr_tool is not None))
+            actions.append((TRANSLATE("Disable two-factor authentication"), True))
 
         selected = 0
         stdscr.keypad(True)
@@ -160,22 +169,22 @@ class MyAccountPlugin(BasePlugin):
             self._draw(stdscr, username, info_rows, actions, selected)
             key = stdscr.getch()
 
-            if key == 4:                                    # Ctrl+D
+            if key == 4:  # Ctrl+D
                 raise HardExit()
-            elif key in (27, ord('q'), ord('Q')):           # Esc / q – back
+            elif key in (27, ord("q"), ord("Q")):  # Esc / q – back
                 break
             elif key == curses.KEY_UP:
                 selected = max(0, selected - 1)
             elif key == curses.KEY_DOWN:
                 selected = min(len(actions) - 1, selected + 1)
-            elif key in (ord('\n'), ord('\r'), curses.KEY_ENTER):
+            elif key in (ord("\n"), ord("\r"), curses.KEY_ENTER):
                 _, enabled = actions[selected]
                 if not enabled:
                     message_dialog(
                         stdscr,
-                        TRANSLATE('Unavailable'),
+                        TRANSLATE("Unavailable"),
                         TRANSLATE(
-                            'No terminal QR code tool was found on this system.\n\n'
+                            "No terminal QR code tool was found on this system.\n\n"
                             'Install "qr" or "qrcode-terminal" to use this feature.'
                         ),
                     )
@@ -184,34 +193,33 @@ class MyAccountPlugin(BasePlugin):
                 elif selected == 1:
                     self._generate_otp(stdscr, session, username)
                 elif selected == 2:
-                    self._setup_2fa(stdscr, session, username,
-                                    two_fa_configured, qr_tool)
+                    self._setup_2fa(
+                        stdscr, session, username, two_fa_configured, qr_tool
+                    )
                 elif selected == 3:
                     self._disable_2fa(stdscr, session, username)
                 stdscr.clear()
 
-    # ------------------------------------------------------------------
-    # Drawing
-    # ------------------------------------------------------------------
-
-    def _draw(self, stdscr, username, info_rows,
-              actions: list[tuple[str, bool]], selected) -> None:
+    def _draw(
+        self, stdscr, username, info_rows, actions: list[tuple[str, bool]], selected
+    ) -> None:
         try:
             sh, sw = stdscr.getmaxyx()
             stdscr.erase()
 
             # Header
-            title = TRANSLATE(' My Account – {u} ').format(u=username)
+            title = TRANSLATE(" My Account – {u} ").format(u=username)
             try:
-                stdscr.addstr(0, 0, title[:sw].ljust(sw),
-                              pair(colors.HEADER) | curses.A_BOLD)
+                stdscr.addstr(
+                    0, 0, title[:sw].ljust(sw), pair(colors.HEADER) | curses.A_BOLD
+                )
             except curses.error:
                 pass
 
             # Account info
             label_w = max(len(k) for k, _ in info_rows)
-            val_x   = 2 + label_w + 2
-            val_w   = max(1, sw - val_x - 1)
+            val_x = 2 + label_w + 2
+            val_w = max(1, sw - val_x - 1)
             row = 2
             for key, val in info_rows:
                 if row >= sh - 5:
@@ -221,10 +229,9 @@ class MyAccountPlugin(BasePlugin):
                         break
                     try:
                         if i == 0:
-                            stdscr.addstr(row, 2, f'{key:<{label_w}}',
-                                          curses.A_BOLD)
+                            stdscr.addstr(row, 2, f"{key:<{label_w}}", curses.A_BOLD)
                         else:
-                            stdscr.addstr(row, 2, ' ' * label_w)
+                            stdscr.addstr(row, 2, " " * label_w)
                         stdscr.addstr(row, val_x, line)
                     except curses.error:
                         pass
@@ -234,7 +241,7 @@ class MyAccountPlugin(BasePlugin):
             row += 1
             if row < sh - 4:
                 try:
-                    stdscr.addstr(row, 0, '─' * (sw - 1))
+                    stdscr.addstr(row, 0, "─" * (sw - 1))
                 except curses.error:
                     pass
                 row += 1
@@ -242,7 +249,7 @@ class MyAccountPlugin(BasePlugin):
             # Actions heading
             if row < sh - 3:
                 try:
-                    stdscr.addstr(row, 2, TRANSLATE('Actions:'), curses.A_BOLD)
+                    stdscr.addstr(row, 2, TRANSLATE("Actions:"), curses.A_BOLD)
                 except curses.error:
                     pass
                 row += 1
@@ -251,7 +258,7 @@ class MyAccountPlugin(BasePlugin):
             for i, (action, enabled) in enumerate(actions):
                 if row >= sh - 2:
                     break
-                suffix = TRANSLATE(' (no QR tool found)') if not enabled else ''
+                suffix = TRANSLATE(" (no QR tool found)") if not enabled else ""
                 display = action + suffix
                 if not enabled:
                     attr = curses.A_DIM | (curses.A_REVERSE if i == selected else 0)
@@ -260,18 +267,17 @@ class MyAccountPlugin(BasePlugin):
                 else:
                     attr = pair(colors.MENU_NORMAL)
                 try:
-                    stdscr.addstr(row, 2, ('  ' + display)[:sw - 3], attr)
+                    stdscr.addstr(row, 2, ("  " + display)[: sw - 3], attr)
                     if i == selected:
-                        stdscr.addstr(row, 2, '>', attr)
+                        stdscr.addstr(row, 2, ">", attr)
                 except curses.error:
                     pass
                 row += 1
 
             # Footer
-            footer = ' \u2191\u2193 Navigate   Enter Select   Esc/q Back   ^D Quit'
+            footer = " \u2191\u2193 Navigate   Enter Select   Esc/q Back   ^D Quit"
             try:
-                stdscr.addstr(sh - 1, 0, footer[:sw].ljust(sw),
-                              pair(colors.HEADER))
+                stdscr.addstr(sh - 1, 0, footer[:sw].ljust(sw), pair(colors.HEADER))
             except curses.error:
                 pass
 
@@ -280,27 +286,25 @@ class MyAccountPlugin(BasePlugin):
         except curses.error:
             pass
 
-    # ------------------------------------------------------------------
-    # Actions
-    # ------------------------------------------------------------------
-
     def _change_password(self, stdscr, session, username, is_local) -> None:
         if not is_local:
             message_dialog(
                 stdscr,
-                TRANSLATE('Cannot Change Password'),
-                TRANSLATE('Password changes are only supported for local accounts.\n'
-                          'This account is managed by an external directory service.'),
+                TRANSLATE("Cannot Change Password"),
+                TRANSLATE(
+                    "Password changes are only supported for local accounts.\n"
+                    "This account is managed by an external directory service."
+                ),
             )
             return
 
-        is_admin = 'FULL_ADMIN' in session.roles
+        is_admin = "FULL_ADMIN" in session.roles
 
         if not is_admin:
             old_pw = input_dialog(
                 stdscr,
-                TRANSLATE('Change Password'),
-                TRANSLATE('Current password:'),
+                TRANSLATE("Change Password"),
+                TRANSLATE("Current password:"),
                 secret=True,
             )
             if old_pw is None:
@@ -310,8 +314,8 @@ class MyAccountPlugin(BasePlugin):
 
         new_pw1 = input_dialog(
             stdscr,
-            TRANSLATE('Change Password'),
-            TRANSLATE('New password for {u}:').format(u=username),
+            TRANSLATE("Change Password"),
+            TRANSLATE("New password for {u}:").format(u=username),
             secret=True,
         )
         if not new_pw1:
@@ -320,66 +324,74 @@ class MyAccountPlugin(BasePlugin):
         if len(new_pw1) < _MIN_PASSWORD_LEN:
             message_dialog(
                 stdscr,
-                TRANSLATE('Error'),
-                TRANSLATE('Password must be at least {n} characters.').format(
-                    n=_MIN_PASSWORD_LEN),
+                TRANSLATE("Error"),
+                TRANSLATE("Password must be at least {n} characters.").format(
+                    n=_MIN_PASSWORD_LEN
+                ),
             )
             return
 
         new_pw2 = input_dialog(
             stdscr,
-            TRANSLATE('Change Password'),
-            TRANSLATE('Retype new password:'),
+            TRANSLATE("Change Password"),
+            TRANSLATE("Retype new password:"),
             secret=True,
         )
         if new_pw2 is None:
             return
 
         if new_pw1 != new_pw2:
-            message_dialog(stdscr, TRANSLATE('Error'),
-                           TRANSLATE('Passwords do not match.'))
+            message_dialog(
+                stdscr, TRANSLATE("Error"), TRANSLATE("Passwords do not match.")
+            )
             return
 
-        params = {'username': username, 'new_password': new_pw1}
+        params = {"username": username, "new_password": new_pw1}
         if old_pw is not None:
-            params['old_password'] = old_pw
+            params["old_password"] = old_pw
 
         try:
             session.call(Method.USER_SET_PASSWORD, params)
-            message_dialog(stdscr, TRANSLATE('Success'),
-                           TRANSLATE('Password changed successfully.'))
+            message_dialog(
+                stdscr,
+                TRANSLATE("Success"),
+                TRANSLATE("Password changed successfully."),
+            )
         except Exception as e:
-            message_dialog(stdscr, TRANSLATE('Error'), format_error(e))
+            message_dialog(stdscr, TRANSLATE("Error"), format_error(e))
 
     def _generate_otp(self, stdscr, session, username) -> None:
         try:
             otp = session.call(
-                Method.AUTH_GENERATE_ONETIME_PASSWORD, {'username': username})
+                Method.AUTH_GENERATE_ONETIME_PASSWORD, {"username": username}
+            )
         except Exception as e:
-            message_dialog(stdscr, TRANSLATE('Error'), format_error(e))
+            message_dialog(stdscr, TRANSLATE("Error"), format_error(e))
             return
 
         message_dialog(
             stdscr,
-            TRANSLATE('One-Time Password'),
-            TRANSLATE('One-time password for "{u}":\n\n'
-                      '  {otp}\n\n'
-                      'This password can only be used once.\n'
-                      'Dialog closes automatically after {t} seconds.').format(
-                          u=username, otp=otp, t=_OTP_DISPLAY_TIMEOUT),
+            TRANSLATE("One-Time Password"),
+            TRANSLATE(
+                'One-time password for "{u}":\n\n'
+                "  {otp}\n\n"
+                "This password can only be used once.\n"
+                "Dialog closes automatically after {t} seconds."
+            ).format(u=username, otp=otp, t=_OTP_DISPLAY_TIMEOUT),
             timeout_secs=_OTP_DISPLAY_TIMEOUT,
         )
 
-    def _setup_2fa(self, stdscr, session, username: str,
-                   already_configured: bool, qr_tool: str) -> None:
+    def _setup_2fa(
+        self, stdscr, session, username: str, already_configured: bool, qr_tool: str
+    ) -> None:
         """Set up (or renew) TOTP 2FA for the current user."""
         if already_configured:
             confirmed = confirm_dialog(
                 stdscr,
-                TRANSLATE('Renew 2FA Secret'),
+                TRANSLATE("Renew 2FA Secret"),
                 TRANSLATE(
-                    'Generating a new 2FA secret will invalidate your current\n'
-                    'authenticator app configuration. Continue?'
+                    "Generating a new 2FA secret will invalidate your current\n"
+                    "authenticator app configuration. Continue?"
                 ),
             )
             if not confirmed:
@@ -389,16 +401,19 @@ class MyAccountPlugin(BasePlugin):
             result = session.call(
                 Method.USER_RENEW_2FA_SECRET,
                 username,
-                {'otp_digits': 6, 'interval': 30},
+                {"otp_digits": 6, "interval": 30},
             )
         except Exception as e:
-            message_dialog(stdscr, TRANSLATE('Error'), format_error(e))
+            message_dialog(stdscr, TRANSLATE("Error"), format_error(e))
             return
 
-        uri = (result or {}).get('two_factor_config', {}).get('provisioning_uri', '')
+        uri = (result or {}).get("two_factor_config", {}).get("provisioning_uri", "")
         if not uri:
-            message_dialog(stdscr, TRANSLATE('Error'),
-                           TRANSLATE('No provisioning URI returned from server.'))
+            message_dialog(
+                stdscr,
+                TRANSLATE("Error"),
+                TRANSLATE("No provisioning URI returned from server."),
+            )
             return
 
         self._show_2fa_setup(stdscr, uri, qr_tool)
@@ -407,10 +422,10 @@ class MyAccountPlugin(BasePlugin):
         """Disable TOTP 2FA for the current user."""
         confirmed = confirm_dialog(
             stdscr,
-            TRANSLATE('Disable Two-Factor Authentication'),
+            TRANSLATE("Disable Two-Factor Authentication"),
             TRANSLATE(
-                'Disable two-factor authentication for {u}?\n'
-                'You will no longer need an OTP to log in.'
+                "Disable two-factor authentication for {u}?\n"
+                "You will no longer need an OTP to log in."
             ).format(u=username),
         )
         if not confirmed:
@@ -420,11 +435,11 @@ class MyAccountPlugin(BasePlugin):
             session.call(Method.USER_UNSET_2FA_SECRET, username)
             message_dialog(
                 stdscr,
-                TRANSLATE('Success'),
-                TRANSLATE('Two-factor authentication has been disabled.'),
+                TRANSLATE("Success"),
+                TRANSLATE("Two-factor authentication has been disabled."),
             )
         except Exception as e:
-            message_dialog(stdscr, TRANSLATE('Error'), format_error(e))
+            message_dialog(stdscr, TRANSLATE("Error"), format_error(e))
 
     def _show_2fa_setup(self, stdscr, uri: str, qr_tool: str | None) -> None:
         """Full-screen 2FA provisioning display. Blocks until user presses Enter."""
@@ -436,22 +451,25 @@ class MyAccountPlugin(BasePlugin):
             stdscr.erase()
 
             # Header
-            title = TRANSLATE(' Two-Factor Authentication Setup ')
+            title = TRANSLATE(" Two-Factor Authentication Setup ")
             try:
-                stdscr.addstr(0, 0, title[:sw].ljust(sw),
-                              pair(colors.HEADER) | curses.A_BOLD)
+                stdscr.addstr(
+                    0, 0, title[:sw].ljust(sw), pair(colors.HEADER) | curses.A_BOLD
+                )
             except curses.error:
                 pass
 
             row = 2
             for line in [
-                TRANSLATE('IMPORTANT: Scan this QR code with your authenticator app'),
-                TRANSLATE('(Google Authenticator, Authy, etc.) before navigating away.'),
-                TRANSLATE('Without it you may be locked out of this system.'),
+                TRANSLATE("IMPORTANT: Scan this QR code with your authenticator app"),
+                TRANSLATE(
+                    "(Google Authenticator, Authy, etc.) before navigating away."
+                ),
+                TRANSLATE("Without it you may be locked out of this system."),
             ]:
                 if row < sh - 3:
                     try:
-                        stdscr.addstr(row, 1, line[:sw - 2])
+                        stdscr.addstr(row, 1, line[: sw - 2])
                     except curses.error:
                         pass
                     row += 1
@@ -464,14 +482,14 @@ class MyAccountPlugin(BasePlugin):
                     if row >= sh - 3:
                         break
                     try:
-                        stdscr.addstr(row, 1, line[:sw - 2])
+                        stdscr.addstr(row, 1, line[: sw - 2])
                     except curses.error:
                         pass
                     row += 1
             else:
                 if row < sh - 3:
                     try:
-                        stdscr.addstr(row, 1, uri[:sw - 2])
+                        stdscr.addstr(row, 1, uri[: sw - 2])
                     except curses.error:
                         pass
                     row += 1
@@ -480,18 +498,18 @@ class MyAccountPlugin(BasePlugin):
 
             # Secret key for manual entry
             if secret and row < sh - 2:
-                secret_line = TRANSLATE(
-                    'Secret key: {s}  (for manual entry)').format(s=secret)
+                secret_line = TRANSLATE("Secret key: {s}  (for manual entry)").format(
+                    s=secret
+                )
                 try:
-                    stdscr.addstr(row, 1, secret_line[:sw - 2], curses.A_BOLD)
+                    stdscr.addstr(row, 1, secret_line[: sw - 2], curses.A_BOLD)
                 except curses.error:
                     pass
 
             # Footer
-            footer = TRANSLATE(' Press Enter to continue')
+            footer = TRANSLATE(" Press Enter to continue")
             try:
-                stdscr.addstr(sh - 1, 0, footer[:sw].ljust(sw),
-                              pair(colors.HEADER))
+                stdscr.addstr(sh - 1, 0, footer[:sw].ljust(sw), pair(colors.HEADER))
             except curses.error:
                 pass
 
@@ -506,6 +524,5 @@ class MyAccountPlugin(BasePlugin):
             key = stdscr.getch()
             if key == 4:
                 raise HardExit()
-            if key in (ord('\n'), ord('\r'), curses.KEY_ENTER,
-                       27, ord('q'), ord('Q')):
+            if key in (ord("\n"), ord("\r"), curses.KEY_ENTER, 27, ord("q"), ord("Q")):
                 break

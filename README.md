@@ -185,7 +185,8 @@ so they are fully compatible with the underlying `truenas_api_client.Client.call
 2. **`localization.py`**:
    ```python
    from truenas_tui.localization import make_translator
-   _, ngettext = make_translator('<name>')
+
+   _, ngettext = make_translator("<name>")
    ```
 
 3. **`view.py`**: subclass `BasePlugin`; set `REQUIRED_WRITE_ROLES`, `LABEL`, `DESCRIPTION`;

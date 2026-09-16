@@ -24,5 +24,5 @@ def format_error(exc: Exception) -> str:
             msg = line
             break
     if len(msg) > 200:
-        msg = msg[:197] + '...'
+        msg = msg[:197] + "..."
     return msg or type(exc).__name__

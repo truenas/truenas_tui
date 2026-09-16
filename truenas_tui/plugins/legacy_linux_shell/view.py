@@ -6,10 +6,14 @@ from truenas_tui.plugins.base import BasePlugin
 from .localization import TRANSLATE
 
 _SAFE_SHELLS = {
-    '/usr/bin/sh', '/bin/sh',
-    '/usr/bin/bash', '/bin/bash',
-    '/usr/bin/dash', '/bin/dash',
-    '/usr/bin/zsh', '/bin/zsh',
+    "/usr/bin/sh",
+    "/bin/sh",
+    "/usr/bin/bash",
+    "/bin/bash",
+    "/usr/bin/dash",
+    "/bin/dash",
+    "/usr/bin/zsh",
+    "/bin/zsh",
 }
 
 
@@ -18,11 +22,11 @@ class LinuxShellPlugin(BasePlugin):
     LEGACY_INDEX = 8
     LEGACY_ONLY = True
     _TRANSLATE = staticmethod(TRANSLATE)
-    LABEL = ('Open Linux Shell')
+    LABEL = "Open Linux Shell"
     DESCRIPTION = (
-        'Open a Linux shell (bash/zsh).\n'
-        '\n'
-        'Suspends the TUI and opens your login shell.\n'
+        "Open a Linux shell (bash/zsh).\n"
+        "\n"
+        "Suspends the TUI and opens your login shell.\n"
         'Type "exit" or press Ctrl+D to return to the TUI.'
     )
 
@@ -30,9 +34,9 @@ class LinuxShellPlugin(BasePlugin):
         try:
             shell = pwd.getpwuid(os.getuid()).pw_shell
         except Exception:
-            shell = ''
+            shell = ""
         if shell not in _SAFE_SHELLS:
-            shell = '/usr/bin/zsh'
+            shell = "/usr/bin/zsh"
         curses.endwin()
         os.system(shell)
         stdscr.refresh()
