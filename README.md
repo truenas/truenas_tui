@@ -249,7 +249,8 @@ so they are fully compatible with the underlying `truenas_api_client.Client.call
        FormField(key="hostname", label=_("Hostname"), value=current),
        BoolField(key="dhcp", label=_("Use DHCP"), value=True),
    ]
-   result = Form(stdscr, _("Title"), fields).run()  # dict of typed values, or None if cancelled
+   # Returns a dict of typed values, or None if cancelled
+   result = Form(stdscr, _("Title"), fields).run()
    ```
 
 4. Add any new API methods to `truenas_tui/api_methods.py` as `Method` enum members.
