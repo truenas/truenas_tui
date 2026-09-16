@@ -8,9 +8,9 @@ Invoke directly:
 Flags:
     --local   Set session.config.server = None so LOCAL_ONLY plugins appear
               (CliShell, LinuxShell).  Default is remote mode (server set).
-    --menu    Enable legacy midcli-compatible numbered menu mode (items 1-10,
-              number-key shortcuts, footer "Enter an option from 1-10:").
-              Without this flag the default mode is used (arrow keys only).
+    --menu    Enable legacy midcli-compatible numbered menu mode (number-key
+              shortcuts, footer "Enter an option from 1-N:").  Without this
+              flag the default mode is used (arrow keys only).
 
 Used by test_expect_compat.py and E2E tests as the subprocess target.
 """
@@ -25,26 +25,8 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from mock_session import MockSession
 from truenas_tui.localization import setup_locale
-from truenas_tui.main import ALL_PLUGINS, _print_ui_urls
+from truenas_tui.main import _print_ui_urls, _tui_main
 from truenas_tui.tui import HardExit
-from truenas_tui.tui.colors import init_colors
-from truenas_tui.tui.main_view import MainView
-
-
-def _tui_main(stdscr, session, menu_mode: bool = False):
-    init_colors()
-    if menu_mode:
-        ordered = sorted(
-            [cls for cls in ALL_PLUGINS if cls.LEGACY_INDEX is not None],
-            key=lambda cls: cls.LEGACY_INDEX,
-        )
-    else:
-        ordered = [cls for cls in ALL_PLUGINS if not cls.LEGACY_ONLY]
-    plugins = [
-        p for p in (cls() for cls in ordered) if p.can_activate(session.roles, session)
-    ]
-    view = MainView(stdscr, session, plugins, menu_mode=menu_mode)
-    view.run()
 
 
 def main():

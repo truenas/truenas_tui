@@ -21,8 +21,6 @@ _HIGH_CONTRAST_REVERSE = frozenset({HEADER, MENU_SELECTED, ERROR})
 def init_colors(theme: str = "default") -> None:
     """Initialise curses color pairs. Safe to call multiple times (live reload)."""
     global _active_theme
-    valid = {"default", "dark", "high_contrast"}
-    _active_theme = theme if theme in valid else "default"
 
     curses.start_color()
     curses.use_default_colors()
@@ -58,27 +56,13 @@ def init_colors(theme: str = "default") -> None:
             (DIM, BK, -1),
             (TITLE, G, -1),
         ],
-        "high_contrast": [
-            # All pairs use terminal defaults; pair() injects A_REVERSE
-            # for HEADER, MENU_SELECTED, ERROR via _HIGH_CONTRAST_REVERSE.
-            (HEADER, -1, -1),
-            (MENU_NORMAL, -1, -1),
-            (MENU_SELECTED, -1, -1),
-            (BORDER, -1, -1),
-            (WARNING, -1, -1),
-            (ERROR, -1, -1),
-            (SUCCESS, -1, -1),
-            (DIM, -1, -1),
-            (TITLE, -1, -1),
-        ],
+        # All pairs use terminal defaults; pair() injects A_REVERSE for
+        # HEADER, MENU_SELECTED, ERROR via _HIGH_CONTRAST_REVERSE.
+        "high_contrast": [(pair_id, -1, -1) for pair_id in range(HEADER, TITLE + 1)],
     }
+    _active_theme = theme if theme in palettes else "default"
     for pair_id, fg, bg in palettes[_active_theme]:
         curses.init_pair(pair_id, fg, bg)
-
-
-def reinit_colors(theme: str) -> None:
-    """Re-apply a different theme mid-session."""
-    init_colors(theme)
 
 
 def pair(color_id: int) -> int:

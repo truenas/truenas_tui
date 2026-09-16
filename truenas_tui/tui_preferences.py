@@ -2,30 +2,7 @@
 
 from __future__ import annotations
 
-from dataclasses import asdict, dataclass
-from enum import StrEnum
-
-
-class DateFormat(StrEnum):
-    """Date format strings matching the TrueNAS WebUI / date-fns conventions."""
-
-    ISO = "yyyy-MM-dd"
-    LONG_US = "MMMM d, yyyy"
-    LONG_EU = "d MMMM, yyyy"
-    SHORT_US = "MMM d, yyyy"
-    SHORT_EU = "d MMM yyyy"
-    SLASH_US = "MM/dd/yyyy"
-    SLASH_EU = "dd/MM/yyyy"
-    DOT_EU = "dd.MM.yyyy"
-
-
-class TimeFormat(StrEnum):
-    """Time format strings matching the TrueNAS WebUI / date-fns conventions."""
-
-    H24 = "HH:mm:ss"
-    H12_AM = "hh:mm:ss aaaaa'm'"
-    H12_AP = "hh:mm:ss aa"
-
+from dataclasses import dataclass
 
 # Language code → display name (matches the TrueNAS WebUI languages constant).
 LANGUAGES: dict[str, str] = {
@@ -108,41 +85,26 @@ LANGUAGES: dict[str, str] = {
     "zh-hant": "Traditional Chinese",
 }
 
-_DATE_FORMAT_VALUES = frozenset(DateFormat)
-_TIME_FORMAT_VALUES = frozenset(TimeFormat)
-
 TUI_PREFERENCES_KEY = "tui_preferences"
 VALID_THEMES = frozenset({"default", "dark", "high_contrast"})
 VALID_STARTUP_VIEWS = frozenset({"sysinfo", "menu"})
 
 
+def _pick(value, allowed, default: str) -> str:
+    return value if isinstance(value, str) and value in allowed else default
+
+
 @dataclass(slots=True, kw_only=True, frozen=True)
 class TuiPreferences:
     language: str = "en"
-    date_format: str = DateFormat.ISO
-    time_format: str = TimeFormat.H24
     theme: str = "default"
-    confirm_dangerous: bool = True
     startup_view: str = "sysinfo"
 
     @classmethod
     def from_dict(cls, d: dict) -> TuiPreferences:
-        """Deserialise, ignoring unknown keys; invalid enum values → defaults."""
-        theme = str(d.get("theme", "default") or "default")
-        startup_view = str(d.get("startup_view", "sysinfo") or "sysinfo")
-        lang_raw = str(d.get("language", "en") or "en")
-        date_raw = str(d.get("date_format", "") or "")
-        time_raw = str(d.get("time_format", "") or "")
+        """Deserialise, ignoring unknown keys; invalid values fall back to defaults."""
         return cls(
-            language=lang_raw if lang_raw in LANGUAGES else "en",
-            date_format=date_raw if date_raw in _DATE_FORMAT_VALUES else DateFormat.ISO,
-            time_format=time_raw if time_raw in _TIME_FORMAT_VALUES else TimeFormat.H24,
-            theme=theme if theme in VALID_THEMES else "default",
-            confirm_dangerous=bool(d.get("confirm_dangerous", True)),
-            startup_view=startup_view
-            if startup_view in VALID_STARTUP_VIEWS
-            else "sysinfo",
+            language=_pick(d.get("language"), LANGUAGES, "en"),
+            theme=_pick(d.get("theme"), VALID_THEMES, "default"),
+            startup_view=_pick(d.get("startup_view"), VALID_STARTUP_VIEWS, "sysinfo"),
         )
-
-    def to_dict(self) -> dict:
-        return asdict(self)

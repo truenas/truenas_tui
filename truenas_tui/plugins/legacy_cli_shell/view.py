@@ -2,17 +2,13 @@ import curses
 import os
 import shutil
 
+from truenas_tui.localization import TRANSLATE
 from truenas_tui.plugins.base import BasePlugin
 from truenas_tui.tui.dialogs import message_dialog
-
-from .localization import TRANSLATE
 
 
 class CliShellPlugin(BasePlugin):
     LOCAL_ONLY = True
-    LEGACY_INDEX = 7
-    LEGACY_ONLY = True
-    _TRANSLATE = staticmethod(TRANSLATE)
     LABEL = "Open TrueNAS CLI Shell"
     DESCRIPTION = (
         "Open the TrueNAS interactive CLI shell (midcli).\n"

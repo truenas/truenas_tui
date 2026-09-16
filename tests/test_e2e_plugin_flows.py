@@ -10,19 +10,20 @@ Each test:
 Legacy mode (--menu) is used for tests that rely on number-key shortcuts.
 Default mode is used for PowerControlPlugin (reached via arrow keys).
 
-Legacy plugin map (remote, --menu):
+Legacy plugin map (remote, --menu; the shell items are hidden):
   1 – NetworkInterfacePlugin   (interface list)
   2 – NetworkSettingsPlugin    (form)
   3 – StaticRoutesPlugin       (route list)
   4 – PasswordPlugin           (select admin)
   5 – OnetimePasswordPlugin    (OTP dialog)
   6 – ResetConfigPlugin        (confirm dialog)
-  9 – RebootPlugin             (reason input)
-  10 – ShutdownPlugin          (reason input, not numbered in 1-9 range)
+  7 – RebootPlugin             (reason input)
+  8 – ShutdownPlugin           (reason input)
 
 Legacy plugin map (local, --menu):
   7 – CliShellPlugin           (midcli not found → error dialog)
   8 – LinuxShellPlugin         (spawns shell → exits → TUI restores)
+  9 – RebootPlugin, 10 – ShutdownPlugin
 """
 
 import os
@@ -189,14 +190,14 @@ class TestResetConfigPlugin:
 
 class TestRebootPlugin:
     def test_opens_and_shows_reason_prompt(self):
-        child = _open_plugin("9")
+        child = _open_plugin("7")
         try:
             child.expect("(?i)reboot|reason", timeout=TIMEOUT)
         finally:
             child.close(force=True)
 
     def test_empty_reason_cancels_and_returns(self):
-        child = _open_plugin("9")
+        child = _open_plugin("7")
         try:
             child.expect("(?i)reboot|reason", timeout=TIMEOUT)
             child.send("\n")  # send empty reason

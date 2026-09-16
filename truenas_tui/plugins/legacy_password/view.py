@@ -9,27 +9,16 @@ Behaviour matches midcli:
   - Otherwise (fresh install / no admin):
       • Prompt to set up 'admin' or 'root'
       • Use user.setup_local_administrator
-
-API version notes:
-  auth.twofactor.update is present in all supported API versions.
 """
 
-from truenas_tui.api_methods import Method
+from truenas_tui.localization import TRANSLATE
 from truenas_tui.plugins.base import BasePlugin
 from truenas_tui.tui import format_error
-from truenas_tui.tui.dialogs import input_dialog, message_dialog, select_dialog
-
-from .localization import TRANSLATE
-
-_MIN_PASSWORD_LEN = 8
+from truenas_tui.tui.dialogs import message_dialog, new_password_dialog, select_dialog
 
 
 class PasswordPlugin(BasePlugin):
     REQUIRED_WRITE_ROLES = frozenset({"ACCOUNT_WRITE"})
-    LEGACY_INDEX = 4
-    LEGACY_ONLY = True
-    REFRESH_INTERVAL = 60  # re-check admin setup state every minute
-    _TRANSLATE = staticmethod(TRANSLATE)
     LABEL = "Change local administrator password"
     DESCRIPTION = (
         "Change the password for a local administrator account.\n"
@@ -41,31 +30,19 @@ class PasswordPlugin(BasePlugin):
         "authentication for that account."
     )
 
-    def _fetch_label(self, session) -> str:
+    def run(self, stdscr, session) -> None:
         try:
-            has_admin = session.call(Method.USER_HAS_LOCAL_ADMINISTRATOR_SET_UP)
+            has_admin = session.call("user.has_local_administrator_set_up")
         except Exception:
             has_admin = True
-        return (
-            TRANSLATE("Change local administrator password")
-            if has_admin
-            else TRANSLATE("Set up local administrator")
-        )
-
-    def run(self, stdscr, session) -> None:
-        label = self.get_label(session)
-        has_admin = label == TRANSLATE("Change local administrator password")
-
         if has_admin:
             self._change_password(stdscr, session)
         else:
             self._setup_administrator(stdscr, session)
 
-        self.refresh(session)  # label may have changed after password setup
-
     def _change_password(self, stdscr, session) -> None:
         try:
-            admins = session.call(Method.PRIVILEGE_LOCAL_ADMINISTRATORS)
+            admins = session.call("privilege.local_administrators")
         except Exception as e:
             message_dialog(stdscr, TRANSLATE("Error"), format_error(e))
             return
@@ -83,44 +60,13 @@ class PasswordPlugin(BasePlugin):
 
         user = admins[idx]
         username = user["username"]
-
-        pw1 = input_dialog(
-            stdscr,
-            TRANSLATE("Change Password"),
-            TRANSLATE("New password for {u}:").format(u=username),
-            secret=True,
-        )
-        if pw1 is None or pw1 == "":
-            return
-
-        if len(pw1) < _MIN_PASSWORD_LEN:
-            message_dialog(
-                stdscr,
-                TRANSLATE("Error"),
-                TRANSLATE("Password must be at least {n} characters.").format(
-                    n=_MIN_PASSWORD_LEN
-                ),
-            )
-            return
-
-        pw2 = input_dialog(
-            stdscr,
-            TRANSLATE("Change Password"),
-            TRANSLATE("Retype password for {u}:").format(u=username),
-            secret=True,
-        )
-        if pw2 is None:
-            return
-
-        if pw1 != pw2:
-            message_dialog(
-                stdscr, TRANSLATE("Error"), TRANSLATE("Passwords do not match.")
-            )
+        password = new_password_dialog(stdscr, TRANSLATE("Change Password"), username)
+        if password is None:
             return
 
         try:
-            session.call(Method.USER_UPDATE, user["id"], {"password": pw1})
-            session.call(Method.AUTH_TWOFACTOR_UPDATE, {"enabled": False})
+            session.call("user.update", user["id"], {"password": password})
+            session.call("auth.twofactor.update", {"enabled": False})
             message_dialog(
                 stdscr,
                 TRANSLATE("Success"),
@@ -142,43 +88,14 @@ class PasswordPlugin(BasePlugin):
             return
 
         username = "admin" if idx == 0 else "root"
-
-        pw1 = input_dialog(
-            stdscr,
-            TRANSLATE("Set Up Administrator"),
-            TRANSLATE("Password for {u}:").format(u=username),
-            secret=True,
+        password = new_password_dialog(
+            stdscr, TRANSLATE("Set Up Administrator"), username
         )
-        if pw1 is None or pw1 == "":
-            return
-
-        if len(pw1) < _MIN_PASSWORD_LEN:
-            message_dialog(
-                stdscr,
-                TRANSLATE("Error"),
-                TRANSLATE("Password must be at least {n} characters.").format(
-                    n=_MIN_PASSWORD_LEN
-                ),
-            )
-            return
-
-        pw2 = input_dialog(
-            stdscr,
-            TRANSLATE("Set Up Administrator"),
-            TRANSLATE("Retype password for {u}:").format(u=username),
-            secret=True,
-        )
-        if pw2 is None:
-            return
-
-        if pw1 != pw2:
-            message_dialog(
-                stdscr, TRANSLATE("Error"), TRANSLATE("Passwords do not match.")
-            )
+        if password is None:
             return
 
         try:
-            session.call(Method.USER_SETUP_LOCAL_ADMINISTRATOR, username, pw1)
+            session.call("user.setup_local_administrator", username, password)
             message_dialog(
                 stdscr,
                 TRANSLATE("Success"),

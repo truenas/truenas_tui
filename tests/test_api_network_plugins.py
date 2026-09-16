@@ -12,7 +12,6 @@ pair() are also patched to avoid terminal initialisation errors.
 
 from unittest.mock import MagicMock, patch
 
-from truenas_tui.api_methods import Method
 from truenas_tui.plugins.network_settings.view import NetworkSettingsPlugin
 from truenas_tui.plugins.static_routes.view import StaticRoutesPlugin
 
@@ -26,7 +25,7 @@ class TestNetworkSettingsPlugin:
             MockForm.return_value.run.return_value = None
             NetworkSettingsPlugin().run(stdscr, recording_session)
 
-        assert recording_session.was_called(Method.NETWORK_CONFIGURATION_CONFIG)
+        assert recording_session.was_called("network.configuration.config")
 
     def test_form_pre_populated_with_current_config(self, recording_session, stdscr):
         """Form fields should be constructed with values from config response."""
@@ -63,10 +62,8 @@ class TestNetworkSettingsPlugin:
             MockForm.return_value.run.return_value = updated
             NetworkSettingsPlugin().run(stdscr, recording_session)
 
-        assert recording_session.was_called(Method.NETWORK_CONFIGURATION_UPDATE)
-        (args, _) = recording_session.called_with(Method.NETWORK_CONFIGURATION_UPDATE)[
-            0
-        ]
+        assert recording_session.was_called("network.configuration.update")
+        (args, _) = recording_session.called_with("network.configuration.update")[0]
         assert args[0] == updated
 
     def test_cancel_skips_update(self, recording_session, stdscr):
@@ -74,7 +71,7 @@ class TestNetworkSettingsPlugin:
             MockForm.return_value.run.return_value = None
             NetworkSettingsPlugin().run(stdscr, recording_session)
 
-        assert not recording_session.was_called(Method.NETWORK_CONFIGURATION_UPDATE)
+        assert not recording_session.was_called("network.configuration.update")
 
     def test_success_message_shown_after_save(self, recording_session, stdscr):
         with (
@@ -114,7 +111,7 @@ def _session_with_route(route=None):
         "gateway": "192.168.1.1",
         "description": "test",
     }
-    return RecordingMockSession().override(Method.STATICROUTE_QUERY, [r])
+    return RecordingMockSession().override("staticroute.query", [r])
 
 
 class TestStaticRoutesPlugin:
@@ -122,7 +119,7 @@ class TestStaticRoutesPlugin:
         _run_static_routes(
             StaticRoutesPlugin(), stdscr, recording_session, keys=[ord("q")]
         )
-        assert recording_session.was_called(Method.STATICROUTE_QUERY)
+        assert recording_session.was_called("staticroute.query")
 
     def test_add_route_calls_create(self, stdscr):
         session = (
@@ -144,8 +141,8 @@ class TestStaticRoutesPlugin:
                 StaticRoutesPlugin(), stdscr, session, keys=[ord("a"), ord("q")]
             )
 
-        assert session.was_called(Method.STATICROUTE_CREATE)
-        (args, _) = session.called_with(Method.STATICROUTE_CREATE)[0]
+        assert session.was_called("staticroute.create")
+        (args, _) = session.called_with("staticroute.create")[0]
         assert args[0] == new_route
 
     def test_add_route_cancel_no_create(self, stdscr):
@@ -158,7 +155,7 @@ class TestStaticRoutesPlugin:
                 StaticRoutesPlugin(), stdscr, session, keys=[ord("a"), ord("q")]
             )
 
-        assert not session.was_called(Method.STATICROUTE_CREATE)
+        assert not session.was_called("staticroute.create")
 
     def test_delete_confirmed_calls_delete(self, stdscr):
         route = {
@@ -176,8 +173,8 @@ class TestStaticRoutesPlugin:
                 StaticRoutesPlugin(), stdscr, session, keys=[ord("d"), ord("q")]
             )
 
-        assert session.was_called(Method.STATICROUTE_DELETE)
-        (args, _) = session.called_with(Method.STATICROUTE_DELETE)[0]
+        assert session.was_called("staticroute.delete")
+        (args, _) = session.called_with("staticroute.delete")[0]
         assert args[0] == 7  # route id
 
     def test_delete_cancelled_no_delete(self, stdscr):
@@ -193,14 +190,14 @@ class TestStaticRoutesPlugin:
                 StaticRoutesPlugin(), stdscr, session, keys=[ord("d"), ord("q")]
             )
 
-        assert not session.was_called(Method.STATICROUTE_DELETE)
+        assert not session.was_called("staticroute.delete")
 
     def test_delete_on_empty_list_no_delete(self, recording_session, stdscr):
         # Empty route list — 'd' key should do nothing
         _run_static_routes(
             StaticRoutesPlugin(), stdscr, recording_session, keys=[ord("d"), ord("q")]
         )
-        assert not recording_session.was_called(Method.STATICROUTE_DELETE)
+        assert not recording_session.was_called("staticroute.delete")
 
     def test_edit_route_calls_update(self, stdscr):
         route = {
@@ -221,8 +218,8 @@ class TestStaticRoutesPlugin:
                 StaticRoutesPlugin(), stdscr, session, keys=[ord("\n"), ord("q")]
             )
 
-        assert session.was_called(Method.STATICROUTE_UPDATE)
-        (args, _) = session.called_with(Method.STATICROUTE_UPDATE)[0]
+        assert session.was_called("staticroute.update")
+        (args, _) = session.called_with("staticroute.update")[0]
         assert args[0] == 5  # route id
         assert args[1] == updated  # new payload
 
@@ -240,11 +237,11 @@ class TestStaticRoutesPlugin:
                 StaticRoutesPlugin(), stdscr, session, keys=[ord("\n"), ord("q")]
             )
 
-        assert not session.was_called(Method.STATICROUTE_UPDATE)
+        assert not session.was_called("staticroute.update")
 
     def test_esc_exits_loop(self, recording_session, stdscr):
         _run_static_routes(
             StaticRoutesPlugin(), stdscr, recording_session, keys=[27]
         )  # ESC
         # Just verify it completed (no StopIteration / hang)
-        assert recording_session.was_called(Method.STATICROUTE_QUERY)
+        assert recording_session.was_called("staticroute.query")

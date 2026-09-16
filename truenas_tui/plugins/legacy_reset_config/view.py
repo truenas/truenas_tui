@@ -10,19 +10,14 @@ Version notes:
   v25.04+: system.config.reset takes no arguments.
 """
 
-from truenas_tui.api_methods import Method
+from truenas_tui.localization import TRANSLATE
 from truenas_tui.plugins.base import BasePlugin
 from truenas_tui.tui import format_error
 from truenas_tui.tui.dialogs import confirm_dialog, input_dialog, message_dialog
 
-from .localization import TRANSLATE
-
 
 class ResetConfigPlugin(BasePlugin):
     REQUIRED_WRITE_ROLES = frozenset({"FULL_ADMIN"})
-    LEGACY_INDEX = 6
-    LEGACY_ONLY = True
-    _TRANSLATE = staticmethod(TRANSLATE)
     LABEL = "Reset configuration to defaults"
     DESCRIPTION = (
         "Erase all TrueNAS configuration and reset to factory\n"
@@ -64,7 +59,7 @@ class ResetConfigPlugin(BasePlugin):
             return
 
         try:
-            session.call(Method.SYSTEM_CONFIG_RESET)
+            session.call("system.config.reset")
             message_dialog(
                 stdscr,
                 TRANSLATE("Reset"),

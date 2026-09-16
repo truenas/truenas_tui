@@ -12,21 +12,16 @@ API:
 
 import curses
 
-from truenas_tui.api_methods import Method
+from truenas_tui.localization import TRANSLATE
 from truenas_tui.plugins.base import BasePlugin
 from truenas_tui.tui import HardExit, colors, format_error
 from truenas_tui.tui.colors import pair
 from truenas_tui.tui.dialogs import confirm_dialog, message_dialog
 from truenas_tui.tui.forms import Form, FormField
 
-from .localization import TRANSLATE
-
 
 class StaticRoutesPlugin(BasePlugin):
     REQUIRED_WRITE_ROLES = frozenset({"NETWORK_INTERFACE_WRITE"})
-    LEGACY_INDEX = 3
-    DEFAULT_HIDDEN = True
-    _TRANSLATE = staticmethod(TRANSLATE)
     LABEL = "Configure static routes"
     DESCRIPTION = (
         "Manage static network routes.\n"
@@ -45,7 +40,7 @@ class StaticRoutesPlugin(BasePlugin):
 
         while True:
             try:
-                routes = session.call(Method.STATICROUTE_QUERY)
+                routes = session.call("staticroute.query")
             except Exception as e:
                 message_dialog(stdscr, TRANSLATE("Error"), format_error(e))
                 return
@@ -141,7 +136,7 @@ class StaticRoutesPlugin(BasePlugin):
         if result is None:
             return
         try:
-            session.call(Method.STATICROUTE_CREATE, result)
+            session.call("staticroute.create", result)
         except Exception as e:
             message_dialog(stdscr, TRANSLATE("Error"), format_error(e))
 
@@ -150,7 +145,7 @@ class StaticRoutesPlugin(BasePlugin):
         if result is None:
             return
         try:
-            session.call(Method.STATICROUTE_UPDATE, route["id"], result)
+            session.call("staticroute.update", route["id"], result)
         except Exception as e:
             message_dialog(stdscr, TRANSLATE("Error"), format_error(e))
 
@@ -162,6 +157,6 @@ class StaticRoutesPlugin(BasePlugin):
             TRANSLATE("Delete static route {dest}?").format(dest=dest),
         ):
             try:
-                session.call(Method.STATICROUTE_DELETE, route["id"])
+                session.call("staticroute.delete", route["id"])
             except Exception as e:
                 message_dialog(stdscr, TRANSLATE("Error"), format_error(e))

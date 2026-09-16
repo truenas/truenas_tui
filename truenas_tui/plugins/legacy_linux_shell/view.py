@@ -4,8 +4,6 @@ import pwd
 
 from truenas_tui.plugins.base import BasePlugin
 
-from .localization import TRANSLATE
-
 _SAFE_SHELLS = {
     "/usr/bin/sh",
     "/bin/sh",
@@ -20,9 +18,6 @@ _SAFE_SHELLS = {
 
 class LinuxShellPlugin(BasePlugin):
     LOCAL_ONLY = True
-    LEGACY_INDEX = 8
-    LEGACY_ONLY = True
-    _TRANSLATE = staticmethod(TRANSLATE)
     LABEL = "Open Linux Shell"
     DESCRIPTION = (
         "Open a Linux shell (bash/zsh).\n"

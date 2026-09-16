@@ -10,7 +10,6 @@ from unittest.mock import patch
 
 import pytest
 
-from truenas_tui.api_methods import Method
 from truenas_tui.plugins.legacy_reboot.view import RebootPlugin
 from truenas_tui.plugins.legacy_reset_config.view import ResetConfigPlugin
 from truenas_tui.plugins.legacy_shutdown.view import ShutdownPlugin
@@ -34,7 +33,7 @@ class TestRebootPlugin:
         ):
             RebootPlugin().run(stdscr, recording_session)
 
-        assert recording_session.was_called(Method.SYSTEM_REBOOT)
+        assert recording_session.was_called("system.reboot")
 
     def test_reason_stripped_before_api_call(self, recording_session, stdscr):
         with (
@@ -50,7 +49,7 @@ class TestRebootPlugin:
         ):
             RebootPlugin().run(stdscr, recording_session)
 
-        (args, _) = recording_session.called_with(Method.SYSTEM_REBOOT)[0]
+        (args, _) = recording_session.called_with("system.reboot")[0]
         assert args[0] == {"reason": "Maintenance"}
 
     def test_success_dialog_shown_after_reboot(self, recording_session, stdscr):
@@ -75,7 +74,7 @@ class TestRebootPlugin:
         ):
             RebootPlugin().run(stdscr, recording_session)
 
-        assert not recording_session.was_called(Method.SYSTEM_REBOOT)
+        assert not recording_session.was_called("system.reboot")
 
     def test_blank_reason_treated_as_cancel(self, recording_session, stdscr):
         with patch(
@@ -83,7 +82,7 @@ class TestRebootPlugin:
         ):
             RebootPlugin().run(stdscr, recording_session)
 
-        assert not recording_session.was_called(Method.SYSTEM_REBOOT)
+        assert not recording_session.was_called("system.reboot")
 
     def test_empty_reason_treated_as_cancel(self, recording_session, stdscr):
         with patch(
@@ -91,7 +90,7 @@ class TestRebootPlugin:
         ):
             RebootPlugin().run(stdscr, recording_session)
 
-        assert not recording_session.was_called(Method.SYSTEM_REBOOT)
+        assert not recording_session.was_called("system.reboot")
 
     def test_cancel_at_confirm_dialog_no_api_call(self, recording_session, stdscr):
         with (
@@ -106,7 +105,7 @@ class TestRebootPlugin:
         ):
             RebootPlugin().run(stdscr, recording_session)
 
-        assert not recording_session.was_called(Method.SYSTEM_REBOOT)
+        assert not recording_session.was_called("system.reboot")
 
 
 class TestShutdownPlugin:
@@ -116,66 +115,66 @@ class TestShutdownPlugin:
     def test_confirmed_calls_system_shutdown(self, recording_session, stdscr):
         with (
             patch(
-                "truenas_tui.plugins.legacy_shutdown.view.input_dialog",
+                "truenas_tui.plugins.legacy_reboot.view.input_dialog",
                 return_value="Planned maintenance",
             ),
             patch(
-                "truenas_tui.plugins.legacy_shutdown.view.confirm_dialog",
+                "truenas_tui.plugins.legacy_reboot.view.confirm_dialog",
                 return_value=True,
             ),
-            patch("truenas_tui.plugins.legacy_shutdown.view.message_dialog"),
+            patch("truenas_tui.plugins.legacy_reboot.view.message_dialog"),
         ):
             ShutdownPlugin().run(stdscr, recording_session)
 
-        assert recording_session.was_called(Method.SYSTEM_SHUTDOWN)
+        assert recording_session.was_called("system.shutdown")
 
     def test_reason_stripped_before_api_call(self, recording_session, stdscr):
         with (
             patch(
-                "truenas_tui.plugins.legacy_shutdown.view.input_dialog",
+                "truenas_tui.plugins.legacy_reboot.view.input_dialog",
                 return_value="  Hardware swap  ",
             ),
             patch(
-                "truenas_tui.plugins.legacy_shutdown.view.confirm_dialog",
+                "truenas_tui.plugins.legacy_reboot.view.confirm_dialog",
                 return_value=True,
             ),
-            patch("truenas_tui.plugins.legacy_shutdown.view.message_dialog"),
+            patch("truenas_tui.plugins.legacy_reboot.view.message_dialog"),
         ):
             ShutdownPlugin().run(stdscr, recording_session)
 
-        (args, _) = recording_session.called_with(Method.SYSTEM_SHUTDOWN)[0]
+        (args, _) = recording_session.called_with("system.shutdown")[0]
         assert args[0] == {"reason": "Hardware swap"}
 
     def test_cancel_at_reason_no_api_call(self, recording_session, stdscr):
         with patch(
-            "truenas_tui.plugins.legacy_shutdown.view.input_dialog", return_value=None
+            "truenas_tui.plugins.legacy_reboot.view.input_dialog", return_value=None
         ):
             ShutdownPlugin().run(stdscr, recording_session)
 
-        assert not recording_session.was_called(Method.SYSTEM_SHUTDOWN)
+        assert not recording_session.was_called("system.shutdown")
 
     def test_blank_reason_treated_as_cancel(self, recording_session, stdscr):
         with patch(
-            "truenas_tui.plugins.legacy_shutdown.view.input_dialog", return_value=""
+            "truenas_tui.plugins.legacy_reboot.view.input_dialog", return_value=""
         ):
             ShutdownPlugin().run(stdscr, recording_session)
 
-        assert not recording_session.was_called(Method.SYSTEM_SHUTDOWN)
+        assert not recording_session.was_called("system.shutdown")
 
     def test_cancel_at_confirm_no_api_call(self, recording_session, stdscr):
         with (
             patch(
-                "truenas_tui.plugins.legacy_shutdown.view.input_dialog",
+                "truenas_tui.plugins.legacy_reboot.view.input_dialog",
                 return_value="reason",
             ),
             patch(
-                "truenas_tui.plugins.legacy_shutdown.view.confirm_dialog",
+                "truenas_tui.plugins.legacy_reboot.view.confirm_dialog",
                 return_value=False,
             ),
         ):
             ShutdownPlugin().run(stdscr, recording_session)
 
-        assert not recording_session.was_called(Method.SYSTEM_SHUTDOWN)
+        assert not recording_session.was_called("system.shutdown")
 
 
 class TestResetConfigPlugin:
@@ -196,7 +195,7 @@ class TestResetConfigPlugin:
         ):
             ResetConfigPlugin().run(stdscr, recording_session)
 
-        assert recording_session.was_called(Method.SYSTEM_CONFIG_RESET)
+        assert recording_session.was_called("system.config.reset")
 
     def test_first_confirm_cancel_no_api_call(self, recording_session, stdscr):
         with patch(
@@ -205,7 +204,7 @@ class TestResetConfigPlugin:
         ):
             ResetConfigPlugin().run(stdscr, recording_session)
 
-        assert not recording_session.was_called(Method.SYSTEM_CONFIG_RESET)
+        assert not recording_session.was_called("system.config.reset")
 
     @pytest.mark.parametrize(
         "wrong",
@@ -236,7 +235,7 @@ class TestResetConfigPlugin:
         ):
             ResetConfigPlugin().run(stdscr, rs)
 
-        assert not rs.was_called(Method.SYSTEM_CONFIG_RESET), (
+        assert not rs.was_called("system.config.reset"), (
             f"Should not reset for confirmation string {wrong!r}"
         )
 
@@ -254,7 +253,7 @@ class TestResetConfigPlugin:
         ):
             ResetConfigPlugin().run(stdscr, recording_session)
 
-        assert not recording_session.was_called(Method.SYSTEM_CONFIG_RESET)
+        assert not recording_session.was_called("system.config.reset")
 
     def test_cancel_message_shown_for_wrong_string(self, recording_session, stdscr):
         with (

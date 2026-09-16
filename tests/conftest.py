@@ -2,7 +2,6 @@
 Shared pytest fixtures for the truenas_tui test suite.
 
 Groups:
-  remote_session       – MockSession with server='192.168.1.108' (default)
   local_session        – MockSession with server=None (LOCAL_ONLY plugins visible)
   recording_session    – RecordingMockSession (remote by default)
   stdscr               – MagicMock satisfying all curses stdscr interactions
@@ -20,12 +19,6 @@ collect_ignore = ["test_live_readonly.py"]
 
 
 @pytest.fixture
-def remote_session():
-    """MockSession presenting as a remote connection (server set)."""
-    return MockSession()
-
-
-@pytest.fixture
 def local_session():
     """MockSession presenting as a local AF-UNIX connection (server=None)."""
     s = MockSession()
@@ -37,14 +30,6 @@ def local_session():
 def recording_session():
     """RecordingMockSession in remote mode; records all session.call() calls."""
     return RecordingMockSession()
-
-
-@pytest.fixture
-def local_recording_session():
-    """RecordingMockSession in local mode (server=None)."""
-    s = RecordingMockSession()
-    s.config.server = None
-    return s
 
 
 @pytest.fixture

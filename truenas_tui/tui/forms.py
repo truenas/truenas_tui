@@ -21,7 +21,7 @@ Layout (takes over the whole content area passed in):
 
 Field types:
 
-  FormField   – plain text input (original behaviour, unchanged)
+  FormField   – plain text input
   BoolField   – True/False toggle; run() returns bool
   ChoiceField – dropdown; Left/Right cycle, Enter opens select_dialog;
                 run() returns the chosen string
@@ -29,10 +29,6 @@ Field types:
   SectionField– non-editable bold header + separator line; skipped by Tab
   ListField   – variable-length list; Enter opens sub-editor;
                 run() returns list[str]
-
-All new types subclass FormField, so existing code using bare FormField
-instances is 100% unaffected.  run() return type broadens from
-dict[str, str] to dict[str, Any].
 
 Usage::
 
@@ -56,6 +52,8 @@ from truenas_tui.localization import TRANSLATE
 
 from . import HardExit, colors
 from .dialogs import confirm_dialog, input_dialog, message_dialog, select_dialog
+
+_ENTER = (ord("\n"), ord("\r"))
 
 
 @dataclass(slots=True, kw_only=True, frozen=True)
@@ -119,6 +117,23 @@ class ListField(FormField):
     item_validator: Callable[[str], str | None] | None = field(default=None, repr=False)
 
 
+def _is_text(f: FormField) -> bool:
+    """FormField and IntField are edited through a text buffer."""
+    return not isinstance(f, (BoolField, ChoiceField, SectionField, ListField))
+
+
+def _initial_state(f: FormField):
+    if isinstance(f, BoolField):
+        return bool(f.value)
+    if isinstance(f, ChoiceField):
+        return int(f.value)
+    if isinstance(f, ListField):
+        return list(f.value)
+    if isinstance(f, SectionField):
+        return None
+    return list(str(f.value))
+
+
 class Form:
     LABEL_W = 20  # Width reserved for labels
 
@@ -127,65 +142,18 @@ class Form:
         self.title = title
         self.fields = fields
         self._error: str = ""
-
-        # Per-field mutable state (parallel arrays, one entry per field)
-        self._field_bufs: list[list[str]] = []  # text buffer (FormField, IntField)
-        self._field_cursors: list[int] = []  # text cursor position
-        self._field_scrolls: list[int] = []  # horizontal scroll offset
-        self._bool_vals: list[bool] = []  # BoolField current value
-        self._choice_idxs: list[int] = []  # ChoiceField selected index
-        self._list_vals: list[list[str]] = []  # ListField current list
-        self._field_errors: list[str] = []  # per-field error (IntField bounds)
-
-        for f in fields:
-            if isinstance(f, BoolField):
-                self._field_bufs.append([])
-                self._field_cursors.append(0)
-                self._field_scrolls.append(0)
-                self._bool_vals.append(bool(f.value))
-                self._choice_idxs.append(0)
-                self._list_vals.append([])
-            elif isinstance(f, ChoiceField):
-                self._field_bufs.append([])
-                self._field_cursors.append(0)
-                self._field_scrolls.append(0)
-                self._bool_vals.append(False)
-                self._choice_idxs.append(int(f.value))
-                self._list_vals.append([])
-            elif isinstance(f, IntField):
-                s = str(f.value)
-                self._field_bufs.append(list(s))
-                self._field_cursors.append(len(s))
-                self._field_scrolls.append(0)
-                self._bool_vals.append(False)
-                self._choice_idxs.append(0)
-                self._list_vals.append([])
-            elif isinstance(f, (SectionField, ListField)):
-                self._field_bufs.append([])
-                self._field_cursors.append(0)
-                self._field_scrolls.append(0)
-                self._bool_vals.append(False)
-                self._choice_idxs.append(0)
-                self._list_vals.append(
-                    list(f.value) if isinstance(f, ListField) else []
-                )
-            else:
-                # Plain FormField
-                s = str(f.value)
-                self._field_bufs.append(list(s))
-                self._field_cursors.append(len(s))
-                self._field_scrolls.append(0)
-                self._bool_vals.append(False)
-                self._choice_idxs.append(0)
-                self._list_vals.append([])
-            self._field_errors.append("")
-
-        # Start on the first non-section navigable field
-        self._cursor_field = 0
-        for i, f in enumerate(fields):
-            if not isinstance(f, SectionField):
-                self._cursor_field = i
-                break
+        # Per-field editable value: list of characters for text fields, bool
+        # for BoolField, chosen index for ChoiceField, list of items for ListField.
+        self._state: list = [_initial_state(f) for f in fields]
+        self._cursors = [
+            len(s) if _is_text(f) else 0 for f, s in zip(fields, self._state)
+        ]
+        self._scrolls = [0] * len(fields)
+        self._field_errors = [""] * len(fields)
+        # Start on the first non-section field
+        self._cursor_field = next(
+            (i for i, f in enumerate(fields) if not isinstance(f, SectionField)), 0
+        )
 
     def run(self) -> dict | None:
         """
@@ -193,118 +161,73 @@ class Form:
         Returns a dict of {key: typed_value} on save, or None on cancel.
         """
         self.stdscr.keypad(True)
-
-        SAVE_IDX = len(self.fields)
-        CANCEL_IDX = len(self.fields) + 1
+        save_idx = len(self.fields)
+        cancel_idx = save_idx + 1
 
         while True:
             self._draw()
             key = self.stdscr.getch()
-
             cur = self._cursor_field
 
             if key == 4:  # Ctrl+D → hard exit
                 curses.curs_set(0)
                 raise HardExit()
-            elif key == 27:  # Esc → cancel
+            if key == 27 or (key in _ENTER and cur == cancel_idx):  # Esc / Cancel
                 curses.curs_set(0)
                 return None
-
-            elif key in (curses.KEY_UP, curses.KEY_BTAB):
+            if key in (curses.KEY_UP, curses.KEY_BTAB):
                 self._cursor_field = self._advance(cur, -1)
-
             elif key in (curses.KEY_DOWN, ord("\t")):
                 self._cursor_field = self._advance(cur, +1)
-
-            elif key in (ord("\n"), ord("\r")):
-                if cur == SAVE_IDX:
-                    result = self._collect()
-                    err = self._validate(result)
-                    if err:
-                        self._error = err
-                    else:
-                        curses.curs_set(0)
-                        return result
-                elif cur == CANCEL_IDX:
+            elif key in _ENTER and cur == save_idx:
+                result = self._collect()
+                self._error = self._validate(result)
+                if not self._error:
                     curses.curs_set(0)
-                    return None
-                elif 0 <= cur < len(self.fields):
-                    f = self.fields[cur]
-                    if isinstance(f, BoolField):
-                        self._bool_vals[cur] = not self._bool_vals[cur]
-                        self._error = ""
-                    elif isinstance(f, ChoiceField):
-                        if f.choices:
-                            display_list = f.labels if f.labels else f.choices
-                            idx = select_dialog(
-                                self.stdscr,
-                                f.label,
-                                display_list,
-                                self._choice_idxs[cur],
-                            )
-                            if idx is not None:
-                                self._choice_idxs[cur] = idx
-                        self._error = ""
-                    elif isinstance(f, ListField):
-                        self._list_vals[cur] = self._run_list_editor(cur)
-                        self._error = ""
-                    elif isinstance(f, SectionField):
-                        pass
-                    else:
-                        # FormField / IntField → advance to next
-                        self._cursor_field = self._advance(cur, +1)
+                    return result
+            elif cur < save_idx:
+                self._field_key(cur, key)
 
-            else:
-                # Delegate to per-field key handler
-                if 0 <= cur < len(self.fields):
-                    f = self.fields[cur]
-                    if isinstance(f, BoolField) and not f.readonly:
-                        if key in (ord(" "), curses.KEY_LEFT, curses.KEY_RIGHT):
-                            self._bool_vals[cur] = not self._bool_vals[cur]
-                            self._error = ""
-                    elif isinstance(f, ChoiceField) and not f.readonly:
-                        if key == curses.KEY_LEFT and f.choices:
-                            self._choice_idxs[cur] = (self._choice_idxs[cur] - 1) % len(
-                                f.choices
-                            )
-                            self._error = ""
-                        elif key == curses.KEY_RIGHT and f.choices:
-                            self._choice_idxs[cur] = (self._choice_idxs[cur] + 1) % len(
-                                f.choices
-                            )
-                            self._error = ""
-                    elif not isinstance(
-                        f, (BoolField, ChoiceField, SectionField, ListField)
-                    ):
-                        # FormField or IntField
-                        if not f.readonly:
-                            self._field_handle_key(cur, key)
+    def _field_key(self, idx: int, key: int) -> None:
+        """Apply a keypress to the field at idx."""
+        f = self.fields[idx]
+        enter = key in _ENTER
+        if isinstance(f, SectionField):
+            return
+        if isinstance(f, BoolField):
+            if enter or (
+                not f.readonly and key in (ord(" "), curses.KEY_LEFT, curses.KEY_RIGHT)
+            ):
+                self._state[idx] = not self._state[idx]
+        elif isinstance(f, ChoiceField):
+            n = len(f.choices)
+            if enter and n:
+                pick = select_dialog(
+                    self.stdscr, f.label, f.labels or f.choices, self._state[idx]
+                )
+                if pick is not None:
+                    self._state[idx] = pick
+            elif key == curses.KEY_LEFT and n and not f.readonly:
+                self._state[idx] = (self._state[idx] - 1) % n
+            elif key == curses.KEY_RIGHT and n and not f.readonly:
+                self._state[idx] = (self._state[idx] + 1) % n
+        elif isinstance(f, ListField):
+            if enter:
+                self._state[idx] = self._run_list_editor(idx)
+        elif enter:
+            self._cursor_field = self._advance(idx, +1)
+        elif not f.readonly:
+            self._text_key(idx, key)
+            self._field_errors[idx] = ""
+        self._error = ""
 
     def _advance(self, cur: int, direction: int) -> int:
         """Move focus index by direction (+1/-1), skipping SectionFields."""
         n_items = len(self.fields) + 2
         new = (cur + direction) % n_items
-        visited: set[int] = set()
-        while (
-            new not in visited
-            and new < len(self.fields)
-            and isinstance(self.fields[new], SectionField)
-        ):
-            visited.add(new)
+        while new < len(self.fields) and isinstance(self.fields[new], SectionField):
             new = (new + direction) % n_items
         return new
-
-    def _compute_field_y_offsets(self) -> list[int]:
-        """Return y-offset (relative to start_y) for each field index."""
-        offsets: list[int] = []
-        y = 0
-        for f in self.fields:
-            offsets.append(y)
-            y += 2 if isinstance(f, SectionField) else 1
-        return offsets
-
-    def _total_fields_height(self) -> int:
-        return sum(2 if isinstance(f, SectionField) else 1 for f in self.fields)
 
     def _draw(self) -> None:
         stdscr = self.stdscr
@@ -312,6 +235,7 @@ class Form:
         sh, sw = stdscr.getmaxyx()
 
         field_w = max(sw - self.LABEL_W - 6, 10)
+        field_x = 2 + self.LABEL_W + 2
 
         # Title
         title_str = f"  {self.title}  "
@@ -329,15 +253,10 @@ class Form:
             pass
 
         start_y = 3
-        y_offsets = self._compute_field_y_offsets()
-        SAVE_IDX = len(self.fields)
-        CANCEL_IDX = len(self.fields) + 1
-
-        # Track where to place the text cursor (for FormField / IntField)
-        cursor_y = cursor_x = -1
+        y = start_y
+        cursor_y = cursor_x = -1  # hardware cursor position for text fields
 
         for i, f in enumerate(self.fields):
-            y = start_y + y_offsets[i]
             if y >= sh - 4:
                 break
             active = self._cursor_field == i
@@ -354,117 +273,73 @@ class Form:
                         )
                 except curses.error:
                     pass
+                y += 2
                 continue
 
-            label = f"{f.label[: self.LABEL_W - 1]:<{self.LABEL_W}}"
-            label_attr = curses.A_BOLD if active else curses.A_DIM
-
+            attr = (
+                curses.color_pair(colors.MENU_SELECTED) | curses.A_BOLD
+                if active
+                else curses.A_NORMAL
+            )
             if isinstance(f, BoolField):
-                val_str = TRANSLATE("Yes") if self._bool_vals[i] else TRANSLATE("No")
-                field_str = f"[{val_str:<{field_w}}]"
-                attr = (
-                    curses.color_pair(colors.MENU_SELECTED) | curses.A_BOLD
-                    if active
-                    else curses.A_NORMAL
-                )
-                try:
-                    stdscr.addstr(y, 2, label, label_attr)
-                    stdscr.addstr(y, 2 + self.LABEL_W + 2, field_str, attr)
-                except curses.error:
-                    pass
-
+                text = TRANSLATE("Yes") if self._state[i] else TRANSLATE("No")
             elif isinstance(f, ChoiceField):
-                idx_c = self._choice_idxs[i]
-                chosen = (
-                    (f.labels[idx_c] if f.labels else f.choices[idx_c])
-                    if f.choices
-                    else ""
-                )
-                display = f"< {chosen} >" if active else chosen
-                field_str = f"[{display:<{field_w}}]"
-                attr = (
-                    curses.color_pair(colors.MENU_SELECTED) | curses.A_BOLD
-                    if active
-                    else curses.A_NORMAL
-                )
-                try:
-                    stdscr.addstr(y, 2, label, label_attr)
-                    stdscr.addstr(y, 2 + self.LABEL_W + 2, field_str, attr)
-                except curses.error:
-                    pass
-
+                chosen = (f.labels or f.choices)[self._state[i]] if f.choices else ""
+                text = f"< {chosen} >" if active else chosen
             elif isinstance(f, ListField):
-                n = len(self._list_vals[i])
-                summary = (
-                    f"({n} item{'s' if n != 1 else ''})  [Enter to edit]"
-                    if n
-                    else "(empty)  [Enter to edit]"
-                )
-                field_str = f"[{summary:<{field_w}}]"
-                attr = (
-                    curses.color_pair(colors.MENU_SELECTED) | curses.A_BOLD
-                    if active
-                    else curses.A_NORMAL
-                )
-                try:
-                    stdscr.addstr(y, 2, label, label_attr)
-                    stdscr.addstr(y, 2 + self.LABEL_W + 2, field_str, attr)
-                except curses.error:
-                    pass
-
+                n = len(self._state[i])
+                summary = f"({n} item{'s' if n != 1 else ''})" if n else "(empty)"
+                text = f"{summary}  [Enter to edit]"
             else:
-                # FormField / IntField (text-based)
-                buf = self._field_bufs[i]
-                cur_pos = self._field_cursors[i]
-                scroll = self._field_scrolls[i]
-                display = ("*" * len(buf)) if f.secret else "".join(buf)
-                visible = display[scroll : scroll + field_w]
-                field_str = f"[{visible:<{field_w}}]"
+                buf = self._state[i]
+                display = "*" * len(buf) if f.secret else "".join(buf)
+                text = display[self._scrolls[i] : self._scrolls[i] + field_w]
                 if self._field_errors[i]:
                     attr = curses.color_pair(colors.ERROR) | curses.A_BOLD
-                elif active:
-                    attr = curses.color_pair(colors.MENU_SELECTED) | curses.A_BOLD
-                else:
-                    attr = curses.A_NORMAL
-                try:
-                    stdscr.addstr(y, 2, label, label_attr)
-                    stdscr.addstr(y, 2 + self.LABEL_W + 2, field_str, attr)
-                except curses.error:
-                    pass
                 if active and not f.readonly:
                     cursor_y = y
-                    cursor_x = 2 + self.LABEL_W + 2 + 1 + (cur_pos - scroll)
+                    cursor_x = field_x + 1 + (self._cursors[i] - self._scrolls[i])
+            try:
+                stdscr.addstr(
+                    y,
+                    2,
+                    f"{f.label[: self.LABEL_W - 1]:<{self.LABEL_W}}",
+                    curses.A_BOLD if active else curses.A_DIM,
+                )
+                stdscr.addstr(y, field_x, f"[{text:<{field_w}}]", attr)
+            except curses.error:
+                pass
+            y += 1
 
-        # Buttons row
-        btn_y = start_y + self._total_fields_height() + 1
-
-        # Help text row (the blank row between last field and buttons)
-        help_row = btn_y - 1
+        # Buttons row, with the focused field's help text on the row above it
+        total = sum(2 if isinstance(f, SectionField) else 1 for f in self.fields)
+        btn_y = start_y + total + 1
         cf = self._cursor_field
-        if 0 <= cf < len(self.fields) and start_y <= help_row < sh - 2:
-            ht = self.fields[cf].help_text
-            if ht:
-                try:
-                    stdscr.addstr(
-                        help_row, 2, ht[: sw - 3], curses.color_pair(colors.DIM)
-                    )
-                except curses.error:
-                    pass
+        help_text = self.fields[cf].help_text if cf < len(self.fields) else ""
+        if help_text and start_y <= btn_y - 1 < sh - 2:
+            try:
+                stdscr.addstr(
+                    btn_y - 1, 2, help_text[: sw - 3], curses.color_pair(colors.DIM)
+                )
+            except curses.error:
+                pass
 
         if btn_y < sh - 2:
-            save_attr = (
-                curses.color_pair(colors.MENU_SELECTED) | curses.A_BOLD
-                if self._cursor_field == SAVE_IDX
-                else curses.A_NORMAL
-            )
-            cancel_attr = (
-                curses.color_pair(colors.MENU_SELECTED) | curses.A_BOLD
-                if self._cursor_field == CANCEL_IDX
-                else curses.A_NORMAL
-            )
+            focus = curses.color_pair(colors.MENU_SELECTED) | curses.A_BOLD
+            save_idx = len(self.fields)
             try:
-                stdscr.addstr(btn_y, 4, f"[ {TRANSLATE('Save')} ]", save_attr)
-                stdscr.addstr(btn_y, 16, f"[ {TRANSLATE('Cancel')} ]", cancel_attr)
+                stdscr.addstr(
+                    btn_y,
+                    4,
+                    f"[ {TRANSLATE('Save')} ]",
+                    focus if cf == save_idx else curses.A_NORMAL,
+                )
+                stdscr.addstr(
+                    btn_y,
+                    16,
+                    f"[ {TRANSLATE('Cancel')} ]",
+                    focus if cf == save_idx + 1 else curses.A_NORMAL,
+                )
             except curses.error:
                 pass
 
@@ -500,14 +375,10 @@ class Form:
 
         stdscr.refresh()
 
-    def _field_handle_key(self, idx: int, key: int) -> None:
-        f = self.fields[idx]
-        buf = self._field_bufs[idx]
-        cursor = self._field_cursors[idx]
-        scroll = self._field_scrolls[idx]
-        sh, sw = self.stdscr.getmaxyx()
-        field_w = max(sw - self.LABEL_W - 6, 10)
-        int_only = isinstance(f, IntField)
+    def _text_key(self, idx: int, key: int) -> None:
+        buf = self._state[idx]
+        cursor = self._cursors[idx]
+        field_w = max(self.stdscr.getmaxyx()[1] - self.LABEL_W - 6, 10)
 
         if key in (curses.KEY_BACKSPACE, 127, 8):
             if cursor > 0:
@@ -529,33 +400,30 @@ class Form:
             cursor = 0
         elif 32 <= key < 256:
             ch = chr(key)
-            if int_only:
-                # Accept digits and a leading minus sign only
-                if ch.isdigit() or (ch == "-" and cursor == 0 and not buf):
-                    buf.insert(cursor, ch)
-                    cursor += 1
-            else:
+            # IntField accepts digits and a leading minus sign only
+            if (
+                not isinstance(self.fields[idx], IntField)
+                or ch.isdigit()
+                or (ch == "-" and not buf)
+            ):
                 buf.insert(cursor, ch)
                 cursor += 1
 
         # Update horizontal scroll
+        scroll = self._scrolls[idx]
         if cursor - scroll >= field_w:
             scroll = cursor - field_w + 1
         elif cursor < scroll:
             scroll = cursor
-
-        self._field_bufs[idx] = buf
-        self._field_cursors[idx] = cursor
-        self._field_scrolls[idx] = scroll
-        self._error = ""
-        self._field_errors[idx] = ""
+        self._cursors[idx] = cursor
+        self._scrolls[idx] = scroll
 
     def _run_list_editor(self, field_idx: int) -> list[str]:
         """Full-screen inline list editor for a ListField.
         Temporarily replaces the form until Esc is pressed.
         Returns the (possibly modified) list."""
         f = self.fields[field_idx]
-        items = list(self._list_vals[field_idx])
+        items = list(self._state[field_idx])
         current = 0
         scroll_top = 0
         stdscr = self.stdscr
@@ -656,7 +524,7 @@ class Form:
                 ):
                     del items[current]
                     current = max(0, min(current, len(items) - 1))
-            elif key in (ord("\n"), ord("\r")) and items:  # Edit
+            elif key in _ENTER and items:  # Edit
                 val = input_dialog(
                     stdscr,
                     f"Edit {f.item_label}",
@@ -675,23 +543,23 @@ class Form:
 
     def _collect(self) -> dict:
         result: dict[str, Any] = {}
-        for i, f in enumerate(self.fields):
+        for f, state in zip(self.fields, self._state):
             if isinstance(f, SectionField):
                 continue
-            elif isinstance(f, BoolField):
-                result[f.key] = self._bool_vals[i]
-            elif isinstance(f, ChoiceField):
-                result[f.key] = f.choices[self._choice_idxs[i]] if f.choices else ""
+            if isinstance(f, ChoiceField):
+                result[f.key] = f.choices[state] if f.choices else ""
             elif isinstance(f, IntField):
-                s = "".join(self._field_bufs[i]).strip()
+                s = "".join(state).strip()
                 try:
                     result[f.key] = int(s) if s else 0
                 except ValueError:
                     result[f.key] = s  # invalid; _validate will catch it
+            elif isinstance(f, BoolField):
+                result[f.key] = state
             elif isinstance(f, ListField):
-                result[f.key] = list(self._list_vals[i])
+                result[f.key] = list(state)
             else:
-                result[f.key] = "".join(self._field_bufs[i])
+                result[f.key] = "".join(state)
         return result
 
     def _validate(self, data: dict) -> str:
@@ -705,14 +573,13 @@ class Form:
                 val = data.get(f.key)
                 if not isinstance(val, int):
                     err = f'"{f.label}" must be a whole number'
-                    self._field_errors[i] = err
-                    return err
-                if f.min_val is not None and val < f.min_val:
-                    err = f'"{f.label}" must be \u2265 {f.min_val}'
-                    self._field_errors[i] = err
-                    return err
-                if f.max_val is not None and val > f.max_val:
-                    err = f'"{f.label}" must be \u2264 {f.max_val}'
+                elif f.min_val is not None and val < f.min_val:
+                    err = f'"{f.label}" must be ≥ {f.min_val}'
+                elif f.max_val is not None and val > f.max_val:
+                    err = f'"{f.label}" must be ≤ {f.max_val}'
+                else:
+                    err = ""
+                if err:
                     self._field_errors[i] = err
                     return err
             if f.validator:
