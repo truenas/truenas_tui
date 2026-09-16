@@ -385,10 +385,13 @@ class NetworkInterfacePlugin(BasePlugin):
         # Step 1 – pick type, name, description
         step1_fields = [
             ChoiceField(
-                "type", TRANSLATE("Interface Type"), choices=_IFACE_TYPES, value=0
+                key="type",
+                label=TRANSLATE("Interface Type"),
+                choices=_IFACE_TYPES,
+                value=0,
             ),
-            FormField("name", TRANSLATE("Name"), ""),
-            FormField("description", TRANSLATE("Description"), ""),
+            FormField(key="name", label=TRANSLATE("Name"), value=""),
+            FormField(key="description", label=TRANSLATE("Description"), value=""),
         ]
         form1 = Form(stdscr, TRANSLATE("New Interface – Step 1"), step1_fields)
         r1 = form1.run()
@@ -479,33 +482,44 @@ def _build_edit_fields(
     iface_type = iface.get("type", "PHYSICAL")
     fields: list = []
 
-    fields.append(SectionField("", TRANSLATE("Interface Settings")))
+    fields.append(SectionField(key="", label=TRANSLATE("Interface Settings")))
     fields.append(
         FormField(
-            "name", TRANSLATE("Name"), iface.get("name", ""), readonly=name_readonly
+            key="name",
+            label=TRANSLATE("Name"),
+            value=iface.get("name", ""),
+            readonly=name_readonly,
         )
     )
     fields.append(
-        FormField("description", TRANSLATE("Description"), iface.get("description", ""))
+        FormField(
+            key="description",
+            label=TRANSLATE("Description"),
+            value=iface.get("description", ""),
+        )
     )
 
     # DHCP / IPv6 auto: only when NOT HA-licensed (mirrors midcli)
     if not failover_licensed:
         fields.append(
             BoolField(
-                "ipv4_dhcp", TRANSLATE("IPv4 DHCP"), value=iface.get("ipv4_dhcp", False)
+                key="ipv4_dhcp",
+                label=TRANSLATE("IPv4 DHCP"),
+                value=iface.get("ipv4_dhcp", False),
             )
         )
         fields.append(
             BoolField(
-                "ipv6_auto", TRANSLATE("IPv6 Auto"), value=iface.get("ipv6_auto", False)
+                key="ipv6_auto",
+                label=TRANSLATE("IPv6 Auto"),
+                value=iface.get("ipv6_auto", False),
             )
         )
 
     fields.append(
         ListField(
-            "_aliases",
-            TRANSLATE("Aliases (CIDR)"),
+            key="_aliases",
+            label=TRANSLATE("Aliases (CIDR)"),
             value=[
                 _alias_str(a)
                 for a in iface.get("aliases", [])
@@ -517,26 +531,26 @@ def _build_edit_fields(
     )
 
     if failover_licensed:
-        fields.append(SectionField("", TRANSLATE("Failover Settings")))
+        fields.append(SectionField(key="", label=TRANSLATE("Failover Settings")))
         fields.append(
             BoolField(
-                "failover_critical",
-                TRANSLATE("Failover Critical"),
+                key="failover_critical",
+                label=TRANSLATE("Failover Critical"),
                 value=iface.get("failover_critical", False),
             )
         )
         fields.append(
             IntField(
-                "failover_group",
-                TRANSLATE("Failover Group"),
+                key="failover_group",
+                label=TRANSLATE("Failover Group"),
                 value=iface.get("failover_group") or 1,
                 min_val=1,
             )
         )
         fields.append(
             ListField(
-                "_failover_aliases",
-                TRANSLATE("This Node IPs"),
+                key="_failover_aliases",
+                label=TRANSLATE("This Node IPs"),
                 value=[a.get("address", "") for a in iface.get("failover_aliases", [])],
                 item_label=TRANSLATE("IP Address"),
                 item_validator=_validate_ip_only,
@@ -544,8 +558,8 @@ def _build_edit_fields(
         )
         fields.append(
             ListField(
-                "_failover_virtual_aliases",
-                TRANSLATE("Virtual IPs"),
+                key="_failover_virtual_aliases",
+                label=TRANSLATE("Virtual IPs"),
                 value=[
                     a.get("address", "")
                     for a in iface.get("failover_virtual_aliases", [])
@@ -570,19 +584,19 @@ def _build_edit_fields(
                 TRANSLATE("Could not load VLAN parent choices:\n") + format_error(e),
             )
             return None
-        fields.append(SectionField("", TRANSLATE("VLAN Settings")))
+        fields.append(SectionField(key="", label=TRANSLATE("VLAN Settings")))
         fields.append(
             ChoiceField(
-                "vlan_parent_interface",
-                TRANSLATE("Parent Interface"),
+                key="vlan_parent_interface",
+                label=TRANSLATE("Parent Interface"),
                 choices=choices,
                 value=_choice_idx(choices, iface.get("vlan_parent_interface", "")),
             )
         )
         fields.append(
             IntField(
-                "vlan_tag",
-                TRANSLATE("VLAN Tag"),
+                key="vlan_tag",
+                label=TRANSLATE("VLAN Tag"),
                 value=iface.get("vlan_tag") or 1,
                 min_val=1,
                 max_val=4094,
@@ -590,8 +604,8 @@ def _build_edit_fields(
         )
         fields.append(
             IntField(
-                "vlan_pcp",
-                TRANSLATE("Priority (PCP)"),
+                key="vlan_pcp",
+                label=TRANSLATE("Priority (PCP)"),
                 value=iface.get("vlan_pcp") or 0,
                 min_val=0,
                 max_val=7,
@@ -615,11 +629,11 @@ def _build_edit_fields(
                 TRANSLATE("Could not load bridge member choices:\n") + format_error(e),
             )
             return None
-        fields.append(SectionField("", TRANSLATE("Bridge Settings")))
+        fields.append(SectionField(key="", label=TRANSLATE("Bridge Settings")))
         fields.append(
             ListField(
-                "bridge_members",
-                TRANSLATE("Members"),
+                key="bridge_members",
+                label=TRANSLATE("Members"),
                 value=list(iface.get("bridge_members", [])),
                 item_label=TRANSLATE("Interface"),
                 item_validator=lambda v, c=choices: (
@@ -645,19 +659,21 @@ def _build_edit_fields(
                 TRANSLATE("Could not load LAG port choices:\n") + format_error(e),
             )
             return None
-        fields.append(SectionField("", TRANSLATE("Link Aggregation Settings")))
+        fields.append(
+            SectionField(key="", label=TRANSLATE("Link Aggregation Settings"))
+        )
         fields.append(
             ChoiceField(
-                "lag_protocol",
-                TRANSLATE("Protocol"),
+                key="lag_protocol",
+                label=TRANSLATE("Protocol"),
                 choices=_LAG_PROTOCOLS,
                 value=_choice_idx(_LAG_PROTOCOLS, iface.get("lag_protocol", "LACP")),
             )
         )
         fields.append(
             ListField(
-                "lag_ports",
-                TRANSLATE("Ports"),
+                key="lag_ports",
+                label=TRANSLATE("Ports"),
                 value=list(iface.get("lag_ports", [])),
                 item_label=TRANSLATE("Port"),
                 item_validator=lambda v, c=port_choices: (
@@ -667,8 +683,8 @@ def _build_edit_fields(
         )
         fields.append(
             ChoiceField(
-                "xmit_hash_policy",
-                TRANSLATE("Xmit Hash Policy"),
+                key="xmit_hash_policy",
+                label=TRANSLATE("Xmit Hash Policy"),
                 choices=_XMIT_POLICIES,
                 value=_choice_idx(
                     _XMIT_POLICIES, iface.get("xmit_hash_policy", "LAYER2+3")
@@ -677,18 +693,18 @@ def _build_edit_fields(
         )
         fields.append(
             ChoiceField(
-                "lacpdu_rate",
-                TRANSLATE("LACPDU Rate"),
+                key="lacpdu_rate",
+                label=TRANSLATE("LACPDU Rate"),
                 choices=_LACPDU_RATES,
                 value=_choice_idx(_LACPDU_RATES, iface.get("lacpdu_rate", "SLOW")),
             )
         )
 
-    fields.append(SectionField("", TRANSLATE("Other Settings")))
+    fields.append(SectionField(key="", label=TRANSLATE("Other Settings")))
     fields.append(
         IntField(
-            "mtu",
-            TRANSLATE("MTU"),
+            key="mtu",
+            label=TRANSLATE("MTU"),
             value=iface.get("mtu") or 0,
             min_val=0,
             max_val=9000,

@@ -42,22 +42,38 @@ class NetworkSettingsPlugin(BasePlugin):
             return
 
         fields = [
-            FormField("hostname", TRANSLATE("Hostname"), cfg.get("hostname", "")),
-            FormField("domain", TRANSLATE("Domain"), cfg.get("domain", "")),
             FormField(
-                "ipv4gateway", TRANSLATE("IPv4 Gateway"), cfg.get("ipv4gateway", "")
+                key="hostname",
+                label=TRANSLATE("Hostname"),
+                value=cfg.get("hostname", ""),
             ),
             FormField(
-                "ipv6gateway", TRANSLATE("IPv6 Gateway"), cfg.get("ipv6gateway", "")
+                key="domain", label=TRANSLATE("Domain"), value=cfg.get("domain", "")
             ),
             FormField(
-                "nameserver1", TRANSLATE("Nameserver 1"), cfg.get("nameserver1", "")
+                key="ipv4gateway",
+                label=TRANSLATE("IPv4 Gateway"),
+                value=cfg.get("ipv4gateway", ""),
             ),
             FormField(
-                "nameserver2", TRANSLATE("Nameserver 2"), cfg.get("nameserver2", "")
+                key="ipv6gateway",
+                label=TRANSLATE("IPv6 Gateway"),
+                value=cfg.get("ipv6gateway", ""),
             ),
             FormField(
-                "nameserver3", TRANSLATE("Nameserver 3"), cfg.get("nameserver3", "")
+                key="nameserver1",
+                label=TRANSLATE("Nameserver 1"),
+                value=cfg.get("nameserver1", ""),
+            ),
+            FormField(
+                key="nameserver2",
+                label=TRANSLATE("Nameserver 2"),
+                value=cfg.get("nameserver2", ""),
+            ),
+            FormField(
+                key="nameserver3",
+                label=TRANSLATE("Nameserver 3"),
+                value=cfg.get("nameserver3", ""),
             ),
         ]
 

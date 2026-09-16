@@ -1,3 +1,5 @@
+from dataclasses import replace
+
 from truenas_tui.api_methods import Method
 from truenas_tui.localization import setup_locale
 from truenas_tui.plugins.base import BasePlugin
@@ -12,7 +14,6 @@ from truenas_tui.tui_preferences import (
     VALID_THEMES,
     DateFormat,
     TimeFormat,
-    TuiPreferences,
 )
 
 from .localization import TRANSLATE
@@ -65,40 +66,43 @@ class TuiSettingsPlugin(BasePlugin):
         time_idx = _TIME_FMT_IDX.get(p.time_format, 0)
 
         fields = [
-            SectionField("", TRANSLATE("Appearance")),
+            SectionField(key="", label=TRANSLATE("Appearance")),
             ChoiceField(
-                "theme", TRANSLATE("Theme"), choices=_THEME_CHOICES, value=theme_idx
+                key="theme",
+                label=TRANSLATE("Theme"),
+                choices=_THEME_CHOICES,
+                value=theme_idx,
             ),
-            SectionField("", TRANSLATE("Startup")),
+            SectionField(key="", label=TRANSLATE("Startup")),
             ChoiceField(
-                "startup_view",
-                TRANSLATE("Startup view"),
+                key="startup_view",
+                label=TRANSLATE("Startup view"),
                 choices=_STARTUP_CHOICES,
                 value=startup_idx,
             ),
-            SectionField("", TRANSLATE("Behaviour")),
+            SectionField(key="", label=TRANSLATE("Behaviour")),
             BoolField(
-                "confirm_dangerous",
-                TRANSLATE("Confirm dangerous actions"),
+                key="confirm_dangerous",
+                label=TRANSLATE("Confirm dangerous actions"),
                 value=p.confirm_dangerous,
             ),
-            SectionField("", TRANSLATE("Locale")),
+            SectionField(key="", label=TRANSLATE("Locale")),
             ChoiceField(
-                "language",
-                TRANSLATE("Language"),
+                key="language",
+                label=TRANSLATE("Language"),
                 choices=_LANG_CODES,
                 labels=_LANG_LABELS,
                 value=lang_idx,
             ),
             ChoiceField(
-                "date_format",
-                TRANSLATE("Date format"),
+                key="date_format",
+                label=TRANSLATE("Date format"),
                 choices=_DATE_FMT_CHOICES,
                 value=date_idx,
             ),
             ChoiceField(
-                "time_format",
-                TRANSLATE("Time format"),
+                key="time_format",
+                label=TRANSLATE("Time format"),
                 choices=_TIME_FMT_CHOICES,
                 labels=_TIME_FMT_LABELS,
                 value=time_idx,
@@ -109,28 +113,30 @@ class TuiSettingsPlugin(BasePlugin):
         if result is None:
             return
 
-        # Snapshot for rollback on API failure
-        snapshot = p.to_dict()
-
-        p.theme = result["theme"]
-        p.startup_view = result["startup_view"]
-        p.confirm_dangerous = result["confirm_dangerous"]
-        p.language = result["language"]
-        p.date_format = result["date_format"]
-        p.time_format = result["time_format"]
+        new_prefs = replace(
+            p,
+            theme=result["theme"],
+            startup_view=result["startup_view"],
+            confirm_dangerous=result["confirm_dangerous"],
+            language=result["language"],
+            date_format=result["date_format"],
+            time_format=result["time_format"],
+        )
 
         try:
-            session.call(Method.AUTH_SET_ATTRIBUTE, TUI_PREFERENCES_KEY, p.to_dict())
+            session.call(
+                Method.AUTH_SET_ATTRIBUTE, TUI_PREFERENCES_KEY, new_prefs.to_dict()
+            )
         except Exception as e:
-            session.tui_prefs = TuiPreferences.from_dict(snapshot)
             message_dialog(stdscr, TRANSLATE("Error"), format_error(e))
             return
 
-        # Side effects only after successful persist
-        if result["language"] != snapshot["language"]:
-            setup_locale(result["language"])
-        if result["theme"] != snapshot["theme"]:
-            reinit_colors(result["theme"])
+        # Session prefs and side effects only after successful persist
+        session.tui_prefs = new_prefs
+        if new_prefs.language != p.language:
+            setup_locale(new_prefs.language)
+        if new_prefs.theme != p.theme:
+            reinit_colors(new_prefs.theme)
 
         message_dialog(
             stdscr,

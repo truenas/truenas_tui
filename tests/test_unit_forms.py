@@ -38,7 +38,7 @@ def _curses_patches():
 
 def test_collect_plain_field():
     stdscr = _make_stdscr()
-    fields = [FormField("name", "Name", "hello")]
+    fields = [FormField(key="name", label="Name", value="hello")]
     form = Form(stdscr, "Test", fields)
     result = form._collect()
     assert result == {"name": "hello"}
@@ -46,7 +46,7 @@ def test_collect_plain_field():
 
 def test_collect_bool_field_true():
     stdscr = _make_stdscr()
-    fields = [BoolField("flag", "Flag", value=True)]
+    fields = [BoolField(key="flag", label="Flag", value=True)]
     form = Form(stdscr, "Test", fields)
     result = form._collect()
     assert result["flag"] is True
@@ -54,7 +54,7 @@ def test_collect_bool_field_true():
 
 def test_collect_bool_field_false():
     stdscr = _make_stdscr()
-    fields = [BoolField("flag", "Flag", value=False)]
+    fields = [BoolField(key="flag", label="Flag", value=False)]
     form = Form(stdscr, "Test", fields)
     result = form._collect()
     assert result["flag"] is False
@@ -62,7 +62,11 @@ def test_collect_bool_field_false():
 
 def test_collect_choice_field():
     stdscr = _make_stdscr()
-    fields = [ChoiceField("proto", "Protocol", choices=["TCP", "UDP", "ICMP"], value=1)]
+    fields = [
+        ChoiceField(
+            key="proto", label="Protocol", choices=["TCP", "UDP", "ICMP"], value=1
+        )
+    ]
     form = Form(stdscr, "Test", fields)
     result = form._collect()
     assert result["proto"] == "UDP"
@@ -70,7 +74,7 @@ def test_collect_choice_field():
 
 def test_collect_choice_field_empty_choices():
     stdscr = _make_stdscr()
-    fields = [ChoiceField("proto", "Protocol", choices=[], value=0)]
+    fields = [ChoiceField(key="proto", label="Protocol", choices=[], value=0)]
     form = Form(stdscr, "Test", fields)
     result = form._collect()
     assert result["proto"] == ""
@@ -78,7 +82,7 @@ def test_collect_choice_field_empty_choices():
 
 def test_collect_int_field_valid():
     stdscr = _make_stdscr()
-    fields = [IntField("mtu", "MTU", value=1500)]
+    fields = [IntField(key="mtu", label="MTU", value=1500)]
     form = Form(stdscr, "Test", fields)
     result = form._collect()
     assert result["mtu"] == 1500
@@ -86,7 +90,7 @@ def test_collect_int_field_valid():
 
 def test_collect_int_field_zero():
     stdscr = _make_stdscr()
-    fields = [IntField("mtu", "MTU", value=0)]
+    fields = [IntField(key="mtu", label="MTU", value=0)]
     form = Form(stdscr, "Test", fields)
     # value=0 → buf=['0'] → int('0') = 0
     result = form._collect()
@@ -95,7 +99,7 @@ def test_collect_int_field_zero():
 
 def test_collect_int_field_invalid_string():
     stdscr = _make_stdscr()
-    fields = [IntField("mtu", "MTU", value=0)]
+    fields = [IntField(key="mtu", label="MTU", value=0)]
     form = Form(stdscr, "Test", fields)
     # Manually corrupt the buffer to an invalid value
     form._field_bufs[0] = list("abc")
@@ -105,7 +109,7 @@ def test_collect_int_field_invalid_string():
 
 def test_collect_int_field_empty_buffer():
     stdscr = _make_stdscr()
-    fields = [IntField("mtu", "MTU", value=0)]
+    fields = [IntField(key="mtu", label="MTU", value=0)]
     form = Form(stdscr, "Test", fields)
     form._field_bufs[0] = []  # cleared
     result = form._collect()
@@ -114,7 +118,10 @@ def test_collect_int_field_empty_buffer():
 
 def test_collect_skips_section_field():
     stdscr = _make_stdscr()
-    fields = [SectionField("", "Section"), FormField("name", "Name", "val")]
+    fields = [
+        SectionField(key="", label="Section"),
+        FormField(key="name", label="Name", value="val"),
+    ]
     form = Form(stdscr, "Test", fields)
     result = form._collect()
     assert "" not in result  # section key not included
@@ -123,7 +130,7 @@ def test_collect_skips_section_field():
 
 def test_collect_list_field():
     stdscr = _make_stdscr()
-    fields = [ListField("items", "Items", value=["a", "b", "c"])]
+    fields = [ListField(key="items", label="Items", value=["a", "b", "c"])]
     form = Form(stdscr, "Test", fields)
     result = form._collect()
     assert result["items"] == ["a", "b", "c"]
@@ -131,7 +138,7 @@ def test_collect_list_field():
 
 def test_collect_list_field_empty():
     stdscr = _make_stdscr()
-    fields = [ListField("items", "Items", value=[])]
+    fields = [ListField(key="items", label="Items", value=[])]
     form = Form(stdscr, "Test", fields)
     result = form._collect()
     assert result["items"] == []
@@ -140,9 +147,9 @@ def test_collect_list_field_empty():
 def test_collect_multiple_fields():
     stdscr = _make_stdscr()
     fields = [
-        FormField("host", "Host", "nas1"),
-        BoolField("dhcp", "DHCP", value=True),
-        IntField("port", "Port", value=80),
+        FormField(key="host", label="Host", value="nas1"),
+        BoolField(key="dhcp", label="DHCP", value=True),
+        IntField(key="port", label="Port", value=80),
     ]
     form = Form(stdscr, "Test", fields)
     result = form._collect()
@@ -151,7 +158,7 @@ def test_collect_multiple_fields():
 
 def test_validate_all_ok():
     stdscr = _make_stdscr()
-    fields = [FormField("name", "Name", "hello")]
+    fields = [FormField(key="name", label="Name", value="hello")]
     form = Form(stdscr, "Test", fields)
     err = form._validate({"name": "hello"})
     assert err == ""
@@ -159,7 +166,7 @@ def test_validate_all_ok():
 
 def test_validate_int_below_min():
     stdscr = _make_stdscr()
-    fields = [IntField("mtu", "MTU", value=100, min_val=68, max_val=9000)]
+    fields = [IntField(key="mtu", label="MTU", value=100, min_val=68, max_val=9000)]
     form = Form(stdscr, "Test", fields)
     err = form._validate({"mtu": 50})
     assert err != ""
@@ -168,7 +175,7 @@ def test_validate_int_below_min():
 
 def test_validate_int_above_max():
     stdscr = _make_stdscr()
-    fields = [IntField("mtu", "MTU", value=100, min_val=68, max_val=9000)]
+    fields = [IntField(key="mtu", label="MTU", value=100, min_val=68, max_val=9000)]
     form = Form(stdscr, "Test", fields)
     err = form._validate({"mtu": 9001})
     assert err != ""
@@ -177,7 +184,7 @@ def test_validate_int_above_max():
 
 def test_validate_int_not_an_int():
     stdscr = _make_stdscr()
-    fields = [IntField("mtu", "MTU", value=0)]
+    fields = [IntField(key="mtu", label="MTU", value=0)]
     form = Form(stdscr, "Test", fields)
     err = form._validate({"mtu": "bad"})
     assert err != ""
@@ -186,7 +193,7 @@ def test_validate_int_not_an_int():
 
 def test_validate_int_within_bounds():
     stdscr = _make_stdscr()
-    fields = [IntField("mtu", "MTU", value=1500, min_val=68, max_val=9000)]
+    fields = [IntField(key="mtu", label="MTU", value=1500, min_val=68, max_val=9000)]
     form = Form(stdscr, "Test", fields)
     err = form._validate({"mtu": 1500})
     assert err == ""
@@ -198,7 +205,7 @@ def test_validate_custom_validator_returns_error():
     def validator(v):
         return "Must not be empty" if not v else None
 
-    fields = [FormField("name", "Name", "", validator=validator)]
+    fields = [FormField(key="name", label="Name", value="", validator=validator)]
     form = Form(stdscr, "Test", fields)
     err = form._validate({"name": ""})
     assert err == "Must not be empty"
@@ -210,7 +217,7 @@ def test_validate_custom_validator_passes():
     def validator(v):
         return None
 
-    fields = [FormField("name", "Name", "ok", validator=validator)]
+    fields = [FormField(key="name", label="Name", value="ok", validator=validator)]
     form = Form(stdscr, "Test", fields)
     err = form._validate({"name": "ok"})
     assert err == ""
@@ -218,7 +225,10 @@ def test_validate_custom_validator_passes():
 
 def test_validate_skips_section_field():
     stdscr = _make_stdscr()
-    fields = [SectionField("", "Section"), IntField("n", "N", value=5, min_val=1)]
+    fields = [
+        SectionField(key="", label="Section"),
+        IntField(key="n", label="N", value=5, min_val=1),
+    ]
     form = Form(stdscr, "Test", fields)
     err = form._validate({"n": 5})
     assert err == ""
@@ -226,7 +236,10 @@ def test_validate_skips_section_field():
 
 def test_advance_forward_basic():
     stdscr = _make_stdscr()
-    fields = [FormField("a", "A", ""), FormField("b", "B", "")]
+    fields = [
+        FormField(key="a", label="A", value=""),
+        FormField(key="b", label="B", value=""),
+    ]
     form = Form(stdscr, "Test", fields)
     # n_items = 4 (2 fields + Save + Cancel)
     assert form._advance(0, +1) == 1
@@ -237,7 +250,10 @@ def test_advance_forward_basic():
 
 def test_advance_backward_basic():
     stdscr = _make_stdscr()
-    fields = [FormField("a", "A", ""), FormField("b", "B", "")]
+    fields = [
+        FormField(key="a", label="A", value=""),
+        FormField(key="b", label="B", value=""),
+    ]
     form = Form(stdscr, "Test", fields)
     assert form._advance(1, -1) == 0
     assert form._advance(0, -1) == 3  # CANCEL_IDX (wraps)
@@ -245,7 +261,10 @@ def test_advance_backward_basic():
 
 def test_advance_skips_section_forward():
     stdscr = _make_stdscr()
-    fields = [SectionField("", "Section"), FormField("name", "Name", "val")]
+    fields = [
+        SectionField(key="", label="Section"),
+        FormField(key="name", label="Name", value="val"),
+    ]
     form = Form(stdscr, "Test", fields)
     # Cancel (idx=3) advances +1 → wraps to 0 (SectionField), skips → 1 (FormField)
     assert form._advance(3, +1) == 1
@@ -253,7 +272,11 @@ def test_advance_skips_section_forward():
 
 def test_advance_skips_section_backward():
     stdscr = _make_stdscr()
-    fields = [FormField("a", "A", ""), SectionField("", "S"), FormField("b", "B", "")]
+    fields = [
+        FormField(key="a", label="A", value=""),
+        SectionField(key="", label="S"),
+        FormField(key="b", label="B", value=""),
+    ]
     form = Form(stdscr, "Test", fields)
     # From field b (idx=2), go backward: 1 is SectionField → skip → 0 (FormField a)
     assert form._advance(2, -1) == 0
@@ -261,7 +284,7 @@ def test_advance_skips_section_backward():
 
 def test_advance_wraps_around():
     stdscr = _make_stdscr()
-    fields = [FormField("name", "Name", "")]
+    fields = [FormField(key="name", label="Name", value="")]
     form = Form(stdscr, "Test", fields)
     # n_items = 3 (1 field + Save + Cancel)
     # From Cancel (2), +1 → 0 (FormField, not Section) → returns 0
@@ -270,7 +293,11 @@ def test_advance_wraps_around():
 
 def test_field_y_offsets_plain_fields():
     stdscr = _make_stdscr()
-    fields = [FormField("a", "A", ""), FormField("b", "B", ""), FormField("c", "C", "")]
+    fields = [
+        FormField(key="a", label="A", value=""),
+        FormField(key="b", label="B", value=""),
+        FormField(key="c", label="C", value=""),
+    ]
     form = Form(stdscr, "Test", fields)
     offsets = form._compute_field_y_offsets()
     assert offsets == [0, 1, 2]
@@ -278,7 +305,10 @@ def test_field_y_offsets_plain_fields():
 
 def test_section_fields_take_two_rows():
     stdscr = _make_stdscr()
-    fields = [SectionField("", "Section"), FormField("name", "Name", "")]
+    fields = [
+        SectionField(key="", label="Section"),
+        FormField(key="name", label="Name", value=""),
+    ]
     form = Form(stdscr, "Test", fields)
     offsets = form._compute_field_y_offsets()
     assert offsets[0] == 0  # SectionField starts at 0
@@ -288,9 +318,9 @@ def test_section_fields_take_two_rows():
 def test_mixed_field_y_offsets():
     stdscr = _make_stdscr()
     fields = [
-        FormField("a", "A", ""),
-        SectionField("", "S"),
-        FormField("b", "B", ""),
+        FormField(key="a", label="A", value=""),
+        SectionField(key="", label="S"),
+        FormField(key="b", label="B", value=""),
     ]
     form = Form(stdscr, "Test", fields)
     offsets = form._compute_field_y_offsets()
@@ -301,7 +331,7 @@ def test_mixed_field_y_offsets():
 
 def test_form_esc_returns_none():
     stdscr = _make_stdscr()
-    fields = [FormField("name", "Name", "hello")]
+    fields = [FormField(key="name", label="Name", value="hello")]
     form = Form(stdscr, "Test", fields)
     stdscr.getch.side_effect = [27]  # Esc
 
@@ -312,7 +342,7 @@ def test_form_esc_returns_none():
 
 def test_form_ctrl_d_raises():
     stdscr = _make_stdscr()
-    fields = [FormField("name", "Name", "")]
+    fields = [FormField(key="name", label="Name", value="")]
     form = Form(stdscr, "Test", fields)
     stdscr.getch.side_effect = [4]  # Ctrl+D
 
@@ -323,7 +353,10 @@ def test_form_ctrl_d_raises():
 
 def test_form_tab_advances_field():
     stdscr = _make_stdscr()
-    fields = [FormField("a", "A", ""), FormField("b", "B", "")]
+    fields = [
+        FormField(key="a", label="A", value=""),
+        FormField(key="b", label="B", value=""),
+    ]
     form = Form(stdscr, "Test", fields)
     # Tab twice → land on Save, Enter saves
     stdscr.getch.side_effect = [ord("\t"), ord("\t"), ord("\n")]
@@ -335,7 +368,7 @@ def test_form_tab_advances_field():
 
 def test_form_enter_save_valid():
     stdscr = _make_stdscr()
-    fields = [FormField("name", "Name", "hello")]
+    fields = [FormField(key="name", label="Name", value="hello")]
     form = Form(stdscr, "Test", fields)
     # Tab to Save (SAVE_IDX=1), then Enter
     stdscr.getch.side_effect = [ord("\t"), ord("\n")]
@@ -351,7 +384,7 @@ def test_form_enter_save_with_validation_error():
     def validator(v):
         return "Name is required" if not v else None
 
-    fields = [FormField("name", "Name", "", validator=validator)]
+    fields = [FormField(key="name", label="Name", value="", validator=validator)]
     form = Form(stdscr, "Test", fields)
     # Tab → Save, Enter → fails validation
     # KEY_UP → back to field, type 'x', Tab → Save, Enter → succeeds
@@ -371,7 +404,7 @@ def test_form_enter_save_with_validation_error():
 
 def test_form_cancel_button_returns_none():
     stdscr = _make_stdscr()
-    fields = [FormField("name", "Name", "hello")]
+    fields = [FormField(key="name", label="Name", value="hello")]
     form = Form(stdscr, "Test", fields)
     # Tab, Tab → Cancel (CANCEL_IDX=2), Enter → returns None
     stdscr.getch.side_effect = [ord("\t"), ord("\t"), ord("\n")]
@@ -383,7 +416,10 @@ def test_form_cancel_button_returns_none():
 
 def test_form_up_navigation():
     stdscr = _make_stdscr()
-    fields = [FormField("a", "A", ""), FormField("b", "B", "")]
+    fields = [
+        FormField(key="a", label="A", value=""),
+        FormField(key="b", label="B", value=""),
+    ]
     form = Form(stdscr, "Test", fields)
     # Start at 0, Down → 1, Up → 0, Tab → 1, Tab → SAVE, Enter
     stdscr.getch.side_effect = [
@@ -401,7 +437,7 @@ def test_form_up_navigation():
 
 def test_form_bool_field_toggle():
     stdscr = _make_stdscr()
-    fields = [BoolField("flag", "Flag", value=False)]
+    fields = [BoolField(key="flag", label="Flag", value=False)]
     form = Form(stdscr, "Test", fields)
     # Enter on BoolField toggles, Tab to Save, Enter saves
     stdscr.getch.side_effect = [ord("\n"), ord("\t"), ord("\n")]
@@ -413,7 +449,7 @@ def test_form_bool_field_toggle():
 
 def test_form_bool_space_toggle():
     stdscr = _make_stdscr()
-    fields = [BoolField("flag", "Flag", value=True)]
+    fields = [BoolField(key="flag", label="Flag", value=True)]
     form = Form(stdscr, "Test", fields)
     # Space toggles bool
     stdscr.getch.side_effect = [ord(" "), ord("\t"), ord("\n")]
@@ -425,7 +461,11 @@ def test_form_bool_space_toggle():
 
 def test_form_choice_field_arrow_cycle():
     stdscr = _make_stdscr()
-    fields = [ChoiceField("proto", "Protocol", choices=["TCP", "UDP", "ICMP"], value=0)]
+    fields = [
+        ChoiceField(
+            key="proto", label="Protocol", choices=["TCP", "UDP", "ICMP"], value=0
+        )
+    ]
     form = Form(stdscr, "Test", fields)
     # KEY_RIGHT cycles forward in choices, Tab → Save, Enter
     stdscr.getch.side_effect = [curses.KEY_RIGHT, ord("\t"), ord("\n")]
@@ -437,7 +477,7 @@ def test_form_choice_field_arrow_cycle():
 
 def test_text_field_typing():
     stdscr = _make_stdscr()
-    fields = [FormField("name", "Name", "")]
+    fields = [FormField(key="name", label="Name", value="")]
     form = Form(stdscr, "Test", fields)
     # Type 'h', 'i', Tab to Save, Enter
     stdscr.getch.side_effect = [ord("h"), ord("i"), ord("\t"), ord("\n")]
@@ -449,7 +489,7 @@ def test_text_field_typing():
 
 def test_text_field_backspace():
     stdscr = _make_stdscr()
-    fields = [FormField("name", "Name", "")]
+    fields = [FormField(key="name", label="Name", value="")]
     form = Form(stdscr, "Test", fields)
     stdscr.getch.side_effect = [
         ord("h"),
@@ -466,7 +506,7 @@ def test_text_field_backspace():
 
 def test_text_field_ctrl_u_clears():
     stdscr = _make_stdscr()
-    fields = [FormField("name", "Name", "")]
+    fields = [FormField(key="name", label="Name", value="")]
     form = Form(stdscr, "Test", fields)
     stdscr.getch.side_effect = [
         ord("h"),
@@ -483,7 +523,7 @@ def test_text_field_ctrl_u_clears():
 
 def test_int_field_rejects_non_digits():
     stdscr = _make_stdscr()
-    fields = [IntField("num", "Num", value=5)]
+    fields = [IntField(key="num", label="Num", value=5)]
     form = Form(stdscr, "Test", fields)
     # buf starts as ['5']. Type 'a' (rejected), Tab → Save, Enter
     stdscr.getch.side_effect = [ord("a"), ord("\t"), ord("\n")]
@@ -495,7 +535,7 @@ def test_int_field_rejects_non_digits():
 
 def test_int_field_accepts_digits():
     stdscr = _make_stdscr()
-    fields = [IntField("num", "Num", value=0)]
+    fields = [IntField(key="num", label="Num", value=0)]
     form = Form(stdscr, "Test", fields)
     # Ctrl+U to clear buf, type '4', '2', Tab → Save, Enter
     stdscr.getch.side_effect = [21, ord("4"), ord("2"), ord("\t"), ord("\n")]
@@ -507,7 +547,7 @@ def test_int_field_accepts_digits():
 
 def test_int_field_accepts_minus():
     stdscr = _make_stdscr()
-    fields = [IntField("num", "Num", value=0)]
+    fields = [IntField(key="num", label="Num", value=0)]
     form = Form(stdscr, "Test", fields)
     # Clear, type '-', '5', Tab → Save, Enter
     stdscr.getch.side_effect = [21, ord("-"), ord("5"), ord("\t"), ord("\n")]
@@ -519,7 +559,7 @@ def test_int_field_accepts_minus():
 
 def test_list_editor_esc_returns_list():
     stdscr = _make_stdscr()
-    fields = [ListField("items", "Items", value=["x", "y"])]
+    fields = [ListField(key="items", label="Items", value=["x", "y"])]
     form = Form(stdscr, "Test", fields)
 
     stdscr.getch.side_effect = [27]  # Esc → done
@@ -530,7 +570,7 @@ def test_list_editor_esc_returns_list():
 
 def test_list_editor_ctrl_d():
     stdscr = _make_stdscr()
-    fields = [ListField("items", "Items", value=[])]
+    fields = [ListField(key="items", label="Items", value=[])]
     form = Form(stdscr, "Test", fields)
 
     stdscr.getch.side_effect = [4]  # Ctrl+D
@@ -541,7 +581,7 @@ def test_list_editor_ctrl_d():
 
 def test_list_editor_add_item():
     stdscr = _make_stdscr()
-    fields = [ListField("items", "Items", value=[])]
+    fields = [ListField(key="items", label="Items", value=[])]
     form = Form(stdscr, "Test", fields)
 
     stdscr.getch.side_effect = [ord("a"), 27]  # 'a' add, Esc done
@@ -556,7 +596,7 @@ def test_list_editor_add_item():
 
 def test_list_editor_add_cancelled():
     stdscr = _make_stdscr()
-    fields = [ListField("items", "Items", value=[])]
+    fields = [ListField(key="items", label="Items", value=[])]
     form = Form(stdscr, "Test", fields)
 
     stdscr.getch.side_effect = [ord("a"), 27]
@@ -572,7 +612,7 @@ def test_list_editor_add_cancelled():
 
 def test_list_editor_delete_item():
     stdscr = _make_stdscr()
-    fields = [ListField("items", "Items", value=["item1", "item2"])]
+    fields = [ListField(key="items", label="Items", value=["item1", "item2"])]
     form = Form(stdscr, "Test", fields)
 
     stdscr.getch.side_effect = [ord("d"), 27]  # 'd' delete, Esc done
@@ -587,7 +627,7 @@ def test_list_editor_delete_item():
 
 def test_list_editor_delete_cancelled():
     stdscr = _make_stdscr()
-    fields = [ListField("items", "Items", value=["item1", "item2"])]
+    fields = [ListField(key="items", label="Items", value=["item1", "item2"])]
     form = Form(stdscr, "Test", fields)
 
     stdscr.getch.side_effect = [ord("d"), 27]
@@ -606,7 +646,7 @@ def test_list_editor_item_validator_reject():
     def validator(val):
         return "Invalid value" if val == "bad" else None
 
-    fields = [ListField("items", "Items", value=[], item_validator=validator)]
+    fields = [ListField(key="items", label="Items", value=[], item_validator=validator)]
     form = Form(stdscr, "Test", fields)
 
     stdscr.getch.side_effect = [ord("a"), 27]
@@ -627,7 +667,7 @@ def test_list_editor_item_validator_accept():
     def validator(val):
         return None
 
-    fields = [ListField("items", "Items", value=[], item_validator=validator)]
+    fields = [ListField(key="items", label="Items", value=[], item_validator=validator)]
     form = Form(stdscr, "Test", fields)
 
     stdscr.getch.side_effect = [ord("a"), 27]
@@ -642,7 +682,7 @@ def test_list_editor_item_validator_accept():
 
 def test_list_editor_edit_item():
     stdscr = _make_stdscr()
-    fields = [ListField("items", "Items", value=["original"])]
+    fields = [ListField(key="items", label="Items", value=["original"])]
     form = Form(stdscr, "Test", fields)
 
     stdscr.getch.side_effect = [ord("\n"), 27]  # Enter to edit, Esc done
@@ -657,7 +697,7 @@ def test_list_editor_edit_item():
 
 def test_list_editor_navigate_up_down():
     stdscr = _make_stdscr()
-    fields = [ListField("items", "Items", value=["a", "b", "c"])]
+    fields = [ListField(key="items", label="Items", value=["a", "b", "c"])]
     form = Form(stdscr, "Test", fields)
 
     stdscr.getch.side_effect = [curses.KEY_DOWN, curses.KEY_DOWN, curses.KEY_UP, 27]
@@ -668,7 +708,7 @@ def test_list_editor_navigate_up_down():
 
 def test_list_editor_uppercase_a():
     stdscr = _make_stdscr()
-    fields = [ListField("items", "Items", value=[])]
+    fields = [ListField(key="items", label="Items", value=[])]
     form = Form(stdscr, "Test", fields)
 
     stdscr.getch.side_effect = [ord("A"), 27]  # 'A' also adds
@@ -683,7 +723,7 @@ def test_list_editor_uppercase_a():
 
 def test_list_editor_uppercase_d():
     stdscr = _make_stdscr()
-    fields = [ListField("items", "Items", value=["x"])]
+    fields = [ListField(key="items", label="Items", value=["x"])]
     form = Form(stdscr, "Test", fields)
 
     stdscr.getch.side_effect = [ord("D"), 27]  # 'D' also deletes

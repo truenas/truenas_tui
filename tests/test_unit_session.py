@@ -513,7 +513,7 @@ def test_fetch_metadata_setup_locale_uses_tui_prefs_language():
 
 def test_date_format_property_delegates_to_tui_prefs():
     session = Session(MockConfig())
-    session.tui_prefs.date_format = "MM/dd/yyyy"
+    session.tui_prefs = TuiPreferences(date_format="MM/dd/yyyy")
     assert session.date_format == "MM/dd/yyyy"
     session.date_format = "dd/MM/yyyy"
     assert session.tui_prefs.date_format == "dd/MM/yyyy"
@@ -521,7 +521,7 @@ def test_date_format_property_delegates_to_tui_prefs():
 
 def test_time_format_property_delegates_to_tui_prefs():
     session = Session(MockConfig())
-    session.tui_prefs.time_format = "hh:mm:ss aa"
+    session.tui_prefs = TuiPreferences(time_format="hh:mm:ss aa")
     assert session.time_format == "hh:mm:ss aa"
     session.time_format = "hh:mm:ss aaaaa'm'"
     assert session.tui_prefs.time_format == "hh:mm:ss aaaaa'm'"

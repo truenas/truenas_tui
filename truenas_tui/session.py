@@ -8,6 +8,7 @@ Handles:
 - Locale initialisation via localization.setup_locale()
 """
 
+from dataclasses import replace
 import errno
 import json
 import re
@@ -277,7 +278,7 @@ class Session:
 
     @date_format.setter
     def date_format(self, value: str) -> None:
-        self.tui_prefs.date_format = value
+        self.tui_prefs = replace(self.tui_prefs, date_format=value)
 
     @property
     def time_format(self) -> str:
@@ -285,4 +286,4 @@ class Session:
 
     @time_format.setter
     def time_format(self, value: str) -> None:
-        self.tui_prefs.time_format = value
+        self.tui_prefs = replace(self.tui_prefs, time_format=value)

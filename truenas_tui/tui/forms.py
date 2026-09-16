@@ -37,12 +37,12 @@ dict[str, str] to dict[str, Any].
 Usage::
 
     fields = [
-        SectionField('', 'Network'),
-        FormField('hostname',   'Hostname',    current_value),
-        BoolField('dhcp',       'Use DHCP',    value=True),
-        ChoiceField('proto',    'Protocol',    choices=['TCP', 'UDP']),
-        IntField('mtu',         'MTU',         value=1500, min_val=68, max_val=9000),
-        ListField('aliases',    'Aliases'),
+        SectionField(key='', label='Network'),
+        FormField(key='hostname', label='Hostname', value=current_value),
+        BoolField(key='dhcp', label='Use DHCP', value=True),
+        ChoiceField(key='proto', label='Protocol', choices=['TCP', 'UDP']),
+        IntField(key='mtu', label='MTU', value=1500, min_val=68, max_val=9000),
+        ListField(key='aliases', label='Aliases'),
     ]
     form = Form(stdscr, 'Network Settings', fields)
     result = form.run()   # returns dict {key: typed_value} or None if cancelled
@@ -58,7 +58,7 @@ from . import HardExit, colors
 from .dialogs import confirm_dialog, input_dialog, message_dialog, select_dialog
 
 
-@dataclass
+@dataclass(slots=True, kw_only=True, frozen=True)
 class FormField:
     key: str
     label: str
@@ -70,14 +70,14 @@ class FormField:
     help_text: str = ""
 
 
-@dataclass
+@dataclass(slots=True, kw_only=True, frozen=True)
 class BoolField(FormField):
     """Toggle True/False.  Space / Left / Right / Enter all flip the value."""
 
     value: bool = False
 
 
-@dataclass
+@dataclass(slots=True, kw_only=True, frozen=True)
 class ChoiceField(FormField):
     """Pick one of N string options.
     Left/Right cycle in-place; Enter opens select_dialog() for longer lists.
@@ -90,7 +90,7 @@ class ChoiceField(FormField):
     labels: list[str] = field(default_factory=list)
 
 
-@dataclass
+@dataclass(slots=True, kw_only=True, frozen=True)
 class IntField(FormField):
     """Numeric text input; non-digit keystrokes are silently dropped.
     Optional inclusive bounds validated on save.  run() returns int."""
@@ -100,7 +100,7 @@ class IntField(FormField):
     max_val: int | None = None
 
 
-@dataclass
+@dataclass(slots=True, kw_only=True, frozen=True)
 class SectionField(FormField):
     """Non-editable visual separator with a bold section title and a
     dimmed rule below it.  Skipped entirely by Tab / arrow navigation."""
@@ -108,7 +108,7 @@ class SectionField(FormField):
     readonly: bool = True
 
 
-@dataclass
+@dataclass(slots=True, kw_only=True, frozen=True)
 class ListField(FormField):
     """Variable-length list of strings.
     Activating with Enter opens a full-screen list sub-editor.

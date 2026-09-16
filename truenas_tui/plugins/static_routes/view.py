@@ -119,13 +119,19 @@ class StaticRoutesPlugin(BasePlugin):
     def _route_form(self, stdscr, title: str, route: dict) -> dict | None:
         fields = [
             FormField(
-                "destination",
-                TRANSLATE("Destination (CIDR)"),
-                route.get("destination", ""),
+                key="destination",
+                label=TRANSLATE("Destination (CIDR)"),
+                value=route.get("destination", ""),
             ),
-            FormField("gateway", TRANSLATE("Gateway"), route.get("gateway", "")),
             FormField(
-                "description", TRANSLATE("Description"), route.get("description", "")
+                key="gateway",
+                label=TRANSLATE("Gateway"),
+                value=route.get("gateway", ""),
+            ),
+            FormField(
+                key="description",
+                label=TRANSLATE("Description"),
+                value=route.get("description", ""),
             ),
         ]
         return Form(stdscr, title, fields).run()
