@@ -4,6 +4,31 @@ Terminal User Interface for TrueNAS, written in Python 3 using stdlib `curses`.
 
 ---
 
+## Running
+
+Requires Python 3.11 or newer and `truenas-api-client`, which is not on PyPI and is
+installed from GitHub:
+
+```bash
+pip install "git+https://github.com/truenas/api_client.git"
+```
+
+Installing this package provides the `truenas-tui` command. From a checkout it can also
+be started with `python -m truenas_tui.main`.
+
+```
+truenas-tui [--config FILE] [--menu]
+```
+
+`--config` selects a config file (default `~/.config/truenas_tui.conf`, see Configuration
+below). `--menu` switches to the legacy numbered menu that mirrors `midcli --menu` and keeps
+the expect scripts used by automated installs working.
+
+On a TrueNAS system with no config file the TUI connects over the local middleware socket
+and needs no credentials.
+
+---
+
 ## Plugin system
 
 ### BasePlugin
@@ -68,11 +93,11 @@ The main view's 1-second tick loop calls `plugin.needs_refresh()` on the current
 ```
 ┌─ TrueNAS 25.10.0 - hostname (server)  User: admin [FULL_ADMIN] ─┐
 │ Menu                         │ Description / System Info         │
-│  1. Network                  │                                   │
-│  2. My Account               │  <right pane>                     │
-│  3. Power Control            │                                   │
+│  Network                     │                                   │
+│  My Account                  │  <right pane>                     │
+│  Power Control               │                                   │
 ├──────────────────────────────────────────────────────────────────┤
-│ Enter an option from 1-3:  ↑↓/Enter Navigate/Select  ^D/q Quit  │
+│ ↑↓/Enter Navigate/Select   r Refresh   s Settings   ^D/q Quit   │
 └──────────────────────────────────────────────────────────────────┘
 ```
 
@@ -99,7 +124,7 @@ The main view's 1-second tick loop calls `plugin.needs_refresh()` on the current
 
 | Key | Action |
 |-----|--------|
-| `1`–`9` | Directly select and activate that menu item (expect-script compatible) |
+| `1`–`9` | Directly select and activate that menu item (`--menu` mode only, expect-script compatible) |
 | `↑` / `↓` | Move selection |
 | `Enter` | Activate selected item |
 | `r` | Force-refresh all plugin labels and system info |
@@ -107,7 +132,8 @@ The main view's 1-second tick loop calls `plugin.needs_refresh()` on the current
 | `Esc` | Return to system info view |
 | `q` / `Ctrl+D` | Quit |
 
-The footer always shows `Enter an option from 1-N:` for pexpect expect-script compatibility.
+In `--menu` mode the footer shows `Enter an option from 1-N:` so the expect scripts used by
+automated installs keep working. Default mode has no numbered prompt.
 
 ---
 
@@ -136,12 +162,14 @@ truenas_tui/locale/
     <lang>/LC_MESSAGES/<domain>.mo   ← compiled binary (not committed)
 ```
 
-`.mo` files are produced by `msgfmt` during the Debian package build (see `debian/rules`).
+`.mo` files are produced by `i18n/gen_locale.py` (which runs `msgfmt`) during the Debian package
+build (see `debian/rules`).
 
-On an installed system, gettext searches `sys.prefix/share/locale` (i.e. `/usr/share/locale`).
+gettext is bound to the package's own `truenas_tui/locale` directory, so translations are found
+wherever the package is installed.
 `fallback=True` means untranslated strings pass through as-is.
 
-87 languages are supported. Translation source files live in `i18n/<lang>.json` (flat
+77 languages are supported. Translation source files live in `i18n/<lang>.json` (flat
 `{"English string": "Translation"}` dicts). `i18n/gen_locale.py` converts them to
 `.po`/`.mo` files at build time.
 
@@ -169,6 +197,26 @@ power_control
 
 ---
 
+## TUI preferences
+
+Press `s` in default mode to open the settings form. Preferences are stored on the user
+account under `auth.me → attributes.tui_preferences` (written with `auth.set_attribute`), so
+they follow the user to any client. On first run they are seeded from the Web UI preferences
+(language, date format, time format).
+
+| Key | Values | Default |
+|-----|--------|---------|
+| `language` | any code in `LANGUAGES` (`truenas_tui/tui_preferences.py`) | `en` |
+| `date_format` | a `DateFormat` value, e.g. `yyyy-MM-dd`, `MM/dd/yyyy`, `dd.MM.yyyy` | `yyyy-MM-dd` |
+| `time_format` | a `TimeFormat` value, e.g. `HH:mm:ss` | `HH:mm:ss` |
+| `theme` | `default`, `dark`, `high_contrast` | `default` |
+| `confirm_dangerous` | `true` / `false`, confirmation before reboot, shutdown and config reset | `true` |
+| `startup_view` | `sysinfo`, `menu` | `sysinfo` |
+
+Unknown keys are ignored and invalid values fall back to the defaults when loaded.
+
+---
+
 ## API methods
 
 All API method strings are defined in `truenas_tui/api_methods.py` as `class Method(StrEnum)`.
@@ -191,6 +239,19 @@ so they are fully compatible with the underlying `truenas_api_client.Client.call
 
 3. **`view.py`**: subclass `BasePlugin`; set `REQUIRED_WRITE_ROLES`, `LABEL`, `DESCRIPTION`;
    implement `run(stdscr, session)`.
+
+   Forms are built from the field classes in `truenas_tui/tui/forms.py` (`FormField`,
+   `BoolField`, `ChoiceField`, `IntField`, `ListField`, `SectionField`). They are frozen,
+   keyword-only dataclasses, so construct them with named arguments:
+   ```python
+   fields = [
+       SectionField(key="", label=_("Network")),
+       FormField(key="hostname", label=_("Hostname"), value=current),
+       BoolField(key="dhcp", label=_("Use DHCP"), value=True),
+   ]
+   # Returns a dict of typed values, or None if cancelled
+   result = Form(stdscr, _("Title"), fields).run()
+   ```
 
 4. Add any new API methods to `truenas_tui/api_methods.py` as `Method` enum members.
 
@@ -215,16 +276,21 @@ Default config path: `~/.config/truenas_tui.conf`
 server       = truenas.example.com
 username     = admin
 api_key_path = /path/to/api.key
+verify_ssl   = true            ; set false only for self-signed certificates
+ca_cert      =                 ; optional path to a CA bundle (PEM)
 ```
 
-Omit `server` (or leave the file absent) to attempt a local AF_UNIX connection to
-`/var/run/middlewared.sock` (no authentication required on-box).
+Omit `server` (or leave the file absent) to connect over the local middleware socket
+(`/var/run/middleware/middlewared.sock` on a TrueNAS system, no authentication required on-box).
 
 ---
 
 ## Running tests
 
 ```bash
+# Test dependencies (the API client is not on PyPI)
+pip install "git+https://github.com/truenas/api_client.git" pytest pexpect
+
 # Full unit/integration test suite (no network required)
 python -m pytest tests/ -v
 
@@ -232,5 +298,5 @@ python -m pytest tests/ -v
 python tests/run_mock_tui.py
 
 # Live read-only tests (requires a configured TrueNAS server)
-python -m pytest tests/test_live_readonly.py -v
+python3 tests/test_live_readonly.py --config /path/to/config.conf
 ```
