@@ -9,20 +9,19 @@ Handles:
 """
 
 import errno
-import threading
-import time
-import urllib.request
 import json
 import re
 import ssl
+import threading
+import time
+import urllib.request
 
 from truenas_api_client import Client
 from truenas_api_client.exc import ClientException
 
 from .api_methods import Method
 from .localization import setup_locale
-from .tui_preferences import TuiPreferences, TUI_PREFERENCES_KEY
-
+from .tui_preferences import TUI_PREFERENCES_KEY, TuiPreferences
 
 _KEEPALIVE_INTERVAL = 5  # seconds of idle before sending core.ping
 

@@ -4,16 +4,17 @@ from truenas_tui.plugins.base import BasePlugin
 from truenas_tui.tui import format_error
 from truenas_tui.tui.colors import reinit_colors
 from truenas_tui.tui.dialogs import message_dialog
-from truenas_tui.tui.forms import Form, BoolField, ChoiceField, SectionField
+from truenas_tui.tui.forms import BoolField, ChoiceField, Form, SectionField
 from truenas_tui.tui_preferences import (
+    LANGUAGES,
     TUI_PREFERENCES_KEY,
-    TuiPreferences,
-    VALID_THEMES,
     VALID_STARTUP_VIEWS,
+    VALID_THEMES,
     DateFormat,
     TimeFormat,
-    LANGUAGES,
+    TuiPreferences,
 )
+
 from .localization import TRANSLATE
 
 _THEME_CHOICES = sorted(VALID_THEMES)

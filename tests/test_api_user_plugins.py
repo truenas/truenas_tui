@@ -12,17 +12,18 @@ Key flow for PasswordPlugin:
 """
 
 import curses
+from unittest.mock import patch
+
 import pytest
-from unittest.mock import patch, call
 
 from truenas_tui.api_methods import Method
 from truenas_tui.plugins.legacy_password.view import PasswordPlugin
-from truenas_tui.plugins.onetime_password.view import OnetimePasswordPlugin
 from truenas_tui.plugins.my_account.view import (
     MyAccountPlugin,
     _extract_secret,
     _find_qr_tool,
 )
+from truenas_tui.plugins.onetime_password.view import OnetimePasswordPlugin
 
 # Aliases for the patch targets (import binding sites in plugin modules)
 _PW = "truenas_tui.plugins.legacy_password.view"

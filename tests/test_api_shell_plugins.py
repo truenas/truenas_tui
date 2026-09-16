@@ -11,11 +11,12 @@ All real system calls (os.execv, os.system, curses.endwin, pwd.getpwuid,
 shutil.which, os.getuid) are patched to avoid side effects.
 """
 
+from unittest.mock import MagicMock, patch
+
 import pytest
-from unittest.mock import patch, MagicMock, call
 
 from truenas_tui.plugins.legacy_cli_shell.view import CliShellPlugin
-from truenas_tui.plugins.legacy_linux_shell.view import LinuxShellPlugin, _SAFE_SHELLS
+from truenas_tui.plugins.legacy_linux_shell.view import _SAFE_SHELLS, LinuxShellPlugin
 
 
 class TestCliShellPlugin:

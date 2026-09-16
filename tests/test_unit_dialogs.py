@@ -6,21 +6,21 @@ requiring a real terminal.  The mock_win fixture controls input via getch.side_e
 """
 
 import curses
-from unittest.mock import MagicMock, patch, call
+from unittest.mock import MagicMock, patch
 
 import pytest
 
+from truenas_tui.tui import HardExit
 from truenas_tui.tui.dialogs import (
-    message_dialog,
+    _center_win,
+    _draw_box,
+    _restore_screen,
+    _save_screen,
     confirm_dialog,
     input_dialog,
+    message_dialog,
     select_dialog,
-    _draw_box,
-    _center_win,
-    _save_screen,
-    _restore_screen,
 )
-from truenas_tui.tui import HardExit
 
 
 def _dialog_patches(mock_win):

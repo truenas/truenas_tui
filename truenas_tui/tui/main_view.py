@@ -46,10 +46,11 @@ import curses
 import signal
 import time
 
-from . import colors, HardExit, format_error
-from .colors import pair
 from truenas_tui.api_methods import Method
 from truenas_tui.localization import TRANSLATE
+
+from . import HardExit, colors, format_error
+from .colors import pair
 
 _INFO_REFRESH_SECS = 10
 _MENU_MIN = 24
@@ -288,7 +289,7 @@ class MainView:
 
     def _draw_info(self, top: int, bottom: int, left: int, sw: int) -> None:
         """Draw system.info as a table in the right content pane."""
-        si = session_info = self.session.system_info
+        si = self.session.system_info
         content_w = sw - left - 2
         col = left + 2
 

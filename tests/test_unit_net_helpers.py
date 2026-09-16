@@ -5,12 +5,10 @@ Tests _alias_str, _parse_alias_entry, and _aliases_to_payload directly,
 without curses or network.
 """
 
-import pytest
-
 from truenas_tui.plugins.network_interface.view import (
     _alias_str,
-    _parse_alias_entry,
     _aliases_to_payload,
+    _parse_alias_entry,
 )
 
 

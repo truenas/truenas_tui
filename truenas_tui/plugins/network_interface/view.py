@@ -30,18 +30,19 @@ import ipaddress
 
 from truenas_tui.api_methods import Method
 from truenas_tui.plugins.base import BasePlugin
-from truenas_tui.tui import colors, HardExit, format_error
+from truenas_tui.tui import HardExit, colors, format_error
 from truenas_tui.tui.colors import pair
-from truenas_tui.tui.dialogs import message_dialog, confirm_dialog
+from truenas_tui.tui.dialogs import confirm_dialog, message_dialog
 from truenas_tui.tui.forms import (
-    Form,
-    FormField,
     BoolField,
     ChoiceField,
+    Form,
+    FormField,
     IntField,
-    SectionField,
     ListField,
+    SectionField,
 )
+
 from .localization import TRANSLATE
 
 _LAG_PROTOCOLS = ["LACP", "FAILOVER", "LOADBALANCE", "ROUNDROBIN", "NONE"]
@@ -347,7 +348,6 @@ class NetworkInterfacePlugin(BasePlugin):
     def _edit_interface(self, stdscr, session, iface: dict) -> None:
         iface_id = iface.get("id") or iface.get("name")
         iface_name = iface.get("name", iface_id)
-        iface_type = iface.get("type", "PHYSICAL")
 
         try:
             failover_licensed = session.call(Method.FAILOVER_LICENSED)

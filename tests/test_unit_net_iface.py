@@ -2,20 +2,18 @@
 
 from unittest.mock import MagicMock, patch
 
-import pytest
-
 from truenas_tui.api_methods import Method
 from truenas_tui.plugins.network_interface.view import (
     NetworkInterfacePlugin,
     _alias_str,
+    _aliases_to_payload,
+    _choice_idx,
+    _collect_payload,
     _iface_summary,
     _parse_alias_entry,
+    _parse_ip_only,
     _validate_alias_str,
     _validate_ip_only,
-    _parse_ip_only,
-    _choice_idx,
-    _aliases_to_payload,
-    _collect_payload,
 )
 
 

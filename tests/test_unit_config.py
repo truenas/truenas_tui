@@ -6,6 +6,7 @@ All tests use tmp_path (pytest built-in) to create real temp config files.
 """
 
 import pytest
+
 from truenas_tui.config import Config
 
 

@@ -6,13 +6,14 @@ plugin module; use RecordingMockSession to assert the right API method was
 (or was not) called with the right arguments.
 """
 
-import pytest
 from unittest.mock import patch
+
+import pytest
 
 from truenas_tui.api_methods import Method
 from truenas_tui.plugins.legacy_reboot.view import RebootPlugin
-from truenas_tui.plugins.legacy_shutdown.view import ShutdownPlugin
 from truenas_tui.plugins.legacy_reset_config.view import ResetConfigPlugin
+from truenas_tui.plugins.legacy_shutdown.view import ShutdownPlugin
 
 
 class TestRebootPlugin:

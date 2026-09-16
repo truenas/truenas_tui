@@ -16,20 +16,19 @@ Used by test_expect_compat.py and E2E tests as the subprocess target.
 """
 
 import argparse
-import sys
-import os
 import curses
+import os
+import sys
 
 # Ensure the package root is on the path when run as a script
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+from mock_session import MockSession
 from truenas_tui.localization import setup_locale
+from truenas_tui.main import ALL_PLUGINS, _print_ui_urls
 from truenas_tui.tui import HardExit
 from truenas_tui.tui.colors import init_colors
 from truenas_tui.tui.main_view import MainView
-from truenas_tui.main import ALL_PLUGINS, _print_ui_urls
-
-from mock_session import MockSession
 
 
 def _tui_main(stdscr, session, menu_mode: bool = False):

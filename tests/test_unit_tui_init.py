@@ -2,7 +2,7 @@
 
 import pytest
 
-from truenas_tui.tui import format_error, HardExit
+from truenas_tui.tui import HardExit, format_error
 
 
 def test_format_error_single_line():

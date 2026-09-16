@@ -3,6 +3,7 @@ import os
 import pwd
 
 from truenas_tui.plugins.base import BasePlugin
+
 from .localization import TRANSLATE
 
 _SAFE_SHELLS = {
