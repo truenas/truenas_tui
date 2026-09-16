@@ -12,8 +12,9 @@ API:
 from truenas_tui.api_methods import Method
 from truenas_tui.plugins.base import BasePlugin
 from truenas_tui.tui import format_error
-from truenas_tui.tui.forms import Form, FormField
 from truenas_tui.tui.dialogs import message_dialog
+from truenas_tui.tui.forms import Form, FormField
+
 from .localization import TRANSLATE
 
 

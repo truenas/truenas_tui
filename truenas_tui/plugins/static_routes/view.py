@@ -14,11 +14,11 @@ import curses
 
 from truenas_tui.api_methods import Method
 from truenas_tui.plugins.base import BasePlugin
-from truenas_tui.tui import HardExit, format_error
-from truenas_tui.tui import colors
+from truenas_tui.tui import HardExit, colors, format_error
 from truenas_tui.tui.colors import pair
-from truenas_tui.tui.dialogs import message_dialog, confirm_dialog
+from truenas_tui.tui.dialogs import confirm_dialog, message_dialog
 from truenas_tui.tui.forms import Form, FormField
+
 from .localization import TRANSLATE
 
 

@@ -16,8 +16,8 @@ Default mode (no --menu):
 
 import os
 import sys
+
 import pexpect
-import pytest
 
 SCRIPT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "run_mock_tui.py")
 PYTHON = sys.executable

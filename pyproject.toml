@@ -24,3 +24,27 @@ truenas_tui = ["locale/**/LC_MESSAGES/*.mo"]
 testpaths = ["tests"]
 pythonpath = [".", "tests"]
 
+
+[tool.ruff]
+line-length = 88
+# Directories that pytest/sys.path put on the import path, so ruff's isort
+# classifies `mock_session` and `gen_locale` as first-party.
+src = [".", "tests", "i18n"]
+
+[tool.ruff.lint]
+select = [
+    # pycodestyle
+    "E",
+    # Pyflakes
+    "F",
+    # isort
+    "I",
+]
+
+[tool.ruff.lint.pycodestyle]
+# The formatter wraps code at `line-length`; E501 only flags what the formatter
+# cannot wrap (long strings, comments, docstrings) beyond this limit.
+max-line-length = 120
+
+[tool.ruff.lint.isort]
+force-sort-within-sections = true

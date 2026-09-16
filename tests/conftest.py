@@ -1,8 +1,3 @@
-# test_live_readonly.py requires a live TrueNAS server and a --config flag.
-# Exclude it from automatic collection so plain `pytest` doesn't fail.
-collect_ignore = ["test_live_readonly.py"]
-
-
 """
 Shared pytest fixtures for the truenas_tui test suite.
 
@@ -12,10 +7,16 @@ Groups:
   recording_session    – RecordingMockSession (remote by default)
   stdscr               – MagicMock satisfying all curses stdscr interactions
 """
-import pytest
+
 from unittest.mock import MagicMock
 
+import pytest
+
 from mock_session import MockSession, RecordingMockSession
+
+# test_live_readonly.py requires a live TrueNAS server and a --config flag.
+# Exclude it from automatic collection so plain `pytest` doesn't fail.
+collect_ignore = ["test_live_readonly.py"]
 
 
 @pytest.fixture

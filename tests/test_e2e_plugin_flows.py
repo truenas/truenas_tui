@@ -26,8 +26,9 @@ Legacy plugin map (local, --menu):
 """
 
 import os
-import sys
 import shutil
+import sys
+
 import pexpect
 import pytest
 

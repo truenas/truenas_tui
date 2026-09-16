@@ -1,7 +1,8 @@
 """Per-user TUI preferences stored under auth.me['attributes']['tui_preferences']."""
 
 from __future__ import annotations
-from dataclasses import dataclass, asdict
+
+from dataclasses import asdict, dataclass
 from enum import StrEnum
 
 

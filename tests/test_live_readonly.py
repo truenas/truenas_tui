@@ -15,6 +15,7 @@ import argparse
 import ipaddress
 import os
 import sys
+
 import pexpect
 
 CONTROL_D = "\x04"

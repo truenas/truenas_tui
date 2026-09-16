@@ -22,14 +22,14 @@ API:
 import curses
 import shutil
 import subprocess
-from urllib.parse import urlparse, parse_qs
+from urllib.parse import parse_qs, urlparse
 
 from truenas_tui.api_methods import Method
 from truenas_tui.plugins.base import BasePlugin
-from truenas_tui.tui import HardExit, format_error
-from truenas_tui.tui import colors
+from truenas_tui.tui import HardExit, colors, format_error
 from truenas_tui.tui.colors import pair
-from truenas_tui.tui.dialogs import message_dialog, input_dialog, confirm_dialog
+from truenas_tui.tui.dialogs import confirm_dialog, input_dialog, message_dialog
+
 from .localization import TRANSLATE
 
 _MIN_PASSWORD_LEN = 8

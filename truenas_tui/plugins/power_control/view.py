@@ -1,7 +1,8 @@
 from truenas_tui.plugins.base import BasePlugin
-from truenas_tui.tui.dialogs import select_dialog
 from truenas_tui.plugins.legacy_reboot.view import RebootPlugin
 from truenas_tui.plugins.legacy_shutdown.view import ShutdownPlugin
+from truenas_tui.tui.dialogs import select_dialog
+
 from .localization import TRANSLATE
 
 

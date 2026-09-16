@@ -1,0 +1,24 @@
+name: ruff
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    types:
+      - 'synchronize'
+      - 'opened'
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: ruff check
+      uses: astral-sh/ruff-action@v3
+      with:
+        args: check
+    - name: ruff format
+      uses: astral-sh/ruff-action@v3
+      with:
+        args: format --diff

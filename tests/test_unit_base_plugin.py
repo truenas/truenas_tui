@@ -5,9 +5,9 @@ Covers can_activate, can_write, get_label caching, refresh, needs_refresh,
 and get_description.  No curses or network required.
 """
 
-import time
-import pytest
 from unittest.mock import patch
+
+import pytest
 
 from truenas_tui.plugins.base import BasePlugin
 

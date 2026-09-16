@@ -7,13 +7,13 @@ real terminal is required.
 
 import curses
 import signal
-from unittest.mock import MagicMock, patch, call
+from unittest.mock import MagicMock, patch
 
 import pytest
 
-from truenas_tui.tui.main_view import MainView, _fmt_bytes, _fmt_load
-from truenas_tui.tui import HardExit
 from truenas_tui.api_methods import Method
+from truenas_tui.tui import HardExit
+from truenas_tui.tui.main_view import MainView, _fmt_bytes, _fmt_load
 
 
 @pytest.fixture(autouse=True)
@@ -118,7 +118,8 @@ def _run_with_patches(view, stdscr, extra_patches=None):
     if extra_patches:
         patchlist.extend(extra_patches)
 
-    cms = [p.__enter__() for p in patchlist]
+    for p in patchlist:
+        p.__enter__()
     try:
         view.run()
     finally:

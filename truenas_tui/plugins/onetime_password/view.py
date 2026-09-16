@@ -12,6 +12,7 @@ from truenas_tui.api_methods import Method
 from truenas_tui.plugins.base import BasePlugin
 from truenas_tui.tui import format_error
 from truenas_tui.tui.dialogs import message_dialog
+
 from .localization import TRANSLATE
 
 _OTP_DISPLAY_TIMEOUT = 30  # seconds before the OTP dialog auto-dismisses

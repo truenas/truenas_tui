@@ -6,8 +6,10 @@ They save/restore the underlying screen content automatically.
 """
 
 import curses
-from . import colors, HardExit
+
 from truenas_tui.localization import TRANSLATE
+
+from . import HardExit, colors
 
 
 def _draw_box(win, title: str = "") -> None:
@@ -65,7 +67,7 @@ def message_dialog(
     """
     lines = message.splitlines()
     width = max(
-        len(ok_label) + 6, max((len(l) for l in lines), default=0) + 4, len(title) + 4
+        len(ok_label) + 6, max((len(ln) for ln in lines), default=0) + 4, len(title) + 4
     )
     width = min(width, stdscr.getmaxyx()[1] - 2)
     height = len(lines) + 5  # title border + lines + blank + button row + border
@@ -145,7 +147,7 @@ def confirm_dialog(
     lines = message.splitlines()
     btn_row = f"[ {yes_label} ]   [ {no_label} ]"
     width = max(
-        len(btn_row) + 4, max((len(l) for l in lines), default=0) + 4, len(title) + 4
+        len(btn_row) + 4, max((len(ln) for ln in lines), default=0) + 4, len(title) + 4
     )
     width = min(width, stdscr.getmaxyx()[1] - 2)
     height = len(lines) + 5

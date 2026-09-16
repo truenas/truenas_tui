@@ -16,6 +16,7 @@ from truenas_tui.plugins.network_interface.view import NetworkInterfacePlugin
 from truenas_tui.plugins.network_settings.view import NetworkSettingsPlugin
 from truenas_tui.plugins.static_routes.view import StaticRoutesPlugin
 from truenas_tui.tui.dialogs import select_dialog
+
 from .localization import TRANSLATE
 
 

@@ -1,18 +1,17 @@
 """Unit tests for truenas_tui/session.py."""
 
 import errno
-import json
 import ssl
 import threading
 import time
-from unittest.mock import MagicMock, patch, call
+from unittest.mock import MagicMock, patch
 
 import pytest
-
 from truenas_api_client.exc import ClientException
-from truenas_tui.session import Session, _parse_version, _make_ssl_context
+
 from truenas_tui.api_methods import Method
-from truenas_tui.tui_preferences import TuiPreferences, TUI_PREFERENCES_KEY
+from truenas_tui.session import Session, _make_ssl_context, _parse_version
+from truenas_tui.tui_preferences import TUI_PREFERENCES_KEY, TuiPreferences
 
 
 class MockConfig:

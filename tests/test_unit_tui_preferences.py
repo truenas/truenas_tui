@@ -1,15 +1,13 @@
 """Unit tests for truenas_tui/tui_preferences.py."""
 
-import pytest
-
 from truenas_tui.tui_preferences import (
-    TuiPreferences,
+    LANGUAGES,
     TUI_PREFERENCES_KEY,
-    VALID_THEMES,
     VALID_STARTUP_VIEWS,
+    VALID_THEMES,
     DateFormat,
     TimeFormat,
-    LANGUAGES,
+    TuiPreferences,
 )
 
 

@@ -52,9 +52,10 @@ import curses
 from dataclasses import dataclass, field
 from typing import Any, Callable
 
-from . import colors, HardExit
-from .dialogs import confirm_dialog, input_dialog, message_dialog, select_dialog
 from truenas_tui.localization import TRANSLATE
+
+from . import HardExit, colors
+from .dialogs import confirm_dialog, input_dialog, message_dialog, select_dialog
 
 
 @dataclass

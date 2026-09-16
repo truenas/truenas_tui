@@ -10,16 +10,16 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
+from truenas_tui.tui import HardExit
 from truenas_tui.tui.forms import (
-    Form,
-    FormField,
     BoolField,
     ChoiceField,
+    Form,
+    FormField,
     IntField,
-    SectionField,
     ListField,
+    SectionField,
 )
-from truenas_tui.tui import HardExit
 
 
 def _make_stdscr(rows=24, cols=80):

@@ -10,9 +10,7 @@ emits a key sequence ending in 'q'.  curses.curs_set and the color helper
 pair() are also patched to avoid terminal initialisation errors.
 """
 
-import curses
-import pytest
-from unittest.mock import patch, MagicMock
+from unittest.mock import MagicMock, patch
 
 from truenas_tui.api_methods import Method
 from truenas_tui.plugins.network_settings.view import NetworkSettingsPlugin

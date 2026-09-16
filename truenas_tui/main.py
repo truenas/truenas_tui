@@ -22,27 +22,27 @@ import sys
 
 from .api_methods import Method
 from .config import Config
-from .session import Session
-from .tui import HardExit
-from .tui.colors import init_colors
-from .tui.main_view import MainView
+from .plugins.legacy_cli_shell.view import CliShellPlugin
+from .plugins.legacy_linux_shell.view import LinuxShellPlugin
+from .plugins.legacy_password.view import PasswordPlugin
+from .plugins.legacy_reboot.view import RebootPlugin
+from .plugins.legacy_reset_config.view import ResetConfigPlugin
+from .plugins.legacy_shutdown.view import ShutdownPlugin
+from .plugins.my_account.view import MyAccountPlugin
 
 # Plugin registry – order determines default-mode display order.
 # Legacy-only plugins appear last (they are hidden in default mode).
 from .plugins.network.view import NetworkPlugin
 from .plugins.network_interface.view import NetworkInterfacePlugin
 from .plugins.network_settings.view import NetworkSettingsPlugin
-from .plugins.static_routes.view import StaticRoutesPlugin
-from .plugins.my_account.view import MyAccountPlugin
 from .plugins.onetime_password.view import OnetimePasswordPlugin
 from .plugins.power_control.view import PowerControlPlugin
+from .plugins.static_routes.view import StaticRoutesPlugin
 from .plugins.tui_settings.view import TuiSettingsPlugin
-from .plugins.legacy_password.view import PasswordPlugin
-from .plugins.legacy_reset_config.view import ResetConfigPlugin
-from .plugins.legacy_cli_shell.view import CliShellPlugin
-from .plugins.legacy_linux_shell.view import LinuxShellPlugin
-from .plugins.legacy_reboot.view import RebootPlugin
-from .plugins.legacy_shutdown.view import ShutdownPlugin
+from .session import Session
+from .tui import HardExit
+from .tui.colors import init_colors
+from .tui.main_view import MainView
 
 ALL_PLUGINS = [
     NetworkPlugin,  # default only (sub-menu wrapping the 3 network plugins)

@@ -7,8 +7,6 @@ Tests can_activate() and LEGACY_ONLY across the full plugin registry, verifying:
   - Plugin counts match expectations in each scenario
 """
 
-import pytest
-
 from truenas_tui.main import ALL_PLUGINS
 from truenas_tui.plugins.legacy_cli_shell.view import CliShellPlugin
 from truenas_tui.plugins.legacy_linux_shell.view import LinuxShellPlugin
