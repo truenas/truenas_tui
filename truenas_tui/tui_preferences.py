@@ -116,7 +116,7 @@ VALID_THEMES = frozenset({"default", "dark", "high_contrast"})
 VALID_STARTUP_VIEWS = frozenset({"sysinfo", "menu"})
 
 
-@dataclass
+@dataclass(slots=True, kw_only=True, frozen=True)
 class TuiPreferences:
     language: str = "en"
     date_format: str = DateFormat.ISO
