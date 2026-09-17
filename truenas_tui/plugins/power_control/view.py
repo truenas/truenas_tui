@@ -1,7 +1,10 @@
+import curses
+
 from truenas_tui.localization import TRANSLATE
 from truenas_tui.plugins.base import BasePlugin
 from truenas_tui.plugins.legacy_reboot.view import RebootPlugin
 from truenas_tui.plugins.legacy_shutdown.view import ShutdownPlugin
+from truenas_tui.session import Session
 from truenas_tui.tui.dialogs import select_dialog
 
 
@@ -16,7 +19,7 @@ class PowerControlPlugin(BasePlugin):
         "before any action is taken."
     )
 
-    def run(self, stdscr, session) -> None:
+    def run(self, stdscr: curses.window, session: Session) -> None:
         choice = select_dialog(
             stdscr,
             TRANSLATE("Power Control"),

@@ -2,7 +2,9 @@
 
 from __future__ import annotations
 
+from collections.abc import Container
 from dataclasses import dataclass
+from typing import Any
 
 # Language code → display name (matches the TrueNAS WebUI languages constant).
 LANGUAGES: dict[str, str] = {
@@ -90,7 +92,7 @@ VALID_THEMES = frozenset({"default", "dark", "high_contrast"})
 VALID_STARTUP_VIEWS = frozenset({"sysinfo", "menu"})
 
 
-def _pick(value, allowed, default: str) -> str:
+def _pick(value: object, allowed: Container[str], default: str) -> str:
     return value if isinstance(value, str) and value in allowed else default
 
 
@@ -101,7 +103,7 @@ class TuiPreferences:
     startup_view: str = "sysinfo"
 
     @classmethod
-    def from_dict(cls, d: dict) -> TuiPreferences:
+    def from_dict(cls, d: dict[str, Any]) -> TuiPreferences:
         """Deserialise, ignoring unknown keys; invalid values fall back to defaults."""
         return cls(
             language=_pick(d.get("language"), LANGUAGES, "en"),

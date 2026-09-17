@@ -1,7 +1,9 @@
+import curses
 from dataclasses import asdict
 
 from truenas_tui.localization import TRANSLATE, setup_locale
 from truenas_tui.plugins.base import BasePlugin
+from truenas_tui.session import Session
 from truenas_tui.tui import format_error
 from truenas_tui.tui.colors import init_colors
 from truenas_tui.tui.dialogs import message_dialog
@@ -31,7 +33,7 @@ class TuiSettingsPlugin(BasePlugin):
         "sessions on any client."
     )
 
-    def run(self, stdscr, session) -> None:
+    def run(self, stdscr: curses.window, session: Session) -> None:
         p = session.tui_prefs
         fields = [
             SectionField(key="", label=TRANSLATE("Appearance")),

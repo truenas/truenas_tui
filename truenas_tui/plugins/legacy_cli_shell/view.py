@@ -4,6 +4,7 @@ import shutil
 
 from truenas_tui.localization import TRANSLATE
 from truenas_tui.plugins.base import BasePlugin
+from truenas_tui.session import Session
 from truenas_tui.tui.dialogs import message_dialog
 
 
@@ -17,7 +18,7 @@ class CliShellPlugin(BasePlugin):
         "interface. The TUI restarts after you exit midcli."
     )
 
-    def run(self, stdscr, session) -> None:
+    def run(self, stdscr: curses.window, session: Session) -> None:
         midcli_path = shutil.which("midcli")
         if not midcli_path:
             message_dialog(

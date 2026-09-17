@@ -11,9 +11,11 @@ API:
 """
 
 import curses
+from typing import Any
 
 from truenas_tui.localization import TRANSLATE
 from truenas_tui.plugins.base import BasePlugin
+from truenas_tui.session import Session
 from truenas_tui.tui import HardExit, colors, format_error
 from truenas_tui.tui.colors import pair
 from truenas_tui.tui.dialogs import confirm_dialog, message_dialog
@@ -33,7 +35,7 @@ class StaticRoutesPlugin(BasePlugin):
         "Keys: Enter = Edit,  a = Add,  d = Delete,  q = Back"
     )
 
-    def run(self, stdscr, session) -> None:
+    def run(self, stdscr: curses.window, session: Session) -> None:
         selected = 0
         stdscr.keypad(True)
         curses.curs_set(0)
@@ -66,7 +68,9 @@ class StaticRoutesPlugin(BasePlugin):
                     self._delete_route(stdscr, session, routes[selected])
                     selected = max(0, selected - 1)
 
-    def _draw_list(self, stdscr, routes: list, selected: int) -> None:
+    def _draw_list(
+        self, stdscr: curses.window, routes: list[dict[str, Any]], selected: int
+    ) -> None:
         stdscr.erase()
         sh, sw = stdscr.getmaxyx()
         title = TRANSLATE("Static Routes")
@@ -111,7 +115,9 @@ class StaticRoutesPlugin(BasePlugin):
             pass
         stdscr.refresh()
 
-    def _route_form(self, stdscr, title: str, route: dict) -> dict | None:
+    def _route_form(
+        self, stdscr: curses.window, title: str, route: dict[str, Any]
+    ) -> dict[str, Any] | None:
         fields = [
             FormField(
                 key="destination",
@@ -131,7 +137,7 @@ class StaticRoutesPlugin(BasePlugin):
         ]
         return Form(stdscr, title, fields).run()
 
-    def _add_route(self, stdscr, session) -> None:
+    def _add_route(self, stdscr: curses.window, session: Session) -> None:
         result = self._route_form(stdscr, TRANSLATE("Add Static Route"), {})
         if result is None:
             return
@@ -140,7 +146,9 @@ class StaticRoutesPlugin(BasePlugin):
         except Exception as e:
             message_dialog(stdscr, TRANSLATE("Error"), format_error(e))
 
-    def _edit_route(self, stdscr, session, route: dict) -> None:
+    def _edit_route(
+        self, stdscr: curses.window, session: Session, route: dict[str, Any]
+    ) -> None:
         result = self._route_form(stdscr, TRANSLATE("Edit Static Route"), route)
         if result is None:
             return
@@ -149,7 +157,9 @@ class StaticRoutesPlugin(BasePlugin):
         except Exception as e:
             message_dialog(stdscr, TRANSLATE("Error"), format_error(e))
 
-    def _delete_route(self, stdscr, session, route: dict) -> None:
+    def _delete_route(
+        self, stdscr: curses.window, session: Session, route: dict[str, Any]
+    ) -> None:
         dest = route.get("destination", "?")
         if confirm_dialog(
             stdscr,

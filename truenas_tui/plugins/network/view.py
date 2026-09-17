@@ -9,11 +9,14 @@ Presents a select_dialog sub-menu that wraps the three network plugins:
 The individual plugins are also items 1, 2 and 3 of the legacy --menu mode.
 """
 
+import curses
+
 from truenas_tui.localization import TRANSLATE
 from truenas_tui.plugins.base import BasePlugin
 from truenas_tui.plugins.network_interface.view import NetworkInterfacePlugin
 from truenas_tui.plugins.network_settings.view import NetworkSettingsPlugin
 from truenas_tui.plugins.static_routes.view import StaticRoutesPlugin
+from truenas_tui.session import Session
 from truenas_tui.tui.dialogs import select_dialog
 
 
@@ -28,7 +31,7 @@ class NetworkPlugin(BasePlugin):
         "before they take effect."
     )
 
-    def run(self, stdscr, session) -> None:
+    def run(self, stdscr: curses.window, session: Session) -> None:
         sub_plugins = [
             NetworkInterfacePlugin(),
             NetworkSettingsPlugin(),

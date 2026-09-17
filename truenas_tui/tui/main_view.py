@@ -47,9 +47,12 @@ Keyboard shortcuts:
 import curses
 import signal
 import time
+from types import FrameType
 
 from truenas_tui.localization import TRANSLATE
+from truenas_tui.plugins.base import BasePlugin
 from truenas_tui.plugins.tui_settings.view import TuiSettingsPlugin
+from truenas_tui.session import Session
 
 from . import HardExit, colors, format_error
 from .colors import pair
@@ -64,7 +67,7 @@ def _fmt_bytes(n: int) -> str:
     return f"{n / (1024**3):.1f} GiB"
 
 
-def _fmt_load(loadavg: list) -> str:
+def _fmt_load(loadavg: list[float]) -> str:
     parts = []
     for v in loadavg[:3]:
         parts.append(f"{v:.2f}")
@@ -72,7 +75,13 @@ def _fmt_load(loadavg: list) -> str:
 
 
 class MainView:
-    def __init__(self, stdscr, session, plugins: list, menu_mode: bool = False):
+    def __init__(
+        self,
+        stdscr: curses.window,
+        session: Session,
+        plugins: list[BasePlugin],
+        menu_mode: bool = False,
+    ) -> None:
         self.stdscr = stdscr
         self.session = session
         self.plugins = plugins
@@ -138,7 +147,7 @@ class MainView:
             pass
         self._info_next_refresh = time.monotonic() + _INFO_REFRESH_SECS
 
-    def _run_plugin(self, plugin) -> None:
+    def _run_plugin(self, plugin: BasePlugin) -> None:
         curses.curs_set(1)
         try:
             plugin.run(self.stdscr, self.session)
@@ -380,5 +389,5 @@ class MainView:
         except curses.error:
             pass
 
-    def _handle_resize(self, signum, frame) -> None:
+    def _handle_resize(self, signum: int, frame: FrameType | None) -> None:
         self._resize_pending = True
