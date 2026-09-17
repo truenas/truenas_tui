@@ -573,5 +573,6 @@ def test_dialog_button_follows_theme(stdscr, mock_win, monkeypatch):
         patch("curses.color_pair", return_value=0),
     ):
         message_dialog(stdscr, "Title", "Hello")
-    attrs = [c.args[3] for c in mock_win.addstr.call_args_list if len(c.args) > 3]
-    assert any(attr & curses.A_REVERSE for attr in attrs)
+    button_calls = [c for c in mock_win.addstr.call_args_list if c.args[2] == "[ OK ]"]
+    assert len(button_calls) == 1
+    assert button_calls[0].args[3] & curses.A_REVERSE

@@ -699,11 +699,47 @@ def test_list_editor_uppercase_d():
 
 
 def test_form_title_follows_theme(monkeypatch):
-    """High contrast theme adds reverse video to the form header."""
+    """High contrast theme adds reverse video to the form header on row 0."""
     monkeypatch.setattr(colors, "_active_theme", "high_contrast")
     stdscr = _make_stdscr()
     form = Form(stdscr, "Test", [FormField(key="a", label="A", value="")])
     with patch("curses.curs_set"), patch("curses.color_pair", return_value=0):
         form._draw()
-    attrs = [c.args[3] for c in stdscr.addstr.call_args_list if len(c.args) > 3]
-    assert any(attr & curses.A_REVERSE for attr in attrs)
+    title_calls = [c for c in stdscr.addstr.call_args_list if c.args[0] == 0]
+    assert len(title_calls) == 1
+    assert title_calls[0].args[2] == "  Test  "
+    assert title_calls[0].args[3] & curses.A_REVERSE
+
+
+def test_form_inactive_label_follows_theme(monkeypatch):
+    """Inactive field labels use the themed DIM pair, not the raw A_DIM attribute."""
+    monkeypatch.setattr(colors, "_active_theme", "high_contrast")
+    stdscr = _make_stdscr()
+    fields = [
+        FormField(key="a", label="A", value=""),
+        FormField(key="b", label="B", value=""),
+    ]
+    form = Form(stdscr, "Test", fields)
+    with patch("curses.curs_set"), patch("curses.color_pair", return_value=0):
+        form._draw()
+    label_calls = [
+        c
+        for c in stdscr.addstr.call_args_list
+        if c.args[1] == 2 and c.args[2].startswith("B")
+    ]
+    assert len(label_calls) == 1
+    assert not label_calls[0].args[3] & curses.A_DIM
+
+
+def test_form_title_overflow_does_not_raise():
+    """A title that does not fit is skipped instead of crashing the form."""
+    stdscr = _make_stdscr(rows=3, cols=4)
+
+    def addstr(y, *args):
+        if y == 0:
+            raise curses.error("addstr() returned ERR")
+
+    stdscr.addstr.side_effect = addstr
+    form = Form(stdscr, "A very long title", [FormField(key="a", label="A", value="")])
+    with patch("curses.curs_set"), patch("curses.color_pair", return_value=0):
+        form._draw()

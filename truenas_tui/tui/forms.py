@@ -240,12 +240,15 @@ class Form:
 
         # Title
         title_str = f"  {self.title}  "
-        stdscr.addstr(
-            0,
-            max(0, (sw - len(title_str)) // 2),
-            title_str,
-            pair(colors.HEADER) | curses.A_BOLD,
-        )
+        try:
+            stdscr.addstr(
+                0,
+                max(0, (sw - len(title_str)) // 2),
+                title_str,
+                pair(colors.HEADER) | curses.A_BOLD,
+            )
+        except curses.error:
+            pass
 
         # Top separator
         try:
@@ -305,7 +308,7 @@ class Form:
                     y,
                     2,
                     f"{f.label[: self.LABEL_W - 1]:<{self.LABEL_W}}",
-                    curses.A_BOLD if active else curses.A_DIM,
+                    curses.A_BOLD if active else pair(colors.DIM),
                 )
                 stdscr.addstr(y, field_x, f"[{text:<{field_w}}]", attr)
             except curses.error:
