@@ -101,7 +101,7 @@ class Session:
         # three is sufficient.  Users with only granular roles (e.g. a custom
         # API key with a single write role) are not supported by this TUI.
         required = {"FULL_ADMIN", "SHARING_ADMIN", "READONLY_ADMIN"}
-        roles = self.me.get("privilege", {}).get("roles", set())
+        roles = self.roles
         if not (roles & required):
             raise PermissionError(
                 f"Insufficient privileges.  This TUI requires at least "
@@ -156,7 +156,8 @@ class Session:
 
     @property
     def roles(self) -> set[str]:
-        return self.me.get("privilege", {}).get("roles", set())
+        """Roles from auth.me, which the API delivers as a JSON list."""
+        return set(self.me.get("privilege", {}).get("roles") or ())
 
     @property
     def role_label(self) -> str:

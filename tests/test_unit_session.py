@@ -36,7 +36,8 @@ def _make_me(roles=None, language="en", tui_prefs=None):
         attrs[TUI_PREFERENCES_KEY] = tui_prefs
     return {
         "pw_name": "admin",
-        "privilege": {"roles": set(roles or {"FULL_ADMIN"})},
+        # A JSON list, as the real API delivers it
+        "privilege": {"roles": sorted(roles or {"FULL_ADMIN"})},
         "attributes": attrs,
     }
 
@@ -77,6 +78,19 @@ def test_roles_from_me():
 def test_roles_empty():
     session = Session(MockConfig())
     session.me = {}
+    assert session.roles == set()
+
+
+def test_roles_list_becomes_set():
+    session = Session(MockConfig())
+    session.me = {"privilege": {"roles": ["FULL_ADMIN", "ACCOUNT_READ"]}}
+    assert session.roles == {"FULL_ADMIN", "ACCOUNT_READ"}
+    assert isinstance(session.roles, set)
+
+
+def test_roles_none_is_empty_set():
+    session = Session(MockConfig())
+    session.me = {"privilege": {"roles": None}}
     assert session.roles == set()
 
 

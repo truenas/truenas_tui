@@ -59,7 +59,8 @@ _FAKE_ME = {
     "local": True,
     "account_attributes": ["LOCAL"],
     "privilege": {
-        "roles": {
+        # A JSON list, as the real API delivers it
+        "roles": [
             "FULL_ADMIN",
             "NETWORK_INTERFACE_READ",
             "NETWORK_INTERFACE_WRITE",
@@ -67,7 +68,7 @@ _FAKE_ME = {
             "NETWORK_GENERAL_WRITE",
             "ACCOUNT_READ",
             "ACCOUNT_WRITE",
-        },
+        ],
         "allowlist": [],
     },
     "attributes": {
@@ -130,7 +131,7 @@ class MockSession:
 
     @property
     def roles(self):
-        return self.me["privilege"]["roles"]
+        return set(self.me["privilege"]["roles"])
 
     @property
     def role_label(self):
