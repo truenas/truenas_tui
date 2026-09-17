@@ -51,6 +51,7 @@ from typing import Any, Callable
 from truenas_tui.localization import TRANSLATE
 
 from . import HardExit, colors
+from .colors import pair
 from .dialogs import confirm_dialog, input_dialog, message_dialog, select_dialog
 
 _ENTER = (ord("\n"), ord("\r"))
@@ -243,12 +244,12 @@ class Form:
             0,
             max(0, (sw - len(title_str)) // 2),
             title_str,
-            curses.color_pair(colors.HEADER) | curses.A_BOLD,
+            pair(colors.HEADER) | curses.A_BOLD,
         )
 
         # Top separator
         try:
-            stdscr.addstr(1, 0, "─" * sw, curses.color_pair(colors.BORDER))
+            stdscr.addstr(1, 0, "─" * sw, pair(colors.BORDER))
         except curses.error:
             pass
 
@@ -269,7 +270,7 @@ class Form:
                             y + 1,
                             2,
                             "─" * max(0, sw - 4),
-                            curses.color_pair(colors.DIM),
+                            pair(colors.DIM),
                         )
                 except curses.error:
                     pass
@@ -277,7 +278,7 @@ class Form:
                 continue
 
             attr = (
-                curses.color_pair(colors.MENU_SELECTED) | curses.A_BOLD
+                pair(colors.MENU_SELECTED) | curses.A_BOLD
                 if active
                 else curses.A_NORMAL
             )
@@ -295,7 +296,7 @@ class Form:
                 display = "*" * len(buf) if f.secret else "".join(buf)
                 text = display[self._scrolls[i] : self._scrolls[i] + field_w]
                 if self._field_errors[i]:
-                    attr = curses.color_pair(colors.ERROR) | curses.A_BOLD
+                    attr = pair(colors.ERROR) | curses.A_BOLD
                 if active and not f.readonly:
                     cursor_y = y
                     cursor_x = field_x + 1 + (self._cursors[i] - self._scrolls[i])
@@ -318,14 +319,12 @@ class Form:
         help_text = self.fields[cf].help_text if cf < len(self.fields) else ""
         if help_text and start_y <= btn_y - 1 < sh - 2:
             try:
-                stdscr.addstr(
-                    btn_y - 1, 2, help_text[: sw - 3], curses.color_pair(colors.DIM)
-                )
+                stdscr.addstr(btn_y - 1, 2, help_text[: sw - 3], pair(colors.DIM))
             except curses.error:
                 pass
 
         if btn_y < sh - 2:
-            focus = curses.color_pair(colors.MENU_SELECTED) | curses.A_BOLD
+            focus = pair(colors.MENU_SELECTED) | curses.A_BOLD
             save_idx = len(self.fields)
             try:
                 stdscr.addstr(
@@ -347,7 +346,7 @@ class Form:
         hint = TRANSLATE("Tab/↑↓: navigate   Enter: confirm   Esc: cancel")
         if sh > 2:
             try:
-                stdscr.addstr(sh - 2, 2, hint[: sw - 3], curses.color_pair(colors.DIM))
+                stdscr.addstr(sh - 2, 2, hint[: sw - 3], pair(colors.DIM))
             except curses.error:
                 pass
 
@@ -358,7 +357,7 @@ class Form:
                     sh - 1,
                     2,
                     self._error[: sw - 3],
-                    curses.color_pair(colors.ERROR) | curses.A_BOLD,
+                    pair(colors.ERROR) | curses.A_BOLD,
                 )
             except curses.error:
                 pass
@@ -442,9 +441,9 @@ class Form:
                     0,
                     max(0, (sw - len(title_str)) // 2),
                     title_str,
-                    curses.color_pair(colors.HEADER) | curses.A_BOLD,
+                    pair(colors.HEADER) | curses.A_BOLD,
                 )
-                stdscr.addstr(1, 0, "─" * sw, curses.color_pair(colors.BORDER))
+                stdscr.addstr(1, 0, "─" * sw, pair(colors.BORDER))
             except curses.error:
                 pass
 
@@ -461,9 +460,7 @@ class Form:
             start_y = 3
             if not items:
                 try:
-                    stdscr.addstr(
-                        start_y, 2, "(empty list)", curses.color_pair(colors.DIM)
-                    )
+                    stdscr.addstr(start_y, 2, "(empty list)", pair(colors.DIM))
                 except curses.error:
                     pass
             else:
@@ -475,7 +472,7 @@ class Form:
                     if y >= sh - 4:
                         break
                     attr = (
-                        curses.color_pair(colors.MENU_SELECTED) | curses.A_BOLD
+                        pair(colors.MENU_SELECTED) | curses.A_BOLD
                         if idx == current
                         else curses.A_NORMAL
                     )
@@ -489,9 +486,7 @@ class Form:
                 "[↑↓] Select  [Enter] Edit  [a] Add  [d] Delete  [Esc] Done"
             )
             try:
-                stdscr.addstr(
-                    sh - 2, 2, footer[: sw - 3], curses.color_pair(colors.DIM)
-                )
+                stdscr.addstr(sh - 2, 2, footer[: sw - 3], pair(colors.DIM))
             except curses.error:
                 pass
 

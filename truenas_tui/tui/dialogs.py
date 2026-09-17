@@ -10,6 +10,7 @@ import curses
 from truenas_tui.localization import TRANSLATE
 
 from . import HardExit, colors
+from .colors import pair
 
 MIN_PASSWORD_LEN = 8
 
@@ -23,7 +24,7 @@ def _draw_box(win, title: str = "") -> None:
         label = f" {title} "
         x = max(1, (w - len(label)) // 2)
         try:
-            win.addstr(0, x, label, curses.color_pair(colors.TITLE) | curses.A_BOLD)
+            win.addstr(0, x, label, pair(colors.TITLE) | curses.A_BOLD)
         except curses.error:
             pass
 
@@ -94,7 +95,7 @@ def message_dialog(stdscr, title: str, message: str, timeout_secs: int = 0) -> N
                 height - 2,
                 max(1, (width - len(button)) // 2),
                 button,
-                curses.color_pair(colors.MENU_SELECTED) | curses.A_BOLD,
+                pair(colors.MENU_SELECTED) | curses.A_BOLD,
             )
         except curses.error:
             pass
@@ -146,12 +147,12 @@ def confirm_dialog(
 
     while True:
         yes_attr = (
-            curses.color_pair(colors.MENU_SELECTED) | curses.A_BOLD
+            pair(colors.MENU_SELECTED) | curses.A_BOLD
             if choice == 0
             else curses.A_NORMAL
         )
         no_attr = (
-            curses.color_pair(colors.MENU_SELECTED) | curses.A_BOLD
+            pair(colors.MENU_SELECTED) | curses.A_BOLD
             if choice == 1
             else curses.A_NORMAL
         )
@@ -213,13 +214,13 @@ def input_dialog(
 
     field_y = 1 + len(prompt_lines) + 1
     try:
-        win.addstr(field_y, 1, " " * inner_w, curses.color_pair(colors.MENU_SELECTED))
+        win.addstr(field_y, 1, " " * inner_w, pair(colors.MENU_SELECTED))
     except curses.error:
         pass
 
     hint = TRANSLATE("Enter: confirm  Esc: cancel")
     try:
-        win.addstr(height - 2, 2, hint[:inner_w], curses.color_pair(colors.DIM))
+        win.addstr(height - 2, 2, hint[:inner_w], pair(colors.DIM))
     except curses.error:
         pass
 
@@ -239,7 +240,7 @@ def input_dialog(
                 field_y,
                 1,
                 visible.ljust(inner_w),
-                curses.color_pair(colors.MENU_SELECTED),
+                pair(colors.MENU_SELECTED),
             )
             cx = 1 + (cursor - scroll)
             win.move(field_y, cx)
@@ -355,7 +356,7 @@ def select_dialog(
 
     hint = TRANSLATE("↑↓ Navigate  Enter Select  Esc Cancel")
     try:
-        win.addstr(height - 2, 2, hint[: width - 3], curses.color_pair(colors.DIM))
+        win.addstr(height - 2, 2, hint[: width - 3], pair(colors.DIM))
     except curses.error:
         pass
 
@@ -379,7 +380,7 @@ def select_dialog(
                 break
             label = options[idx][: inner_w - 2]
             attr = (
-                curses.color_pair(colors.MENU_SELECTED) | curses.A_BOLD
+                pair(colors.MENU_SELECTED) | curses.A_BOLD
                 if idx == current
                 else curses.A_NORMAL
             )

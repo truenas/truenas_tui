@@ -10,7 +10,7 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
-from truenas_tui.tui import HardExit
+from truenas_tui.tui import HardExit, colors
 from truenas_tui.tui.forms import (
     BoolField,
     ChoiceField,
@@ -696,3 +696,14 @@ def test_list_editor_uppercase_d():
     ):
         result = form._run_list_editor(0)
     assert result == []
+
+
+def test_form_title_follows_theme(monkeypatch):
+    """High contrast theme adds reverse video to the form header."""
+    monkeypatch.setattr(colors, "_active_theme", "high_contrast")
+    stdscr = _make_stdscr()
+    form = Form(stdscr, "Test", [FormField(key="a", label="A", value="")])
+    with patch("curses.curs_set"), patch("curses.color_pair", return_value=0):
+        form._draw()
+    attrs = [c.args[3] for c in stdscr.addstr.call_args_list if len(c.args) > 3]
+    assert any(attr & curses.A_REVERSE for attr in attrs)

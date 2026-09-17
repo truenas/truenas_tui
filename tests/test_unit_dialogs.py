@@ -10,7 +10,7 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
-from truenas_tui.tui import HardExit
+from truenas_tui.tui import HardExit, colors
 from truenas_tui.tui.dialogs import (
     _center_win,
     _draw_box,
@@ -561,3 +561,17 @@ def test_select_dialog_down_at_bottom_stays(stdscr, mock_win):
     ):
         result = select_dialog(stdscr, "Pick", ["Alpha", "Beta"], selected=1)
     assert result == 1  # stayed at 1
+
+
+def test_dialog_button_follows_theme(stdscr, mock_win, monkeypatch):
+    """High contrast theme adds reverse video to the dialog button."""
+    monkeypatch.setattr(colors, "_active_theme", "high_contrast")
+    mock_win.getch.side_effect = [ord("\n")]
+    with (
+        patch("curses.newwin", return_value=mock_win),
+        patch("curses.curs_set"),
+        patch("curses.color_pair", return_value=0),
+    ):
+        message_dialog(stdscr, "Title", "Hello")
+    attrs = [c.args[3] for c in mock_win.addstr.call_args_list if len(c.args) > 3]
+    assert any(attr & curses.A_REVERSE for attr in attrs)
