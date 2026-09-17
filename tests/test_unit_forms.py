@@ -705,7 +705,10 @@ def test_form_title_follows_theme(monkeypatch):
     form = Form(stdscr, "Test", [FormField(key="a", label="A", value="")])
     with patch("curses.curs_set"), patch("curses.color_pair", return_value=0):
         form._draw()
-    title_calls = [c for c in stdscr.addstr.call_args_list if c.args[0] == 0]
+    title_calls = []
+    for c in stdscr.addstr.call_args_list:
+        if c.args[0] == 0:
+            title_calls.append(c)
     assert len(title_calls) == 1
     assert title_calls[0].args[2] == "  Test  "
     assert title_calls[0].args[3] & curses.A_REVERSE
@@ -722,11 +725,10 @@ def test_form_inactive_label_follows_theme(monkeypatch):
     form = Form(stdscr, "Test", fields)
     with patch("curses.curs_set"), patch("curses.color_pair", return_value=0):
         form._draw()
-    label_calls = [
-        c
-        for c in stdscr.addstr.call_args_list
-        if c.args[1] == 2 and c.args[2].startswith("B")
-    ]
+    label_calls = []
+    for c in stdscr.addstr.call_args_list:
+        if c.args[1] == 2 and c.args[2].startswith("B"):
+            label_calls.append(c)
     assert len(label_calls) == 1
     assert not label_calls[0].args[3] & curses.A_DIM
 

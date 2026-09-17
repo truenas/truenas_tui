@@ -145,16 +145,20 @@ class Form:
         self._error: str = ""
         # Per-field editable value: list of characters for text fields, bool
         # for BoolField, chosen index for ChoiceField, list of items for ListField.
-        self._state: list = [_initial_state(f) for f in fields]
-        self._cursors = [
-            len(s) if _is_text(f) else 0 for f, s in zip(fields, self._state)
-        ]
+        self._state: list = []
+        self._cursors = []
+        for f in fields:
+            s = _initial_state(f)
+            self._state.append(s)
+            self._cursors.append(len(s) if _is_text(f) else 0)
         self._scrolls = [0] * len(fields)
         self._field_errors = [""] * len(fields)
         # Start on the first non-section field
-        self._cursor_field = next(
-            (i for i, f in enumerate(fields) if not isinstance(f, SectionField)), 0
-        )
+        self._cursor_field = 0
+        for i, f in enumerate(fields):
+            if not isinstance(f, SectionField):
+                self._cursor_field = i
+                break
 
     def run(self) -> dict | None:
         """
@@ -316,7 +320,9 @@ class Form:
             y += 1
 
         # Buttons row, with the focused field's help text on the row above it
-        total = sum(2 if isinstance(f, SectionField) else 1 for f in self.fields)
+        total = 0
+        for f in self.fields:
+            total += 2 if isinstance(f, SectionField) else 1
         btn_y = start_y + total + 1
         cf = self._cursor_field
         help_text = self.fields[cf].help_text if cf < len(self.fields) else ""

@@ -61,24 +61,29 @@ def extract_strings(py_file: pathlib.Path) -> set[str]:
                     and isinstance(stmt.value, ast.Constant)
                     and isinstance(stmt.value.value, str)
                     and stmt.value.value
-                    and any(
-                        isinstance(t, ast.Name) and t.id in ("LABEL", "DESCRIPTION")
-                        for t in stmt.targets
-                    )
                 ):
-                    found.add(stmt.value.value)
+                    for t in stmt.targets:
+                        if isinstance(t, ast.Name) and t.id in ("LABEL", "DESCRIPTION"):
+                            found.add(stmt.value.value)
+                            break
     return found
 
 
 def all_source_strings() -> set[str]:
-    return set().union(*(extract_strings(f) for f in SRC_DIR.rglob("*.py")))
+    strings: set[str] = set()
+    for f in SRC_DIR.rglob("*.py"):
+        strings |= extract_strings(f)
+    return strings
 
 
 def is_clean(value: str) -> bool:
     """A usable translation: non-empty and free of HTML/Angular syntax."""
     if not value or not value.strip():
         return False
-    return not any(c in value for c in ("<", ">", "{{"))
+    for c in ("<", ">", "{{"):
+        if c in value:
+            return False
+    return True
 
 
 def _google_translator():
@@ -106,12 +111,19 @@ def update(lang_filter: str | None, delay: float) -> None:
         if lang_filter and lang != lang_filter:
             continue
         data: dict[str, str] = json.loads(json_file.read_text(encoding="utf-8"))
-        stale = [k for k in data if k not in strings]
+        stale = []
+        for k in data:
+            if k not in strings:
+                stale.append(k)
         for k in stale:
             del data[k]
         if stale:
             _write(json_file, data)
-        missing = sorted(s for s in strings if not data.get(s))
+        missing = []
+        for s in strings:
+            if not data.get(s):
+                missing.append(s)
+        missing.sort()
         print(f"  {lang}: {len(stale)} stale removed, {len(missing)} missing")
         if missing:
             to_translate.append((json_file, data, missing))

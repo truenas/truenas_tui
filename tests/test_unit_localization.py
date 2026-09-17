@@ -78,10 +78,17 @@ def test_language_files_match_source_strings():
     report: list[str] = []
     for json_path in sorted(loc.I18N_DIR.glob("*.json")):
         data = json.loads(json_path.read_text(encoding="utf-8"))
-        bad = [k for k, v in data.items() if not isinstance(v, str) or not v]
+        bad = []
+        for k, v in data.items():
+            if not isinstance(v, str) or not v:
+                bad.append(k)
         if bad:
             report.append(f"{json_path.name}: non-string values for {bad[:5]}")
-        stale = sorted(k for k in data if k not in strings)
+        stale = []
+        for k in data:
+            if k not in strings:
+                stale.append(k)
+        stale.sort()
         if stale:
             report.append(
                 f"{json_path.name}: {len(stale)} stale keys, e.g. {stale[:5]}"

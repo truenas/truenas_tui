@@ -40,7 +40,11 @@ from truenas_tui.tui.dialogs import (
 
 def _find_qr_tool() -> str | None:
     """Return path to a terminal QR code tool, or None if unavailable."""
-    return next(filter(None, map(shutil.which, ("qr", "qrcode-terminal"))), None)
+    for name in ("qr", "qrcode-terminal"):
+        path = shutil.which(name)
+        if path:
+            return path
+    return None
 
 
 def _render_qr(uri: str, tool_path: str) -> str | None:
@@ -102,7 +106,11 @@ class MyAccountPlugin(BasePlugin):
         roles = sorted(me.get("privilege", {}).get("roles", []))
         # READONLY_ADMIN implies every *_READ role; suppress them to avoid clutter
         if "READONLY_ADMIN" in roles:
-            roles = [r for r in roles if not r.endswith("_READ")]
+            kept = []
+            for r in roles:
+                if not r.endswith("_READ"):
+                    kept.append(r)
+            roles = kept
         roles_str = ", ".join(roles) if roles else TRANSLATE("(none)")
 
         info_rows = [("Username", username)]
@@ -191,7 +199,10 @@ class MyAccountPlugin(BasePlugin):
                 pass
 
             # Account info
-            label_w = max(len(k) for k, _ in info_rows)
+            label_w = 0
+            for k, _ in info_rows:
+                if len(k) > label_w:
+                    label_w = len(k)
             val_x = 2 + label_w + 2
             val_w = max(1, sw - val_x - 1)
             row = 2

@@ -229,8 +229,15 @@ class RecordingMockSession(MockSession):
 
     def called_with(self, method) -> list[tuple]:
         """Return list of (args, kwargs) tuples for every call to method."""
-        return [(a, kw) for (m, a, kw) in self.calls if m == method]
+        matches = []
+        for m, a, kw in self.calls:
+            if m == method:
+                matches.append((a, kw))
+        return matches
 
     def was_called(self, method) -> bool:
         """Return True if method was called at least once."""
-        return any(m == method for m, _, _ in self.calls)
+        for m, _, _ in self.calls:
+            if m == method:
+                return True
+        return False

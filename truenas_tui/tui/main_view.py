@@ -65,7 +65,10 @@ def _fmt_bytes(n: int) -> str:
 
 
 def _fmt_load(loadavg: list) -> str:
-    return "  ".join(f"{v:.2f}" for v in loadavg[:3])
+    parts = []
+    for v in loadavg[:3]:
+        parts.append(f"{v:.2f}")
+    return "  ".join(parts)
 
 
 class MainView:
@@ -187,10 +190,11 @@ class MainView:
                 pass
 
     def _divider_x(self, sw: int) -> int:
-        max_label = max(
-            (5 + len(p.get_label(self.session)) for p in self.plugins),
-            default=_MENU_MIN,
-        )
+        max_label = _MENU_MIN
+        for p in self.plugins:
+            label_w = 5 + len(p.get_label(self.session))
+            if label_w > max_label:
+                max_label = label_w
         return min(max(max_label + 1, _MENU_MIN), int(sw * _MENU_MAX_FRAC))
 
     def _draw_panes(self, sh: int, sw: int) -> None:
@@ -321,7 +325,11 @@ class MainView:
             (TRANSLATE("Timezone"), si.get("timezone", "")),
         ]
 
-        label_w = max((len(r[0]) for r in rows), default=0) + 1
+        label_w = 0
+        for r in rows:
+            if len(r[0]) > label_w:
+                label_w = len(r[0])
+        label_w += 1
 
         row_y = top + 1
         for label, value in rows:

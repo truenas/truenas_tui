@@ -53,7 +53,9 @@ class PasswordPlugin(BasePlugin):
             )
             return
 
-        options = [a["username"] for a in admins]
+        options = []
+        for a in admins:
+            options.append(a["username"])
         idx = select_dialog(stdscr, TRANSLATE("Select Administrator"), options)
         if idx is None:
             return
