@@ -9,8 +9,11 @@ API:
   network.configuration.update   → save changes
 """
 
+import curses
+
 from truenas_tui.localization import TRANSLATE
 from truenas_tui.plugins.base import BasePlugin
+from truenas_tui.session import Session
 from truenas_tui.tui import format_error
 from truenas_tui.tui.dialogs import message_dialog
 from truenas_tui.tui.forms import Form, FormField
@@ -29,7 +32,7 @@ class NetworkSettingsPlugin(BasePlugin):
         "Changes take effect immediately after saving."
     )
 
-    def run(self, stdscr, session) -> None:
+    def run(self, stdscr: curses.window, session: Session) -> None:
         try:
             cfg = session.call("network.configuration.config")
         except Exception as e:

@@ -16,6 +16,7 @@ import json
 import pathlib
 import sys
 import time
+from typing import Any
 
 ROOT = pathlib.Path(__file__).parent.parent
 SRC_DIR = ROOT / "truenas_tui"
@@ -86,7 +87,7 @@ def is_clean(value: str) -> bool:
     return True
 
 
-def _google_translator():
+def _google_translator() -> Any:
     try:
         from deep_translator import GoogleTranslator  # noqa: PLC0415
     except ImportError:

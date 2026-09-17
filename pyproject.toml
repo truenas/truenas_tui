@@ -25,6 +25,19 @@ testpaths = ["tests"]
 pythonpath = [".", "tests"]
 
 
+[tool.mypy]
+python_version = "3.11"
+strict = true
+files = ["truenas_tui", "i18n/update_translations.py"]
+exclude = ["^tests/"]
+
+[[tool.mypy.overrides]]
+# deep-translator ships no type information and is only imported when the
+# translation script actually needs to reach Google Translate.
+module = "deep_translator"
+ignore_missing_imports = true
+
+
 [tool.ruff]
 line-length = 88
 # Directories that pytest/sys.path put on the import path, so ruff's isort

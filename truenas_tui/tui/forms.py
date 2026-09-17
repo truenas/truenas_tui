@@ -61,11 +61,12 @@ _ENTER = (ord("\n"), ord("\r"))
 class FormField:
     key: str
     label: str
-    value: str = ""
+    # Subclasses narrow this to the type they edit.
+    value: str | bool | int | list[str] = ""
     secret: bool = False
     readonly: bool = False
     # Optionally validate; return error string or None
-    validator: Any = field(default=None, repr=False)
+    validator: Callable[[Any], str | None] | None = field(default=None, repr=False)
     help_text: str = ""
 
 
@@ -123,7 +124,7 @@ def _is_text(f: FormField) -> bool:
     return not isinstance(f, (BoolField, ChoiceField, SectionField, ListField))
 
 
-def _initial_state(f: FormField):
+def _initial_state(f: FormField) -> bool | int | list[str] | None:
     if isinstance(f, BoolField):
         return bool(f.value)
     if isinstance(f, ChoiceField):
@@ -138,19 +139,21 @@ def _initial_state(f: FormField):
 class Form:
     LABEL_W = 20  # Width reserved for labels
 
-    def __init__(self, stdscr, title: str, fields: list[FormField]):
+    def __init__(
+        self, stdscr: curses.window, title: str, fields: list[FormField]
+    ) -> None:
         self.stdscr = stdscr
         self.title = title
         self.fields = fields
         self._error: str = ""
         # Per-field editable value: list of characters for text fields, bool
         # for BoolField, chosen index for ChoiceField, list of items for ListField.
-        self._state: list = []
-        self._cursors = []
+        self._state: list[Any] = []
+        self._cursors: list[int] = []
         for f in fields:
             s = _initial_state(f)
             self._state.append(s)
-            self._cursors.append(len(s) if _is_text(f) else 0)
+            self._cursors.append(len(s) if _is_text(f) and isinstance(s, list) else 0)
         self._scrolls = [0] * len(fields)
         self._field_errors = [""] * len(fields)
         # Start on the first non-section field
@@ -160,7 +163,7 @@ class Form:
                 self._cursor_field = i
                 break
 
-    def run(self) -> dict | None:
+    def run(self) -> dict[str, Any] | None:
         """
         Run the form event loop.
         Returns a dict of {key: typed_value} on save, or None on cancel.
@@ -431,6 +434,8 @@ class Form:
         Temporarily replaces the form until Esc is pressed.
         Returns the (possibly modified) list."""
         f = self.fields[field_idx]
+        if not isinstance(f, ListField):
+            raise TypeError("_run_list_editor needs a ListField")
         items = list(self._state[field_idx])
         current = 0
         scroll_top = 0
@@ -545,7 +550,7 @@ class Form:
         curses.curs_set(1)
         return items
 
-    def _collect(self) -> dict:
+    def _collect(self) -> dict[str, Any]:
         result: dict[str, Any] = {}
         for f, state in zip(self.fields, self._state):
             if isinstance(f, SectionField):
@@ -566,7 +571,7 @@ class Form:
                 result[f.key] = "".join(state)
         return result
 
-    def _validate(self, data: dict) -> str:
+    def _validate(self, data: dict[str, Any]) -> str:
         """Return first validation error string, or empty string if OK."""
         # Clear per-field error highlighting before re-checking
         self._field_errors = [""] * len(self.fields)
@@ -587,7 +592,7 @@ class Form:
                     self._field_errors[i] = err
                     return err
             if f.validator:
-                err = f.validator(data.get(f.key, ""))
-                if err:
-                    return err
+                msg = f.validator(data.get(f.key, ""))
+                if msg:
+                    return msg
         return ""

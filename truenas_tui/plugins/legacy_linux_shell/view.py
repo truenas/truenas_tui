@@ -3,6 +3,7 @@ import os
 import pwd
 
 from truenas_tui.plugins.base import BasePlugin
+from truenas_tui.session import Session
 
 _SAFE_SHELLS = {
     "/usr/bin/sh",
@@ -26,7 +27,7 @@ class LinuxShellPlugin(BasePlugin):
         'Type "exit" or press Ctrl+D to return to the TUI.'
     )
 
-    def run(self, stdscr, session) -> None:
+    def run(self, stdscr: curses.window, session: Session) -> None:
         try:
             shell = pwd.getpwuid(os.getuid()).pw_shell
         except Exception:

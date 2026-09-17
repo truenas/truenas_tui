@@ -28,6 +28,7 @@ from urllib.parse import parse_qs, urlparse
 from truenas_tui.localization import TRANSLATE
 from truenas_tui.plugins.base import BasePlugin
 from truenas_tui.plugins.onetime_password.view import show_onetime_password
+from truenas_tui.session import Session
 from truenas_tui.tui import HardExit, colors, format_error
 from truenas_tui.tui.colors import pair
 from truenas_tui.tui.dialogs import (
@@ -89,7 +90,7 @@ class MyAccountPlugin(BasePlugin):
         "One-time passwords expire after a single login."
     )
 
-    def run(self, stdscr, session) -> None:
+    def run(self, stdscr: curses.window, session: Session) -> None:
         try:
             me = session.call("auth.me")
         except Exception as e:
@@ -113,7 +114,7 @@ class MyAccountPlugin(BasePlugin):
             roles = kept
         roles_str = ", ".join(roles) if roles else TRANSLATE("(none)")
 
-        info_rows = [("Username", username)]
+        info_rows: list[tuple[str, str]] = [("Username", username)]
         if full_name:
             info_rows.append(("Full name", full_name))
         info_rows.extend(
@@ -183,7 +184,12 @@ class MyAccountPlugin(BasePlugin):
                 stdscr.clear()
 
     def _draw(
-        self, stdscr, username, info_rows, actions: list[tuple[str, bool]], selected
+        self,
+        stdscr: curses.window,
+        username: str,
+        info_rows: list[tuple[str, str]],
+        actions: list[tuple[str, bool]],
+        selected: int,
     ) -> None:
         try:
             sh, sw = stdscr.getmaxyx()
@@ -270,7 +276,9 @@ class MyAccountPlugin(BasePlugin):
         except curses.error:
             pass
 
-    def _change_password(self, stdscr, session, username, is_local) -> None:
+    def _change_password(
+        self, stdscr: curses.window, session: Session, username: str, is_local: bool
+    ) -> None:
         if not is_local:
             message_dialog(
                 stdscr,
@@ -312,7 +320,12 @@ class MyAccountPlugin(BasePlugin):
             message_dialog(stdscr, TRANSLATE("Error"), format_error(e))
 
     def _setup_2fa(
-        self, stdscr, session, username: str, already_configured: bool, qr_tool: str
+        self,
+        stdscr: curses.window,
+        session: Session,
+        username: str,
+        already_configured: bool,
+        qr_tool: str | None,
     ) -> None:
         """Set up (or renew) TOTP 2FA for the current user."""
         if already_configured:
@@ -348,7 +361,9 @@ class MyAccountPlugin(BasePlugin):
 
         self._show_2fa_setup(stdscr, uri, qr_tool)
 
-    def _disable_2fa(self, stdscr, session, username: str) -> None:
+    def _disable_2fa(
+        self, stdscr: curses.window, session: Session, username: str
+    ) -> None:
         """Disable TOTP 2FA for the current user."""
         confirmed = confirm_dialog(
             stdscr,
@@ -371,7 +386,9 @@ class MyAccountPlugin(BasePlugin):
         except Exception as e:
             message_dialog(stdscr, TRANSLATE("Error"), format_error(e))
 
-    def _show_2fa_setup(self, stdscr, uri: str, qr_tool: str | None) -> None:
+    def _show_2fa_setup(
+        self, stdscr: curses.window, uri: str, qr_tool: str | None
+    ) -> None:
         """Full-screen 2FA provisioning display. Blocks until user presses Enter."""
         secret = _extract_secret(uri)
         qr_output = _render_qr(uri, qr_tool) if qr_tool else None

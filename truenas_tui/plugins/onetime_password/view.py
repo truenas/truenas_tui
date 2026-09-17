@@ -8,15 +8,20 @@ API:
   auth.generate_onetime_password    → {username: str} → otp string
 """
 
+import curses
+
 from truenas_tui.localization import TRANSLATE
 from truenas_tui.plugins.base import BasePlugin
+from truenas_tui.session import Session
 from truenas_tui.tui import format_error
 from truenas_tui.tui.dialogs import message_dialog
 
 _OTP_DISPLAY_TIMEOUT = 30  # seconds before the OTP dialog auto-dismisses
 
 
-def show_onetime_password(stdscr, session, username: str) -> None:
+def show_onetime_password(
+    stdscr: curses.window, session: Session, username: str
+) -> None:
     """Generate a one-time password for username and show it briefly."""
     try:
         otp = session.call("auth.generate_onetime_password", {"username": username})
@@ -47,10 +52,10 @@ class OnetimePasswordPlugin(BasePlugin):
         "and is invalidated immediately after use."
     )
 
-    def get_label(self, session) -> str:
+    def get_label(self, session: Session) -> str:
         return TRANSLATE('Create one-time password for "{u}"').format(
             u=session.username
         )
 
-    def run(self, stdscr, session) -> None:
+    def run(self, stdscr: curses.window, session: Session) -> None:
         show_onetime_password(stdscr, session, session.username)

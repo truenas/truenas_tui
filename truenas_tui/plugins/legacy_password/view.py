@@ -11,8 +11,11 @@ Behaviour matches midcli:
       • Use user.setup_local_administrator
 """
 
+import curses
+
 from truenas_tui.localization import TRANSLATE
 from truenas_tui.plugins.base import BasePlugin
+from truenas_tui.session import Session
 from truenas_tui.tui import format_error
 from truenas_tui.tui.dialogs import message_dialog, new_password_dialog, select_dialog
 
@@ -30,7 +33,7 @@ class PasswordPlugin(BasePlugin):
         "authentication for that account."
     )
 
-    def run(self, stdscr, session) -> None:
+    def run(self, stdscr: curses.window, session: Session) -> None:
         try:
             has_admin = session.call("user.has_local_administrator_set_up")
         except Exception:
@@ -40,7 +43,7 @@ class PasswordPlugin(BasePlugin):
         else:
             self._setup_administrator(stdscr, session)
 
-    def _change_password(self, stdscr, session) -> None:
+    def _change_password(self, stdscr: curses.window, session: Session) -> None:
         try:
             admins = session.call("privilege.local_administrators")
         except Exception as e:
@@ -80,7 +83,7 @@ class PasswordPlugin(BasePlugin):
         except Exception as e:
             message_dialog(stdscr, TRANSLATE("Error"), format_error(e))
 
-    def _setup_administrator(self, stdscr, session) -> None:
+    def _setup_administrator(self, stdscr: curses.window, session: Session) -> None:
         options = [
             TRANSLATE("Administrative user (admin)  [recommended]"),
             TRANSLATE("Root user (not recommended)"),

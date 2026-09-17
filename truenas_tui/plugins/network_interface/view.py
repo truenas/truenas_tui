@@ -24,9 +24,11 @@ API:
 
 import curses
 import ipaddress
+from typing import Any, Callable
 
 from truenas_tui.localization import TRANSLATE
 from truenas_tui.plugins.base import BasePlugin
+from truenas_tui.session import Session
 from truenas_tui.tui import HardExit, colors, format_error
 from truenas_tui.tui.colors import pair
 from truenas_tui.tui.dialogs import confirm_dialog, message_dialog
@@ -58,9 +60,9 @@ _TYPE_KEYS = {
 }
 
 
-def _alias_str(alias: dict) -> str:
+def _alias_str(alias: dict[str, Any]) -> str:
     """Format an alias dict into a human-readable CIDR string."""
-    addr = alias.get("address", "")
+    addr: str = alias.get("address", "")
     netmask = alias.get("netmask")
     plen = netmask if netmask is not None else alias.get("prefix_length")
     if plen is not None:
@@ -68,7 +70,7 @@ def _alias_str(alias: dict) -> str:
     return addr
 
 
-def _iface_summary(iface: dict) -> str:
+def _iface_summary(iface: dict[str, Any]) -> str:
     """One-line summary for the interface list."""
     name = iface.get("name", iface.get("id", "?"))
     itype = iface.get("type", "")
@@ -95,7 +97,7 @@ def _iface_summary(iface: dict) -> str:
     return f"{name:<12}  {suffix}"
 
 
-def _parse_alias_entry(entry: str) -> tuple[dict | None, str | None]:
+def _parse_alias_entry(entry: str) -> tuple[dict[str, Any] | None, str | None]:
     """
     Parse a single 'address/prefix' CIDR string into an alias dict.
 
@@ -140,7 +142,7 @@ def _validate_ip_only(s: str) -> str | None:
         return TRANSLATE("Invalid IP address: {s}").format(s=s)
 
 
-def _parse_ip_only(s: str) -> dict:
+def _parse_ip_only(s: str) -> dict[str, str]:
     """Convert a bare IP string to a minimal alias dict (address only, no netmask)."""
     ip = ipaddress.ip_address(s)
     return {
@@ -157,27 +159,41 @@ def _choice_idx(choices: list[str], value: str) -> int:
         return 0
 
 
-def _aliases_to_payload(alias_strings: list[str]) -> list[dict] | str:
+def _aliases_to_payload(alias_strings: list[str]) -> list[dict[str, Any]] | str:
     """
     Convert a list of CIDR strings to alias dicts for the API payload.
     Returns list[dict] on success or an error string on failure.
     """
-    result = []
+    result: list[dict[str, Any]] = []
     for s in alias_strings:
         alias, err = _parse_alias_entry(s)
-        if err:
-            return err
+        if alias is None:
+            return err or ""
         result.append(alias)
     return result
 
 
-def _load_choices(stdscr, session, error_prefix: str, method: str, *args):
+def _load_choices(
+    stdscr: curses.window, session: Session, error_prefix: str, method: str, *args: Any
+) -> list[str] | None:
     """Sorted names from an interface.*_choices call, or None after showing the error."""
     try:
         return sorted(session.call(method, *args))
     except Exception as e:
         message_dialog(stdscr, TRANSLATE("Error"), error_prefix + format_error(e))
         return None
+
+
+def _choice_validator(choices: list[str], message: str) -> Callable[[str], str | None]:
+    """Build a ListField item_validator that only accepts values from choices.
+
+    message is a translated string with a {v} placeholder for the rejected value.
+    """
+
+    def validate(v: str) -> str | None:
+        return None if v in choices else message.format(v=v)
+
+    return validate
 
 
 class NetworkInterfacePlugin(BasePlugin):
@@ -197,7 +213,7 @@ class NetworkInterfacePlugin(BasePlugin):
         "After editing, use [a] to Apply and [p] to Persist."
     )
 
-    def run(self, stdscr, session) -> None:
+    def run(self, stdscr: curses.window, session: Session) -> None:
         selected = 0
         ifaces = None  # None → reload the list and status before drawing
         status = ""
@@ -241,7 +257,7 @@ class NetworkInterfacePlugin(BasePlugin):
                 self._persist_changes(stdscr, session)
                 ifaces = None
 
-    def _get_status(self, session) -> str:
+    def _get_status(self, session: Session) -> str:
         try:
             waiting = session.call("interface.checkin_waiting")
             if waiting is not None:
@@ -254,7 +270,13 @@ class NetworkInterfacePlugin(BasePlugin):
             pass
         return ""
 
-    def _draw_list(self, stdscr, ifaces: list, selected: int, status: str) -> None:
+    def _draw_list(
+        self,
+        stdscr: curses.window,
+        ifaces: list[dict[str, Any]],
+        selected: int,
+        status: str,
+    ) -> None:
         stdscr.erase()
         sh, sw = stdscr.getmaxyx()
 
@@ -297,7 +319,7 @@ class NetworkInterfacePlugin(BasePlugin):
 
         stdscr.refresh()
 
-    def _apply_changes(self, stdscr, session) -> None:
+    def _apply_changes(self, stdscr: curses.window, session: Session) -> None:
         try:
             session.call("interface.commit")
             message_dialog(
@@ -311,7 +333,7 @@ class NetworkInterfacePlugin(BasePlugin):
         except Exception as e:
             message_dialog(stdscr, TRANSLATE("Error"), format_error(e))
 
-    def _persist_changes(self, stdscr, session) -> None:
+    def _persist_changes(self, stdscr: curses.window, session: Session) -> None:
         try:
             session.call("interface.checkin")
             message_dialog(
@@ -322,7 +344,9 @@ class NetworkInterfacePlugin(BasePlugin):
         except Exception as e:
             message_dialog(stdscr, TRANSLATE("Error"), format_error(e))
 
-    def _delete_interface(self, stdscr, session, iface: dict) -> None:
+    def _delete_interface(
+        self, stdscr: curses.window, session: Session, iface: dict[str, Any]
+    ) -> None:
         iface_id = iface.get("id") or iface.get("name")
         iface_name = iface.get("name", iface_id)
         if not confirm_dialog(
@@ -343,7 +367,9 @@ class NetworkInterfacePlugin(BasePlugin):
         except Exception as e:
             message_dialog(stdscr, TRANSLATE("Error"), format_error(e))
 
-    def _edit_interface(self, stdscr, session, iface: dict) -> None:
+    def _edit_interface(
+        self, stdscr: curses.window, session: Session, iface: dict[str, Any]
+    ) -> None:
         iface_id = iface.get("id") or iface.get("name")
         iface_name = iface.get("name", iface_id)
 
@@ -379,7 +405,7 @@ class NetworkInterfacePlugin(BasePlugin):
         except Exception as e:
             message_dialog(stdscr, TRANSLATE("Error"), format_error(e))
 
-    def _create_interface(self, stdscr, session) -> None:
+    def _create_interface(self, stdscr: curses.window, session: Session) -> None:
         # Step 1 – pick type, name, description
         step1_fields = [
             ChoiceField(
@@ -407,7 +433,7 @@ class NetworkInterfacePlugin(BasePlugin):
             return
 
         # Build a stub iface dict so _build_edit_fields can re-use the same logic
-        stub_iface = {
+        stub_iface: dict[str, Any] = {
             "name": iface_name,
             "type": iface_type,
             "description": description,
@@ -469,14 +495,18 @@ class NetworkInterfacePlugin(BasePlugin):
 
 
 def _build_edit_fields(
-    stdscr, session, iface: dict, failover_licensed: bool, name_readonly: bool = True
-) -> list | None:
+    stdscr: curses.window,
+    session: Session,
+    iface: dict[str, Any],
+    failover_licensed: bool,
+    name_readonly: bool = True,
+) -> list[FormField] | None:
     """
     Build the list of FormField instances for the interface edit/create form.
     Returns the field list or None if a prerequisite API call failed.
     """
     iface_type = iface.get("type", "PHYSICAL")
-    fields: list = [
+    fields: list[FormField] = [
         SectionField(key="", label=TRANSLATE("Interface Settings")),
         FormField(
             key="name",
@@ -606,8 +636,8 @@ def _build_edit_fields(
                 label=TRANSLATE("Members"),
                 value=list(iface.get("bridge_members", [])),
                 item_label=TRANSLATE("Interface"),
-                item_validator=lambda v, c=choices: (
-                    None if v in c else TRANSLATE("Not a valid member: {v}").format(v=v)
+                item_validator=_choice_validator(
+                    choices, TRANSLATE("Not a valid member: {v}")
                 ),
             ),
         ]
@@ -635,8 +665,8 @@ def _build_edit_fields(
                 label=TRANSLATE("Ports"),
                 value=list(iface.get("lag_ports", [])),
                 item_label=TRANSLATE("Port"),
-                item_validator=lambda v, c=port_choices: (
-                    None if v in c else TRANSLATE("Not a valid port: {v}").format(v=v)
+                item_validator=_choice_validator(
+                    port_choices, TRANSLATE("Not a valid port: {v}")
                 ),
             ),
             ChoiceField(
@@ -670,12 +700,14 @@ def _build_edit_fields(
     return fields
 
 
-def _collect_payload(result: dict, iface: dict, failover_licensed: bool) -> dict | str:
+def _collect_payload(
+    result: dict[str, Any], iface: dict[str, Any], failover_licensed: bool
+) -> dict[str, Any] | str:
     """
     Convert form result into an API payload dict.
     Returns the dict on success or an error string on failure.
     """
-    payload: dict = {}
+    payload: dict[str, Any] = {}
     if "description" in result:
         payload["description"] = result["description"]
 

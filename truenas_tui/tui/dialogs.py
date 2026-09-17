@@ -17,7 +17,7 @@ MIN_PASSWORD_LEN = 8
 _DISMISS_KEYS = (ord("\n"), ord("\r"), ord(" "), 27, ord("q"), ord("Q"))
 
 
-def _draw_box(win, title: str = "") -> None:
+def _draw_box(win: curses.window, title: str = "") -> None:
     win.box()
     if title:
         h, w = win.getmaxyx()
@@ -29,7 +29,7 @@ def _draw_box(win, title: str = "") -> None:
             pass
 
 
-def _center_win(stdscr, height: int, width: int):
+def _center_win(stdscr: curses.window, height: int, width: int) -> curses.window:
     """Create a centered window overlay."""
     sh, sw = stdscr.getmaxyx()
     y = max(0, (sh - height) // 2)
@@ -41,19 +41,21 @@ def _center_win(stdscr, height: int, width: int):
     return win
 
 
-def _save_screen(stdscr):
+def _save_screen(stdscr: curses.window) -> curses.window | None:
     """Snapshot the screen state for later restoration.
 
     dupwin() is not available on all Python/curses builds (notably Python 3.13
     on some platforms).  Falls back to None; callers must handle None.
     """
     try:
-        return stdscr.dupwin()
+        # typeshed does not declare dupwin, so the call is only checked at runtime.
+        saved: curses.window = stdscr.dupwin()  # type: ignore[attr-defined]
     except AttributeError:
         return None
+    return saved
 
 
-def _restore_screen(stdscr, saved) -> None:
+def _restore_screen(stdscr: curses.window, saved: curses.window | None) -> None:
     """Restore the screen state captured by _save_screen()."""
     if saved is not None:
         stdscr.overlay(saved)
@@ -62,7 +64,9 @@ def _restore_screen(stdscr, saved) -> None:
     stdscr.refresh()
 
 
-def message_dialog(stdscr, title: str, message: str, timeout_secs: int = 0) -> None:
+def message_dialog(
+    stdscr: curses.window, title: str, message: str, timeout_secs: int = 0
+) -> None:
     """Show a message box.  Returns when the user presses Enter/Space/Esc/q.
 
     timeout_secs: if > 0 the dialog auto-dismisses after that many seconds.
@@ -120,7 +124,11 @@ def message_dialog(stdscr, title: str, message: str, timeout_secs: int = 0) -> N
 
 
 def confirm_dialog(
-    stdscr, title: str, message: str, yes_label: str = "Yes", no_label: str = "No"
+    stdscr: curses.window,
+    title: str,
+    message: str,
+    yes_label: str = "Yes",
+    no_label: str = "No",
 ) -> bool:
     """
     Show a Yes/No confirmation dialog.
@@ -193,7 +201,11 @@ def confirm_dialog(
 
 
 def input_dialog(
-    stdscr, title: str, prompt: str, default: str = "", secret: bool = False
+    stdscr: curses.window,
+    title: str,
+    prompt: str,
+    default: str = "",
+    secret: bool = False,
 ) -> str | None:
     """
     Single-line text input dialog.
@@ -300,7 +312,7 @@ def input_dialog(
     return result
 
 
-def new_password_dialog(stdscr, title: str, username: str) -> str | None:
+def new_password_dialog(stdscr: curses.window, title: str, username: str) -> str | None:
     """
     Ask for a new password and its confirmation.
 
@@ -340,7 +352,7 @@ def new_password_dialog(stdscr, title: str, username: str) -> str | None:
 
 
 def select_dialog(
-    stdscr, title: str, options: list[str], selected: int = 0
+    stdscr: curses.window, title: str, options: list[str], selected: int = 0
 ) -> int | None:
     """
     Scrollable list selection dialog.

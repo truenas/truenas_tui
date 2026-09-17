@@ -11,10 +11,12 @@ from dataclasses import asdict
 import errno
 import threading
 import time
+from typing import Any
 
 from truenas_api_client import Client
 from truenas_api_client.exc import ClientException
 
+from .config import Config
 from .localization import setup_locale
 from .tui_preferences import TUI_PREFERENCES_KEY, TuiPreferences
 
@@ -32,11 +34,11 @@ class Session:
     tui_prefs   : TuiPreferences – per-user TUI preferences
     """
 
-    def __init__(self, config):
+    def __init__(self, config: Config) -> None:
         self.config = config
         self._client: Client | None = None
-        self.me: dict = {}
-        self.system_info: dict = {}
+        self.me: dict[str, Any] = {}
+        self.system_info: dict[str, Any] = {}
         self.tui_prefs = TuiPreferences()
         self._last_call_time: float = 0.0
         self._reconnect_lock = threading.Lock()
@@ -53,15 +55,21 @@ class Session:
             self._connect_local()
         self._fetch_metadata()
 
-    def _connect_remote(self, cfg) -> None:
+    def _connect_remote(self, cfg: Config) -> None:
+        username = cfg.username
+        api_key = cfg.get_api_key()
+        if username is None or api_key is None:
+            raise ValueError(
+                "A remote connection needs username and api_key_path in the config file"
+            )
         url = f"wss://{cfg.server}/api/current"
         self._client = Client(url, verify_ssl=cfg.verify_ssl)
-        self._client.__enter__()
-        self._client.login_with_api_key(cfg.username, cfg.get_api_key())
+        self._client.__enter__()  # type: ignore[no-untyped-call]
+        self._client.login_with_api_key(username, api_key)
 
     def _connect_local(self) -> None:
         self._client = Client()
-        self._client.__enter__()
+        self._client.__enter__()  # type: ignore[no-untyped-call]
 
     def _start_keepalive(self) -> None:
         """Launch the background thread that pings when the connection is idle."""
@@ -83,18 +91,26 @@ class Session:
             if self._reconnect_generation != failed_generation:
                 return  # another thread already reconnected
             old = self._client
-            try:
-                old.__exit__(None, None, None)
-            except Exception:
-                pass
+            if old is not None:
+                try:
+                    old.__exit__(None, None, None)  # type: ignore[no-untyped-call]
+                except Exception:
+                    pass
             self._connect_remote(self.config)  # sets self._client on success
             self._reconnect_generation += 1
             self._last_call_time = time.monotonic()
 
+    def _connected(self) -> Client:
+        """The open client, or an error when there is no connection."""
+        if self._client is None:
+            raise RuntimeError("Session is not connected")
+        return self._client
+
     def _fetch_metadata(self) -> None:
         """Populate me, system_info, preferences and locale."""
-        self.me = self._client.call("auth.me")
-        self.system_info = self._client.call("system.info")
+        client = self._connected()
+        self.me = client.call("auth.me")
+        self.system_info = client.call("system.info")
 
         # Enforce minimum privilege: READONLY_ADMIN (or a superset thereof).
         # FULL_ADMIN and SHARING_ADMIN both include all READ roles; any of the
@@ -118,7 +134,7 @@ class Session:
                 {"language": web_prefs.get("language")}
             )
             try:
-                self._client.call(
+                client.call(
                     "auth.set_attribute", TUI_PREFERENCES_KEY, asdict(self.tui_prefs)
                 )
             except Exception:
@@ -132,31 +148,31 @@ class Session:
         self._keepalive_stop.set()
         if self._client is not None:
             try:
-                self._client.__exit__(None, None, None)
+                self._client.__exit__(None, None, None)  # type: ignore[no-untyped-call]
             except Exception:
                 pass
             self._client = None
 
-    def call(self, method: str, *args, **kwargs):
+    def call(self, method: str, *args: Any, **kwargs: Any) -> Any:
         """Delegate an API call; reconnect once on connection-aborted errors."""
         self._last_call_time = time.monotonic()
         gen = self._reconnect_generation
         try:
-            return self._client.call(method, *args, **kwargs)
+            return self._connected().call(method, *args, **kwargs)
         except ClientException as e:
             if e.errno == errno.ECONNABORTED and self.config.server:
                 self._reconnect(gen)
                 self._last_call_time = time.monotonic()
-                return self._client.call(method, *args, **kwargs)
+                return self._connected().call(method, *args, **kwargs)
             raise
 
     @property
     def username(self) -> str:
-        return self.me.get("pw_name", "unknown")
+        return str(self.me.get("pw_name", "unknown"))
 
     @property
     def roles(self) -> set[str]:
-        return self.me.get("privilege", {}).get("roles", set())
+        return set(self.me.get("privilege", {}).get("roles", set()))
 
     @property
     def role_label(self) -> str:
@@ -168,8 +184,8 @@ class Session:
 
     @property
     def hostname(self) -> str:
-        return self.system_info.get("hostname", "unknown")
+        return str(self.system_info.get("hostname", "unknown"))
 
     @property
     def version(self) -> str:
-        return self.system_info.get("version", "unknown")
+        return str(self.system_info.get("version", "unknown"))

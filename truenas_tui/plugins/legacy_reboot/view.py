@@ -5,8 +5,11 @@ Prompts for a reboot reason, confirms, then calls system.reboot.
 ShutdownPlugin reuses the same flow with its own strings and method.
 """
 
+import curses
+
 from truenas_tui.localization import TRANSLATE
 from truenas_tui.plugins.base import BasePlugin
+from truenas_tui.session import Session
 from truenas_tui.tui import format_error
 from truenas_tui.tui.dialogs import confirm_dialog, input_dialog, message_dialog
 
@@ -37,7 +40,7 @@ class RebootPlugin(BasePlugin):
             TRANSLATE("Reboot initiated. The system is shutting down."),
         )
 
-    def run(self, stdscr, session) -> None:
+    def run(self, stdscr: curses.window, session: Session) -> None:
         prompt, confirm_title, confirm_body, done_title, done_body = self._texts()
         label = TRANSLATE(self.LABEL)
 

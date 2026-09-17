@@ -19,22 +19,22 @@ class Config:
         verify_ssl = true           ; set false only for self-signed certificates
     """
 
-    def __init__(self, path=None):
+    def __init__(self, path: str | None = None) -> None:
         self.path = path or DEFAULT_CONFIG_PATH
         self._parser = configparser.ConfigParser()
         self._parser.read(self.path)
 
     @property
-    def server(self):
+    def server(self) -> str | None:
         """Remote server address, or None for local AF_UNIX."""
         return self._parser.get("truenas", "server", fallback=None) or None
 
     @property
-    def username(self):
+    def username(self) -> str | None:
         return self._parser.get("truenas", "username", fallback=None)
 
     @property
-    def api_key_path(self):
+    def api_key_path(self) -> str | None:
         return self._parser.get("truenas", "api_key_path", fallback=None)
 
     @property
@@ -42,7 +42,7 @@ class Config:
         """Whether to verify the server's TLS certificate.  Defaults to True."""
         return self._parser.getboolean("truenas", "verify_ssl", fallback=True)
 
-    def get_api_key(self):
+    def get_api_key(self) -> str | None:
         """Return raw API key string from api_key_path file, or None."""
         path = self.api_key_path
         if not path:

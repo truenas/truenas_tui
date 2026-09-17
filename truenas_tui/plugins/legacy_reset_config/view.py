@@ -10,8 +10,11 @@ Version notes:
   v25.04+: system.config.reset takes no arguments.
 """
 
+import curses
+
 from truenas_tui.localization import TRANSLATE
 from truenas_tui.plugins.base import BasePlugin
+from truenas_tui.session import Session
 from truenas_tui.tui import format_error
 from truenas_tui.tui.dialogs import confirm_dialog, input_dialog, message_dialog
 
@@ -30,7 +33,7 @@ class ResetConfigPlugin(BasePlugin):
         "You will be prompted to confirm twice before proceeding."
     )
 
-    def run(self, stdscr, session) -> None:
+    def run(self, stdscr: curses.window, session: Session) -> None:
         # First confirmation
         if not confirm_dialog(
             stdscr,

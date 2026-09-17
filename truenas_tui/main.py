@@ -21,6 +21,7 @@ import curses
 import sys
 
 from .config import Config
+from .plugins.base import BasePlugin
 from .plugins.legacy_cli_shell.view import CliShellPlugin
 from .plugins.legacy_linux_shell.view import LinuxShellPlugin
 from .plugins.legacy_password.view import PasswordPlugin
@@ -42,8 +43,12 @@ from .tui.main_view import MainView
 # Menu contents and order.  In --menu mode an item's number is its position
 # in LEGACY_MENU, which mirrors midcli --menu.  TuiSettingsPlugin is in
 # neither menu; default mode reaches it with the 's' hotkey.
-DEFAULT_MENU = [NetworkPlugin, MyAccountPlugin, PowerControlPlugin]
-LEGACY_MENU = [
+DEFAULT_MENU: list[type[BasePlugin]] = [
+    NetworkPlugin,
+    MyAccountPlugin,
+    PowerControlPlugin,
+]
+LEGACY_MENU: list[type[BasePlugin]] = [
     NetworkInterfacePlugin,
     NetworkSettingsPlugin,
     StaticRoutesPlugin,
@@ -57,17 +62,17 @@ LEGACY_MENU = [
 ]
 
 
-def menu_plugins(session, menu_mode: bool) -> list:
+def menu_plugins(session: Session, menu_mode: bool) -> list[BasePlugin]:
     """Instantiate the menu for this mode, hiding LOCAL_ONLY items on remote sessions."""
     menu = LEGACY_MENU if menu_mode else DEFAULT_MENU
-    plugins = []
+    plugins: list[BasePlugin] = []
     for cls in menu:
         if not (cls.LOCAL_ONLY and session.config.server):
             plugins.append(cls())
     return plugins
 
 
-def _print_ui_urls(session) -> None:
+def _print_ui_urls(session: Session) -> None:
     """
     Print web UI URLs to stdout BEFORE entering curses.
 
@@ -80,7 +85,7 @@ def _print_ui_urls(session) -> None:
     https:// URLs from active INET interface addresses if that call is
     denied or unavailable.
     """
-    urls = []
+    urls: list[str] = []
     if session.config.server:
         # Remote connection: system.general.get_ui_urls is a private method
         # unavailable on the public WebSocket API.  Construct from config.
@@ -114,7 +119,7 @@ def _print_ui_urls(session) -> None:
     sys.stdout.flush()
 
 
-def _parse_args():
+def _parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="TrueNAS Terminal User Interface",
     )
@@ -133,7 +138,7 @@ def _parse_args():
     return parser.parse_args()
 
 
-def _tui_main(stdscr, session, menu_mode: bool = False) -> None:
+def _tui_main(stdscr: curses.window, session: Session, menu_mode: bool = False) -> None:
     """Called by curses.wrapper after the terminal is initialised."""
     init_colors(session.tui_prefs.theme)
     MainView(stdscr, session, menu_plugins(session, menu_mode), menu_mode).run()

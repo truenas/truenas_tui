@@ -1,0 +1,26 @@
+name: mypy
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+  workflow_dispatch:
+
+jobs:
+  typecheck:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v10.1.0
+        with:
+          python-version: "3.13"
+
+      - name: Run mypy
+        # truenas-api-client is not published on PyPI, so it is pulled from GitHub
+        # into the same tool environment mypy runs in.
+        run: uvx --with "git+https://github.com/truenas/api_client.git" mypy
