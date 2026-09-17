@@ -135,7 +135,12 @@ def test_draw_header_shows_hostname(stdscr):
         view._draw_header(24, 80)
     # addstr should have been called and include hostname
     calls = stdscr.addstr.call_args_list
-    assert any("bobnas" in str(c) for c in calls)
+    found = False
+    for c in calls:
+        if "bobnas" in str(c):
+            found = True
+            break
+    assert found
 
 
 def test_draw_header_shows_server(stdscr):
@@ -147,7 +152,12 @@ def test_draw_header_shows_server(stdscr):
     ):
         view._draw_header(24, 80)
     calls = stdscr.addstr.call_args_list
-    assert any("10.0.0.1" in str(c) for c in calls)
+    found = False
+    for c in calls:
+        if "10.0.0.1" in str(c):
+            found = True
+            break
+    assert found
 
 
 def test_draw_header_local_mode(stdscr):
@@ -159,7 +169,12 @@ def test_draw_header_local_mode(stdscr):
     ):
         view._draw_header(24, 80)
     calls = stdscr.addstr.call_args_list
-    assert any("local" in str(c) for c in calls)
+    found = False
+    for c in calls:
+        if "local" in str(c):
+            found = True
+            break
+    assert found
 
 
 def test_draw_header_root_warning(stdscr):
@@ -177,12 +192,19 @@ def test_draw_header_root_warning(stdscr):
 
 def test_draw_footer_shows_plugin_count(stdscr):
     session = _make_session()
-    plugins = [_make_plugin(f"Plugin {i}") for i in range(8)]
+    plugins = []
+    for i in range(8):
+        plugins.append(_make_plugin(f"Plugin {i}"))
     view = _make_view(stdscr, session, plugins, menu_mode=True)
     with patch("truenas_tui.tui.main_view.pair", return_value=0):
         view._draw_footer(24, 80)
     calls = stdscr.addstr.call_args_list
-    assert any("1-8" in str(c) for c in calls)
+    found = False
+    for c in calls:
+        if "1-8" in str(c):
+            found = True
+            break
+    assert found
 
 
 def test_draw_footer_info_mode_hints(stdscr):

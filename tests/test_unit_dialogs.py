@@ -64,7 +64,11 @@ def test_save_screen_dupwin_available(stdscr):
 
 def test_save_screen_no_dupwin(stdscr):
     del stdscr.dupwin  # MagicMock will raise AttributeError
-    stdscr.dupwin = property(lambda self: (_ for _ in ()).throw(AttributeError))
+
+    def _raise_attribute_error(self):
+        raise AttributeError
+
+    stdscr.dupwin = property(_raise_attribute_error)
 
     # Use a regular object without dupwin
     class NoDupwin:
@@ -573,6 +577,9 @@ def test_dialog_button_follows_theme(stdscr, mock_win, monkeypatch):
         patch("curses.color_pair", return_value=0),
     ):
         message_dialog(stdscr, "Title", "Hello")
-    button_calls = [c for c in mock_win.addstr.call_args_list if c.args[2] == "[ OK ]"]
+    button_calls = []
+    for c in mock_win.addstr.call_args_list:
+        if c.args[2] == "[ OK ]":
+            button_calls.append(c)
     assert len(button_calls) == 1
     assert button_calls[0].args[3] & curses.A_REVERSE

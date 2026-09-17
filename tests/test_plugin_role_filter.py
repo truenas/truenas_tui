@@ -24,7 +24,10 @@ def _session(server):
 
 
 def _names(server, menu_mode: bool) -> list[str]:
-    return [type(p).__name__ for p in menu_plugins(_session(server), menu_mode)]
+    names = []
+    for p in menu_plugins(_session(server), menu_mode):
+        names.append(type(p).__name__)
+    return names
 
 
 class TestLocalOnlyFiltering:

@@ -132,7 +132,9 @@ class TestAliasesToPayload:
         result = _aliases_to_payload(["10.0.0.1/8", "::1/128"])
         assert isinstance(result, list)
         assert len(result) == 2
-        types = {a["type"] for a in result}
+        types = set()
+        for a in result:
+            types.add(a["type"])
         assert types == {"INET", "INET6"}
 
     def test_bad_entry_returns_error_string(self):

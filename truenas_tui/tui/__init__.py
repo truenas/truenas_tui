@@ -16,7 +16,11 @@ def format_error(exc: Exception) -> str:
     Uses only the first non-empty line of the message so tracebacks and
     internal detail do not reach dialog boxes, capped at 200 characters.
     """
-    msg = next((line.strip() for line in str(exc).splitlines() if line.strip()), "")
+    msg = ""
+    for line in str(exc).splitlines():
+        if line.strip():
+            msg = line.strip()
+            break
     if len(msg) > 200:
         msg = msg[:197] + "..."
     return msg or type(exc).__name__

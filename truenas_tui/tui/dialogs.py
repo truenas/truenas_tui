@@ -69,7 +69,11 @@ def message_dialog(stdscr, title: str, message: str, timeout_secs: int = 0) -> N
     Used for sensitive output (e.g. one-time passwords) that should not linger.
     """
     lines = message.splitlines()
-    width = max(16, max((len(ln) for ln in lines), default=0) + 4, len(title) + 4)
+    longest = 0
+    for ln in lines:
+        if len(ln) > longest:
+            longest = len(ln)
+    width = max(16, longest + 4, len(title) + 4)
     width = min(width, stdscr.getmaxyx()[1] - 2)
     height = len(lines) + 5  # title border + lines + blank + button row + border
 
@@ -125,9 +129,11 @@ def confirm_dialog(
     """
     lines = message.splitlines()
     btn_row = f"[ {yes_label} ]   [ {no_label} ]"
-    width = max(
-        len(btn_row) + 4, max((len(ln) for ln in lines), default=0) + 4, len(title) + 4
-    )
+    longest = 0
+    for ln in lines:
+        if len(ln) > longest:
+            longest = len(ln)
+    width = max(len(btn_row) + 4, longest + 4, len(title) + 4)
     width = min(width, stdscr.getmaxyx()[1] - 2)
     height = len(lines) + 5
 
@@ -344,7 +350,10 @@ def select_dialog(
         return None
 
     sh, sw = stdscr.getmaxyx()
-    max_opt_w = max(len(o) for o in options)
+    max_opt_w = 0
+    for o in options:
+        if len(o) > max_opt_w:
+            max_opt_w = len(o)
 
     saved = _save_screen(stdscr)
 

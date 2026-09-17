@@ -33,6 +33,9 @@ def init_colors(theme: str = "default") -> None:
     G = curses.COLOR_GREEN
     Y = curses.COLOR_YELLOW
 
+    high_contrast = []
+    for pair_id in range(HEADER, TITLE + 1):
+        high_contrast.append((pair_id, -1, -1))
     palettes = {
         "default": [
             (HEADER, W, BL),
@@ -58,7 +61,7 @@ def init_colors(theme: str = "default") -> None:
         ],
         # All pairs use terminal defaults; pair() injects A_REVERSE for
         # HEADER, MENU_SELECTED, ERROR via _HIGH_CONTRAST_REVERSE.
-        "high_contrast": [(pair_id, -1, -1) for pair_id in range(HEADER, TITLE + 1)],
+        "high_contrast": high_contrast,
     }
     _active_theme = theme if theme in palettes else "default"
     for pair_id, fg, bg in palettes[_active_theme]:

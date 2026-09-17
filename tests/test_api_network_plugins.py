@@ -43,7 +43,9 @@ class TestNetworkSettingsPlugin:
         ):
             NetworkSettingsPlugin().run(stdscr, recording_session)
 
-        field_values = {f.key: f.value for f in captured_fields}
+        field_values = {}
+        for f in captured_fields:
+            field_values[f.key] = f.value
         assert field_values.get("hostname") == "mocknas"
         assert field_values.get("domain") == "test.local"
         assert field_values.get("ipv4gateway") == "192.168.1.1"

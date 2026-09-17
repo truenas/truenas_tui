@@ -60,7 +60,11 @@ LEGACY_MENU = [
 def menu_plugins(session, menu_mode: bool) -> list:
     """Instantiate the menu for this mode, hiding LOCAL_ONLY items on remote sessions."""
     menu = LEGACY_MENU if menu_mode else DEFAULT_MENU
-    return [cls() for cls in menu if not (cls.LOCAL_ONLY and session.config.server)]
+    plugins = []
+    for cls in menu:
+        if not (cls.LOCAL_ONLY and session.config.server):
+            plugins.append(cls())
+    return plugins
 
 
 def _print_ui_urls(session) -> None:

@@ -75,10 +75,14 @@ def _iface_summary(iface: dict) -> str:
     aliases = iface.get("aliases", [])
     state_aliases = (iface.get("state") or {}).get("aliases", [])
 
-    configured = [_alias_str(a) for a in aliases if a.get("type") in ("INET", "INET6")]
-    active = [
-        _alias_str(a) for a in state_aliases if a.get("type") in ("INET", "INET6")
-    ]
+    configured = []
+    for a in aliases:
+        if a.get("type") in ("INET", "INET6"):
+            configured.append(_alias_str(a))
+    active = []
+    for a in state_aliases:
+        if a.get("type") in ("INET", "INET6"):
+            active.append(_alias_str(a))
 
     parts = []
     if itype and itype not in ("PHYSICAL",):
@@ -502,21 +506,27 @@ def _build_edit_fields(
             ),
         ]
 
+    alias_strs = []
+    for a in iface.get("aliases", []):
+        if a.get("type") in ("INET", "INET6"):
+            alias_strs.append(_alias_str(a))
     fields.append(
         ListField(
             key="_aliases",
             label=TRANSLATE("Aliases (CIDR)"),
-            value=[
-                _alias_str(a)
-                for a in iface.get("aliases", [])
-                if a.get("type") in ("INET", "INET6")
-            ],
+            value=alias_strs,
             item_label=TRANSLATE("Address"),
             item_validator=_validate_alias_str,
         )
     )
 
     if failover_licensed:
+        node_ips = []
+        for a in iface.get("failover_aliases", []):
+            node_ips.append(a.get("address", ""))
+        virtual_ips = []
+        for a in iface.get("failover_virtual_aliases", []):
+            virtual_ips.append(a.get("address", ""))
         fields += [
             SectionField(key="", label=TRANSLATE("Failover Settings")),
             BoolField(
@@ -533,17 +543,14 @@ def _build_edit_fields(
             ListField(
                 key="_failover_aliases",
                 label=TRANSLATE("This Node IPs"),
-                value=[a.get("address", "") for a in iface.get("failover_aliases", [])],
+                value=node_ips,
                 item_label=TRANSLATE("IP Address"),
                 item_validator=_validate_ip_only,
             ),
             ListField(
                 key="_failover_virtual_aliases",
                 label=TRANSLATE("Virtual IPs"),
-                value=[
-                    a.get("address", "")
-                    for a in iface.get("failover_virtual_aliases", [])
-                ],
+                value=virtual_ips,
                 item_label=TRANSLATE("IP Address"),
                 item_validator=_validate_ip_only,
             ),
@@ -668,15 +675,17 @@ def _collect_payload(result: dict, iface: dict, failover_licensed: bool) -> dict
     Convert form result into an API payload dict.
     Returns the dict on success or an error string on failure.
     """
-    payload: dict = {k: result[k] for k in ("description",) if k in result}
+    payload: dict = {}
+    if "description" in result:
+        payload["description"] = result["description"]
 
     # DHCP / IPv6 auto are forced off on HA systems
     if failover_licensed:
         payload["ipv4_dhcp"] = payload["ipv6_auto"] = False
     else:
-        payload.update(
-            {k: result[k] for k in ("ipv4_dhcp", "ipv6_auto") if k in result}
-        )
+        for k in ("ipv4_dhcp", "ipv6_auto"):
+            if k in result:
+                payload[k] = result[k]
 
     aliases = _aliases_to_payload(result.get("_aliases", []))
     if isinstance(aliases, str):
@@ -684,22 +693,23 @@ def _collect_payload(result: dict, iface: dict, failover_licensed: bool) -> dict
     payload["aliases"] = aliases
 
     if failover_licensed:
-        payload.update(
-            {
-                k: result[k]
-                for k in ("failover_critical", "failover_group")
-                if k in result
-            }
-        )
+        for k in ("failover_critical", "failover_group"):
+            if k in result:
+                payload[k] = result[k]
         for key in ("failover_aliases", "failover_virtual_aliases"):
             ips = result.get("_" + key, [])
-            err = next(filter(None, map(_validate_ip_only, ips)), None)
-            if err:
-                return err
-            payload[key] = [_parse_ip_only(s) for s in ips]
+            parsed = []
+            for s in ips:
+                err = _validate_ip_only(s)
+                if err:
+                    return err
+                parsed.append(_parse_ip_only(s))
+            payload[key] = parsed
 
     type_keys = _TYPE_KEYS.get(iface.get("type", "PHYSICAL"), ())
-    payload.update({k: result[k] for k in type_keys if k in result})
+    for k in type_keys:
+        if k in result:
+            payload[k] = result[k]
 
     # MTU — send None if 0 (API treats 0/None as "use default")
     mtu = result.get("mtu", 0)
